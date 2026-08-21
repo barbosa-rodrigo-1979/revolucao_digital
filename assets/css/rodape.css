@@ -1,0 +1,135 @@
+/*
+===================================================================
+    CSS REDUZIDO E OTIMIZADO – Rodapé com espaços reduzidos
+    (Parte 1 – Variáveis e Reset)
+===================================================================
+*/
+
+/* ===================================================================
+   VARIÁVEIS CSS (cores usadas no rodapé e no main)
+   =================================================================== */
+:root {
+  --utfpr-Yellow: #ffd200;
+  --utfpr-Yellow-light: #ffe84d;
+  --utfpr-Yellow-dark: #e9b400;
+  --utfpr-Yellow-darker: #c99700;
+  --utfpr-white: #ffffff;
+  --utfpr-gray-light: #f8f9fa;
+  --utfpr-gray: #e9ecef;
+  --utfpr-gray-medium: #dee2e6;
+  --utfpr-gray-dark: #6c757d;
+  --utfpr-black: #212529;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ===================================================================
+   RESET GLOBAL
+   =================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--utfpr-black);
+  background: linear-gradient(135deg, var(--utfpr-gray-dark) 0%, #343a40 100%);
+}
+
+/* ===================================================================
+   CONTAINER (usado no rodapé e no conteúdo)
+   =================================================================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===================================================================
+   CONTEÚDO PRINCIPAL (main) – com espaçamento reduzido
+   =================================================================== */
+main {
+  padding: 20px 0; /* reduzido de 30px */
+  background: linear-gradient(
+    135deg,
+    var(--utfpr-gray-medium) 0%,
+    var(--utfpr-gray-dark) 100%
+  );
+  min-height: calc(100vh - 150px); /* reduzido de 200px */
+}
+
+/* ===================================================================
+   RODAPÉ (footer) – com espaçamentos verticais reduzidos
+   =================================================================== */
+footer {
+  background: linear-gradient(
+    135deg,
+    var(--utfpr-gray-medium) 0%,
+    var(--utfpr-gray-dark) 100%
+  );
+  color: var(--utfpr-black);
+  padding: 30px 0 15px 0; /* topo reduzido de 45px, base mantida */
+  border-top: 5px solid var(--utfpr-Yellow);
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Grid de colunas do rodapé – com espaçamento inferior bem reduzido */
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px; /* reduzido de 35px */
+  margin-bottom: 5px; /* <--- AQUI: reduzido de 20px para 5px (menor espaço entre o grid e o copyright) */
+}
+
+/* ===================================================================
+   SEÇÕES DO RODAPÉ – Títulos, textos, listas e links
+   =================================================================== */
+
+.footer-section h3 {
+  color: var(--utfpr-black);
+  margin-bottom: 6px;    /* REDUZIDO: 12px → 6px */
+  font-size: 1.25rem;
+  border-bottom: 2px solid var(--utfpr-Yellow-light);
+  padding-bottom: 4px;   /* REDUZIDO: 8px → 4px */
+  display: inline-block;
+}
+
+.footer-section p,
+.footer-section li {
+  margin-bottom: 4px;    /* REDUZIDO: 10px → 4px */
+  line-height: 1.4;      /* ADICIONADO: reduz espaço entre linhas do texto */
+  opacity: 0.95;
+  color: var(--utfpr-black);
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section a {
+  color: var(--utfpr-black);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.footer-section a:hover {
+  opacity: 0.9;
+  border-bottom-color: var(--utfpr-black);
+}
+
+/* ===================================================================
+   COPYRIGHT – com espaçamento superior reduzido
+   =================================================================== */
+.copyright {
+  text-align: center;
+  padding-top: 5px; /* <--- AQUI: reduzido de 15px para 5px (menos espaço acima do copyright) */
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  opacity: 0.9;
+  font-size: 0.92rem;
+  color: var(--utfpr-black);
+}
+

@@ -1,0 +1,185 @@
+/*
+===================================================================
+    CSS UTILIZADO NO CABEÇALHO — modelo_cabecalho.html
+    Extraído e organizado da folha de estilos global.
+===================================================================
+*/
+
+/* ===================================================================
+   SEÇÃO 1 — VARIÁVEIS CSS
+   =================================================================== */
+:root {
+  /* Paleta UTFPR */
+  --utfpr-Yellow: #ffd200;
+  --utfpr-Yellow-light: #ffe84d;
+  --utfpr-Yellow-dark: #e9b400;
+  --utfpr-Yellow-darker: #c99700;
+
+  /* Escala de cinza */
+  --utfpr-white: #ffffff;
+  --utfpr-gray-light: #f8f9fa;
+  --utfpr-gray: #e9ecef;
+  --utfpr-gray-medium: #dee2e6;
+  --utfpr-gray-dark: #6c757d;
+  --utfpr-black: #212529;
+
+  /* Outras cores (não usadas diretamente no cabeçalho, mas mantidas para consistência) */
+  --scratch-motion: #4a6cd4;
+  --scratch-looks: #8a55d7;
+  --scratch-sound: #bb42c3;
+  --scratch-events: #ffbf00;
+  --scratch-control: #ff8c1a;
+  --scratch-sensing: #2ca5a2;
+  --scratch-operators: #5cb712;
+  --card-bg: #ffffff;
+  --border-color: #dee2e6;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --success-color: #28a745;
+}
+
+/* ===================================================================
+   SEÇÃO 2 — RESET E CONFIGURAÇÕES BASE
+   =================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--utfpr-black);
+  background: linear-gradient(135deg, var(--utfpr-gray-dark) 0%, #343a40 100%);
+}
+
+/* ===================================================================
+   SEÇÃO 3 — CONTAINER
+   =================================================================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===================================================================
+   SEÇÃO 4 — CABEÇALHO SUPERIOR (header-top)
+   =================================================================== */
+.header-top {
+  background: linear-gradient(
+    135deg,
+    var(--utfpr-gray-dark) 0%,
+    var(--utfpr-gray-medium) 100%
+  );
+  color: var(--utfpr-black);
+  padding: 20px 0;
+  box-shadow: 0 2px 15px rgba(35, 31, 32, 0.4);
+  border-bottom: 4px solid var(--utfpr-Yellow-dark);
+}
+
+.header-top .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  height: 65px;
+  width: auto;
+  filter: brightness(0) invert(1);
+}
+
+.institution-name {
+  font-size: 0.95rem;
+  line-height: 1.3;
+  font-weight: 600;
+  color: var(--utfpr-black);
+}
+
+.institution-name small {
+  font-size: 0.85rem;
+  opacity: 0.95;
+  font-weight: normal;
+  color: var(--utfpr-black);
+}
+
+.header-title {
+  text-align: right;
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: var(--utfpr-black);
+}
+
+.header-title small {
+  font-size: 0.9rem;
+  font-weight: normal;
+  opacity: 0.95;
+  color: var(--utfpr-black);
+}
+
+/* ===================================================================
+   SEÇÃO 5 — RESPONSIVIDADE (TABLETS E CELULARES)
+   =================================================================== */
+@media (max-width: 768px) {
+  .header-top .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 18px;
+  }
+  .header-title {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+  .logo {
+    height: 55px;
+  }
+}
+
+/* ===================================================================
+   SEÇÃO 6 — MODO ESCURO (se a classe .dark-mode for adicionada ao body)
+   =================================================================== */
+body.dark-mode {
+  --utfpr-black: #f8f9fa;
+  --utfpr-white: #212529;
+  --utfpr-gray-light: #343a40;
+  --utfpr-gray: #495057;
+  --utfpr-gray-medium: #6c757d;
+  --utfpr-gray-dark: #adb5bd;
+  --card-bg: #2d3748;
+  --border-color: #4a5568;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .header-top {
+  background: linear-gradient(
+    135deg,
+    var(--utfpr-gray) 0%,
+    var(--utfpr-gray-medium) 100%
+  );
+  color: var(--utfpr-black);
+}
+
+/* ===================================================================
+   SEÇÃO 7 — ACESSIBILIDADE (scroll suave e foco)
+   =================================================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+a:focus,
+button:focus {
+  outline: 3px solid var(--utfpr-Yellow);
+  outline-offset: 2px;
+}
