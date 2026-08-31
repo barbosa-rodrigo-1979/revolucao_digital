@@ -1,8 +1,7 @@
 /* ================================================================
-   ano1bim3.css – Estilos consolidados para o 3º Bimestre
-   Baseado nos modelos: cabeçalho.css, menu.css,
-   modelo_apresentacao_bimestre.css, ano1bim2_planos_de_aula.css,
-   modelo_fechamento_bimestre.css
+   ano2bim1.css – Estilos unificados para o 2º Ano 1º Bimestre
+   Baseado na paleta UTFPR (amarelo)
+   Inclui: cabeçalho, menu, apresentação, planos de aula, fechamento, rodapé
    ================================================================ */
 
 /* --- 1. VARIÁVEIS CSS (PALETA UTFPR) --- */
@@ -11,25 +10,32 @@
   --utfpr-Yellow-light: #ffe84d;
   --utfpr-Yellow-dark: #e9b400;
   --utfpr-Yellow-darker: #c99700;
+
   --utfpr-white: #ffffff;
   --utfpr-gray-light: #f8f9fa;
   --utfpr-gray: #e9ecef;
   --utfpr-gray-medium: #dee2e6;
   --utfpr-gray-dark: #6c757d;
   --utfpr-black: #212529;
+
   --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   --shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.15);
   --transition-base: 0.3s ease-in-out;
 }
 
-/* --- 2. RESET E CONFIGURAÇÕES BASE --- */
+/* --- 2. RESET GLOBAL --- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* --- 3. ESTILOS GERAIS --- */
 body {
   font-family:
     "Inter",
@@ -59,14 +65,9 @@ a {
   text-decoration: none;
   transition: color var(--transition-base);
 }
-
 a:hover {
   color: var(--utfpr-Yellow-darker);
   text-decoration: underline;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 a:focus,
@@ -75,14 +76,16 @@ button:focus {
   outline-offset: 2px;
 }
 
-/* --- 3. CONTAINER --- */
+/* --- 4. CONTAINER --- */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* --- 4. CABEÇALHO (header-top) --- */
+/* ================================================================
+   CABEÇALHO (copiado de cabecalho.css)
+   ================================================================ */
 .header-top {
   background: linear-gradient(
     135deg,
@@ -142,7 +145,9 @@ button:focus {
   color: var(--utfpr-black);
 }
 
-/* --- 5. MENU (header-bottom) --- */
+/* ================================================================
+   MENU (copiado de menu.css)
+   ================================================================ */
 .header-bottom {
   background-color: var(--utfpr-gray-dark);
   border-bottom: 3px solid var(--utfpr-Yellow-darker);
@@ -184,7 +189,9 @@ nav a.active {
   color: var(--utfpr-black);
 }
 
-/* --- 6. CARDS GLASS --- */
+/* ================================================================
+   CARDS GLASS (modelo_apresentacao_bimestre.css e outros)
+   ================================================================ */
 .glass-card {
   background: rgba(104, 113, 120, 0.7);
   backdrop-filter: blur(12px);
@@ -196,7 +203,6 @@ nav a.active {
     transform var(--transition-base),
     box-shadow var(--transition-base);
 }
-
 .glass-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
@@ -209,15 +215,12 @@ nav a.active {
   margin-bottom: 1.5rem;
 }
 
-/* --- 7. CORES AUXILIARES --- */
 .text-utfpr-yellow {
   color: var(--utfpr-Yellow-dark) !important;
 }
-
 .text-utfpr-yellow-light {
   color: var(--utfpr-Yellow-light) !important;
 }
-
 .text-utfpr-yellow-darker {
   color: var(--utfpr-Yellow-darker) !important;
 }
@@ -227,13 +230,26 @@ nav a.active {
   color: var(--utfpr-black) !important;
 }
 
-/* --- 8. TABELAS --- */
+/* --- Carta de abertura --- */
+.carta-abelha {
+  background: rgba(255, 210, 0, 0.08) !important;
+  border-left: 10px solid var(--utfpr-Yellow) !important;
+  padding: 2rem !important;
+  border-radius: 1.5rem !important;
+}
+.carta-abelha p {
+  margin-bottom: 1rem;
+}
+.carta-abelha .display-6 {
+  color: var(--utfpr-Yellow-dark);
+}
+
+/* --- Tabelas --- */
 .table-utfpr-yellow {
   background-color: var(--utfpr-Yellow) !important;
   color: var(--utfpr-black) !important;
   border-color: var(--utfpr-Yellow-dark) !important;
 }
-
 .table-utfpr-yellow th {
   background-color: var(--utfpr-Yellow-dark) !important;
   color: var(--utfpr-white) !important;
@@ -246,16 +262,127 @@ nav a.active {
 .table tbody {
   background-color: #87888a !important;
 }
-
 .table-striped > tbody > tr:nth-of-type(odd) {
   background-color: rgba(255, 210, 0, 0.08);
 }
-
 .table-hover > tbody > tr:hover {
   background-color: rgba(255, 210, 0, 0.2);
 }
 
-/* --- 9. BLOCOS DE CÓDIGO --- */
+/* --- Badges --- */
+.badge.bg-warning {
+  background-color: var(--utfpr-Yellow) !important;
+  color: var(--utfpr-black) !important;
+}
+.badge.bg-info {
+  background-color: #17a2b8 !important;
+  color: var(--utfpr-white) !important;
+}
+.badge.bg-danger {
+  background-color: #dc3545 !important;
+  color: var(--utfpr-white) !important;
+}
+.badge.bg-success {
+  background-color: #28a745 !important;
+  color: var(--utfpr-white) !important;
+}
+.badge.bg-primary {
+  background-color: #007bff !important;
+  color: var(--utfpr-white) !important;
+}
+.badge.bg-secondary {
+  background-color: var(--utfpr-gray-dark) !important;
+  color: var(--utfpr-white) !important;
+}
+.badge.bg-dark {
+  background-color: var(--utfpr-black) !important;
+  color: var(--utfpr-white) !important;
+}
+
+/* --- Botão de impressão (global) --- */
+.btn-print {
+  background-color: var(--utfpr-Yellow);
+  color: var(--utfpr-black);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 3rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+}
+.btn-print:hover {
+  background-color: var(--utfpr-Yellow-light);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
+.btn-print:active {
+  background-color: var(--utfpr-Yellow-dark);
+  transform: scale(0.95);
+}
+
+/* ================================================================
+   PLANOS DE AULA (modelo_planos_aula.css)
+   ================================================================ */
+/* Accordion */
+.accordion-item {
+  border: none;
+  background: transparent;
+}
+.accordion-header {
+  background: transparent;
+}
+.accordion-button {
+  background-color: var(--utfpr-white);
+  color: var(--utfpr-black);
+  border-radius: 1rem !important;
+  padding: 1rem 1.5rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  border: 1px solid var(--utfpr-gray);
+}
+.accordion-button:not(.collapsed) {
+  background-color: var(--utfpr-Yellow-light);
+  color: var(--utfpr-black);
+  box-shadow: inset 0 -1px 0 var(--utfpr-Yellow-dark);
+}
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(255, 210, 0, 0.5);
+  border-color: var(--utfpr-Yellow);
+}
+.accordion-button .badge {
+  background-color: var(--utfpr-Yellow-dark);
+  color: var(--utfpr-black);
+}
+.accordion-body {
+  background-color: var(--utfpr-white);
+  border-radius: 0 0 1rem 1rem;
+  padding: 1.5rem 2rem;
+  border: 1px solid var(--utfpr-gray);
+  border-top: none;
+  box-shadow: var(--shadow-sm);
+}
+.accordion-body h4 {
+  color: var(--utfpr-Yellow-dark);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+.accordion-body h4:first-of-type {
+  margin-top: 0;
+}
+.accordion-body ul,
+.accordion-body ol {
+  padding-left: 1.5rem;
+}
+.accordion-body code {
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.3rem;
+  font-size: 0.85em;
+  color: var(--utfpr-Yellow-darker);
+}
+
+/* Blocos de código */
 .code-block {
   background-color: var(--utfpr-black);
   border-radius: 1rem;
@@ -264,7 +391,6 @@ nav a.active {
   box-shadow: var(--shadow-md);
   border-left: 6px solid var(--utfpr-Yellow);
 }
-
 .code-block pre {
   margin: 0;
   padding: 1.5rem 2rem;
@@ -278,7 +404,6 @@ nav a.active {
   text-shadow: none !important;
   border: none;
 }
-
 .code-block pre code {
   font-family: inherit;
   color: #ebf0eb !important;
@@ -286,7 +411,6 @@ nav a.active {
   background: transparent;
   padding: 0;
 }
-
 [id^="code"] {
   color: #ebf0eb !important;
   text-shadow: none !important;
@@ -304,163 +428,43 @@ nav a.active {
   transition: all var(--transition-base);
   z-index: 10;
 }
-
 .btn-copy-code:hover {
   opacity: 1;
   background-color: var(--utfpr-Yellow-light);
   transform: scale(1.05);
 }
-
 .btn-copy-code:active {
   transform: scale(0.95);
 }
 
-/* --- 10. ACCORDION --- */
-.accordion-item {
-  border: none;
-  background: transparent;
-}
-
-.accordion-header {
-  background: transparent;
-}
-
-.accordion-button {
-  background-color: var(--utfpr-white);
-  color: var(--utfpr-black);
-  border-radius: 1rem !important;
-  padding: 1rem 1.5rem;
-  font-weight: 600;
-  box-shadow: var(--shadow-sm);
-  transition: all var(--transition-base);
-  border: 1px solid var(--utfpr-gray);
-}
-
-.accordion-button:not(.collapsed) {
-  background-color: var(--utfpr-Yellow-light);
-  color: var(--utfpr-black);
-  box-shadow: inset 0 -1px 0 var(--utfpr-Yellow-dark);
-}
-
-.accordion-button:focus {
-  box-shadow: 0 0 0 0.25rem rgba(255, 210, 0, 0.5);
-  border-color: var(--utfpr-Yellow);
-}
-
-.accordion-button .badge {
-  background-color: var(--utfpr-Yellow-dark);
-  color: var(--utfpr-black);
-}
-
-.accordion-body {
-  background-color: var(--utfpr-white);
-  border-radius: 0 0 1rem 1rem;
-  padding: 1.5rem 2rem;
-  border: 1px solid var(--utfpr-gray);
-  border-top: none;
-  box-shadow: var(--shadow-sm);
-}
-
-.accordion-body h4 {
-  color: var(--utfpr-Yellow-dark);
-  margin-top: 1.5rem;
-  margin-bottom: 0.75rem;
-  font-weight: 700;
-}
-
-.accordion-body h4:first-of-type {
-  margin-top: 0;
-}
-
-.accordion-body ul,
-.accordion-body ol {
-  padding-left: 1.5rem;
-}
-
-.accordion-body code {
-  /* background-color: var(--utfpr-gray-light); */
-  padding: 0.2rem 0.5rem;
-  border-radius: 0.3rem;
-  font-size: 0.85em;
-  color: var(--utfpr-Yellow-darker);
-}
-
-/* --- 11. CARTA DE ABERTURA --- */
-.carta-abelha {
+/* ================================================================
+   FECHAMENTO (modelo_fechamento_bimestre.css)
+   ================================================================ */
+.blockquote-highlight {
   background: rgba(255, 210, 0, 0.08) !important;
   border-left: 10px solid var(--utfpr-Yellow) !important;
-  padding: 2rem !important;
-  border-radius: 1.5rem !important;
+}
+.card-orientacao-bg {
+  background: rgba(255, 210, 0, 0.05) !important;
+}
+.bg-gradient-footer {
+  background: linear-gradient(
+    135deg,
+    var(--utfpr-Yellow-dark),
+    var(--utfpr-Yellow)
+  ) !important;
 }
 
-.carta-abelha p {
-  margin-bottom: 1rem;
+code:not(.language-html):not(.language-css) {
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-size: 0.85em;
+  color: #0a0a0a;
 }
 
-.carta-abelha .display-6 {
-  color: var(--utfpr-Yellow-dark);
-}
-
-/* --- 12. BOTÃO DE IMPRESSÃO --- */
-.btn-print {
-  background-color: var(--utfpr-Yellow);
-  color: var(--utfpr-black);
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 3rem;
-  font-weight: 700;
-  box-shadow: var(--shadow-md);
-  transition: all var(--transition-base);
-}
-
-.btn-print:hover {
-  background-color: var(--utfpr-Yellow-light);
-  transform: scale(1.05);
-  box-shadow: var(--shadow-lg);
-}
-
-.btn-print:active {
-  background-color: var(--utfpr-Yellow-dark);
-  transform: scale(0.95);
-}
-
-/* --- 13. BADGES --- */
-.badge.bg-warning {
-  background-color: var(--utfpr-Yellow) !important;
-  color: var(--utfpr-black) !important;
-}
-
-.badge.bg-info {
-  background-color: #17a2b8 !important;
-  color: var(--utfpr-white) !important;
-}
-
-.badge.bg-danger {
-  background-color: #dc3545 !important;
-  color: var(--utfpr-white) !important;
-}
-
-.badge.bg-success {
-  background-color: #28a745 !important;
-  color: var(--utfpr-white) !important;
-}
-
-.badge.bg-primary {
-  background-color: #007bff !important;
-  color: var(--utfpr-white) !important;
-}
-
-.badge.bg-secondary {
-  background-color: var(--utfpr-gray-dark) !important;
-  color: var(--utfpr-white) !important;
-}
-
-.badge.bg-dark {
-  background-color: var(--utfpr-black) !important;
-  color: var(--utfpr-white) !important;
-}
-
-/* --- 14. RODAPÉ --- */
+/* ================================================================
+   RODAPÉ (rodape.css)
+   ================================================================ */
 footer {
   background: linear-gradient(
     135deg,
@@ -488,7 +492,6 @@ footer {
   padding-bottom: 4px;
   display: inline-block;
 }
-
 .footer-section p,
 .footer-section li {
   margin-bottom: 4px;
@@ -496,19 +499,16 @@ footer {
   opacity: 0.95;
   color: var(--utfpr-black);
 }
-
 .footer-section ul {
   list-style: none;
   padding: 0;
 }
-
 .footer-section a {
   color: var(--utfpr-black);
   text-decoration: none;
   transition: all 0.3s ease;
   border-bottom: 1px solid transparent;
 }
-
 .footer-section a:hover {
   opacity: 0.9;
   border-bottom-color: var(--utfpr-black);
@@ -523,81 +523,45 @@ footer {
   color: var(--utfpr-black);
 }
 
-/* --- 15. BLOCKQUOTE DE DESTAQUE --- */
-.blockquote-highlight {
-  background: rgba(255, 210, 0, 0.08) !important;
-  border-left: 10px solid var(--utfpr-Yellow) !important;
-}
-
-/* --- 16. CARD DE ORIENTAÇÃO --- */
-.card-orientacao-bg {
-  background: rgba(255, 210, 0, 0.05) !important;
-}
-
-/* --- 17. GRADIENTE DE RODAPÉ --- */
-.bg-gradient-footer {
-  background: linear-gradient(
-    135deg,
-    var(--utfpr-Yellow-dark),
-    var(--utfpr-Yellow)
-  ) !important;
-}
-
-/* --- 18. ESTILO PARA CÓDIGO INLINE --- */
-code:not(.language-html):not(.language-css) {
-  /* background-color: var(--utfpr-gray-light); */
-  padding: 0.2rem 0.4rem;
-  border-radius: 0.25rem;
-  font-size: 0.85em;
-  color: #0a0a0a;
-}
-
-/* --- 19. RESPONSIVIDADE --- */
+/* ================================================================
+   RESPONSIVIDADE
+   ================================================================ */
 @media (max-width: 768px) {
   .header-top .container {
     flex-direction: column;
     text-align: center;
     gap: 18px;
   }
-
   .header-title {
     text-align: center;
   }
-
   nav ul {
     flex-direction: column;
   }
-
   nav a {
     padding: 10px 20px;
     text-align: center;
   }
-
   .glass-card {
     padding: 1.25rem !important;
   }
-
-  .code-block pre {
-    padding: 1rem;
-    font-size: 0.8rem;
-  }
-
-  .accordion-button {
-    font-size: 0.9rem;
-    padding: 0.75rem 1rem;
-  }
-
-  .accordion-body {
-    padding: 1rem;
-  }
-
   .btn-print {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
   }
-
   .carta-abelha {
     padding: 1.25rem !important;
+  }
+  .code-block pre {
+    padding: 1rem;
+    font-size: 0.8rem;
+  }
+  .accordion-button {
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
+  }
+  .accordion-body {
+    padding: 1rem;
   }
 }
 
@@ -605,24 +569,75 @@ code:not(.language-html):not(.language-css) {
   .container {
     padding: 0 15px;
   }
-
   .logo {
     height: 55px;
   }
-
   nav a {
     padding: 8px 15px;
   }
 }
 
-/* --- 20. ESTILOS PARA IMPRESSÃO --- */
+/* ================================================================
+   IMPRESSÃO – PLANOS DE AULA (A4)
+   ================================================================ */
 @media print {
+  /* Ocultar botões e navegação */
+  .btn-print,
+  .btn-copy-code,
+  .nav-controls,
+  button:not(.accordion-button),
+  .d-print-none {
+    display: none !important;
+  }
+
   body {
     background: var(--utfpr-white) !important;
     color: var(--utfpr-black) !important;
     font-size: 12pt;
+    padding-bottom: 0 !important;
   }
 
+  /* Apenas o accordion (planos) deve ser impresso */
+  #accordionPlanos,
+  #accordionPlanos * {
+    visibility: visible !important;
+  }
+
+  #accordionPlanos {
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .accordion-collapse {
+    display: block !important;
+  }
+  .accordion-button::after {
+    display: none !important;
+  }
+  .accordion-button {
+    background: #f8f9fa !important;
+    border: 1px solid #dee2e6 !important;
+    color: #000 !important;
+  }
+  .accordion-body {
+    border: 1px solid #dee2e6 !important;
+    background: #fff !important;
+  }
+  .code-block {
+    page-break-inside: avoid;
+    border-left-color: #000 !important;
+    background: #f4f4f4 !important;
+  }
+  .code-block pre {
+    color: #000 !important;
+    background: #f4f4f4 !important;
+  }
+  .code-block pre code {
+    color: #000 !important;
+  }
   .glass-card {
     background: var(--utfpr-white) !important;
     backdrop-filter: none !important;
@@ -630,58 +645,39 @@ code:not(.language-html):not(.language-css) {
     border: 1px solid var(--utfpr-gray) !important;
     page-break-inside: avoid;
   }
-
-  .btn-print,
-  .btn-copy-code,
-  .nav-controls,
-  button:not(.accordion-button) {
-    display: none !important;
-  }
-
-  .accordion-collapse {
-    display: block !important;
-  }
-
-  .accordion-button::after {
-    display: none !important;
-  }
-
-  .accordion-button {
-    background: #f8f9fa !important;
-    border: 1px solid #dee2e6 !important;
-  }
-
   .table-utfpr-yellow th {
     background-color: var(--utfpr-Yellow-dark) !important;
     color: var(--utfpr-white) !important;
   }
-
   .text-utfpr-yellow {
     color: var(--utfpr-Yellow-dark) !important;
   }
-
-  a {
-    color: var(--utfpr-Yellow-dark) !important;
-  }
-
   .carta-abelha {
     border-left-color: var(--utfpr-Yellow-dark) !important;
     background: var(--utfpr-gray-light) !important;
   }
-
-  .bg-gradient-footer {
-    background: var(--utfpr-Yellow) !important;
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-  }
-
-  code:not(.language-html):not(.language-css) {
-    color: #0a0a0a !important;
-  }
-
   .badge {
     border: 1px solid var(--utfpr-gray) !important;
     background: var(--utfpr-gray-light) !important;
     color: var(--utfpr-black) !important;
+  }
+  .badge.bg-warning,
+  .badge.bg-info,
+  .badge.bg-danger,
+  .badge.bg-success,
+  .badge.bg-primary,
+  .badge.bg-secondary,
+  .badge.bg-dark {
+    background: var(--utfpr-gray-light) !important;
+    color: var(--utfpr-black) !important;
+  }
+  footer {
+    display: none !important;
+  }
+  header {
+    display: none !important;
+  }
+  .header-bottom {
+    display: none !important;
   }
 }
