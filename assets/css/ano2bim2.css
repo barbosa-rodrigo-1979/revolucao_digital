@@ -1,0 +1,601 @@
+/* ================================================================
+   ano2bim2.css – Estilos unificados para o 2º Ano – 2º Bimestre
+   Baseado na paleta UTFPR (amarelo) e nos estilos dos anexos
+   ================================================================ */
+
+/* --- 1. VARIÁVEIS CSS (PALETA UTFPR) --- */
+:root {
+  --utfpr-Yellow: #ffd200;
+  --utfpr-Yellow-light: #ffe84d;
+  --utfpr-Yellow-dark: #e9b400;
+  --utfpr-Yellow-darker: #c99700;
+
+  --utfpr-white: #ffffff;
+  --utfpr-gray-light: #f8f9fa;
+  --utfpr-gray: #e9ecef;
+  --utfpr-gray-medium: #dee2e6;
+  --utfpr-gray-dark: #6c757d;
+  --utfpr-black: #212529;
+
+  --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.15);
+  --transition-base: 0.3s ease-in-out;
+}
+
+/* --- 2. RESET E CONFIGURAÇÕES BASE --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  background-color: #b3b4b5;
+  color: var(--utfpr-black);
+  line-height: 1.7;
+  padding-bottom: 2rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a:focus,
+button:focus {
+  outline: 3px solid var(--utfpr-Yellow);
+  outline-offset: 2px;
+}
+
+/* --- 3. CABEÇALHO (header-top) --- */
+.header-top {
+  background: linear-gradient(
+    135deg,
+    var(--utfpr-gray-dark) 0%,
+    var(--utfpr-gray-medium) 100%
+  );
+  color: var(--utfpr-black);
+  padding: 20px 0;
+  box-shadow: 0 2px 15px rgba(35, 31, 32, 0.4);
+  border-bottom: 4px solid var(--utfpr-Yellow-dark);
+}
+
+.header-top .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  height: 65px;
+  width: auto;
+  filter: brightness(0) invert(1);
+}
+
+.institution-name {
+  font-size: 0.95rem;
+  line-height: 1.3;
+  font-weight: 600;
+  color: var(--utfpr-black);
+}
+
+.institution-name small {
+  font-size: 0.85rem;
+  opacity: 0.95;
+  font-weight: normal;
+  color: var(--utfpr-black);
+}
+
+.header-title {
+  text-align: right;
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: var(--utfpr-black);
+}
+
+.header-title small {
+  font-size: 0.9rem;
+  font-weight: normal;
+  opacity: 0.95;
+  color: var(--utfpr-black);
+}
+
+/* --- 4. MENU (header-bottom) --- */
+.header-bottom {
+  background-color: var(--utfpr-gray-dark);
+  border-bottom: 3px solid var(--utfpr-Yellow-darker);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav li {
+  margin: 0;
+}
+
+nav a {
+  display: block;
+  padding: 10px 22px;
+  color: var(--utfpr-black);
+  text-decoration: none;
+  font-weight: 500;
+  line-height: 1.2;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+nav a:hover {
+  background-color: var(--utfpr-Yellow-dark);
+  color: var(--utfpr-black);
+  border-bottom-color: var(--utfpr-Yellow-light);
+}
+
+nav a.active {
+  background-color: var(--utfpr-Yellow);
+  border-bottom-color: var(--utfpr-black);
+  font-weight: bold;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: var(--utfpr-black);
+}
+
+/* --- 5. CONTEÚDO PRINCIPAL --- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 5.1. Cards com efeito glass */
+.glass-card {
+  background: rgba(104, 113, 120, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow-md);
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.glass-card .card-title {
+  color: var(--utfpr-Yellow-dark);
+  border-bottom: 3px solid var(--utfpr-Yellow);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+/* 5.2. Cores da marca */
+.text-utfpr-yellow {
+  color: var(--utfpr-Yellow-dark) !important;
+}
+.text-utfpr-yellow-light {
+  color: var(--utfpr-Yellow-light) !important;
+}
+.text-utfpr-yellow-darker {
+  color: var(--utfpr-Yellow-darker) !important;
+}
+.bg-utfpr-yellow-dark {
+  background-color: var(--utfpr-Yellow-dark) !important;
+  color: var(--utfpr-black) !important;
+}
+
+/* 5.3. Carta de abertura */
+.carta-abelha {
+  background: rgba(255, 210, 0, 0.08) !important;
+  border-left: 10px solid var(--utfpr-Yellow) !important;
+  padding: 2rem !important;
+  border-radius: 1.5rem !important;
+}
+.carta-abelha p {
+  margin-bottom: 1rem;
+}
+.carta-abelha .display-6 {
+  color: var(--utfpr-Yellow-dark);
+}
+
+/* 5.4. Tabelas */
+.table-utfpr-yellow {
+  background-color: var(--utfpr-Yellow) !important;
+  color: var(--utfpr-black) !important;
+  border-color: var(--utfpr-Yellow-dark) !important;
+}
+.table-utfpr-yellow th {
+  background-color: var(--utfpr-Yellow-dark) !important;
+  color: var(--utfpr-white) !important;
+  border-color: var(--utfpr-Yellow-darker) !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.table tbody {
+  background-color: #87888a !important;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: rgba(255, 210, 0, 0.08);
+}
+.table-hover > tbody > tr:hover {
+  background-color: rgba(255, 210, 0, 0.2);
+}
+
+/* 5.5. Badges */
+.badge.bg-warning {
+  background-color: var(--utfpr-Yellow) !important;
+  color: var(--utfpr-black) !important;
+}
+.badge.bg-info {
+  background-color: #17a2b8 !important;
+  color: var(--utfpr-white) !important;
+}
+.badge.bg-danger {
+  background-color: #dc3545 !important;
+  color: var(--utfpr-white) !important;
+}
+.badge.bg-success {
+  background-color: #28a745 !important;
+  color: var(--utfpr-white) !important;
+}
+.badge.bg-primary {
+  background-color: #007bff !important;
+  color: var(--utfpr-white) !important;
+}
+.badge.bg-secondary {
+  background-color: var(--utfpr-gray-dark) !important;
+  color: var(--utfpr-white) !important;
+}
+.badge.bg-dark {
+  background-color: var(--utfpr-black) !important;
+  color: var(--utfpr-white) !important;
+}
+
+/* 5.6. Blocos de código */
+.code-block {
+  background-color: var(--utfpr-black);
+  border-radius: 1rem;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border-left: 6px solid var(--utfpr-Yellow);
+}
+.code-block pre {
+  margin: 0;
+  padding: 1.5rem 2rem;
+  font-family: "Fira Code", "Courier New", monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  overflow-x: auto;
+  max-height: 500px;
+  background: transparent;
+  color: #ebf0eb;
+  text-shadow: none !important;
+  border: none;
+}
+.code-block pre code {
+  font-family: inherit;
+  color: #ebf0eb !important;
+  text-shadow: none !important;
+  background: transparent;
+  padding: 0;
+}
+[id^="code"] {
+  color: #ebf0eb !important;
+  text-shadow: none !important;
+}
+
+/* Botão copiar dentro do bloco de código */
+.btn-copy-code {
+  background-color: var(--utfpr-Yellow);
+  color: var(--utfpr-black);
+  border: none;
+  border-radius: 2rem;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  opacity: 0.7;
+  transition: all var(--transition-base);
+  z-index: 10;
+}
+.btn-copy-code:hover {
+  opacity: 1;
+  background-color: var(--utfpr-Yellow-light);
+  transform: scale(1.05);
+}
+.btn-copy-code:active {
+  transform: scale(0.95);
+}
+
+/* 5.7. Accordion */
+.accordion-item {
+  border: none;
+  background: transparent;
+}
+.accordion-header {
+  background: transparent;
+}
+.accordion-button {
+  background-color: var(--utfpr-white);
+  color: var(--utfpr-black);
+  border-radius: 1rem !important;
+  padding: 1rem 1.5rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  border: 1px solid var(--utfpr-gray);
+}
+.accordion-button:not(.collapsed) {
+  background-color: var(--utfpr-Yellow-light);
+  color: var(--utfpr-black);
+  box-shadow: inset 0 -1px 0 var(--utfpr-Yellow-dark);
+}
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(255, 210, 0, 0.5);
+  border-color: var(--utfpr-Yellow);
+}
+.accordion-button .badge {
+  background-color: var(--utfpr-Yellow-dark);
+  color: var(--utfpr-black);
+}
+.accordion-body {
+  background-color: var(--utfpr-white);
+  border-radius: 0 0 1rem 1rem;
+  padding: 1.5rem 2rem;
+  border: 1px solid var(--utfpr-gray);
+  border-top: none;
+  box-shadow: var(--shadow-sm);
+}
+.accordion-body h4 {
+  color: var(--utfpr-Yellow-dark);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+.accordion-body h4:first-of-type {
+  margin-top: 0;
+}
+.accordion-body ul,
+.accordion-body ol {
+  padding-left: 1.5rem;
+}
+.accordion-body code {
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.3rem;
+  font-size: 0.85em;
+  color: var(--utfpr-Yellow-darker);
+}
+
+/* 5.8. Código inline */
+code:not(.language-html):not(.language-css) {
+    padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-size: 0.85em;
+  color: #0a0a0a;
+}
+
+/* --- 6. RODAPÉ --- */
+footer {
+  background: linear-gradient(
+    135deg,
+    var(--utfpr-gray-medium) 0%,
+    var(--utfpr-gray-dark) 100%
+  );
+  color: var(--utfpr-black);
+  padding: 30px 0 15px 0;
+  border-top: 5px solid var(--utfpr-Yellow);
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-bottom: 5px;
+}
+
+.footer-section h3 {
+  color: var(--utfpr-black);
+  margin-bottom: 6px;
+  font-size: 1.25rem;
+  border-bottom: 2px solid var(--utfpr-Yellow-light);
+  padding-bottom: 4px;
+  display: inline-block;
+}
+
+.footer-section p,
+.footer-section li {
+  margin-bottom: 4px;
+  line-height: 1.4;
+  opacity: 0.95;
+  color: var(--utfpr-black);
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section a {
+  color: var(--utfpr-black);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.footer-section a:hover {
+  opacity: 0.9;
+  border-bottom-color: var(--utfpr-black);
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 5px;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  opacity: 0.9;
+  font-size: 0.92rem;
+  color: var(--utfpr-black);
+}
+
+/* --- 7. BOTÃO DE IMPRESSÃO --- */
+.btn-print {
+  background-color: var(--utfpr-Yellow);
+  color: var(--utfpr-black);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 3rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+}
+.btn-print:hover {
+  background-color: var(--utfpr-Yellow-light);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
+.btn-print:active {
+  background-color: var(--utfpr-Yellow-dark);
+  transform: scale(0.95);
+}
+
+/* --- 8. RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+  .header-top .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 18px;
+  }
+  .header-title {
+    text-align: center;
+  }
+  nav ul {
+    flex-direction: column;
+  }
+  nav a {
+    padding: 10px 20px;
+    text-align: center;
+  }
+  .glass-card {
+    padding: 1.25rem !important;
+  }
+  .btn-print {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  .carta-abelha {
+    padding: 1.25rem !important;
+  }
+  .code-block pre {
+    padding: 1rem;
+    font-size: 0.8rem;
+  }
+  .accordion-button {
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
+  }
+  .accordion-body {
+    padding: 1rem;
+  }
+  .container {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    height: 55px;
+  }
+  nav a {
+    padding: 8px 15px;
+  }
+}
+
+/* --- 9. ESTILOS PARA IMPRESSÃO --- */
+@media print {
+  body {
+    background: var(--utfpr-white) !important;
+    color: var(--utfpr-black) !important;
+    font-size: 12pt;
+  }
+  .glass-card {
+    background: var(--utfpr-white) !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+    border: 1px solid var(--utfpr-gray) !important;
+    page-break-inside: avoid;
+  }
+  .btn-print {
+    display: none !important;
+  }
+  .table-utfpr-yellow th {
+    background-color: var(--utfpr-Yellow-dark) !important;
+    color: var(--utfpr-white) !important;
+  }
+  .carta-abelha {
+    border-left-color: var(--utfpr-Yellow-dark) !important;
+    background: var(--utfpr-gray-light) !important;
+  }
+  .text-utfpr-yellow {
+    color: var(--utfpr-Yellow-dark) !important;
+  }
+  a {
+    color: var(--utfpr-Yellow-dark) !important;
+  }
+  .badge {
+    border: 1px solid var(--utfpr-gray) !important;
+    background: var(--utfpr-gray-light) !important;
+    color: var(--utfpr-black) !important;
+  }
+  .badge.bg-warning,
+  .badge.bg-info,
+  .badge.bg-danger,
+  .badge.bg-success,
+  .badge.bg-primary,
+  .badge.bg-secondary,
+  .badge.bg-dark {
+    background: var(--utfpr-gray-light) !important;
+    color: var(--utfpr-black) !important;
+  }
+  .btn-copy-code {
+    display: none !important;
+  }
+  .accordion-collapse {
+    display: block !important;
+  }
+  .accordion-button::after {
+    display: none !important;
+  }
+  .accordion-button {
+    background: #f8f9fa !important;
+    border: 1px solid #dee2e6 !important;
+  }
+  .code-block {
+    page-break-inside: avoid;
+  }
+  footer {
+    background: var(--utfpr-gray-light) !important;
+    border-top-color: var(--utfpr-Yellow-dark) !important;
+  }
+}
