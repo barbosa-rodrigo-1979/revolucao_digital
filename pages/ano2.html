@@ -2,20 +2,28 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Programação Web e Cultura Digital | Material Didático para o Ensino Médio
-      - UTFPR
-    </title>
-    <!-- CSS externo -->
-    <link rel="stylesheet" href="../assets/css/ano.css" />
-    <!-- Opcional: Bootstrap para responsividade extra (CDN) -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>2º Ano – Revolução Digital | Material Didático UTFPR</title>
+    <!-- Bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
+    <!-- Fonte Inter e outras -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS próprio do 2º ano -->
+    <link rel="stylesheet" href="../assets/css/ano2.css" />
   </head>
   <body>
     <!-- ========== CABEÇALHO (copiado de cabecalho.html) ========== -->
@@ -42,16 +50,18 @@
       </div>
     </header>
 
-    <!-- ========== MENU PRINCIPAL (copiado de menu_principal.html) ========== -->
+    <!-- ========== MENU (copiado de menu_ano_2.html) ========== -->
     <div class="header-bottom">
       <div class="container">
         <nav>
           <ul>
             <li>
-              <a href="../index.html" aria-current="page">Página Inicial</a>
+              <a href="../index.html">Página Inicial</a>
             </li>
-            <li><a href="ano2.html" class="active">2º Ano</a></li>
-            <li><a href="ano2bim1.html">1º Bimestre</a></li>
+            <li>
+              <a href="ano2.html" class="active" aria-current="page">2º Ano</a>
+            </li>
+            <li><a href="ano2bim1.html ">1º Bimestre</a></li>
             <li><a href="ano2bim2.html">2º Bimestre</a></li>
             <li><a href="ano2bim3.html">3º Bimestre</a></li>
             <li><a href="ano2bim4.html">4º Bimestre</a></li>
@@ -60,17 +70,1306 @@
       </div>
     </div>
 
-    <!-- ========== CONTEÚDO PRINCIPAL (IMAGEM EM TELA CHEIA) ========== -->
-    <main class="hero-section">
-      <div class="hero-image">
-        <!-- A imagem deve preencher toda a área do main -->
-        <img
-          src="../assets/images/em_construção.png"
-          alt="Revolução Digital - Criação, Inovação, Impacto"
-          class="img-fluid w-100 h-100"
-          style="object-fit: cover"
-        />
-      </div>
+    <!-- ========== CONTEÚDO PRINCIPAL ========== -->
+    <main class="container py-4">
+      <!-- ============================================================ -->
+      <!-- SEÇÃO 1 – CARTA DE ABERTURA (do docx)                       -->
+      <!-- ============================================================ -->
+      <section id="inicio" class="mb-5">
+        <div class="glass-card p-4 p-md-5">
+          <h1 class="display-5 fw-bold text-utfpr-yellow mb-3">
+            <i class="bi bi-envelope-paper-fill"></i> Carta de Abertura
+          </h1>
+          <h2 class="h4 fst-italic text-muted mb-4">
+            “Bem‑vindos ao Sistema, agora desliguem‑no”
+          </h2>
+
+          <blockquote class="blockquote-highlight p-4 mb-4">
+            <p class="fs-5 fst-italic">
+              "Se você está lendo isso, provavelmente já passou mais tempo
+              rolando o feed do que respirando fundo hoje. Não se preocupe: a
+              culpa não é sua. É do algoritmo. E ele vai te odiar depois deste
+              ano."
+            </p>
+          </blockquote>
+
+          <p><strong>Caros guerreiros digitais do 2º ano,</strong></p>
+          <p>
+            No ano passado, vocês construíram castelos de HTML, enfeitaram com
+            CSS e deram vida com JavaScript. Acharam que estavam no controle.
+            Erro. Aqueles castelos foram projetados para serem invadidos por
+            dados, por vigilância, por anúncios que sabem mais sobre vocês do
+            que a própria mãe.
+          </p>
+          <p>
+            Agora, a parada é outra. Esqueçam tudo. Este ano não é sobre estudar
+            o mundo digital – é sobre criar o mundo que vocês querem ver. E não,
+            não estou falando de um site meia‑boca com fundo gradiente e botão
+            que não funciona. Estou falando de um
+            <strong>PROJETO COMPLETO</strong>, do zero, no ar, com a cara de
+            vocês e com propósito.
+          </p>
+          <p>
+            Vamos desmontar a Matrix, rastrear os rastreadores, questionar o que
+            merece ser questionado e, acima de tudo,
+            <strong>codificar a liberdade</strong>. Vamos aprender a programar
+            <em>e</em> a pensar – porque código sem consciência é só ruído, e
+            consciência sem código é só filosofia de sofá.
+          </p>
+
+          <p>Neste ano, vocês vão:</p>
+          <ul class="list-unstyled row row-cols-1 row-cols-md-2 g-3 mb-4">
+            <li class="col">
+              <span class="badge bg-warning text-dark me-2">👾</span> Planejar
+              uma revolução digital (não, não é TCC – é um manifesto).
+            </li>
+            <li class="col">
+              <span class="badge bg-warning text-dark me-2">🧠</span> Codificar
+              uma aplicação web completa com HTML, CSS e JS puros – sem
+              frameworks, sem muletas, sem desculpas.
+            </li>
+            <li class="col">
+              <span class="badge bg-warning text-dark me-2">🔍</span>
+              Desconstruir o algoritmo que te prende e construir um que te
+              liberta.
+            </li>
+            <li class="col">
+              <span class="badge bg-warning text-dark me-2">📊</span> Analisar o
+              impacto das redes na sua saúde mental e criar ferramentas de
+              bem‑estar que funcionam de verdade.
+            </li>
+            <li class="col">
+              <span class="badge bg-warning text-dark me-2">🗣️</span> Debater o
+              futuro da IA, da ética e da privacidade como se a democracia
+              dependesse disso (e depende).
+            </li>
+            <li class="col">
+              <span class="badge bg-warning text-dark me-2">🚀</span> Apresentar
+              seu projeto para o mundo e provar que você não é mais um usuário
+              passivo – você é um <strong>criador ativo</strong>.
+            </li>
+          </ul>
+
+          <div
+            class="alert alert-warning bg-warning bg-opacity-10 border-warning"
+          >
+            <i class="bi bi-exclamation-triangle-fill"></i>
+            <strong>Aviso:</strong> Este material contém doses letais de
+            sarcasmo, referências à cultura pop que vocês nem vão pegar (mas vão
+            fingir que sim) e a crença inabalável de que
+            <code>&lt;div&gt;</code> não é uma divindade – é uma ferramenta de
+            libertação.
+          </div>
+
+          <blockquote
+            class="blockquote text-center fs-3 fw-bold text-utfpr-yellow mt-4"
+          >
+            "A revolução não vai ser televisionada. Ela vai ser
+            <span class="text-decoration-underline">CODIFICADA</span>."
+          </blockquote>
+          <p class="text-center fs-5">Bora hackear essa Matrix? 🧑‍💻👩‍💻</p>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- SEÇÃO 2 – MAPEAMENTO DE HABILIDADES BNCC e RCP-PR             -->
+      <!-- ============================================================ -->
+      <section id="mapa" class="mb-5">
+        <div class="glass-card p-4">
+          <h2 class="text-utfpr-yellow">
+            <i class="bi bi-map-fill"></i> Mapeamento Completo de Habilidades
+            BNCC e RCP‑PR por Bimestre
+          </h2>
+          <p class="text-muted">
+            (Versão resumida porque ninguém merece ler 200 linhas de uma vez)
+          </p>
+
+          <!-- Tabela resumo -->
+          <div class="table-responsive mt-3">
+            <table
+              class="table table-utfpr-yellow table-bordered table-hover align-middle"
+            >
+              <thead>
+                <tr>
+                  <th>Bimestre</th>
+                  <th>Habilidades BNCC (Matemática)</th>
+                  <th>Habilidades BNCC (Linguagens)</th>
+                  <th>Habilidades BNCC Computação</th>
+                  <th>Pilares do PC em destaque</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>1º</strong></td>
+                  <td>
+                    EM13MAT101, EM13MAT102, EM13MAT301, EM13MAT302, EM13MAT201,
+                    EM13MAT303, EM13MAT304, EM13MAT401, EM13MAT402, EM13MAT501
+                  </td>
+                  <td>
+                    EM13LP01, EM13LP02, EM13LP04, EM13LP05, EM13LP06, EM13LP07,
+                    EM13LP08, EM13LP09, EM13LP10, EM13LP11
+                  </td>
+                  <td>
+                    EM13CO01, EM13CO04, EM13CO07, EM13CO03, EM13CO05, EM13CO02,
+                    EM13CO09
+                  </td>
+                  <td>
+                    Abstração, Decomposição, Reconhecimento de Padrões,
+                    Algoritmos
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>2º</strong></td>
+                  <td>
+                    EM13MAT101, EM13MAT102, EM13MAT201, EM13MAT301, EM13MAT302,
+                    EM13MAT303, EM13MAT401, EM13MAT402, EM13MAT501
+                  </td>
+                  <td>
+                    EM13LP01, EM13LP02, EM13LP04, EM13LP05, EM13LP07, EM13LP08,
+                    EM13LP09, EM13LP10, EM13LP11
+                  </td>
+                  <td>
+                    EM13CO23, EM13CO26, EM13CO24, EM13CO25, EM13CO02, EM13CO03,
+                    EM13CO05, EM13CO07
+                  </td>
+                  <td>
+                    Abstração, Reconhecimento de Padrões, Decomposição,
+                    Algoritmos
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>3º</strong></td>
+                  <td>
+                    EM13MAT101, EM13MAT102, EM13MAT201, EM13MAT301, EM13MAT302,
+                    EM13MAT303, EM13MAT401, EM13MAT402, EM13MAT501
+                  </td>
+                  <td>
+                    EM13LP01, EM13LP02, EM13LP04, EM13LP05, EM13LP07, EM13LP08,
+                    EM13LP09, EM13LP10, EM13LP11
+                  </td>
+                  <td>
+                    EM13CO23, EM13CO26, EM13CO24, EM13CO25, EM13CO02, EM13CO03,
+                    EM13CO05, EM13CO07
+                  </td>
+                  <td>
+                    Abstração, Reconhecimento de Padrões, Decomposição,
+                    Algoritmos
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>4º</strong></td>
+                  <td>
+                    EM13MAT101, EM13MAT102, EM13MAT201, EM13MAT301, EM13MAT302,
+                    EM13MAT303, EM13MAT304, EM13MAT401, EM13MAT402, EM13MAT501
+                  </td>
+                  <td>
+                    EM13LP01, EM13LP02, EM13LP04, EM13LP05, EM13LP06, EM13LP07,
+                    EM13LP08, EM13LP09, EM13LP10, EM13LP11
+                  </td>
+                  <td>
+                    EM13CO01, EM13CO04, EM13CO07, EM13CO03, EM13CO05, EM13CO02,
+                    EM13CO09
+                  </td>
+                  <td>
+                    Abstração, Decomposição, Reconhecimento de Padrões,
+                    Algoritmos
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="fst-italic text-muted mt-2">
+            <i class="bi bi-info-circle"></i> (Sim, elas se repetem. É
+            proposital: a gente não aprende uma habilidade em uma semana e joga
+            fora – a gente mastiga, digere e defeca código de qualidade.)
+          </p>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- SEÇÃO 3 – PLANO ANUAL COMPLETO (40 SEMANAS)                   -->
+      <!-- ============================================================ -->
+      <section id="plano-anual" class="mb-5">
+        <div class="glass-card p-4">
+          <h2 class="text-utfpr-yellow">
+            <i class="bi bi-calendar-range"></i> Plano Anual Completo – 40
+            Semanas de Caos Organizado
+          </h2>
+          <p class="text-muted">
+            (Sem resumos, sem firulas, sem "vamos ver como fica". É o que vai
+            acontecer – ou pelo menos o que a gente planeja antes de vocês
+            quebrarem o código e a gente ter que improvisar.)
+          </p>
+
+          <!-- 1º BIMESTRE -->
+          <h3 class="mt-4 mb-3 text-utfpr-yellow-dark">
+            1º Bimestre – "A Queda da Matrix"
+          </h3>
+          <p class="fw-semibold">
+            Tema: Planejamento, Estrutura e Primeiro Contato com a Trindade
+            (HTML, CSS, JS)
+          </p>
+          <div class="table-responsive">
+            <table
+              class="table table-utfpr-yellow table-bordered table-hover align-middle"
+            >
+              <thead>
+                <tr>
+                  <th>Semana</th>
+                  <th>Título</th>
+                  <th>Conceito (O que realmente importa)</th>
+                  <th>Atividade Principal (O que vocês vão fazer)</th>
+                  <th>Pilares do PC</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>"Do Caos ao Código: O Planejamento da Revolução"</td>
+                  <td>
+                    Um bom projeto não começa com código. Começa com uma
+                    pergunta que dói: "Que problema eu quero resolver?"
+                  </td>
+                  <td>
+                    "O Mapa da Revolução" – escolha um problema real da cultura
+                    digital e planeje um projeto completo aplicando os 4 Pilares
+                    do PC.
+                  </td>
+                  <td>Abstração</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>"HTML: A Estrutura da Resistência"</td>
+                  <td>
+                    HTML é a espinha dorsal. Sem ele, o site é uma ameba
+                    disforme. E ameba não convence ninguém.
+                  </td>
+                  <td>
+                    "Construindo a Base" – crie a estrutura HTML completa com
+                    tags semânticas, acessibilidade e boas práticas.
+                  </td>
+                  <td>Decomposição</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>"CSS: O Estilo da Revolução"</td>
+                  <td>
+                    CSS transforma bloco de texto em experiência visual. Feio
+                    até funciona, mas bonito encanta (e vende melhor).
+                  </td>
+                  <td>
+                    "Operação Beleza" – estilize o projeto com variáveis CSS,
+                    Flexbox/Grid, responsividade e identidade visual própria.
+                  </td>
+                  <td>Reconhecimento de Padrões</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>"JavaScript: A Mágica da Interatividade"</td>
+                  <td>
+                    JS é o cérebro. Sem ele, o site é um manequim bonito, mas
+                    morto. E manequim não muda o mundo.
+                  </td>
+                  <td>
+                    "O Despertar" – adicione interatividade básica: botões que
+                    fazem coisas, mensagens personalizadas, contadores e a
+                    primeira função útil.
+                  </td>
+                  <td>Algoritmos</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>"DOM: O Controle Remoto da Sua Página"</td>
+                  <td>
+                    O DOM é a árvore da página. Manipulá-lo é ter controle
+                    remoto sobre cada elemento. Você é o jardineiro.
+                  </td>
+                  <td>
+                    "Caça ao Elemento" – aprenda a selecionar, modificar, criar
+                    e remover elementos via JS com <code>getElementById</code>,
+                    <code>querySelector</code>, <code>classList</code> e
+                    <code>createElement</code>.
+                  </td>
+                  <td>Abstração + Algoritmos</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>"Eventos: Quando o Usuário Toca na Tela"</td>
+                  <td>
+                    Eventos são cliques, teclas, mouse. Dominá-los é dominar a
+                    interação. O usuário toca, o site responde.
+                  </td>
+                  <td>
+                    "A Hora do Clique" – adicione eventos completos: cliques,
+                    teclas pressionadas, mouse passando, feedback visual
+                    imediato.
+                  </td>
+                  <td>Decomposição + Algoritmos</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>"Dados e Arrays: A Biblioteca da Revolução"</td>
+                  <td>
+                    Arrays são listas organizadas. Sem eles, o código vira caos.
+                    E caos é inimigo da revolução.
+                  </td>
+                  <td>
+                    "Organizando o Caos" – implemente arrays para gerenciar
+                    dados: lista de tarefas, itens, posts, com
+                    <code>push</code>, <code>pop</code>, <code>shift</code>,
+                    <code>unshift</code>, <code>splice</code> e
+                    <code>forEach</code>.
+                  </td>
+                  <td>Abstração + Reconhecimento de Padrões</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>"Funções: O Exército da Revolução"</td>
+                  <td>
+                    Funções reutilizam código e deixam tudo mais limpo. São os
+                    soldados da sua revolução.
+                  </td>
+                  <td>
+                    "Modularizando a Revolução" – refatore o código para usar
+                    funções reutilizáveis com parâmetros e retorno.
+                  </td>
+                  <td>Algoritmos</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>"Debug e Polimento: A Batalha Final"</td>
+                  <td>
+                    Testar, encontrar bugs e refatorar não é fracasso – é
+                    aprendizado. Debug separa amadores de profissionais.
+                  </td>
+                  <td>
+                    "Caça aos Bugs" – teste, depure e polir o projeto com
+                    <code>console.log</code>, <code>debugger</code> e DevTools.
+                  </td>
+                  <td>Decomposição + Algoritmos</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>"Lançamento Oficial: O Mundo Vai Ver"</td>
+                  <td>
+                    Apresentar o projeto final e celebrar a jornada. Revolução
+                    que ninguém vê é só ensaio.
+                  </td>
+                  <td>
+                    "A Grande Estreia" – pitch de 3 minutos, demonstração ao
+                    vivo, perguntas da banca, autoavaliação e premiação nas
+                    categorias.
+                  </td>
+                  <td>Todos os Pilares</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- 2º BIMESTRE -->
+          <h3 class="mt-5 mb-3 text-utfpr-yellow-dark">
+            2º Bimestre – "O Algoritmo Invisível e a Vigilância"
+          </h3>
+          <p class="fw-semibold">
+            Tema: Algoritmos, Dados, Dopamina, Bolhas, LGPD, Cyberbullying
+          </p>
+          <div class="table-responsive">
+            <table
+              class="table table-utfpr-yellow table-bordered table-hover align-middle"
+            >
+              <thead>
+                <tr>
+                  <th>Semana</th>
+                  <th>Título</th>
+                  <th>Conceito</th>
+                  <th>Atividade Principal</th>
+                  <th>Pilares do PC</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>"O Algoritmo Invisível"</td>
+                  <td>
+                    Algoritmos de recomendação não são neutros – são programados
+                    para prender sua atenção e vender suas decisões.
+                  </td>
+                  <td>
+                    "Quem Manda no Feed?" – simulação onde vocês viram o
+                    algoritmo e decidem o que mostrar para diferentes perfis.
+                  </td>
+                  <td>Abstração</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>"Dados: O Novo Petróleo"</td>
+                  <td>
+                    Seus dados valem dinheiro e você está dando eles de graça
+                    para empresas que lucram bilhões com sua vida digital.
+                  </td>
+                  <td>
+                    "Caça aos Dados" – liste TUDO que sabem sobre vocês e
+                    descubram que as empresas sabem muito mais (e vendem isso).
+                  </td>
+                  <td>Reconhecimento de Padrões</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>"A Fábrica de Dopamina"</td>
+                  <td>
+                    Redes sociais são máquinas de vender atenção. Seu cérebro é
+                    a fábrica, a matéria-prima e o produto final.
+                  </td>
+                  <td>
+                    "O Dilema da Atenção" – exibição de trechos do documentário
+                    + debate sobre gatilhos emocionais.
+                  </td>
+                  <td>Decomposição</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>"A Bolha que te Aprisiona"</td>
+                  <td>
+                    O algoritmo te coloca numa bolha e te alimenta com o que
+                    você já acredita. Você nunca vê o que está fora.
+                  </td>
+                  <td>
+                    "Caça à Fake News" – analise posts reais e identifique
+                    padrões de desinformação.
+                  </td>
+                  <td>Reconhecimento de Padrões</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>"LGPD e Privacidade"</td>
+                  <td>
+                    A Lei Geral de Proteção de Dados te dá poder – mas você
+                    precisa saber usar, ou ela não serve pra nada.
+                  </td>
+                  <td>
+                    "Julgamento Digital" – simule casos reais de violação de
+                    dados onde vocês atuam como juízes, promotores e defensores.
+                  </td>
+                  <td>Abstração</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>"Netiqueta e Cyberbullying"</td>
+                  <td>
+                    O que você faz online quando ninguém está vendo importa – e
+                    tem consequências legais, sociais e psicológicas.
+                  </td>
+                  <td>
+                    "Teatro do Cyberbullying" – encene situações e construa
+                    planos de ação com roteiro de denúncia passo a passo.
+                  </td>
+                  <td>Algoritmos</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>"Planejando a Revolução"</td>
+                  <td>
+                    Hora de criar algo que vai mudar o jogo – um projeto que não
+                    é só código, é um manifesto digital.
+                  </td>
+                  <td>
+                    Brainstorm e planejamento – escolha o problema, a solução e
+                    aplique os 4 Pilares do PC.
+                  </td>
+                  <td>Todos os Pilares</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>"Mão na Massa: O Início da Guerra"</td>
+                  <td>
+                    Código, design, conteúdo – tudo junto, transformando
+                    planejamento em realidade funcional.
+                  </td>
+                  <td>
+                    Desenvolvimento do protótipo – robô, campanha, jogo ou app,
+                    com foco no MVP.
+                  </td>
+                  <td>Decomposição + Algoritmos</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>"Mão na Massa: A Batalha Final"</td>
+                  <td>
+                    Testes, ajustes e polimento – a reta final da obra-prima.
+                  </td>
+                  <td>
+                    Refinamento do projeto – feedback, correção de bugs,
+                    preparação do pitch.
+                  </td>
+                  <td>Reconhecimento de Padrões + Abstração</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>"A Grande Estreia"</td>
+                  <td>
+                    Mostre ao mundo o que você construiu e prove que você não é
+                    mais só um usuário.
+                  </td>
+                  <td>
+                    Pitch e apresentação – cada grupo apresenta seu projeto no
+                    formato Shark Tank.
+                  </td>
+                  <td>Todos os Pilares</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- 3º BIMESTRE -->
+          <h3 class="mt-5 mb-3 text-utfpr-yellow-dark">
+            3º Bimestre – "Codando o Futuro (3º Ano Edition)"
+          </h3>
+          <p class="fw-semibold">
+            Tema: Reforço dos Pilares, Projetos Interdisciplinares e Autonomia
+            Criativa
+          </p>
+          <p class="text-muted fst-italic">
+            (Nota: Sim, o título está confuso. É proposital. A vida é confusa, o
+            código é confuso, e a gente vai aprender a lidar com isso.)
+          </p>
+          <div class="table-responsive">
+            <table
+              class="table table-utfpr-yellow table-bordered table-hover align-middle"
+            >
+              <thead>
+                <tr>
+                  <th>Semana</th>
+                  <th>Título</th>
+                  <th>Conceito</th>
+                  <th>Atividade Principal</th>
+                  <th>Pilares do PC</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>"O Algoritmo Invisível Reboot"</td>
+                  <td>
+                    Revisão com mais profundidade: algoritmos como modelos
+                    matemáticos com vieses embutidos.
+                  </td>
+                  <td>
+                    "O Jogo do Viés 2.0" – calcule manualmente pontuações de
+                    posts com novas regras que vocês mesmos criam.
+                  </td>
+                  <td>Abstração</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>"Dados: O Novo Petróleo Refinaria"</td>
+                  <td>
+                    Aprofundamento no capitalismo de vigilância com dados reais
+                    e estudos de caso brasileiros.
+                  </td>
+                  <td>
+                    "Leilão de Dados Avançado" – incluindo dados sensíveis e
+                    negociações com empresas de diferentes níveis de ética.
+                  </td>
+                  <td>Reconhecimento de Padrões</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>"A Fábrica de Dopamina Expansão"</td>
+                  <td>
+                    Design persuasivo e psicologia comportamental aplicada à
+                    tecnologia.
+                  </td>
+                  <td>
+                    "Redesign da Interface" – cada grupo redesenha uma rede
+                    social para promover bem-estar digital.
+                  </td>
+                  <td>Decomposição</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>"A Bolha que te Aprisiona Deep Dive"</td>
+                  <td>Fake news, deepfakes e o futuro da desinformação.</td>
+                  <td>
+                    "Detetive de Deepfakes" – análise de imagens e vídeos
+                    manipulados, criação de algoritmo anti-bolha.
+                  </td>
+                  <td>Reconhecimento de Padrões</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>"LGPD e Privacidade Tribunal Avançado"</td>
+                  <td>
+                    Casos reais de violação de dados no Brasil com multas e
+                    decisões da ANPD.
+                  </td>
+                  <td>
+                    "Tribunal Digital 2.0" – simulação com casos reais e
+                    argumentação jurídica.
+                  </td>
+                  <td>Abstração</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>"Netiqueta e Cyberbullying Intervenção"</td>
+                  <td>
+                    Papel das testemunhas e como interromper o ciclo do ódio.
+                  </td>
+                  <td>
+                    "Campanha de Conscientização" – criação de cartazes, vídeos
+                    ou posts sobre cyberbullying.
+                  </td>
+                  <td>Algoritmos</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>"Planejando a Revolução 3º Ano"</td>
+                  <td>
+                    Projetos interdisciplinares com outras disciplinas
+                    (História, Sociologia, Filosofia).
+                  </td>
+                  <td>
+                    "Plano de Projeto Expandido" – inclua elementos de outras
+                    áreas e entreviste potenciais usuários.
+                  </td>
+                  <td>Todos os Pilares</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>"Mão na Massa: O Início da Guerra 3º Ano"</td>
+                  <td>
+                    Desenvolvimento de projetos mais complexos, com integração
+                    de APIs ou dados externos.
+                  </td>
+                  <td>
+                    "MVP Plus" – adicione pelo menos uma funcionalidade extra
+                    que use dados externos.
+                  </td>
+                  <td>Decomposição + Algoritmos</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>"Mão na Massa: A Batalha Final 3º Ano"</td>
+                  <td>
+                    Testes de usabilidade com usuários reais e refinamento.
+                  </td>
+                  <td>
+                    "Teste com Usuários" – convide outro grupo ou professor para
+                    testar e dar feedback.
+                  </td>
+                  <td>Reconhecimento de Padrões + Abstração</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>"A Grande Estreia 3º Ano"</td>
+                  <td>
+                    Apresentação para um público maior (outras turmas,
+                    comunidade, ou pais).
+                  </td>
+                  <td>
+                    "Demo Day Aberto" – apresentação com convidados e premiação
+                    expandida.
+                  </td>
+                  <td>Todos os Pilares</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- 4º BIMESTRE -->
+          <h3 class="mt-5 mb-3 text-utfpr-yellow-dark">
+            4º Bimestre – "Lançamento Oficial: O Mundo Vai Ver"
+          </h3>
+          <p class="fw-semibold">
+            Tema: Finalização, Publicação e Reflexão Final
+          </p>
+          <p class="text-muted fst-italic">
+            (Spoiler: É a última chance de fazer algo que preste antes do fim do
+            ano. Não desperdicem.)
+          </p>
+          <div class="table-responsive">
+            <table
+              class="table table-utfpr-yellow table-bordered table-hover align-middle"
+            >
+              <thead>
+                <tr>
+                  <th>Semana</th>
+                  <th>Título</th>
+                  <th>Conceito</th>
+                  <th>Atividade Principal</th>
+                  <th>Pilares do PC</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>
+                    "Do Caos ao Código: O Planejamento da Revolução Final"
+                  </td>
+                  <td>
+                    Revisão e planejamento do projeto final do ano com foco em
+                    impacto real.
+                  </td>
+                  <td>
+                    "O Mapa da Revolução Final" – escolha um problema para o
+                    projeto final do ano.
+                  </td>
+                  <td>Abstração</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>"HTML: A Estrutura da Resistência Final"</td>
+                  <td>
+                    Estrutura avançada com formulários, tabelas, e elementos
+                    semânticos complexos.
+                  </td>
+                  <td>
+                    "Construindo a Base Avançada" – crie a estrutura com
+                    formulários, tabelas e elementos semânticos.
+                  </td>
+                  <td>Decomposição</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>"CSS: O Estilo da Revolução Final"</td>
+                  <td>Animações, transições e design responsivo avançado.</td>
+                  <td>
+                    "Operação Beleza Avançada" – adicione animações, transições
+                    e design responsivo.
+                  </td>
+                  <td>Reconhecimento de Padrões</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>"JavaScript: A Mágica da Interatividade Final"</td>
+                  <td>
+                    Funções assíncronas, APIs e manipulação avançada do DOM.
+                  </td>
+                  <td>
+                    "O Despertar Avançado" – integre uma API externa (clima,
+                    notícias, dados) ao projeto.
+                  </td>
+                  <td>Algoritmos</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>"DOM: O Controle Remoto da Sua Página Final"</td>
+                  <td>
+                    Manipulação avançada com eventos delegados e performance.
+                  </td>
+                  <td>
+                    "Caça ao Elemento Avançado" – implemente manipulação
+                    avançada com eventos delegados.
+                  </td>
+                  <td>Abstração + Algoritmos</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>"Eventos: Quando o Usuário Toca na Tela Final"</td>
+                  <td>
+                    Eventos personalizados e interações complexas (drag &amp;
+                    drop, gestos).
+                  </td>
+                  <td>
+                    "A Hora do Clique Avançado" – adicione drag &amp; drop,
+                    gestos ou eventos personalizados.
+                  </td>
+                  <td>Decomposição + Algoritmos</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>"Dados e Arrays: A Biblioteca da Revolução Final"</td>
+                  <td>Arrays de objetos, filtros, mapas e redução.</td>
+                  <td>
+                    "Organizando o Caos Avançado" – implemente filtros, mapas e
+                    redução para gerenciar dados.
+                  </td>
+                  <td>Abstração + Reconhecimento de Padrões</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>"Funções: O Exército da Revolução Final"</td>
+                  <td>
+                    Funções de ordem superior, closures e programação funcional.
+                  </td>
+                  <td>
+                    "Modularizando a Revolução Avançada" – refatore o código com
+                    funções de ordem superior.
+                  </td>
+                  <td>Algoritmos</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>"Debug e Polimento: A Batalha Final Final"</td>
+                  <td>Testes automatizados e otimização de performance.</td>
+                  <td>
+                    "Caça aos Bugs Avançada" – implemente testes automatizados e
+                    otimize o código.
+                  </td>
+                  <td>Decomposição + Algoritmos</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>"Lançamento Oficial: O Mundo Vai Ver Final"</td>
+                  <td>
+                    Apresentação final do ano com público ampliado e avaliação
+                    externa.
+                  </td>
+                  <td>
+                    "A Grande Estreia Final" – apresentação com banca de
+                    professores e convidados, premiação final e encerramento do
+                    ano letivo.
+                  </td>
+                  <td>Todos os Pilares</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <blockquote class="blockquote-highlight p-3 mt-4">
+            <p class="fst-italic">
+              "O plano está aí. 40 semanas de pura emoção, código e café. Agora
+              é com vocês – e com a paciência do professor, que já está
+              começando a tremer."
+            </p>
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- SEÇÃO 4 – CRITÉRIOS DE AVALIAÇÃO                              -->
+      <!-- ============================================================ -->
+      <section id="avaliacao" class="mb-5">
+        <div class="glass-card p-4">
+          <h2 class="text-utfpr-yellow">
+            <i class="bi bi-clipboard-check"></i> Critérios de Avaliação – Ano
+            Letivo Completo
+          </h2>
+          <p class="text-muted">
+            "Como vamos te avaliar (e como você vai tentar burlar, mas a gente
+            já viu todas as tentativas)"
+          </p>
+          <p>
+            Agora que vocês já sabem o que vão fazer (ou pelo menos o que a
+            gente planejou que vocês façam antes de tudo desandar), é hora de
+            falar sobre como vocês vão ser avaliados.
+          </p>
+          <p>
+            <strong>Regra de ouro:</strong> Não é sobre acertar tudo. É sobre
+            tentar, errar, aprender e tentar de novo. Se você copiar código do
+            colega, a gente vai saber e não vai ser bonito. Se você usar IA para
+            gerar tudo, a gente também vai saber e vai ser ainda menos bonito. O
+            que a gente quer ver é sua cara, sua voz e sua lógica no projeto.
+          </p>
+
+          <h3 class="mt-4">Rubrica Geral – Ano Letivo Completo</h3>
+          <p class="text-muted">
+            (Os critérios que valem para todos os bimestres, com pesos que podem
+            variar)
+          </p>
+          <div class="table-responsive">
+            <table class="table table-utfpr-yellow table-bordered">
+              <thead>
+                <tr>
+                  <th>Critério</th>
+                  <th>O que significa (traduzindo)</th>
+                  <th>Peso no Bimestre</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Compreensão do Problema</td>
+                  <td>
+                    Você entendeu o que está resolvendo ou só está seguindo
+                    receita de bolo? Sabe explicar o "porquê" do projeto sem
+                    gaguejar?
+                  </td>
+                  <td>15%</td>
+                </tr>
+                <tr>
+                  <td>Aplicação dos Pilares do PC</td>
+                  <td>
+                    Você usou os 4 Pilares (Abstração, Decomposição,
+                    Reconhecimento de Padrões, Algoritmos) como ferramentas
+                    vivas ou só decorou os nomes para passar na prova?
+                  </td>
+                  <td>25%</td>
+                </tr>
+                <tr>
+                  <td>Desenvolvimento do Protótipo</td>
+                  <td>
+                    O código funciona? É limpo? Tem comentários? Quebra quando o
+                    usuário faz algo estúpido? (spoiler: usuários são
+                    estúpidos).
+                  </td>
+                  <td>25%</td>
+                </tr>
+                <tr>
+                  <td>Apresentação (Pitch)</td>
+                  <td>
+                    Você consegue convencer alguém de que seu projeto é incrível
+                    em 3 minutos ou vai ficar olhando para o chão e lendo
+                    slides?
+                  </td>
+                  <td>15%</td>
+                </tr>
+                <tr>
+                  <td>Trabalho em Equipe</td>
+                  <td>
+                    Você é um líder, um colaborador, ou aquele que desaparece e
+                    aparece só na hora da apresentação?
+                  </td>
+                  <td>10%</td>
+                </tr>
+                <tr>
+                  <td>Reflexão e Autoavaliação</td>
+                  <td>
+                    Você aprendeu algo com isso ou só quer a nota e vazar? Sabe
+                    dizer o que foi difícil, o que mudou em você e o que faria
+                    diferente?
+                  </td>
+                  <td>10%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 class="mt-5">Critérios Específicos por Bimestre</h3>
+          <p class="text-muted">
+            (Porque cada bimestre tem sua personalidade e sua forma de te fazer
+            sofrer)
+          </p>
+
+          <div class="row mt-3">
+            <!-- 1º Bimestre -->
+            <div class="col-md-6 mb-4">
+              <div class="card h-100 border-warning bg-dark text-white">
+                <div class="card-header bg-warning text-dark fw-bold">
+                  1º Bimestre – "A Queda da Matrix"
+                </div>
+                <div class="card-body">
+                  <p class="fw-semibold">
+                    Foco: Estrutura, planejamento e primeiros passos com HTML,
+                    CSS e JS.
+                  </p>
+                  <ul class="small">
+                    <li>
+                      <strong>Mapa do Projeto</strong> – O plano está bem
+                      estruturado? O MVP está claro? Os 4 Pilares estão
+                      aplicados de forma coerente?
+                      <span class="badge bg-warning text-dark">+5%</span>
+                    </li>
+                    <li>
+                      <strong>Qualidade do HTML</strong> – Tags semânticas?
+                      Acessibilidade? Indentação? Ou é uma sopa de
+                      <code>&lt;div&gt;</code> que nenhum leitor de tela vai
+                      entender?
+                      <span class="badge bg-warning text-dark">+5%</span>
+                    </li>
+                    <li>
+                      <strong>Qualidade do CSS</strong> – Design system?
+                      Variáveis CSS? Responsividade? Ou parece que foi feito no
+                      Paint em 1998?
+                      <span class="badge bg-warning text-dark">+5%</span>
+                    </li>
+                    <li>
+                      <strong>Primeira Função JS</strong> – O botão faz algo? O
+                      <code>console.log</code> tem mensagens úteis? Ou é só um
+                      <code>alert("olá")</code> que a gente já viu 500 vezes?
+                      <span class="badge bg-warning text-dark">+5%</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- 2º Bimestre -->
+            <div class="col-md-6 mb-4">
+              <div class="card h-100 border-warning bg-dark text-white">
+                <div class="card-header bg-warning text-dark fw-bold">
+                  2º Bimestre – "O Algoritmo Invisível e a Vigilância"
+                </div>
+                <div class="card-body">
+                  <p class="fw-semibold">
+                    Foco: Análise crítica, dados, algoritmos e impacto social.
+                  </p>
+                  <ul class="small">
+                    <li>
+                      <strong>Análise do Algoritmo</strong> – Você identificou o
+                      viés no simulador? Propôs uma solução para mitigá-lo? Ou
+                      só aceitou que o algoritmo manda e pronto?
+                      <span class="badge bg-warning text-dark">+5%</span>
+                    </li>
+                    <li>
+                      <strong>Leilão de Dados</strong> – Você participou
+                      ativamente, justificou suas escolhas e mostrou compreensão
+                      do valor dos dados?
+                      <span class="badge bg-warning text-dark">+5%</span>
+                    </li>
+                    <li>
+                      <strong>Identificação de Gatilhos</strong> – Você
+                      reconheceu os gatilhos emocionais nas redes e propôs um
+                      redesign? Ou acha que tudo isso é "frescura"?
+                      <span class="badge bg-warning text-dark">+5%</span>
+                    </li>
+                    <li>
+                      <strong>Plano de Ação LGPD</strong> – Você criou um plano
+                      realista para proteger seus dados ou só anotou "vou ler os
+                      termos" e nunca fez?
+                      <span class="badge bg-warning text-dark">+5%</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- 3º Bimestre -->
+            <div class="col-md-6 mb-4">
+              <div class="card h-100 border-warning bg-dark text-white">
+                <div class="card-header bg-warning text-dark fw-bold">
+                  3º Bimestre – "Codando o Futuro"
+                </div>
+                <div class="card-body">
+                  <p class="fw-semibold">
+                    Foco: Reforço, integração de APIs, projetos
+                    interdisciplinares e autonomia.
+                  </p>
+                  <ul class="small">
+                    <li>
+                      <strong>API Integration</strong> – Você integrou uma API
+                      externa ao projeto? Funciona? Ou quebrou na primeira
+                      requisição?
+                      <span class="badge bg-warning text-dark">+5%</span>
+                    </li>
+                    <li>
+                      <strong>Interdisciplinaridade</strong> – Você trouxe
+                      elementos de outras disciplinas (História, Sociologia,
+                      Filosofia) para o projeto? Ou ficou só no "isso é legal"?
+                      <span class="badge bg-warning text-dark">+5%</span>
+                    </li>
+                    <li>
+                      <strong>Teste com Usuários</strong> – Você testou o
+                      projeto com alguém de fora do grupo? Documentou o
+                      feedback? Ou testou com o espelho?
+                      <span class="badge bg-warning text-dark">+5%</span>
+                    </li>
+                    <li>
+                      <strong>Campanha Anti-Bolha</strong> – Você criou um
+                      material (cartaz, vídeo, post) de conscientização sobre
+                      bolhas e fake news? Ou acha que fake news é só "notícia
+                      que eu não gosto"?
+                      <span class="badge bg-warning text-dark">+5%</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- 4º Bimestre -->
+            <div class="col-md-6 mb-4">
+              <div class="card h-100 border-warning bg-dark text-white">
+                <div class="card-header bg-warning text-dark fw-bold">
+                  4º Bimestre – "Lançamento Oficial"
+                </div>
+                <div class="card-body">
+                  <p class="fw-semibold">
+                    Foco: Finalização, publicação, apresentação para público
+                    ampliado.
+                  </p>
+                  <ul class="small">
+                    <li>
+                      <strong>Projeto Final no Ar</strong> – O projeto está
+                      publicado (GitHub Pages, Vercel, etc.)? Funciona em
+                      diferentes navegadores? Ou só no seu computador porque
+                      você "esqueceu" de testar?
+                      <span class="badge bg-warning text-dark">+10%</span>
+                    </li>
+                    <li>
+                      <strong>Demonstração ao Vivo</strong> – A demo funcionou?
+                      Se quebrou, você lidou bem? Ou ficou em pânico e pediu
+                      para "tentar de novo"?
+                      <span class="badge bg-warning text-dark">+5%</span>
+                    </li>
+                    <li>
+                      <strong>Documentação do Processo</strong> – Você
+                      documentou todo o processo (fotos, vídeos, prints,
+                      anotações)? Ou acha que a memória é suficiente (spoiler:
+                      não é)?
+                      <span class="badge bg-warning text-dark">+5%</span>
+                    </li>
+                    <li>
+                      <strong>Apresentação para Público Externo</strong> – Você
+                      apresentou para outras turmas, pais ou comunidade?
+                      Conseguiu explicar de forma clara? Ou só leu o que estava
+                      no slide?
+                      <span class="badge bg-warning text-dark">+5%</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="mt-5">Sistema de Pontuação e Conceitos</h3>
+          <p class="text-muted">
+            (Porque nota é só um número, mas vocês vão se importar com ele de
+            qualquer jeito)
+          </p>
+          <div class="table-responsive">
+            <table class="table table-utfpr-yellow table-bordered">
+              <thead>
+                <tr>
+                  <th>Nota</th>
+                  <th>Conceito</th>
+                  <th>Tradução (para humanos)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>9.0 – 10</td>
+                  <td>Revolucionário</td>
+                  <td>
+                    Você codificou a liberdade, entendeu tudo, e ainda ajudou os
+                    colegas. Provavelmente vai trabalhar no Google (ou vai criar
+                    algo melhor).
+                  </td>
+                </tr>
+                <tr>
+                  <td>7.0 – 8.9</td>
+                  <td>Insurgente</td>
+                  <td>
+                    Você fez o que foi pedido, com criatividade, mas ainda tem
+                    uns bugs que te atormentam à noite. Bom trabalho. Continue
+                    assim.
+                  </td>
+                </tr>
+                <tr>
+                  <td>5.0 – 6.9</td>
+                  <td>Sobrevivente</td>
+                  <td>
+                    O projeto está de pé, mas por pouco. Faltou planejamento,
+                    faltou dedicação, ou faltou café. Dá para melhorar.
+                  </td>
+                </tr>
+                <tr>
+                  <td>0 – 4.9</td>
+                  <td>Pegador de Vento</td>
+                  <td>
+                    Você copiou, colou, ou só não fez. O código não funciona, a
+                    apresentação foi um desastre e você não sabe explicar o que
+                    fez. Recomece.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <blockquote class="blockquote-highlight p-3 mt-3">
+            <p class="fst-italic">
+              "Nota não é castigo, é diagnóstico. Se você tirou 4, não é porque
+              a professora te odeia – é porque você precisa de mais café e menos
+              Netflix durante a madrugada."
+            </p>
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- SEÇÃO 5 – AUTOAVALIAÇÃO OBRIGATÓRIA                           -->
+      <!-- ============================================================ -->
+      <section id="autoavaliacao" class="mb-5">
+        <div class="glass-card p-4">
+          <h2 class="text-utfpr-yellow">
+            <i class="bi bi-pencil-square"></i> Autoavaliação Obrigatória (e
+            Obrigatoriamente Honesta)
+          </h2>
+          <p class="text-muted">
+            (O que você vai precisar responder no final de cada bimestre)
+          </p>
+          <ol class="list-group list-group-numbered mt-3">
+            <li class="list-group-item bg-transparent border-warning">
+              O que eu aprendi neste bimestre que eu não sabia antes? (não vale
+              "aprendi a programar" – seja específico)
+            </li>
+            <li class="list-group-item bg-transparent border-warning">
+              Qual foi a maior dificuldade que eu enfrentei? (não vale "o código
+              não funcionou" – explique como você tentou resolver)
+            </li>
+            <li class="list-group-item bg-transparent border-warning">
+              O que eu faria diferente se começasse de novo? (isso mostra
+              maturidade – ou pelo menos que você pensou sobre isso)
+            </li>
+            <li class="list-group-item bg-transparent border-warning">
+              Como avalio minha contribuição para o grupo? (seja honesto – a
+              gente sabe quem trabalhou e quem só apareceu)
+            </li>
+            <li class="list-group-item bg-transparent border-warning">
+              O que eu levo deste projeto para minha vida? (isso é o mais
+              importante – e a gente vai ler com atenção)
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- SEÇÃO 6 – ENCERRAMENTO                                        -->
+      <!-- ============================================================ -->
+      <section id="encerramento" class="mb-5">
+        <div class="glass-card p-4 text-center">
+          <h2 class="text-utfpr-yellow">
+            <i class="bi bi-fire"></i> E é isso. Agora vai chorar no código.
+          </h2>
+          <p class="fs-5">
+            Chegamos ao fim do nosso passeio guiado pelo caos digital do 2º ano.
+            Vocês viram o planejamento, as 40 semanas de pura adrenalina, os
+            critérios de avaliação que vão fazer vocês suarem frio (e suar
+            código). Agora, a única coisa que falta é executar.
+          </p>
+          <div class="row text-start mt-4">
+            <div class="col-md-6">
+              <ul class="list-unstyled">
+                <li>
+                  <i class="bi bi-x-circle text-danger"></i> O algoritmo não é
+                  seu amigo – ele é um produto. E você é a matéria-prima.
+                </li>
+                <li>
+                  <i class="bi bi-x-circle text-danger"></i> Seus dados não são
+                  seus – você só está alugando eles para as big techs.
+                </li>
+                <li>
+                  <i class="bi bi-x-circle text-danger"></i> Seu cérebro não é
+                  seu quando você está rolando o feed – ele é a fábrica de
+                  dopamina.
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <ul class="list-unstyled">
+                <li>
+                  <i class="bi bi-x-circle text-danger"></i> A bolha não te
+                  protege – ela te aprisiona.
+                </li>
+                <li>
+                  <i class="bi bi-x-circle text-danger"></i> A LGPD não é uma
+                  sugestão – é uma arma. Use-a.
+                </li>
+                <li>
+                  <i class="bi bi-x-circle text-danger"></i> Cyberbullying não é
+                  "brincadeira" – é crime. Denuncie.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <p class="mt-4 fs-5 fw-bold">E, acima de tudo:</p>
+          <blockquote class="blockquote fs-3 fw-bold text-utfpr-yellow">
+            "Código não é só código – é poder. E poder, quando bem usado, pode
+            mudar o mundo (ou pelo menos a sua escola – e mudar a escola já é um
+            começo e tanto)."
+          </blockquote>
+          <div class="alert alert-warning mt-4">
+            <i class="bi bi-quote"></i>
+            "A revolução não vai ser televisionada. Ela vai ser
+            <strong>CODIFICADA</strong>. E vocês – os mesmos que foram chamados
+            de 'viciados em tela' – vão ser os arquitetos do novo mundo digital.
+            A pergunta não é 'se' vocês vão fazer. A pergunta é:
+            <strong>'quando vão começar?'</strong>"
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- ========== RODAPÉ (copiado de rodape.html) ========== -->
@@ -96,13 +1395,9 @@
       </div>
     </footer>
 
-    <!-- JavaScript externo -->
-    <script src=""></script>
-    <!-- Opcional: Bootstrap JS (para componentes interativos, se necessário) -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
+    <!-- Scripts Bootstrap (opcional, mas mantido para responsividade) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JS próprio (caso necessário) -->
+    <script src="../assets/js/ano2.js"></script>
   </body>
 </html>
