@@ -1,5 +1,26 @@
 /* ===================================================================
-   VARIÁVEIS CSS (tokens de design) – unificadas de todos os anexos
+   ANO1.CSS – TODOS OS ESTILOS UTILIZADOS NO PROJETO
+   Concatenados a partir dos anexos:
+   - cabecalho.css
+   - menu.css
+   - rodape.css
+   - modelo_apresentacao_bimestre.css
+   - modelo_fechamento_bimestre.css
+   - modelo_planos_aula.css
+   =================================================================== */
+
+/* ===================================================================
+   CABECALHO.CSS (íntegra)
+   =================================================================== */
+/*
+===================================================================
+    CSS UTILIZADO NO CABEÇALHO — modelo_cabecalho.html
+    Extraído e organizado da folha de estilos global.
+===================================================================
+*/
+
+/* ===================================================================
+   SEÇÃO 1 — VARIÁVEIS CSS
    =================================================================== */
 :root {
   /* Paleta UTFPR */
@@ -16,7 +37,7 @@
   --utfpr-gray-dark: #6c757d;
   --utfpr-black: #212529;
 
-  /* Cores temáticas do Scratch (mantidas por referência) */
+  /* Outras cores (não usadas diretamente no cabeçalho, mas mantidas para consistência) */
   --scratch-motion: #4a6cd4;
   --scratch-looks: #8a55d7;
   --scratch-sound: #bb42c3;
@@ -24,20 +45,14 @@
   --scratch-control: #ff8c1a;
   --scratch-sensing: #2ca5a2;
   --scratch-operators: #5cb712;
-
-  /* Tokens utilitários */
   --card-bg: #ffffff;
   --border-color: #dee2e6;
   --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   --success-color: #28a745;
-  --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  --shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.15);
-  --transition-base: 0.3s ease-in-out;
 }
 
 /* ===================================================================
-   RESET GLOBAL E CONFIGURAÇÕES BASE
+   SEÇÃO 2 — RESET E CONFIGURAÇÕES BASE
    =================================================================== */
 * {
   margin: 0;
@@ -49,12 +64,11 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   color: var(--utfpr-black);
-  /*background: linear-gradient(135deg, var(--utfpr-gray-dark) 0%, #343a40 100%);*/
-  background-color: #b3b4b5;
+  background: linear-gradient(135deg, var(--utfpr-gray-dark) 0%, #343a40 100%);
 }
 
 /* ===================================================================
-   LAYOUT CONTAINER
+   SEÇÃO 3 — CONTAINER
    =================================================================== */
 .container {
   max-width: 1200px;
@@ -63,7 +77,7 @@ body {
 }
 
 /* ===================================================================
-   CABEÇALHO SUPERIOR (header-top) – copiado de cabecalho.css
+   SEÇÃO 4 — CABEÇALHO SUPERIOR (header-top)
    =================================================================== */
 .header-top {
   background: linear-gradient(
@@ -125,7 +139,141 @@ body {
 }
 
 /* ===================================================================
-   CABEÇALHO INFERIOR (BARRA DE NAVEGAÇÃO) – copiado de menu.css
+   SEÇÃO 5 — RESPONSIVIDADE (TABLETS E CELULARES)
+   =================================================================== */
+@media (max-width: 768px) {
+  .header-top .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 18px;
+  }
+  .header-title {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+  .logo {
+    height: 55px;
+  }
+}
+
+/* ===================================================================
+   SEÇÃO 6 — MODO ESCURO (se a classe .dark-mode for adicionada ao body)
+   =================================================================== */
+body.dark-mode {
+  --utfpr-black: #f8f9fa;
+  --utfpr-white: #212529;
+  --utfpr-gray-light: #343a40;
+  --utfpr-gray: #495057;
+  --utfpr-gray-medium: #6c757d;
+  --utfpr-gray-dark: #adb5bd;
+  --card-bg: #2d3748;
+  --border-color: #4a5568;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .header-top {
+  background: linear-gradient(
+    135deg,
+    var(--utfpr-gray) 0%,
+    var(--utfpr-gray-medium) 100%
+  );
+  color: var(--utfpr-black);
+}
+
+/* ===================================================================
+   SEÇÃO 7 — ACESSIBILIDADE (scroll suave e foco)
+   =================================================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+a:focus,
+button:focus {
+  outline: 3px solid var(--utfpr-Yellow);
+  outline-offset: 2px;
+}
+
+/* ===================================================================
+   MENU.CSS (íntegra)
+   =================================================================== */
+/*
+====================================================================
+  CSS EXTRATO — APENAS REGRAS UTILIZADAS NO modelo_menu.html
+====================================================================
+  Este arquivo contém unicamente as declarações CSS que estilizam
+  os elementos presentes no fragmento HTML do menu de navegação.
+  Foram mantidas as variáveis, o reset global, o container, a barra
+  de navegação inferior, os links e as adaptações responsivas.
+  Todo o restante (conteúdo, cards, rodapé, etc.) foi omitido.
+====================================================================
+*/
+
+/* ===================================================================
+   SEÇÃO 1 — VARIÁVEIS CSS (tokens de design)
+   =================================================================== */
+:root {
+  /* Paleta UTFPR */
+  --utfpr-Yellow: #ffd200;
+  --utfpr-Yellow-light: #ffe84d;
+  --utfpr-Yellow-dark: #e9b400;
+  --utfpr-Yellow-darker: #c99700;
+
+  /* Escala de cinza */
+  --utfpr-white: #ffffff;
+  --utfpr-gray-light: #f8f9fa;
+  --utfpr-gray: #e9ecef;
+  --utfpr-gray-medium: #dee2e6;
+  --utfpr-gray-dark: #6c757d;
+  --utfpr-black: #212529;
+
+  /* Cores temáticas do Scratch (usadas em outros contextos, mas mantidas por referência) */
+  --scratch-motion: #4a6cd4;
+  --scratch-looks: #8a55d7;
+  --scratch-sound: #bb42c3;
+  --scratch-events: #ffbf00;
+  --scratch-control: #ff8c1a;
+  --scratch-sensing: #2ca5a2;
+  --scratch-operators: #5cb712;
+
+  /* Tokens utilitários */
+  --card-bg: #ffffff;
+  --border-color: #dee2e6;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --success-color: #28a745;
+}
+
+/* ===================================================================
+   SEÇÃO 2 — RESET GLOBAL E CONFIGURAÇÕES BASE
+   =================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--utfpr-black);
+  background: linear-gradient(135deg, var(--utfpr-gray-dark) 0%, #343a40 100%);
+}
+
+/* ===================================================================
+   SEÇÃO 3 — LAYOUT CONTAINER
+   =================================================================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===================================================================
+   SEÇÃO 4 — CABEÇALHO INFERIOR (BARRA DE NAVEGAÇÃO)
    =================================================================== */
 .header-bottom {
   background-color: var(--utfpr-gray-dark);
@@ -133,7 +281,7 @@ body {
 }
 
 /* ===================================================================
-   NAVEGAÇÃO PRINCIPAL – copiado de menu.css
+   SEÇÃO 5 — NAVEGAÇÃO PRINCIPAL
    =================================================================== */
 nav ul {
   display: flex;
@@ -148,11 +296,11 @@ nav li {
 
 nav a {
   display: block;
-  padding: 10px 22px;
+  padding: 10px 22px; /* REDUZIDO: antes era 16px vertical */
   color: var(--utfpr-black);
   text-decoration: none;
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 1.2; /* ADICIONADO: diminui a altura da linha do texto */
   transition: all 0.3s ease;
   border-bottom: 3px solid transparent;
 }
@@ -172,8 +320,262 @@ nav a.active {
 }
 
 /* ===================================================================
-   COMPONENTES DO CONTEÚDO – copiados dos modelos
+   SEÇÃO 6 — ACESSIBILIDADE (foco por teclado e scroll suave)
    =================================================================== */
+a:focus,
+button:focus {
+  outline: 3px solid var(--utfpr-Yellow);
+  outline-offset: 2px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===================================================================
+   SEÇÃO 7 — RESPONSIVIDADE
+   =================================================================== */
+
+/* ---- Tablets (max-width: 768px) ---- */
+@media (max-width: 768px) {
+  /* Menu vertical */
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav a {
+    padding: 10px 20px; /* REDUZIDO: antes era 14px vertical */
+    text-align: center;
+  }
+}
+
+/* ---- Celulares (max-width: 480px) ---- */
+@media (max-width: 480px) {
+  /* Reduz o espaçamento lateral do container */
+  .container {
+    padding: 0 15px;
+  }
+
+  /* ADICIONADO: compacta ainda mais os links em telas muito pequenas */
+  nav a {
+    padding: 8px 15px;
+  }
+}
+
+/* ---- Redução de movimento (acessibilidade) ---- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===================================================================
+   RODAPE.CSS (íntegra)
+   =================================================================== */
+/*
+===================================================================
+    CSS REDUZIDO E OTIMIZADO – Rodapé com espaços reduzidos
+    (Parte 1 – Variáveis e Reset)
+===================================================================
+*/
+
+/* ===================================================================
+   VARIÁVEIS CSS (cores usadas no rodapé e no main)
+   =================================================================== */
+:root {
+  --utfpr-Yellow: #ffd200;
+  --utfpr-Yellow-light: #ffe84d;
+  --utfpr-Yellow-dark: #e9b400;
+  --utfpr-Yellow-darker: #c99700;
+  --utfpr-white: #ffffff;
+  --utfpr-gray-light: #f8f9fa;
+  --utfpr-gray: #e9ecef;
+  --utfpr-gray-medium: #dee2e6;
+  --utfpr-gray-dark: #6c757d;
+  --utfpr-black: #212529;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ===================================================================
+   RESET GLOBAL
+   =================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--utfpr-black);
+  background: linear-gradient(135deg, var(--utfpr-gray-dark) 0%, #343a40 100%);
+}
+
+/* ===================================================================
+   CONTAINER (usado no rodapé e no conteúdo)
+   =================================================================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===================================================================
+   CONTEÚDO PRINCIPAL (main) – com espaçamento reduzido
+   =================================================================== */
+main {
+  padding: 20px 0; /* reduzido de 30px */
+  background: linear-gradient(
+    135deg,
+    var(--utfpr-gray-medium) 0%,
+    var(--utfpr-gray-dark) 100%
+  );
+  min-height: calc(100vh - 150px); /* reduzido de 200px */
+}
+
+/* ===================================================================
+   RODAPÉ (footer) – com espaçamentos verticais reduzidos
+   =================================================================== */
+footer {
+  background: linear-gradient(
+    135deg,
+    var(--utfpr-gray-medium) 0%,
+    var(--utfpr-gray-dark) 100%
+  );
+  color: var(--utfpr-black);
+  padding: 30px 0 15px 0; /* topo reduzido de 45px, base mantida */
+  border-top: 5px solid var(--utfpr-Yellow);
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Grid de colunas do rodapé – com espaçamento inferior bem reduzido */
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px; /* reduzido de 35px */
+  margin-bottom: 5px; /* <--- AQUI: reduzido de 20px para 5px (menor espaço entre o grid e o copyright) */
+}
+
+/* ===================================================================
+   SEÇÕES DO RODAPÉ – Títulos, textos, listas e links
+   =================================================================== */
+
+.footer-section h3 {
+  color: var(--utfpr-black);
+  margin-bottom: 6px; /* REDUZIDO: 12px → 6px */
+  font-size: 1.25rem;
+  border-bottom: 2px solid var(--utfpr-Yellow-light);
+  padding-bottom: 4px; /* REDUZIDO: 8px → 4px */
+  display: inline-block;
+}
+
+.footer-section p,
+.footer-section li {
+  margin-bottom: 4px; /* REDUZIDO: 10px → 4px */
+  line-height: 1.4; /* ADICIONADO: reduz espaço entre linhas do texto */
+  opacity: 0.95;
+  color: var(--utfpr-black);
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section a {
+  color: var(--utfpr-black);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.footer-section a:hover {
+  opacity: 0.9;
+  border-bottom-color: var(--utfpr-black);
+}
+
+/* ===================================================================
+   COPYRIGHT – com espaçamento superior reduzido
+   =================================================================== */
+.copyright {
+  text-align: center;
+  padding-top: 5px; /* <--- AQUI: reduzido de 15px para 5px (menos espaço acima do copyright) */
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  opacity: 0.9;
+  font-size: 0.92rem;
+  color: var(--utfpr-black);
+}
+
+/* ===================================================================
+   MODELO_APRESENTACAO_BIMESTRE.CSS (íntegra)
+   =================================================================== */
+/* ================================================================
+   modelo_apresentacao_bimestre.css
+   Estilos exclusivos para o template de apresentação bimestral
+   Baseado na paleta UTFPR (amarelo)
+   ================================================================ */
+
+/* --- 1. VARIÁVEIS CSS (PALETA UTFPR) --- */
+:root {
+  --utfpr-Yellow: #ffd200;
+  --utfpr-Yellow-light: #ffe84d;
+  --utfpr-Yellow-dark: #e9b400;
+  --utfpr-Yellow-darker: #c99700;
+
+  --utfpr-white: #ffffff;
+  --utfpr-gray-light: #f8f9fa;
+  --utfpr-gray: #e9ecef;
+  --utfpr-gray-medium: #dee2e6;
+  --utfpr-gray-dark: #6c757d;
+  --utfpr-black: #212529;
+
+  --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.15);
+  --transition-base: 0.3s ease-in-out;
+}
+
+/* --- 2. ESTILOS GERAIS --- */
+body {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  background-color: #b3b4b5;
+  color: var(--utfpr-black);
+  line-height: 1.7;
+  padding-bottom: 2rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: var(--utfpr-Yellow-dark);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+a:hover {
+  color: var(--utfpr-Yellow-darker);
+  text-decoration: underline;
+}
+
+/* --- 3. COMPONENTES PRINCIPAIS --- */
+
+/* 3.1. Cards com efeito “glass” (vidro) */
 .glass-card {
   background: rgba(104, 113, 120, 0.7);
   backdrop-filter: blur(12px);
@@ -185,7 +587,6 @@ nav a.active {
     transform var(--transition-base),
     box-shadow var(--transition-base);
 }
-
 .glass-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
@@ -198,23 +599,12 @@ nav a.active {
   margin-bottom: 1.5rem;
 }
 
+/* 3.2. Cabeçalhos com cor amarela */
 .text-utfpr-yellow {
   color: var(--utfpr-Yellow-dark) !important;
 }
 
-.carta-abelha {
-  background: rgba(255, 210, 0, 0.08) !important;
-  border-left: 10px solid var(--utfpr-Yellow) !important;
-  padding: 2rem !important;
-  border-radius: 1.5rem !important;
-}
-.carta-abelha p {
-  margin-bottom: 1rem;
-}
-.carta-abelha .display-6 {
-  color: var(--utfpr-Yellow-dark);
-}
-
+/* 3.3. Tabelas */
 .table-utfpr-yellow {
   background-color: var(--utfpr-Yellow) !important;
   color: var(--utfpr-black) !important;
@@ -228,9 +618,11 @@ nav a.active {
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
+
 .table tbody {
   background-color: #87888a !important;
 }
+
 .table-striped > tbody > tr:nth-of-type(odd) {
   background-color: rgba(255, 210, 0, 0.08);
 }
@@ -238,7 +630,42 @@ nav a.active {
   background-color: rgba(255, 210, 0, 0.2);
 }
 
-/* Badges */
+/* 3.4. Botão de impressão */
+.btn-print {
+  background-color: var(--utfpr-Yellow);
+  color: var(--utfpr-black);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 3rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+}
+.btn-print:hover {
+  background-color: var(--utfpr-Yellow-light);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
+.btn-print:active {
+  background-color: var(--utfpr-Yellow-dark);
+  transform: scale(0.95);
+}
+
+/* 3.5. Carta de abertura */
+.carta-abelha {
+  background: rgba(255, 210, 0, 0.08) !important;
+  border-left: 10px solid var(--utfpr-Yellow) !important;
+  padding: 2rem !important;
+  border-radius: 1.5rem !important;
+}
+.carta-abelha p {
+  margin-bottom: 1rem;
+}
+.carta-abelha .display-6 {
+  color: var(--utfpr-Yellow-dark);
+}
+
+/* 3.6. Badges personalizadas (cores UTFPR) */
 .badge.bg-warning {
   background-color: var(--utfpr-Yellow) !important;
   color: var(--utfpr-black) !important;
@@ -268,128 +695,737 @@ nav a.active {
   color: var(--utfpr-white) !important;
 }
 
-/* ===================================================================
-   RODAPÉ – copiado de rodape.css
-   =================================================================== */
-footer {
-  background: linear-gradient(
-    135deg,
-    var(--utfpr-gray-medium) 0%,
-    var(--utfpr-gray-dark) 100%
-  );
-  color: var(--utfpr-black);
-  padding: 30px 0 15px 0;
-  border-top: 5px solid var(--utfpr-Yellow);
-  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-.footer-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-  margin-bottom: 5px;
-}
-
-.footer-section h3 {
-  color: var(--utfpr-black);
-  margin-bottom: 6px;
-  font-size: 1.25rem;
-  border-bottom: 2px solid var(--utfpr-Yellow-light);
-  padding-bottom: 4px;
-  display: inline-block;
-}
-
-.footer-section p,
-.footer-section li {
-  margin-bottom: 4px;
-  line-height: 1.4;
-  opacity: 0.95;
-  color: var(--utfpr-black);
-}
-
-.footer-section ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-section a {
-  color: var(--utfpr-black);
-  text-decoration: none;
-  transition: all 0.3s ease;
-  border-bottom: 1px solid transparent;
-}
-
-.footer-section a:hover {
-  opacity: 0.9;
-  border-bottom-color: var(--utfpr-black);
-}
-
-.copyright {
-  text-align: center;
-  padding-top: 5px;
-  border-top: 1px solid rgba(0, 0, 0, 0.3);
-  opacity: 0.9;
-  font-size: 0.92rem;
-  color: var(--utfpr-black);
-}
-
-/* ===================================================================
-   RESPONSIVIDADE – cabeçalho, menu, conteúdo, rodapé
-   =================================================================== */
+/* --- 4. RESPONSIVIDADE --- */
 @media (max-width: 768px) {
-  .header-top .container {
-    flex-direction: column;
-    text-align: center;
-    gap: 18px;
-  }
-  .header-title {
-    text-align: center;
-  }
-  nav ul {
-    flex-direction: column;
-  }
-  nav a {
-    padding: 10px 20px;
-    text-align: center;
-  }
   .glass-card {
     padding: 1.25rem !important;
+  }
+  .btn-print {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
   }
   .carta-abelha {
     padding: 1.25rem !important;
   }
 }
 
-@media (max-width: 480px) {
-  .container {
-    padding: 0 15px;
+/* --- 5. ESTILOS PARA IMPRESSÃO --- */
+@media print {
+  body {
+    background: var(--utfpr-white) !important;
+    color: var(--utfpr-black) !important;
+    font-size: 12pt;
   }
-  .logo {
-    height: 55px;
+  .glass-card {
+    background: var(--utfpr-white) !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+    border: 1px solid var(--utfpr-gray) !important;
+    page-break-inside: avoid;
   }
-  nav a {
-    padding: 8px 15px;
+  .btn-print {
+    display: none !important;
+  }
+  .table-utfpr-yellow th {
+    background-color: var(--utfpr-Yellow-dark) !important;
+    color: var(--utfpr-white) !important;
+  }
+  .carta-abelha {
+    border-left-color: var(--utfpr-Yellow-dark) !important;
+    background: var(--utfpr-gray-light) !important;
+  }
+  .text-utfpr-yellow {
+    color: var(--utfpr-Yellow-dark) !important;
+  }
+  a {
+    color: var(--utfpr-Yellow-dark) !important;
+  }
+  .badge {
+    border: 1px solid var(--utfpr-gray) !important;
+    background: var(--utfpr-gray-light) !important;
+    color: var(--utfpr-black) !important;
+  }
+  .badge.bg-warning,
+  .badge.bg-info,
+  .badge.bg-danger,
+  .badge.bg-success,
+  .badge.bg-primary,
+  .badge.bg-secondary,
+  .badge.bg-dark {
+    background: var(--utfpr-gray-light) !important;
+    color: var(--utfpr-black) !important;
   }
 }
 
 /* ===================================================================
-   ACESSIBILIDADE (scroll suave e foco)
+   MODELO_FECHAMENTO_BIMESTRE.CSS (íntegra)
    =================================================================== */
-html {
-  scroll-behavior: smooth;
+/* ================================================================
+   modelo_fechamento_bimestre.css – Estilos exclusivos para a página
+   ================================================================ */
+
+/* --- 1. VARIÁVEIS CSS (PALETA UTFPR) --- */
+:root {
+  --utfpr-Yellow: #ffd200;
+  --utfpr-Yellow-light: #ffe84d;
+  --utfpr-Yellow-dark: #e9b400;
+  --utfpr-Yellow-darker: #c99700;
+
+  --utfpr-white: #ffffff;
+  --utfpr-gray-light: #f8f9fa;
+  --utfpr-gray: #e9ecef;
+  --utfpr-gray-medium: #dee2e6;
+  --utfpr-gray-dark: #6c757d;
+  --utfpr-black: #212529;
+
+  --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.15);
+  --transition-base: 0.3s ease-in-out;
 }
 
-a:focus,
-button:focus {
-  outline: 3px solid var(--utfpr-Yellow);
-  outline-offset: 2px;
+/* --- 2. ESTILOS GERAIS --- */
+body {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  background-color: #b3b4b5;
+  color: var(--utfpr-black);
+  line-height: 1.7;
+  padding-bottom: 2rem;
 }
 
-/* Redução de movimento */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: var(--utfpr-Yellow-dark);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+a:hover {
+  color: var(--utfpr-Yellow-darker);
+  text-decoration: underline;
+}
+
+/* --- 3. COMPONENTES PRINCIPAIS --- */
+
+/* 3.1. Cards com efeito “glass” (vidro) */
+.glass-card {
+  background: rgba(104, 113, 120, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow-md);
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+}
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.glass-card .card-title {
+  color: var(--utfpr-Yellow-dark);
+  border-bottom: 3px solid var(--utfpr-Yellow);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+/* 3.2. Cores da marca */
+.text-utfpr-yellow {
+  color: var(--utfpr-Yellow-dark) !important;
+}
+.text-utfpr-yellow-light {
+  color: var(--utfpr-Yellow-light) !important;
+}
+.text-utfpr-yellow-darker {
+  color: var(--utfpr-Yellow-darker) !important;
+}
+
+.bg-utfpr-yellow-dark {
+  background-color: var(--utfpr-Yellow-dark) !important;
+  color: var(--utfpr-black) !important;
+}
+
+/* 3.3. Tabelas */
+.table-utfpr-yellow {
+  background-color: var(--utfpr-Yellow) !important;
+  color: var(--utfpr-black) !important;
+  border-color: var(--utfpr-Yellow-dark) !important;
+}
+.table-utfpr-yellow th {
+  background-color: var(--utfpr-Yellow-dark) !important;
+  color: var(--utfpr-white) !important;
+  border-color: var(--utfpr-Yellow-darker) !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.table tbody {
+  background-color: #87888a !important;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: rgba(255, 210, 0, 0.08);
+}
+.table-hover > tbody > tr:hover {
+  background-color: rgba(255, 210, 0, 0.2);
+}
+
+/* 3.4. Bloco de citação (blockquote) */
+.blockquote-highlight {
+  background: rgba(255, 210, 0, 0.08) !important;
+  border-left: 10px solid var(--utfpr-Yellow) !important;
+}
+
+/* 3.5. Cards de orientação (fundo sutil) */
+.card-orientacao-bg {
+  background: rgba(255, 210, 0, 0.05) !important;
+}
+
+/* 3.6. Rodapé com gradiente amarelo */
+.bg-gradient-footer {
+  background: linear-gradient(
+    135deg,
+    var(--utfpr-Yellow-dark),
+    var(--utfpr-Yellow)
+  ) !important;
+}
+
+/* --- 3.7. Estilo para trechos <code> (ajustado para #0a0a0a) --- */
+code:not(.language-html):not(.language-css) {
+  background-color: var(--utfpr-gray-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-size: 0.85em;
+  color: #0a0a0a; /* <-- ALTERADO AQUI */
+}
+
+/* --- 4. RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+  .glass-card {
+    padding: 1.25rem !important;
+  }
+  .blockquote-highlight p {
+    font-size: 1rem !important;
+  }
+}
+
+/* --- 5. ESTILOS PARA IMPRESSÃO --- */
+@media print {
+  body {
+    background: var(--utfpr-white) !important;
+    color: var(--utfpr-black) !important;
+    font-size: 12pt;
+  }
+  .glass-card {
+    background: var(--utfpr-white) !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+    border: 1px solid var(--utfpr-gray) !important;
+    page-break-inside: avoid;
+  }
+  .table-utfpr-yellow th {
+    background-color: var(--utfpr-Yellow-dark) !important;
+    color: var(--utfpr-white) !important;
+  }
+  .text-utfpr-yellow {
+    color: var(--utfpr-Yellow-dark) !important;
+  }
+  a {
+    color: var(--utfpr-Yellow-dark) !important;
+  }
+  .blockquote-highlight {
+    border-left-color: var(--utfpr-Yellow-dark) !important;
+    background: var(--utfpr-gray-light) !important;
+  }
+  .card-orientacao-bg {
+    background: var(--utfpr-gray-light) !important;
+  }
+  .bg-gradient-footer {
+    background: var(--utfpr-Yellow) !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  /* Garante que a cor do code também fique preta na impressão */
+  code:not(.language-html):not(.language-css) {
+    color: #0a0a0a !important;
+  }
+}
+
+/* ===================================================================
+   MODELO_PLANOS_AULA.CSS (íntegra)
+   =================================================================== */
+/* ================================================================
+   ANO1 BIMESTRE 2 PLANOS DE AULA – ESTILOS PRINCIPAIS
+   Baseado na paleta oficial UTFPR (amarelo) e no design do material
+   ================================================================ */
+
+/* --- 1. VARIÁVEIS CSS (PALETA UTFPR) --- */
+:root {
+  --utfpr-Yellow: #ffd200;
+  --utfpr-Yellow-light: #ffe84d;
+  --utfpr-Yellow-dark: #e9b400;
+  --utfpr-Yellow-darker: #c99700;
+  --utfpr-white: #ffffff;
+  --utfpr-gray-light: #f8f9fa;
+  --utfpr-gray: #e9ecef;
+  --utfpr-gray-medium: #dee2e6;
+  --utfpr-gray-dark: #6c757d;
+  --utfpr-black: #212529;
+  --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.15);
+  --transition-base: 0.3s ease-in-out;
+}
+
+/* --- 2. ESTILOS GERAIS --- */
+body {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  background-color: #b3b4b5;
+  color: var(--utfpr-black);
+  line-height: 1.7;
+  padding-bottom: 2rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+a {
+  color: var(--utfpr-Yellow-dark);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+a:hover {
+  color: var(--utfpr-Yellow-darker);
+  text-decoration: underline;
+}
+
+/* --- 3. COMPONENTES PRINCIPAIS --- */
+
+/* 3.1. Cards com efeito “glass” (vidro) */
+.glass-card {
+  background: rgba(104, 113, 120, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow-md);
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+}
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+.glass-card .card-title {
+  color: var(--utfpr-Yellow-dark);
+  border-bottom: 3px solid var(--utfpr-Yellow);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+/* 3.2. Cabeçalhos com cor amarela */
+.text-utfpr-yellow {
+  color: var(--utfpr-Yellow-dark) !important;
+}
+.text-utfpr-yellow-light {
+  color: var(--utfpr-Yellow-light) !important;
+}
+.text-utfpr-yellow-darker {
+  color: var(--utfpr-Yellow-darker) !important;
+}
+.bg-utfpr-yellow-dark {
+  background-color: var(--utfpr-Yellow-dark) !important;
+  color: var(--utfpr-black) !important;
+}
+
+/* 3.3. Blocos de código – SEM SOMBRAS */
+.code-block {
+  background-color: var(--utfpr-black);
+  border-radius: 1rem;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border-left: 6px solid var(--utfpr-Yellow);
+}
+.code-block pre {
+  margin: 0;
+  padding: 1.5rem 2rem;
+  font-family: "Fira Code", "Courier New", monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  overflow-x: auto;
+  max-height: 500px;
+  background: transparent;
+  color: #ebf0eb;
+  text-shadow: none !important;
+  border: none;
+}
+.code-block pre code {
+  font-family: inherit;
+  color: #ebf0eb !important;
+  text-shadow: none !important;
+  background: transparent;
+  padding: 0;
+}
+[id^="code"] {
+  color: #ebf0eb !important;
+  text-shadow: none !important;
+}
+
+/* Botão copiar dentro do bloco de código */
+.btn-copy-code {
+  background-color: var(--utfpr-Yellow);
+  color: var(--utfpr-black);
+  border: none;
+  border-radius: 2rem;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  opacity: 0.7;
+  transition: all var(--transition-base);
+  z-index: 10;
+}
+.btn-copy-code:hover {
+  opacity: 1;
+  background-color: var(--utfpr-Yellow-light);
+  transform: scale(1.05);
+}
+.btn-copy-code:active {
+  transform: scale(0.95);
+}
+
+/* 3.4. Accordion personalizado */
+.accordion-item {
+  border: none;
+  background: transparent;
+}
+.accordion-header {
+  background: transparent;
+}
+.accordion-button {
+  background-color: var(--utfpr-white);
+  color: var(--utfpr-black);
+  border-radius: 1rem !important;
+  padding: 1rem 1.5rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  border: 1px solid var(--utfpr-gray);
+}
+.accordion-button:not(.collapsed) {
+  background-color: var(--utfpr-Yellow-light);
+  color: var(--utfpr-black);
+  box-shadow: inset 0 -1px 0 var(--utfpr-Yellow-dark);
+}
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(255, 210, 0, 0.5);
+  border-color: var(--utfpr-Yellow);
+}
+.accordion-button .badge {
+  background-color: var(--utfpr-Yellow-dark);
+  color: var(--utfpr-black);
+}
+.accordion-body {
+  background-color: var(--utfpr-white);
+  border-radius: 0 0 1rem 1rem;
+  padding: 1.5rem 2rem;
+  border: 1px solid var(--utfpr-gray);
+  border-top: none;
+  box-shadow: var(--shadow-sm);
+}
+.accordion-body h4 {
+  color: var(--utfpr-Yellow-dark);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+.accordion-body h4:first-of-type {
+  margin-top: 0;
+}
+.accordion-body ul,
+.accordion-body ol {
+  padding-left: 1.5rem;
+}
+.accordion-body code {
+  background-color: var(--utfpr-gray-light);
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.3rem;
+  font-size: 0.85em;
+  color: var(--utfpr-Yellow-darker);
+}
+
+/* 3.5. Badges e tags */
+.badge.bg-warning {
+  background-color: var(--utfpr-Yellow) !important;
+  color: var(--utfpr-black) !important;
+}
+.badge.bg-info {
+  background-color: #17a2b8 !important;
+  color: var(--utfpr-white) !important;
+}
+.badge.bg-danger {
+  background-color: #dc3545 !important;
+  color: var(--utfpr-white) !important;
+}
+.badge.bg-success {
+  background-color: #28a745 !important;
+  color: var(--utfpr-white) !important;
+}
+.badge.bg-primary {
+  background-color: #007bff !important;
+  color: var(--utfpr-white) !important;
+}
+.badge.bg-secondary {
+  background-color: var(--utfpr-gray-dark) !important;
+  color: var(--utfpr-white) !important;
+}
+.badge.bg-dark {
+  background-color: var(--utfpr-black) !important;
+  color: var(--utfpr-white) !important;
+}
+
+/* 3.6. Classes auxiliares */
+.area-criacao {
+  margin-top: 30px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 16px;
+  border: 2px dashed #b2bec3;
+}
+.botoes-acoes {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.footer {
+  font-size: 14px;
+  color: #aaa;
+}
+.input-area {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  padding: 10px 0;
+  border-top: 1px solid var(--utfpr-gray);
+  font-size: 0.95rem;
+}
+
+/* 3.7. Calculadora (semana 7) */
+.calc-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: var(--shadow-lg);
+}
+.calc-container .display {
+  background: var(--utfpr-black);
+  color: white;
+  padding: 20px;
+  text-align: right;
+  font-size: 2.5rem;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  font-family: "Fira Code", monospace;
+  overflow-x: auto;
+}
+.calc-container .input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.calc-container .input-group input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 12px;
+  border: 2px solid var(--utfpr-gray);
+  font-size: 1.1rem;
+}
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.btn-grid .btn {
+  padding: 15px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border-radius: 15px;
+  border: none;
+  transition: all var(--transition-base);
+}
+.btn-grid .btn-operacao {
+  background: var(--utfpr-Yellow);
+  color: var(--utfpr-black);
+}
+.btn-grid .btn-operacao:hover {
+  background: var(--utfpr-Yellow-light);
+  transform: scale(1.05);
+}
+.btn-grid .btn-funcao {
+  background: #6c5ce7;
+  color: white;
+}
+.btn-grid .btn-funcao:hover {
+  background: #5a4bd1;
+  transform: scale(1.05);
+}
+.btn-grid .btn-especial {
+  background: #00b894;
+  color: white;
+}
+.btn-grid .btn-especial:hover {
+  background: #00a381;
+  transform: scale(1.05);
+}
+.btn-grid .btn-limpar {
+  background: #e17055;
+  color: white;
+}
+.btn-grid .btn-limpar:hover {
+  background: #d63031;
+  transform: scale(1.05);
+}
+.btn-grid .btn-igual {
+  background: #0984e3;
+  color: white;
+  grid-column: span 2;
+}
+.btn-grid .btn-igual:hover {
+  background: #0770c4;
+  transform: scale(1.05);
+}
+.historico {
+  margin-top: 20px;
+  padding: 15px;
+  background: var(--utfpr-gray-light);
+  border-radius: 12px;
+  border-left: 6px solid var(--utfpr-Yellow);
+  font-size: 0.95rem;
+  min-height: 60px;
+}
+
+/* Melhora a legibilidade de códigos inline */
+code:not(.language-html):not(.language-css) {
+  background-color: var(--utfpr-gray-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-size: 0.85em;
+  color: var(--utfpr-Yellow-darker);
+}
+
+/* --- 4. RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+  .glass-card {
+    padding: 1.25rem !important;
+  }
+  .code-block pre {
+    padding: 1rem;
+    font-size: 0.8rem;
+  }
+  .accordion-button {
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
+  }
+  .accordion-body {
+    padding: 1rem;
+  }
+  .botoes-acoes {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .calc-container {
+    padding: 20px;
+  }
+  .calc-container .display {
+    font-size: 2rem;
+    padding: 15px;
+  }
+  .btn-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .btn-grid .btn-igual {
+    grid-column: span 3;
+  }
+  .info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  .input-area {
+    flex-direction: column;
+  }
+}
+
+/* --- 5. ESTILOS PARA IMPRESSÃO (sem referência ao botão) --- */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #accordionPlanos,
+  #accordionPlanos * {
+    visibility: visible;
+  }
+  #accordionPlanos {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+  }
+  .btn-copy-code,
+  .nav-controls,
+  button:not(.accordion-button) {
+    display: none !important;
+  }
+  .accordion-collapse {
+    display: block !important;
+  }
+  .accordion-button::after {
+    display: none !important;
+  }
+  .accordion-button {
+    background: #f8f9fa !important;
+    border: 1px solid #dee2e6 !important;
+  }
+  .code-block {
+    page-break-inside: avoid;
   }
 }

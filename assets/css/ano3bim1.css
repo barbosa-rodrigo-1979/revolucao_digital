@@ -1,29 +1,30 @@
 /* ================================================================
-   ANO 3 – BIMESTRE 1 – ESTILOS PRINCIPAIS
-   Baseado na paleta oficial UTFPR (amarelo) e nos anexos fornecidos
+   CABEÇALHO (cabecalho.css)
    ================================================================ */
-
-/* --- 1. VARIÁVEIS CSS (PALETA UTFPR) --- */
 :root {
   --utfpr-Yellow: #ffd200;
   --utfpr-Yellow-light: #ffe84d;
   --utfpr-Yellow-dark: #e9b400;
   --utfpr-Yellow-darker: #c99700;
-
   --utfpr-white: #ffffff;
   --utfpr-gray-light: #f8f9fa;
   --utfpr-gray: #e9ecef;
   --utfpr-gray-medium: #dee2e6;
   --utfpr-gray-dark: #6c757d;
   --utfpr-black: #212529;
-
-  --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  --shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.15);
-  --transition-base: 0.3s ease-in-out;
+  --scratch-motion: #4a6cd4;
+  --scratch-looks: #8a55d7;
+  --scratch-sound: #bb42c3;
+  --scratch-events: #ffbf00;
+  --scratch-control: #ff8c1a;
+  --scratch-sensing: #2ca5a2;
+  --scratch-operators: #5cb712;
+  --card-bg: #ffffff;
+  --border-color: #dee2e6;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --success-color: #28a745;
 }
 
-/* --- 2. RESET E CONFIGURAÇÕES BASE --- */
 * {
   margin: 0;
   padding: 0;
@@ -31,40 +32,18 @@
 }
 
 body {
-  font-family:
-    "Inter",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    sans-serif;
-  background-color: #b3b4b5;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
   color: var(--utfpr-black);
-  line-height: 1.7;
-  padding-bottom: 2rem;
+  background: linear-gradient(135deg, var(--utfpr-gray-dark) 0%, #343a40 100%);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 700;
-  letter-spacing: -0.02em;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-a {
-  color: var(--utfpr-Yellow-dark);
-  text-decoration: none;
-  transition: color var(--transition-base);
-}
-a:hover {
-  color: var(--utfpr-Yellow-darker);
-  text-decoration: underline;
-}
-
-/* --- 3. CABEÇALHO (header-top) --- */
 .header-top {
   background: linear-gradient(
     135deg,
@@ -82,9 +61,6 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
 }
 
 .logo-container {
@@ -105,6 +81,7 @@ a:hover {
   font-weight: 600;
   color: var(--utfpr-black);
 }
+
 .institution-name small {
   font-size: 0.85rem;
   opacity: 0.95;
@@ -118,6 +95,7 @@ a:hover {
   font-weight: bold;
   color: var(--utfpr-black);
 }
+
 .header-title small {
   font-size: 0.9rem;
   font-weight: normal;
@@ -125,50 +103,131 @@ a:hover {
   color: var(--utfpr-black);
 }
 
-/* --- 4. MENU (header-bottom) --- */
+@media (max-width: 768px) {
+  .header-top .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 18px;
+  }
+  .header-title {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+  .logo {
+    height: 55px;
+  }
+}
+
+body.dark-mode {
+  --utfpr-black: #f8f9fa;
+  --utfpr-white: #212529;
+  --utfpr-gray-light: #343a40;
+  --utfpr-gray: #495057;
+  --utfpr-gray-medium: #6c757d;
+  --utfpr-gray-dark: #adb5bd;
+  --card-bg: #2d3748;
+  --border-color: #4a5568;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .header-top {
+  background: linear-gradient(
+    135deg,
+    var(--utfpr-gray) 0%,
+    var(--utfpr-gray-medium) 100%
+  );
+  color: var(--utfpr-black);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a:focus,
+button:focus {
+  outline: 3px solid var(--utfpr-Yellow);
+  outline-offset: 2px;
+}
+
+/* ================================================================
+   MENU (menu.css)
+   ================================================================ */
 .header-bottom {
-  background: var(--utfpr-gray-dark);
-  border-bottom: 2px solid var(--utfpr-Yellow);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  background-color: var(--utfpr-gray-dark);
+  border-bottom: 3px solid var(--utfpr-Yellow-darker);
 }
 
-.header-bottom .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.header-bottom nav ul {
+nav ul {
   display: flex;
   list-style: none;
-  margin: 0;
-  padding: 0;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
-.header-bottom nav ul li a {
+nav li {
+  margin: 0;
+}
+
+nav a {
   display: block;
-  padding: 12px 20px;
-  color: var(--utfpr-white);
-  font-weight: 600;
-  transition: all var(--transition-base);
+  padding: 10px 22px;
+  color: var(--utfpr-black);
+  text-decoration: none;
+  font-weight: 500;
+  line-height: 1.2;
+  transition: all 0.3s ease;
   border-bottom: 3px solid transparent;
 }
-.header-bottom nav ul li a:hover,
-.header-bottom nav ul li a.active {
-  background: rgba(255, 210, 0, 0.15);
-  border-bottom-color: var(--utfpr-Yellow);
-  color: var(--utfpr-Yellow-light);
-  text-decoration: none;
-}
-.header-bottom nav ul li a.active {
-  background: rgba(255, 210, 0, 0.25);
-  border-bottom-color: var(--utfpr-Yellow);
+
+nav a:hover {
+  background-color: var(--utfpr-Yellow-dark);
+  color: var(--utfpr-black);
+  border-bottom-color: var(--utfpr-Yellow-light);
 }
 
-/* --- 5. COMPONENTES PRINCIPAIS --- */
+nav a.active {
+  background-color: var(--utfpr-Yellow);
+  border-bottom-color: var(--utfpr-black);
+  font-weight: bold;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: var(--utfpr-black);
+}
 
-/* 5.1. Cards com efeito glass */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+  nav a {
+    padding: 10px 20px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+  nav a {
+    padding: 8px 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ================================================================
+   APRESENTAÇÃO (modelo_apresentacao_bimestre.css)
+   ================================================================ */
 .glass-card {
   background: rgba(104, 113, 120, 0.7);
   backdrop-filter: blur(12px);
@@ -180,10 +239,12 @@ a:hover {
     transform var(--transition-base),
     box-shadow var(--transition-base);
 }
+
 .glass-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
 }
+
 .glass-card .card-title {
   color: var(--utfpr-Yellow-dark);
   border-bottom: 3px solid var(--utfpr-Yellow);
@@ -191,41 +252,16 @@ a:hover {
   margin-bottom: 1.5rem;
 }
 
-/* 5.2. Cores da marca */
 .text-utfpr-yellow {
   color: var(--utfpr-Yellow-dark) !important;
 }
-.text-utfpr-yellow-light {
-  color: var(--utfpr-Yellow-light) !important;
-}
-.text-utfpr-yellow-darker {
-  color: var(--utfpr-Yellow-darker) !important;
-}
-.bg-utfpr-yellow-dark {
-  background-color: var(--utfpr-Yellow-dark) !important;
-  color: var(--utfpr-black) !important;
-}
 
-/* 5.3. Carta de abertura */
-.carta-abelha {
-  background: rgba(255, 210, 0, 0.08) !important;
-  border-left: 10px solid var(--utfpr-Yellow) !important;
-  padding: 2rem !important;
-  border-radius: 1.5rem !important;
-}
-.carta-abelha p {
-  margin-bottom: 1rem;
-}
-.carta-abelha .display-6 {
-  color: var(--utfpr-Yellow-dark);
-}
-
-/* 5.4. Tabelas */
 .table-utfpr-yellow {
   background-color: var(--utfpr-Yellow) !important;
   color: var(--utfpr-black) !important;
   border-color: var(--utfpr-Yellow-dark) !important;
 }
+
 .table-utfpr-yellow th {
   background-color: var(--utfpr-Yellow-dark) !important;
   color: var(--utfpr-white) !important;
@@ -234,107 +270,154 @@ a:hover {
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
+
 .table tbody {
   background-color: #87888a !important;
 }
+
 .table-striped > tbody > tr:nth-of-type(odd) {
   background-color: rgba(255, 210, 0, 0.08);
 }
+
 .table-hover > tbody > tr:hover {
   background-color: rgba(255, 210, 0, 0.2);
 }
 
-/* 5.5. Badges personalizadas */
+.btn-print {
+  background-color: var(--utfpr-Yellow);
+  color: var(--utfpr-black);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 3rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+}
+
+.btn-print:hover {
+  background-color: var(--utfpr-Yellow-light);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-print:active {
+  background-color: var(--utfpr-Yellow-dark);
+  transform: scale(0.95);
+}
+
+.carta-abelha {
+  background: rgba(255, 210, 0, 0.08) !important;
+  border-left: 10px solid var(--utfpr-Yellow) !important;
+  padding: 2rem !important;
+  border-radius: 1.5rem !important;
+}
+
+.carta-abelha p {
+  margin-bottom: 1rem;
+}
+
+.carta-abelha .display-6 {
+  color: var(--utfpr-Yellow-dark);
+}
+
 .badge.bg-warning {
   background-color: var(--utfpr-Yellow) !important;
   color: var(--utfpr-black) !important;
 }
+
 .badge.bg-info {
   background-color: #17a2b8 !important;
   color: var(--utfpr-white) !important;
 }
+
 .badge.bg-danger {
   background-color: #dc3545 !important;
   color: var(--utfpr-white) !important;
 }
+
 .badge.bg-success {
   background-color: #28a745 !important;
   color: var(--utfpr-white) !important;
 }
+
 .badge.bg-primary {
   background-color: #007bff !important;
   color: var(--utfpr-white) !important;
 }
+
 .badge.bg-secondary {
   background-color: var(--utfpr-gray-dark) !important;
   color: var(--utfpr-white) !important;
 }
+
 .badge.bg-dark {
   background-color: var(--utfpr-black) !important;
   color: var(--utfpr-white) !important;
 }
 
-/* 5.6. Accordion personalizado */
-.accordion-item {
-  border: none;
-  background: transparent;
-}
-.accordion-header {
-  background: transparent;
-}
-.accordion-button {
-  background-color: var(--utfpr-white);
-  color: var(--utfpr-black);
-  border-radius: 1rem !important;
-  padding: 1rem 1.5rem;
-  font-weight: 600;
-  box-shadow: var(--shadow-sm);
-  transition: all var(--transition-base);
-  border: 1px solid var(--utfpr-gray);
-}
-.accordion-button:not(.collapsed) {
-  background-color: var(--utfpr-Yellow-light);
-  color: var(--utfpr-black);
-  box-shadow: inset 0 -1px 0 var(--utfpr-Yellow-dark);
-}
-.accordion-button:focus {
-  box-shadow: 0 0 0 0.25rem rgba(255, 210, 0, 0.5);
-  border-color: var(--utfpr-Yellow);
-}
-.accordion-button .badge {
-  background-color: var(--utfpr-Yellow-dark);
-  color: var(--utfpr-black);
-}
-.accordion-body {
-  background-color: var(--utfpr-white);
-  border-radius: 0 0 1rem 1rem;
-  padding: 1.5rem 2rem;
-  border: 1px solid var(--utfpr-gray);
-  border-top: none;
-  box-shadow: var(--shadow-sm);
-}
-.accordion-body h4 {
-  color: var(--utfpr-Yellow-dark);
-  margin-top: 1.5rem;
-  margin-bottom: 0.75rem;
-  font-weight: 700;
-}
-.accordion-body h4:first-of-type {
-  margin-top: 0;
-}
-.accordion-body ul,
-.accordion-body ol {
-  padding-left: 1.5rem;
-}
-.accordion-body code {
-  background-color: var(--utfpr-gray-light);
-  padding: 0.2rem 0.5rem;
-  border-radius: 0.3rem;
-  font-size: 0.85em;
-  color: var(--utfpr-Yellow-darker);
+@media (max-width: 768px) {
+  .glass-card {
+    padding: 1.25rem !important;
+  }
+  .btn-print {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  .carta-abelha {
+    padding: 1.25rem !important;
+  }
 }
 
-/* 5.7. Blocos de código */
+@media print {
+  body {
+    background: var(--utfpr-white) !important;
+    color: var(--utfpr-black) !important;
+    font-size: 12pt;
+  }
+  .glass-card {
+    background: var(--utfpr-white) !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+    border: 1px solid var(--utfpr-gray) !important;
+    page-break-inside: avoid;
+  }
+  .btn-print {
+    display: none !important;
+  }
+  .table-utfpr-yellow th {
+    background-color: var(--utfpr-Yellow-dark) !important;
+    color: var(--utfpr-white) !important;
+  }
+  .carta-abelha {
+    border-left-color: var(--utfpr-Yellow-dark) !important;
+    background: var(--utfpr-gray-light) !important;
+  }
+  .text-utfpr-yellow {
+    color: var(--utfpr-Yellow-dark) !important;
+  }
+  a {
+    color: var(--utfpr-Yellow-dark) !important;
+  }
+  .badge {
+    border: 1px solid var(--utfpr-gray) !important;
+    background: var(--utfpr-gray-light) !important;
+    color: var(--utfpr-black) !important;
+  }
+  .badge.bg-warning,
+  .badge.bg-info,
+  .badge.bg-danger,
+  .badge.bg-success,
+  .badge.bg-primary,
+  .badge.bg-secondary,
+  .badge.bg-dark {
+    background: var(--utfpr-gray-light) !important;
+    color: var(--utfpr-black) !important;
+  }
+}
+
+/* ================================================================
+   PLANOS DE AULA (modelo_planos_aula.css)
+   ================================================================ */
 .code-block {
   background-color: var(--utfpr-black);
   border-radius: 1rem;
@@ -343,6 +426,7 @@ a:hover {
   box-shadow: var(--shadow-md);
   border-left: 6px solid var(--utfpr-Yellow);
 }
+
 .code-block pre {
   margin: 0;
   padding: 1.5rem 2rem;
@@ -356,6 +440,7 @@ a:hover {
   text-shadow: none !important;
   border: none;
 }
+
 .code-block pre code {
   font-family: inherit;
   color: #ebf0eb !important;
@@ -363,12 +448,12 @@ a:hover {
   background: transparent;
   padding: 0;
 }
+
 [id^="code"] {
   color: #ebf0eb !important;
   text-shadow: none !important;
 }
 
-/* Botão copiar dentro do bloco de código */
 .btn-copy-code {
   background-color: var(--utfpr-Yellow);
   color: var(--utfpr-black);
@@ -381,43 +466,408 @@ a:hover {
   transition: all var(--transition-base);
   z-index: 10;
 }
+
 .btn-copy-code:hover {
   opacity: 1;
   background-color: var(--utfpr-Yellow-light);
   transform: scale(1.05);
 }
+
 .btn-copy-code:active {
   transform: scale(0.95);
 }
 
-/* 5.8. Botão de impressão */
-.btn-print {
-  background-color: var(--utfpr-Yellow);
-  color: var(--utfpr-black);
+.accordion-item {
   border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 3rem;
-  font-weight: 700;
-  box-shadow: var(--shadow-md);
-  transition: all var(--transition-base);
-}
-.btn-print:hover {
-  background-color: var(--utfpr-Yellow-light);
-  transform: scale(1.05);
-  box-shadow: var(--shadow-lg);
-}
-.btn-print:active {
-  background-color: var(--utfpr-Yellow-dark);
-  transform: scale(0.95);
+  background: transparent;
 }
 
-/* 5.9. Blockquote de destaque */
+.accordion-header {
+  background: transparent;
+}
+
+.accordion-button {
+  background-color: var(--utfpr-white);
+  color: var(--utfpr-black);
+  border-radius: 1rem !important;
+  padding: 1rem 1.5rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  border: 1px solid var(--utfpr-gray);
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--utfpr-Yellow-light);
+  color: var(--utfpr-black);
+  box-shadow: inset 0 -1px 0 var(--utfpr-Yellow-dark);
+}
+
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(255, 210, 0, 0.5);
+  border-color: var(--utfpr-Yellow);
+}
+
+.accordion-button .badge {
+  background-color: var(--utfpr-Yellow-dark);
+  color: var(--utfpr-black);
+}
+
+.accordion-body {
+  background-color: var(--utfpr-white);
+  border-radius: 0 0 1rem 1rem;
+  padding: 1.5rem 2rem;
+  border: 1px solid var(--utfpr-gray);
+  border-top: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.accordion-body h4 {
+  color: var(--utfpr-Yellow-dark);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.accordion-body h4:first-of-type {
+  margin-top: 0;
+}
+
+.accordion-body ul,
+.accordion-body ol {
+  padding-left: 1.5rem;
+}
+
+.accordion-body code {
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.3rem;
+  font-size: 0.85em;
+  color: var(--utfpr-Yellow-darker);
+}
+
+.area-criacao {
+  margin-top: 30px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 16px;
+  border: 2px dashed #b2bec3;
+}
+
+.botoes-acoes {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.input-area {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  padding: 10px 0;
+  border-top: 1px solid var(--utfpr-gray);
+  font-size: 0.95rem;
+}
+
+.calc-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: var(--shadow-lg);
+}
+
+.calc-container .display {
+  background: var(--utfpr-black);
+  color: white;
+  padding: 20px;
+  text-align: right;
+  font-size: 2.5rem;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  font-family: "Fira Code", monospace;
+  overflow-x: auto;
+}
+
+.calc-container .input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.calc-container .input-group input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 12px;
+  border: 2px solid var(--utfpr-gray);
+  font-size: 1.1rem;
+}
+
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.btn-grid .btn {
+  padding: 15px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border-radius: 15px;
+  border: none;
+  transition: all var(--transition-base);
+}
+
+.btn-grid .btn-operacao {
+  background: var(--utfpr-Yellow);
+  color: var(--utfpr-black);
+}
+
+.btn-grid .btn-operacao:hover {
+  background: var(--utfpr-Yellow-light);
+  transform: scale(1.05);
+}
+
+.btn-grid .btn-funcao {
+  background: #6c5ce7;
+  color: white;
+}
+
+.btn-grid .btn-funcao:hover {
+  background: #5a4bd1;
+  transform: scale(1.05);
+}
+
+.btn-grid .btn-especial {
+  background: #00b894;
+  color: white;
+}
+
+.btn-grid .btn-especial:hover {
+  background: #00a381;
+  transform: scale(1.05);
+}
+
+.btn-grid .btn-limpar {
+  background: #e17055;
+  color: white;
+}
+
+.btn-grid .btn-limpar:hover {
+  background: #d63031;
+  transform: scale(1.05);
+}
+
+.btn-grid .btn-igual {
+  background: #0984e3;
+  color: white;
+  grid-column: span 2;
+}
+
+.btn-grid .btn-igual:hover {
+  background: #0770c4;
+  transform: scale(1.05);
+}
+
+.historico {
+  margin-top: 20px;
+  padding: 15px;
+  background: var(--utfpr-gray-light);
+  border-radius: 12px;
+  border-left: 6px solid var(--utfpr-Yellow);
+  font-size: 0.95rem;
+  min-height: 60px;
+}
+
+code:not(.language-html):not(.language-css) {
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-size: 0.85em;
+  color: var(--utfpr-Yellow-darker);
+}
+
+@media (max-width: 768px) {
+  .glass-card {
+    padding: 1.25rem !important;
+  }
+  .code-block pre {
+    padding: 1rem;
+    font-size: 0.8rem;
+  }
+  .accordion-button {
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
+  }
+  .accordion-body {
+    padding: 1rem;
+  }
+  .botoes-acoes {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .calc-container {
+    padding: 20px;
+  }
+  .calc-container .display {
+    font-size: 2rem;
+    padding: 15px;
+  }
+  .btn-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .btn-grid .btn-igual {
+    grid-column: span 3;
+  }
+  .info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  .input-area {
+    flex-direction: column;
+  }
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #accordionPlanos,
+  #accordionPlanos * {
+    visibility: visible;
+  }
+  #accordionPlanos {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+  }
+  .btn-copy-code,
+  .nav-controls,
+  button:not(.accordion-button) {
+    display: none !important;
+  }
+  .accordion-collapse {
+    display: block !important;
+  }
+  .accordion-button::after {
+    display: none !important;
+  }
+  .accordion-button {
+    background: #f8f9fa !important;
+    border: 1px solid #dee2e6 !important;
+  }
+  .code-block {
+    page-break-inside: avoid;
+  }
+}
+
+/* ================================================================
+   FECHAMENTO (modelo_fechamento_bimestre.css)
+   ================================================================ */
+.text-utfpr-yellow-light {
+  color: var(--utfpr-Yellow-light) !important;
+}
+
+.text-utfpr-yellow-darker {
+  color: var(--utfpr-Yellow-darker) !important;
+}
+
+.bg-utfpr-yellow-dark {
+  background-color: var(--utfpr-Yellow-dark) !important;
+  color: var(--utfpr-black) !important;
+}
+
 .blockquote-highlight {
   background: rgba(255, 210, 0, 0.08) !important;
   border-left: 10px solid var(--utfpr-Yellow) !important;
 }
 
-/* --- 6. RODAPÉ --- */
+.card-orientacao-bg {
+  background: rgba(255, 210, 0, 0.05) !important;
+}
+
+.bg-gradient-footer {
+  background: linear-gradient(
+    135deg,
+    var(--utfpr-Yellow-dark),
+    var(--utfpr-Yellow)
+  ) !important;
+}
+
+@media (max-width: 768px) {
+  .blockquote-highlight p {
+    font-size: 1rem !important;
+  }
+}
+
+@media print {
+  body {
+    background: var(--utfpr-white) !important;
+    color: var(--utfpr-black) !important;
+    font-size: 12pt;
+  }
+  .glass-card {
+    background: var(--utfpr-white) !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+    border: 1px solid var(--utfpr-gray) !important;
+    page-break-inside: avoid;
+  }
+  .table-utfpr-yellow th {
+    background-color: var(--utfpr-Yellow-dark) !important;
+    color: var(--utfpr-white) !important;
+  }
+  .text-utfpr-yellow {
+    color: var(--utfpr-Yellow-dark) !important;
+  }
+  a {
+    color: var(--utfpr-Yellow-dark) !important;
+  }
+  .blockquote-highlight {
+    border-left-color: var(--utfpr-Yellow-dark) !important;
+    background: var(--utfpr-gray-light) !important;
+  }
+  .card-orientacao-bg {
+    background: var(--utfpr-gray-light) !important;
+  }
+  .bg-gradient-footer {
+    background: var(--utfpr-Yellow) !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  code:not(.language-html):not(.language-css) {
+    color: #0a0a0a !important;
+  }
+}
+
+/* ================================================================
+   RODAPÉ (rodape.css)
+   ================================================================ */
+main {
+  padding: 20px 0;
+  background: linear-gradient(
+    135deg,
+    var(--utfpr-gray-medium) 0%,
+    var(--utfpr-gray-dark) 100%
+  );
+  min-height: calc(100vh - 150px);
+}
+
 footer {
   background: linear-gradient(
     135deg,
@@ -428,13 +878,6 @@ footer {
   padding: 30px 0 15px 0;
   border-top: 5px solid var(--utfpr-Yellow);
   box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
-  margin-top: 2rem;
-}
-
-footer .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
 }
 
 .footer-content {
@@ -472,6 +915,7 @@ footer .container {
   transition: all 0.3s ease;
   border-bottom: 1px solid transparent;
 }
+
 .footer-section a:hover {
   opacity: 0.9;
   border-bottom-color: var(--utfpr-black);
@@ -484,150 +928,4 @@ footer .container {
   opacity: 0.9;
   font-size: 0.92rem;
   color: var(--utfpr-black);
-}
-
-/* --- 7. RESPONSIVIDADE --- */
-@media (max-width: 768px) {
-  .header-top .container {
-    flex-direction: column;
-    text-align: center;
-    gap: 18px;
-  }
-  .header-title {
-    text-align: center;
-  }
-  .header-bottom nav ul {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .header-bottom nav ul li a {
-    text-align: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .glass-card {
-    padding: 1.25rem !important;
-  }
-  .accordion-button {
-    font-size: 0.9rem;
-    padding: 0.75rem 1rem;
-  }
-  .accordion-body {
-    padding: 1rem;
-  }
-  .code-block pre {
-    padding: 1rem;
-    font-size: 0.8rem;
-  }
-  .btn-print {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
-  .carta-abelha {
-    padding: 1.25rem !important;
-  }
-  .footer-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  .footer-section h3 {
-    display: block;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding: 0 15px;
-  }
-  .logo {
-    height: 55px;
-  }
-  .header-title {
-    font-size: 1rem;
-  }
-  .header-title small {
-    font-size: 0.8rem;
-  }
-}
-
-/* --- 8. ESTILOS PARA IMPRESSÃO --- */
-@media print {
-  body {
-    background: var(--utfpr-white) !important;
-    color: var(--utfpr-black) !important;
-    font-size: 12pt;
-    padding: 0;
-  }
-  .glass-card {
-    background: var(--utfpr-white) !important;
-    backdrop-filter: none !important;
-    box-shadow: none !important;
-    border: 1px solid var(--utfpr-gray) !important;
-    page-break-inside: avoid;
-  }
-  .btn-print,
-  .btn-copy-code,
-  .header-bottom,
-  footer .copyright,
-  .d-print-none {
-    display: none !important;
-  }
-  .accordion-collapse {
-    display: block !important;
-  }
-  .accordion-button::after {
-    display: none !important;
-  }
-  .accordion-button {
-    background: #f8f9fa !important;
-    border: 1px solid #dee2e6 !important;
-    color: #000 !important;
-  }
-  .accordion-body {
-    border: 1px solid #dee2e6 !important;
-  }
-  .table-utfpr-yellow th {
-    background-color: var(--utfpr-Yellow-dark) !important;
-    color: var(--utfpr-white) !important;
-  }
-  .text-utfpr-yellow {
-    color: var(--utfpr-Yellow-dark) !important;
-  }
-  .code-block {
-    page-break-inside: avoid;
-    border-left-color: var(--utfpr-Yellow-dark) !important;
-  }
-  .code-block pre {
-    color: #000 !important;
-    background: #f5f5f5 !important;
-  }
-  .code-block pre code {
-    color: #000 !important;
-  }
-  .carta-abelha {
-    border-left-color: var(--utfpr-Yellow-dark) !important;
-    background: var(--utfpr-gray-light) !important;
-  }
-  .blockquote-highlight {
-    border-left-color: var(--utfpr-Yellow-dark) !important;
-    background: var(--utfpr-gray-light) !important;
-  }
-  .badge {
-    border: 1px solid var(--utfpr-gray) !important;
-    background: var(--utfpr-gray-light) !important;
-    color: var(--utfpr-black) !important;
-  }
-  .badge.bg-warning,
-  .badge.bg-info,
-  .badge.bg-danger,
-  .badge.bg-success,
-  .badge.bg-primary,
-  .badge.bg-secondary,
-  .badge.bg-dark {
-    background: var(--utfpr-gray-light) !important;
-    color: var(--utfpr-black) !important;
-  }
-  .table tbody {
-    background-color: #fff !important;
-  }
 }
