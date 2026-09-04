@@ -1,24 +1,38 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Programação Web e Cultura Digital | Material Didático para o Ensino Médio
-      - UTFPR
-    </title>
-    <!-- CSS externo -->
-    <link rel="stylesheet" href="../assets/css/ano3bim1.css" />
-    <!-- Opcional: Bootstrap para responsividade extra (CDN) -->
+    <title>🚀 Codando o Futuro – Ano 3 (Edição Caótica)</title>
+
+    <!-- Bootstrap 5 + Font Awesome 6 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800;14..32,900&family=Fira+Code:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Nosso CSS -->
+    <link rel="stylesheet" href="../assets/css/ano3.css" />
   </head>
   <body>
-    <!-- ========== CABEÇALHO (copiado de cabecalho.html) ========== -->
+    <!-- ======================== BOTÃO DE IMPRESSÃO ======================== -->
+    <div class="d-print-none position-fixed top-0 end-0 m-4 z-3">
+      <button class="btn btn-print shadow-lg" id="btnPrint">
+        <i class="fas fa-print me-2"></i> Imprimir (ou salvar em PDF)
+      </button>
+    </div>
+
+    <!-- ======================== CABEÇALHO ======================== -->
     <header>
       <div class="header-top">
         <div class="container">
@@ -42,7 +56,7 @@
       </div>
     </header>
 
-    <!-- ========== MENU PRINCIPAL (copiado de menu_principal.html) ========== -->
+    <!-- ======================== MENU ======================== -->
     <div class="header-bottom">
       <div class="container">
         <nav>
@@ -59,21 +73,1803 @@
         </nav>
       </div>
     </div>
+    <!-- ======================== CONTEÚDO PRINCIPAL ======================== -->
+    <div class="container py-5" id="main-content">
+      <!-- ============================================================ -->
+      <!-- CARTA DE ABERTURA DO ANO LETIVO                              -->
+      <!-- ============================================================ -->
+      <section class="card glass-card p-4 p-lg-5 mb-5">
+        <div class="card-body">
+          <h2 class="card-title display-6 fw-bold text-utfpr-yellow">
+            <i class="fas fa-bullhorn me-3"></i> CARTA DE ABERTURA DO ANO LETIVO
+          </h2>
+          <div class="carta-abelha p-4 rounded-4">
+            <p class="fs-4 fst-italic">
+              <i class="fas fa-bullhorn me-2 text-utfpr-yellow"></i>
+              <strong>ATENÇÃO, TURMA! 🕶️🔥</strong>
+            </p>
+            <p class="fs-5">Senta que lá vem história.</p>
+            <p class="fs-5">
+              Vocês estão prestes a embarcar na jornada mais insana, mais
+              revolucionária e mais codificada de toda a vida de vocês. Esqueçam
+              o que sabem sobre escola. Esqueçam o que sabem sobre tecnologia.
+              Esqueçam o que sabem sobre si mesmos.
+            </p>
+            <p class="fs-5">
+              Porque vocês vão descobrir que não sabiam é <strong>nada</strong>.
+            </p>
+            <p class="fs-5">Este ano, vocês vão:</p>
+            <ul class="list-unstyled ms-4 fs-5">
+              <li>
+                <i class="fas fa-check-circle text-utfpr-yellow me-3"></i>
+                <strong>DESMONTAR</strong> a Matrix de uma vez por todas –
+                entender quem realmente manda no feed de vocês (spoiler: não são
+                vocês).
+              </li>
+              <li>
+                <i class="fas fa-check-circle text-utfpr-yellow me-3"></i>
+                <strong>DESCONSTRUIR</strong> os castelos digitais que vocês
+                mesmos construíram – descobrir que aquela div
+                <code>&lt;div&gt;</code> não é uma divindade, é uma ferramenta
+                de controle (e de libertação, se vocês souberem usar).
+              </li>
+              <li>
+                <i class="fas fa-check-circle text-utfpr-yellow me-3"></i>
+                <strong>CODIFICAR</strong> a revolução – HTML, CSS e JavaScript
+                não são só linguagens, são armas. E vocês vão aprender a
+                usá-las.
+              </li>
+              <li>
+                <i class="fas fa-check-circle text-utfpr-yellow me-3"></i>
+                <strong>CRIAR</strong> projetos que não são só código – são
+                manifestos. Gritos. Revoluções silenciosas (mas codificadas).
+              </li>
+              <li>
+                <i class="fas fa-check-circle text-utfpr-yellow me-3"></i>
+                <strong>APRESENTAR</strong> suas criações para o mundo – e
+                provar que vocês não são mais apenas usuários, são
+                <strong>ARQUITETOS DO FUTURO DIGITAL</strong>.
+              </li>
+            </ul>
+            <p class="fs-5">
+              E no final? Vocês vão ter um <strong>PRODUTO FINAL</strong> no ar.
+              Para mostrar para o mundo. Para provar que vocês são capazes de
+              <strong>CRIAR</strong>, não só consumir.
+            </p>
+            <p class="fs-5">
+              A revolução não vai ser televisionada. Ela vai ser
+              <strong>CODIFICADA</strong>.
+            </p>
+            <p class="fs-5">
+              E, spoiler: o código que vocês vão escrever
+              <strong>NÃO</strong> vai ser bonito. Vai ser funcional. Vai ser
+              caótico. Vai ser <strong>VOCÊS</strong>.
+            </p>
+            <p class="display-6 fw-bold mt-4">
+              <i class="fas fa-rocket text-utfpr-yellow me-3"></i> Bora codar
+              essa revolução? 🧑‍💻👩‍💻
+            </p>
+            <p class="text-muted fst-italic">
+              — <em>A Profe (que também vai aprender muito com vocês)</em>
+            </p>
+          </div>
+        </div>
+      </section>
 
-    <!-- ========== CONTEÚDO PRINCIPAL (IMAGEM EM TELA CHEIA) ========== -->
-    <main class="hero-section">
-      <div class="hero-image">
-        <!-- A imagem deve preencher toda a área do main -->
-        <img
-          src="../assets/images/em_construção.png"
-          alt="Revolução Digital - Criação, Inovação, Impacto"
-          class="img-fluid w-100 h-100"
-          style="object-fit: cover"
-        />
-      </div>
-    </main>
+      <!-- ============================================================ -->
+      <!-- MAPEAMENTO COMPLETO DE HABILIDADES BNCC E RCP-PR POR BIMESTRE -->
+      <!-- ============================================================ -->
+      <section class="card glass-card p-4 p-lg-5 mb-5">
+        <h2 class="card-title display-6 fw-bold text-utfpr-yellow">
+          <i class="fas fa-map-signs me-3"></i> MAPEAMENTO COMPLETO DE
+          HABILIDADES BNCC E RCP-PR POR BIMESTRE
+        </h2>
 
-    <!-- ========== RODAPÉ (copiado de rodape.html) ========== -->
+        <!-- Accordion para os 4 bimestres -->
+        <div class="accordion" id="accordionMapeamento">
+          <!-- BIMESTRE 1 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingMap1">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseMap1"
+                aria-expanded="true"
+                aria-controls="collapseMap1"
+              >
+                <span class="badge bg-utfpr-yellow-dark text-dark me-3 p-2"
+                  >Bimestre 1</span
+                >
+                <span class="fw-bold">"A Revolução Será Codificada"</span>
+              </button>
+            </h2>
+            <div
+              id="collapseMap1"
+              class="accordion-collapse collapse show"
+              aria-labelledby="headingMap1"
+              data-bs-parent="#accordionMapeamento"
+            >
+              <div class="accordion-body">
+                <div class="table-responsive">
+                  <table
+                    class="table table-hover align-middle table-striped border-0"
+                  >
+                    <thead class="table-utfpr-yellow">
+                      <tr>
+                        <th>Semana</th>
+                        <th>Título da Aula</th>
+                        <th>Habilidades BNCC (Matemática)</th>
+                        <th>Habilidades BNCC (LP)</th>
+                        <th>Habilidades BNCC (Outras)</th>
+                        <th>Pilares do PC</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>
+                          "Do Caos ao Código: O Planejamento da Revolução"
+                        </td>
+                        <td>EM13MAT101</td>
+                        <td>EM13LP01</td>
+                        <td>EM13CO07</td>
+                        <td>
+                          <span class="badge bg-warning text-dark"
+                            >Abstração</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>"HTML: A Estrutura da Resistência"</td>
+                        <td>EM13MAT102</td>
+                        <td>EM13LP02</td>
+                        <td>EM13CO03</td>
+                        <td>
+                          <span class="badge bg-info text-dark"
+                            >Decomposição</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>"CSS: O Estilo da Revolução"</td>
+                        <td>EM13MAT301</td>
+                        <td>EM13LP04</td>
+                        <td>EM13CO05</td>
+                        <td>
+                          <span class="badge bg-danger"
+                            >Reconhecimento de Padrões</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>"JavaScript: A Mágica da Interatividade"</td>
+                        <td>EM13MAT302</td>
+                        <td>EM13LP05</td>
+                        <td>EM13CO06</td>
+                        <td>
+                          <span class="badge bg-success">Algoritmos</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>"DOM: O Controle Remoto da Sua Página"</td>
+                        <td>EM13MAT201</td>
+                        <td>EM13LP06</td>
+                        <td>EM13CO04</td>
+                        <td>
+                          <span class="badge bg-primary"
+                            >Abstração + Algoritmos</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td>"Eventos: Quando o Usuário Toca na Tela"</td>
+                        <td>EM13MAT303</td>
+                        <td>EM13LP07</td>
+                        <td>EM13CO02</td>
+                        <td>
+                          <span class="badge bg-secondary"
+                            >Decomposição + Algoritmos</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>7</td>
+                        <td>"Dados e Arrays: A Biblioteca da Revolução"</td>
+                        <td>EM13MAT304</td>
+                        <td>EM13LP08</td>
+                        <td>EM13CO05</td>
+                        <td>
+                          <span class="badge bg-dark text-white"
+                            >Abstração + Reconhecimento</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>8</td>
+                        <td>"Funções: O Exército da Revolução"</td>
+                        <td>EM13MAT401</td>
+                        <td>EM13LP09</td>
+                        <td>EM13CO07</td>
+                        <td>
+                          <span class="badge bg-warning text-dark"
+                            >Algoritmos</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>9</td>
+                        <td>"Debug e Polimento: A Batalha Final"</td>
+                        <td>EM13MAT402</td>
+                        <td>EM13LP10</td>
+                        <td>EM13CO09</td>
+                        <td>
+                          <span class="badge bg-info text-dark"
+                            >Decomposição + Algoritmos</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td>"Lançamento Oficial: O Mundo Vai Ver"</td>
+                        <td>EM13MAT501</td>
+                        <td>EM13LP11</td>
+                        <td>EM13CO08</td>
+                        <td>
+                          <span class="badge bg-dark text-white"
+                            >Todos os Pilares</span
+                          >
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BIMESTRE 2 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingMap2">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseMap2"
+                aria-expanded="false"
+                aria-controls="collapseMap2"
+              >
+                <span class="badge bg-utfpr-yellow-dark text-dark me-3 p-2"
+                  >Bimestre 2</span
+                >
+                <span class="fw-bold"
+                  >"A Última Janela – Despertando para o Caos Digital"</span
+                >
+              </button>
+            </h2>
+            <div
+              id="collapseMap2"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingMap2"
+              data-bs-parent="#accordionMapeamento"
+            >
+              <div class="accordion-body">
+                <div class="table-responsive">
+                  <table
+                    class="table table-hover align-middle table-striped border-0"
+                  >
+                    <thead class="table-utfpr-yellow">
+                      <tr>
+                        <th>Semana</th>
+                        <th>Título da Aula</th>
+                        <th>Habilidades BNCC (Matemática)</th>
+                        <th>Habilidades BNCC (LP)</th>
+                        <th>Habilidades BNCC (Outras)</th>
+                        <th>Pilares do PC</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>"O Último Planejamento"</td>
+                        <td>EM13MAT101</td>
+                        <td>EM13LP01</td>
+                        <td>EM13CO07</td>
+                        <td>
+                          <span class="badge bg-warning text-dark"
+                            >Abstração</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>"HTML: A Estrutura do Adeus"</td>
+                        <td>EM13MAT102</td>
+                        <td>EM13LP02</td>
+                        <td>EM13CO03</td>
+                        <td>
+                          <span class="badge bg-info text-dark"
+                            >Decomposição</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>"CSS: O Estilo da Despedida"</td>
+                        <td>EM13MAT301</td>
+                        <td>EM13LP04</td>
+                        <td>EM13CO05</td>
+                        <td>
+                          <span class="badge bg-danger"
+                            >Reconhecimento de Padrões</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>"JavaScript: A Mágica que Não Acaba"</td>
+                        <td>EM13MAT302</td>
+                        <td>EM13LP05</td>
+                        <td>EM13CO06</td>
+                        <td>
+                          <span class="badge bg-success">Algoritmos</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>"DOM: O Controle Remoto do Fim"</td>
+                        <td>EM13MAT201</td>
+                        <td>EM13LP06</td>
+                        <td>EM13CO04</td>
+                        <td>
+                          <span class="badge bg-primary"
+                            >Abstração + Algoritmos</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td>"Eventos: Quando o Usuário Toca no Fim"</td>
+                        <td>EM13MAT303</td>
+                        <td>EM13LP07</td>
+                        <td>EM13CO02</td>
+                        <td>
+                          <span class="badge bg-secondary"
+                            >Decomposição + Algoritmos</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>7</td>
+                        <td>"Dados e Arrays: A Biblioteca do Fim"</td>
+                        <td>EM13MAT304</td>
+                        <td>EM13LP08</td>
+                        <td>EM13CO05</td>
+                        <td>
+                          <span class="badge bg-dark text-white"
+                            >Abstração + Reconhecimento</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>8</td>
+                        <td>"Funções: O Exército do Adeus"</td>
+                        <td>EM13MAT401</td>
+                        <td>EM13LP09</td>
+                        <td>EM13CO07</td>
+                        <td>
+                          <span class="badge bg-warning text-dark"
+                            >Algoritmos</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>9</td>
+                        <td>"Debug e Polimento: A Batalha Final"</td>
+                        <td>EM13MAT402</td>
+                        <td>EM13LP10</td>
+                        <td>EM13CO09</td>
+                        <td>
+                          <span class="badge bg-info text-dark"
+                            >Decomposição + Algoritmos</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td>
+                          "Lançamento Oficial: O Mundo Vai Ver (e Chorar)"
+                        </td>
+                        <td>EM13MAT501</td>
+                        <td>EM13LP11</td>
+                        <td>EM13CO08</td>
+                        <td>
+                          <span class="badge bg-dark text-white"
+                            >Todos os Pilares</span
+                          >
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BIMESTRE 3 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingMap3">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseMap3"
+                aria-expanded="false"
+                aria-controls="collapseMap3"
+              >
+                <span class="badge bg-utfpr-yellow-dark text-dark me-3 p-2"
+                  >Bimestre 3</span
+                >
+                <span class="fw-bold"
+                  >"A Última Janela, o Último Bug, a Última Chance de Ser
+                  Revolucionário"</span
+                >
+              </button>
+            </h2>
+            <div
+              id="collapseMap3"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingMap3"
+              data-bs-parent="#accordionMapeamento"
+            >
+              <div class="accordion-body">
+                <div class="table-responsive">
+                  <table
+                    class="table table-hover align-middle table-striped border-0"
+                  >
+                    <thead class="table-utfpr-yellow">
+                      <tr>
+                        <th>Semana</th>
+                        <th>Título da Aula</th>
+                        <th>Habilidades BNCC (Matemática)</th>
+                        <th>Habilidades BNCC (LP)</th>
+                        <th>Habilidades BNCC (Outras)</th>
+                        <th>Pilares do PC</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>"O Último Planejamento"</td>
+                        <td>EM13MAT101</td>
+                        <td>EM13LP01</td>
+                        <td>EM13CO07</td>
+                        <td>
+                          <span class="badge bg-warning text-dark"
+                            >Abstração</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>"HTML: A Estrutura do Adeus"</td>
+                        <td>EM13MAT102</td>
+                        <td>EM13LP02</td>
+                        <td>EM13CO03</td>
+                        <td>
+                          <span class="badge bg-info text-dark"
+                            >Decomposição</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>"CSS: O Estilo da Despedida"</td>
+                        <td>EM13MAT301</td>
+                        <td>EM13LP04</td>
+                        <td>EM13CO05</td>
+                        <td>
+                          <span class="badge bg-danger"
+                            >Reconhecimento de Padrões</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>"JavaScript: A Mágica que Não Acaba"</td>
+                        <td>EM13MAT302</td>
+                        <td>EM13LP05</td>
+                        <td>EM13CO06</td>
+                        <td>
+                          <span class="badge bg-success">Algoritmos</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>"DOM: O Controle Remoto do Fim"</td>
+                        <td>EM13MAT201</td>
+                        <td>EM13LP06</td>
+                        <td>EM13CO04</td>
+                        <td>
+                          <span class="badge bg-primary"
+                            >Abstração + Algoritmos</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td>"Eventos: Quando o Usuário Toca no Fim"</td>
+                        <td>EM13MAT303</td>
+                        <td>EM13LP07</td>
+                        <td>EM13CO02</td>
+                        <td>
+                          <span class="badge bg-secondary"
+                            >Decomposição + Algoritmos</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>7</td>
+                        <td>"Dados e Arrays: A Biblioteca do Fim"</td>
+                        <td>EM13MAT304</td>
+                        <td>EM13LP08</td>
+                        <td>EM13CO05</td>
+                        <td>
+                          <span class="badge bg-dark text-white"
+                            >Abstração + Reconhecimento</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>8</td>
+                        <td>"Funções: O Exército do Adeus"</td>
+                        <td>EM13MAT401</td>
+                        <td>EM13LP09</td>
+                        <td>EM13CO07</td>
+                        <td>
+                          <span class="badge bg-warning text-dark"
+                            >Algoritmos</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>9</td>
+                        <td>"Debug e Polimento: A Batalha Final"</td>
+                        <td>EM13MAT402</td>
+                        <td>EM13LP10</td>
+                        <td>EM13CO09</td>
+                        <td>
+                          <span class="badge bg-info text-dark"
+                            >Decomposição + Algoritmos</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td>
+                          "Lançamento Oficial: O Mundo Vai Ver (e Chorar)"
+                        </td>
+                        <td>EM13MAT501</td>
+                        <td>EM13LP11</td>
+                        <td>EM13CO08</td>
+                        <td>
+                          <span class="badge bg-dark text-white"
+                            >Todos os Pilares</span
+                          >
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BIMESTRE 4 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingMap4">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseMap4"
+                aria-expanded="false"
+                aria-controls="collapseMap4"
+              >
+                <span class="badge bg-utfpr-yellow-dark text-dark me-3 p-2"
+                  >Bimestre 4</span
+                >
+                <span class="fw-bold"
+                  >"A Última Janela: O Despertar dos Arquitetos do Caos"</span
+                >
+              </button>
+            </h2>
+            <div
+              id="collapseMap4"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingMap4"
+              data-bs-parent="#accordionMapeamento"
+            >
+              <div class="accordion-body">
+                <div class="table-responsive">
+                  <table
+                    class="table table-hover align-middle table-striped border-0"
+                  >
+                    <thead class="table-utfpr-yellow">
+                      <tr>
+                        <th>Semana</th>
+                        <th>Título da Aula</th>
+                        <th>Habilidades BNCC (Matemática)</th>
+                        <th>Habilidades BNCC (LP)</th>
+                        <th>Habilidades BNCC (Outras)</th>
+                        <th>Pilares do PC</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>"O Último Planejamento"</td>
+                        <td>EM13MAT101</td>
+                        <td>EM13LP01</td>
+                        <td>EM13CO07</td>
+                        <td>
+                          <span class="badge bg-warning text-dark"
+                            >Abstração</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>"HTML: A Estrutura do Adeus"</td>
+                        <td>EM13MAT102</td>
+                        <td>EM13LP02</td>
+                        <td>EM13CO03</td>
+                        <td>
+                          <span class="badge bg-info text-dark"
+                            >Decomposição</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>"CSS: O Estilo da Despedida"</td>
+                        <td>EM13MAT301</td>
+                        <td>EM13LP04</td>
+                        <td>EM13CO05</td>
+                        <td>
+                          <span class="badge bg-danger"
+                            >Reconhecimento de Padrões</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>"JavaScript: A Mágica que Não Acaba"</td>
+                        <td>EM13MAT302</td>
+                        <td>EM13LP05</td>
+                        <td>EM13CO06</td>
+                        <td>
+                          <span class="badge bg-success">Algoritmos</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>"DOM: O Controle Remoto do Fim"</td>
+                        <td>EM13MAT201</td>
+                        <td>EM13LP06</td>
+                        <td>EM13CO04</td>
+                        <td>
+                          <span class="badge bg-primary"
+                            >Abstração + Algoritmos</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td>"Eventos: Quando o Usuário Toca no Fim"</td>
+                        <td>EM13MAT303</td>
+                        <td>EM13LP07</td>
+                        <td>EM13CO02</td>
+                        <td>
+                          <span class="badge bg-secondary"
+                            >Decomposição + Algoritmos</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>7</td>
+                        <td>"Dados e Arrays: A Biblioteca do Fim"</td>
+                        <td>EM13MAT304</td>
+                        <td>EM13LP08</td>
+                        <td>EM13CO05</td>
+                        <td>
+                          <span class="badge bg-dark text-white"
+                            >Abstração + Reconhecimento</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>8</td>
+                        <td>"Funções: O Exército do Adeus"</td>
+                        <td>EM13MAT401</td>
+                        <td>EM13LP09</td>
+                        <td>EM13CO07</td>
+                        <td>
+                          <span class="badge bg-warning text-dark"
+                            >Algoritmos</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>9</td>
+                        <td>"Debug e Polimento: A Batalha Final"</td>
+                        <td>EM13MAT402</td>
+                        <td>EM13LP10</td>
+                        <td>EM13CO09</td>
+                        <td>
+                          <span class="badge bg-info text-dark"
+                            >Decomposição + Algoritmos</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td>
+                          "Lançamento Oficial: O Mundo Vai Ver (e Chorar)"
+                        </td>
+                        <td>EM13MAT501</td>
+                        <td>EM13LP11</td>
+                        <td>EM13CO08</td>
+                        <td>
+                          <span class="badge bg-dark text-white"
+                            >Todos os Pilares</span
+                          >
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /accordion mapeamento -->
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- PLANO ANUAL COMPLETO (40 SEMANAS)                            -->
+      <!-- ============================================================ -->
+      <section class="card glass-card p-4 p-lg-5 mb-5">
+        <h2 class="card-title display-6 fw-bold text-utfpr-yellow">
+          <i class="fas fa-list-ul me-3"></i> PLANO ANUAL COMPLETO – A JORNADA
+          DO ARQUITETO DIGITAL
+        </h2>
+        <p class="text-muted fs-5">
+          4 bimestres, 40 semanas de revolução codificada.
+        </p>
+
+        <!-- Accordion para os planos anuais -->
+        <div class="accordion" id="accordionPlanosAnuais">
+          <!-- BIMESTRE 1 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingPlano1">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapsePlano1"
+                aria-expanded="true"
+                aria-controls="collapsePlano1"
+              >
+                <span class="badge bg-utfpr-yellow-dark text-dark me-3 p-2"
+                  >Bimestre 1</span
+                >
+                <span class="fw-bold">"A Revolução Será Codificada"</span>
+              </button>
+            </h2>
+            <div
+              id="collapsePlano1"
+              class="accordion-collapse collapse show"
+              aria-labelledby="headingPlano1"
+              data-bs-parent="#accordionPlanosAnuais"
+            >
+              <div class="accordion-body">
+                <div class="table-responsive">
+                  <table
+                    class="table table-hover align-middle table-striped border-0"
+                  >
+                    <thead class="table-utfpr-yellow">
+                      <tr>
+                        <th>Semana</th>
+                        <th>Título</th>
+                        <th>Atividade Principal</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>
+                          "Do Caos ao Código: O Planejamento da Revolução"
+                        </td>
+                        <td>
+                          "O Mapa da Revolução" – cada grupo escolhe um problema
+                          real da cultura digital e planeja um projeto completo,
+                          aplicando os 4 Pilares do PC e definindo o MVP.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>"HTML: A Estrutura da Resistência"</td>
+                        <td>
+                          "Construindo a Base" – os grupos constroem a estrutura
+                          HTML do projeto, com tags semânticas e boas práticas
+                          de acessibilidade.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>"CSS: O Estilo da Revolução"</td>
+                        <td>
+                          "Operação Beleza" – estilização com personalidade,
+                          usando variáveis CSS, Flexbox/Grid, responsividade e
+                          um design system próprio.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>"JavaScript: A Mágica da Interatividade"</td>
+                        <td>
+                          "O Despertar" – adicionam interatividade básica:
+                          botões, mensagens, contadores, primeira função útil.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>"DOM: O Controle Remoto da Sua Página"</td>
+                        <td>
+                          "Caça ao Elemento" – selecionar, modificar, criar e
+                          remover elementos via JS.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td>"Eventos: Quando o Usuário Toca na Tela"</td>
+                        <td>
+                          "A Hora do Clique" – adicionam eventos (clique,
+                          teclado, mouse) com feedback visual imediato.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>7</td>
+                        <td>"Dados e Arrays: A Biblioteca da Revolução"</td>
+                        <td>
+                          "Organizando o Caos" – implementam arrays para
+                          gerenciar dados (lista de tarefas, itens, etc.) usando
+                          push, pop, forEach.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>8</td>
+                        <td>"Funções: O Exército da Revolução"</td>
+                        <td>
+                          "Modularizando a Revolução" – refatoram o código para
+                          usar funções com parâmetros e retorno.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>9</td>
+                        <td>"Debug e Polimento: A Batalha Final"</td>
+                        <td>
+                          "Caça aos Bugs" – testam, depuram e polinem o projeto
+                          com console.log, debugger e DevTools.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td>"Lançamento Oficial: O Mundo Vai Ver"</td>
+                        <td>
+                          "A Grande Estreia" – apresentações no formato Shark
+                          Tank: pitch de 3 min, demonstração ao vivo, perguntas,
+                          autoavaliação e premiação.
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BIMESTRE 2 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingPlano2">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapsePlano2"
+                aria-expanded="false"
+                aria-controls="collapsePlano2"
+              >
+                <span class="badge bg-utfpr-yellow-dark text-dark me-3 p-2"
+                  >Bimestre 2</span
+                >
+                <span class="fw-bold"
+                  >"A Última Janela – Despertando para o Caos Digital"</span
+                >
+              </button>
+            </h2>
+            <div
+              id="collapsePlano2"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingPlano2"
+              data-bs-parent="#accordionPlanosAnuais"
+            >
+              <div class="accordion-body">
+                <div class="table-responsive">
+                  <table
+                    class="table table-hover align-middle table-striped border-0"
+                  >
+                    <thead class="table-utfpr-yellow">
+                      <tr>
+                        <th>Semana</th>
+                        <th>Título</th>
+                        <th>Atividade Principal</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>"O Último Planejamento"</td>
+                        <td>
+                          "O Mapa da Revolução" – escolha de um problema real da
+                          cultura digital, planejamento com os 4 Pilares e MVP.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>"HTML: A Estrutura do Adeus"</td>
+                        <td>
+                          "Construindo a Base" – estrutura HTML com semântica e
+                          acessibilidade.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>"CSS: O Estilo da Despedida"</td>
+                        <td>
+                          "Operação Beleza" – estilização personalizada com
+                          design system próprio.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>"JavaScript: A Mágica que Não Acaba"</td>
+                        <td>
+                          "O Despertar" – interatividade básica (botões,
+                          mensagens, contadores).
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>"DOM: O Controle Remoto do Fim"</td>
+                        <td>
+                          "Caça ao Elemento" – manipulação completa do DOM.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td>"Eventos: Quando o Usuário Toca no Fim"</td>
+                        <td>
+                          "A Hora do Clique" – eventos com feedback visual.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>7</td>
+                        <td>"Dados e Arrays: A Biblioteca do Fim"</td>
+                        <td>
+                          "Organizando o Caos" – arrays para gerenciar dados.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>8</td>
+                        <td>"Funções: O Exército do Adeus"</td>
+                        <td>
+                          "Modularizando a Revolução" – refatoração com funções.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>9</td>
+                        <td>"Debug e Polimento: A Batalha Final"</td>
+                        <td>"Caça aos Bugs" – testes e depuração.</td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td>
+                          "Lançamento Oficial: O Mundo Vai Ver (e Chorar)"
+                        </td>
+                        <td>"A Grande Estreia" – apresentações Shark Tank.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BIMESTRE 3 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingPlano3">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapsePlano3"
+                aria-expanded="false"
+                aria-controls="collapsePlano3"
+              >
+                <span class="badge bg-utfpr-yellow-dark text-dark me-3 p-2"
+                  >Bimestre 3</span
+                >
+                <span class="fw-bold"
+                  >"A Última Janela, o Último Bug, a Última Chance de Ser
+                  Revolucionário"</span
+                >
+              </button>
+            </h2>
+            <div
+              id="collapsePlano3"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingPlano3"
+              data-bs-parent="#accordionPlanosAnuais"
+            >
+              <div class="accordion-body">
+                <div class="table-responsive">
+                  <table
+                    class="table table-hover align-middle table-striped border-0"
+                  >
+                    <thead class="table-utfpr-yellow">
+                      <tr>
+                        <th>Semana</th>
+                        <th>Título</th>
+                        <th>Atividade Principal</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>"O Último Planejamento"</td>
+                        <td>
+                          "O Mapa da Revolução" – planejamento com PC e MVP.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>"HTML: A Estrutura do Adeus"</td>
+                        <td>"Construindo a Base" – HTML semântico.</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>"CSS: O Estilo da Despedida"</td>
+                        <td>
+                          "Operação Beleza" – estilização com design system.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>"JavaScript: A Mágica que Não Acaba"</td>
+                        <td>"O Despertar" – interatividade básica.</td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>"DOM: O Controle Remoto do Fim"</td>
+                        <td>"Caça ao Elemento" – manipulação DOM.</td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td>"Eventos: Quando o Usuário Toca no Fim"</td>
+                        <td>"A Hora do Clique" – eventos.</td>
+                      </tr>
+                      <tr>
+                        <td>7</td>
+                        <td>"Dados e Arrays: A Biblioteca do Fim"</td>
+                        <td>"Organizando o Caos" – arrays.</td>
+                      </tr>
+                      <tr>
+                        <td>8</td>
+                        <td>"Funções: O Exército do Adeus"</td>
+                        <td>"Modularizando a Revolução" – funções.</td>
+                      </tr>
+                      <tr>
+                        <td>9</td>
+                        <td>"Debug e Polimento: A Batalha Final"</td>
+                        <td>"Caça aos Bugs" – debug.</td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td>
+                          "Lançamento Oficial: O Mundo Vai Ver (e Chorar)"
+                        </td>
+                        <td>"A Grande Estreia" – apresentações.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BIMESTRE 4 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingPlano4">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapsePlano4"
+                aria-expanded="false"
+                aria-controls="collapsePlano4"
+              >
+                <span class="badge bg-utfpr-yellow-dark text-dark me-3 p-2"
+                  >Bimestre 4</span
+                >
+                <span class="fw-bold"
+                  >"A Última Janela: O Despertar dos Arquitetos do Caos"</span
+                >
+              </button>
+            </h2>
+            <div
+              id="collapsePlano4"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingPlano4"
+              data-bs-parent="#accordionPlanosAnuais"
+            >
+              <div class="accordion-body">
+                <div class="table-responsive">
+                  <table
+                    class="table table-hover align-middle table-striped border-0"
+                  >
+                    <thead class="table-utfpr-yellow">
+                      <tr>
+                        <th>Semana</th>
+                        <th>Título</th>
+                        <th>Atividade Principal</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>"O Último Planejamento"</td>
+                        <td>
+                          "O Mapa da Revolução" – planejamento com PC e MVP.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>"HTML: A Estrutura do Adeus"</td>
+                        <td>"Construindo a Base" – HTML semântico.</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>"CSS: O Estilo da Despedida"</td>
+                        <td>
+                          "Operação Beleza" – estilização com design system.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>"JavaScript: A Mágica que Não Acaba"</td>
+                        <td>"O Despertar" – interatividade básica.</td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>"DOM: O Controle Remoto do Fim"</td>
+                        <td>"Caça ao Elemento" – manipulação DOM.</td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td>"Eventos: Quando o Usuário Toca no Fim"</td>
+                        <td>"A Hora do Clique" – eventos.</td>
+                      </tr>
+                      <tr>
+                        <td>7</td>
+                        <td>"Dados e Arrays: A Biblioteca do Fim"</td>
+                        <td>"Organizando o Caos" – arrays.</td>
+                      </tr>
+                      <tr>
+                        <td>8</td>
+                        <td>"Funções: O Exército do Adeus"</td>
+                        <td>"Modularizando a Revolução" – funções.</td>
+                      </tr>
+                      <tr>
+                        <td>9</td>
+                        <td>"Debug e Polimento: A Batalha Final"</td>
+                        <td>"Caça aos Bugs" – debug.</td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td>
+                          "Lançamento Oficial: O Mundo Vai Ver (e Chorar)"
+                        </td>
+                        <td>"A Grande Estreia" – apresentações.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /accordion planos anuais -->
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- CRITÉRIOS DE AVALIAÇÃO – ANO LETIVO COMPLETO                 -->
+      <!-- ============================================================ -->
+      <section class="card glass-card p-4 p-lg-5 mb-5">
+        <h2 class="card-title display-6 fw-bold text-utfpr-yellow">
+          <i class="fas fa-clipboard-check me-3"></i> CRITÉRIOS DE AVALIAÇÃO –
+          ANO LETIVO COMPLETO
+        </h2>
+
+        <h4 class="mt-4 mb-3">Rubrica Geral</h4>
+        <div class="table-responsive">
+          <table class="table table-hover align-middle table-striped border-0">
+            <thead class="table-utfpr-yellow">
+              <tr>
+                <th>Critério</th>
+                <th>Excelente (10)</th>
+                <th>Bom (7)</th>
+                <th>Regular (5)</th>
+                <th>Insuficiente (3)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Compreensão do Problema</strong></td>
+                <td>
+                  Identificou e analisou profundamente o problema da Cultura
+                  Digital, com dados e exemplos concretos.
+                </td>
+                <td>Identificou o problema, mas com análise superficial.</td>
+                <td>Identificou o problema de forma vaga.</td>
+                <td>Não identificou ou compreendeu o problema.</td>
+              </tr>
+              <tr>
+                <td><strong>Aplicação dos Pilares do PC</strong></td>
+                <td>
+                  Aplicou os 4 pilares de forma criativa e eficaz, com
+                  justificativas claras em cada etapa.
+                </td>
+                <td>Aplicou a maioria dos pilares corretamente.</td>
+                <td>Aplicou alguns pilares, mas com falhas.</td>
+                <td>Não aplicou os pilares ou aplicou incorretamente.</td>
+              </tr>
+              <tr>
+                <td><strong>Desenvolvimento do Protótipo</strong></td>
+                <td>
+                  Protótipo funcional, criativo, bem executado e com bom
+                  design/experiência do usuário.
+                </td>
+                <td>
+                  Protótipo funcional, mas com pouca criatividade ou
+                  usabilidade.
+                </td>
+                <td>Protótipo parcialmente funcional.</td>
+                <td>Protótipo não funcional ou incompleto.</td>
+              </tr>
+              <tr>
+                <td><strong>Apresentação (Pitch)</strong></td>
+                <td>
+                  Comunicação clara, envolvente, com domínio do conteúdo e boa
+                  demonstração.
+                </td>
+                <td>Clara, mas com algumas hesitações ou falhas na demo.</td>
+                <td>Razoável, com dificuldades e sem demo convincente.</td>
+                <td>Confusa, tímida ou sem preparo.</td>
+              </tr>
+              <tr>
+                <td><strong>Trabalho em Equipe</strong></td>
+                <td>
+                  Colaboração excelente, divisão equilibrada e comunicação
+                  efetiva.
+                </td>
+                <td>Boa colaboração, pequenos desequilíbrios.</td>
+                <td>Razoável, alguns conflitos ou desorganização.</td>
+                <td>Pouca colaboração ou trabalho individual.</td>
+              </tr>
+              <tr>
+                <td><strong>Reflexão e Autoavaliação</strong></td>
+                <td>
+                  Reflexão profunda e crítica sobre o processo, com aprendizados
+                  claros e aplicáveis.
+                </td>
+                <td>Reflexão honesta, mas superficial.</td>
+                <td>Reflexão vaga ou genérica.</td>
+                <td>Sem reflexão ou autoavaliação.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4 class="mt-5 mb-3">Critérios Específicos por Bimestre</h4>
+
+        <!-- Accordion para critérios específicos -->
+        <div class="accordion" id="accordionCriterios">
+          <!-- Bimestre 1 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingCrit1">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseCrit1"
+                aria-expanded="true"
+                aria-controls="collapseCrit1"
+              >
+                <span class="badge bg-utfpr-yellow-dark text-dark me-3 p-2"
+                  >Bimestre 1</span
+                >
+                <span class="fw-bold">Planejamento e Fundação</span>
+              </button>
+            </h2>
+            <div
+              id="collapseCrit1"
+              class="accordion-collapse collapse show"
+              aria-labelledby="headingCrit1"
+              data-bs-parent="#accordionCriterios"
+            >
+              <div class="accordion-body">
+                <div class="table-responsive">
+                  <table class="table table-striped table-hover">
+                    <thead class="table-utfpr-yellow">
+                      <tr>
+                        <th>Critério</th>
+                        <th>Descrição</th>
+                        <th>Pontuação</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Escolha do Desafio</td>
+                        <td>
+                          Escolheu um problema relevante, bem definido, com
+                          impacto real e dados que comprovem sua existência.
+                        </td>
+                        <td>0-2</td>
+                      </tr>
+                      <tr>
+                        <td>Aplicação dos Pilares</td>
+                        <td>
+                          Aplicou corretamente os 4 pilares no mapa, com
+                          justificativas claras e exemplos concretos.
+                        </td>
+                        <td>0-3</td>
+                      </tr>
+                      <tr>
+                        <td>Planejamento</td>
+                        <td>
+                          Criou um plano de projeto coerente, completo, com
+                          prazos realistas e divisão de tarefas clara.
+                        </td>
+                        <td>0-3</td>
+                      </tr>
+                      <tr>
+                        <td>Pitch</td>
+                        <td>
+                          Apresentou a ideia de forma clara, convincente,
+                          envolvente e no tempo estipulado.
+                        </td>
+                        <td>0-2</td>
+                      </tr>
+                      <tr>
+                        <td>Colaboração</td>
+                        <td>
+                          Trabalhou bem em grupo, respeitando as ideias dos
+                          colegas, contribuindo ativamente.
+                        </td>
+                        <td>0-1</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Total</strong></td>
+                        <td></td>
+                        <td><strong>0-10</strong></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bimestre 2 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingCrit2">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseCrit2"
+                aria-expanded="false"
+                aria-controls="collapseCrit2"
+              >
+                <span class="badge bg-utfpr-yellow-dark text-dark me-3 p-2"
+                  >Bimestre 2</span
+                >
+                <span class="fw-bold">Construção (HTML+CSS+JS)</span>
+              </button>
+            </h2>
+            <div
+              id="collapseCrit2"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingCrit2"
+              data-bs-parent="#accordionCriterios"
+            >
+              <div class="accordion-body">
+                <div class="table-responsive">
+                  <table class="table table-striped table-hover">
+                    <thead class="table-utfpr-yellow">
+                      <tr>
+                        <th>Critério</th>
+                        <th>Descrição</th>
+                        <th>Pontuação</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Estrutura HTML</td>
+                        <td>
+                          Criou a estrutura HTML completa com tags semânticas,
+                          indentação e organização.
+                        </td>
+                        <td>0-3</td>
+                      </tr>
+                      <tr>
+                        <td>Estilização CSS</td>
+                        <td>
+                          Usou seletores, propriedades essenciais, layout
+                          moderno e responsividade.
+                        </td>
+                        <td>0-3</td>
+                      </tr>
+                      <tr>
+                        <td>Interatividade JS</td>
+                        <td>
+                          Criou variáveis, funções, manipulou o DOM e
+                          implementou eventos.
+                        </td>
+                        <td>0-4</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Total</strong></td>
+                        <td></td>
+                        <td><strong>0-10</strong></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bimestre 3 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingCrit3">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseCrit3"
+                aria-expanded="false"
+                aria-controls="collapseCrit3"
+              >
+                <span class="badge bg-utfpr-yellow-dark text-dark me-3 p-2"
+                  >Bimestre 3</span
+                >
+                <span class="fw-bold">Estruturação de Dados e Lógica</span>
+              </button>
+            </h2>
+            <div
+              id="collapseCrit3"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingCrit3"
+              data-bs-parent="#accordionCriterios"
+            >
+              <div class="accordion-body">
+                <div class="table-responsive">
+                  <table class="table table-striped table-hover">
+                    <thead class="table-utfpr-yellow">
+                      <tr>
+                        <th>Critério</th>
+                        <th>Descrição</th>
+                        <th>Pontuação</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Arrays e Dados</td>
+                        <td>
+                          Criou e manipulou arrays com métodos essenciais (push,
+                          pop, forEach, etc.).
+                        </td>
+                        <td>0-3</td>
+                      </tr>
+                      <tr>
+                        <td>Funções</td>
+                        <td>
+                          Criou funções com parâmetros e retorno, modularizando
+                          o código.
+                        </td>
+                        <td>0-3</td>
+                      </tr>
+                      <tr>
+                        <td>Refatoração</td>
+                        <td>
+                          Refatorou código repetido para usar funções
+                          reutilizáveis.
+                        </td>
+                        <td>0-2</td>
+                      </tr>
+                      <tr>
+                        <td>Debug</td>
+                        <td>
+                          Identificou e corrigiu bugs, usou ferramentas de
+                          debug.
+                        </td>
+                        <td>0-2</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Total</strong></td>
+                        <td></td>
+                        <td><strong>0-10</strong></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bimestre 4 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingCrit4">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseCrit4"
+                aria-expanded="false"
+                aria-controls="collapseCrit4"
+              >
+                <span class="badge bg-utfpr-yellow-dark text-dark me-3 p-2"
+                  >Bimestre 4</span
+                >
+                <span class="fw-bold">Apresentação e Comunicação</span>
+              </button>
+            </h2>
+            <div
+              id="collapseCrit4"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingCrit4"
+              data-bs-parent="#accordionCriterios"
+            >
+              <div class="accordion-body">
+                <div class="table-responsive">
+                  <table class="table table-striped table-hover">
+                    <thead class="table-utfpr-yellow">
+                      <tr>
+                        <th>Critério</th>
+                        <th>Descrição</th>
+                        <th>Pontuação</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Clareza da Apresentação</td>
+                        <td>
+                          Explicou o projeto de forma clara, organizada e
+                          envolvente.
+                        </td>
+                        <td>0-2</td>
+                      </tr>
+                      <tr>
+                        <td>Demonstração Funcional</td>
+                        <td>
+                          Projeto demonstrado ao vivo e funcionou (ou lidou bem
+                          com imprevistos).
+                        </td>
+                        <td>0-2</td>
+                      </tr>
+                      <tr>
+                        <td>Storytelling</td>
+                        <td>
+                          Contou uma história envolvente (contexto, desafios,
+                          soluções, impacto).
+                        </td>
+                        <td>0-2</td>
+                      </tr>
+                      <tr>
+                        <td>Justificativa</td>
+                        <td>Explicou as escolhas técnicas e de design.</td>
+                        <td>0-1</td>
+                      </tr>
+                      <tr>
+                        <td>Trabalho em Equipe</td>
+                        <td>Todos os membros participaram ativamente.</td>
+                        <td>0-1</td>
+                      </tr>
+                      <tr>
+                        <td>Respostas às Perguntas</td>
+                        <td>
+                          Respondeu com segurança, conhecimento e humildade.
+                        </td>
+                        <td>0-1</td>
+                      </tr>
+                      <tr>
+                        <td>Autoavaliação</td>
+                        <td>
+                          Refletiu criticamente sobre o próprio aprendizado.
+                        </td>
+                        <td>0-1</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Total</strong></td>
+                        <td></td>
+                        <td><strong>0-10</strong></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /accordion criterios -->
+
+        <div
+          class="mt-4 p-3 rounded-4"
+          style="
+            background: rgba(255, 210, 0, 0.1);
+            border-left: 6px solid var(--utfpr-Yellow);
+          "
+        >
+          <p class="fs-5 mb-0">
+            <strong>Matriz de Correlação por Bimestre:</strong>
+          </p>
+          <ul class="list-unstyled ms-3">
+            <li>
+              <strong>Bimestre 1:</strong> Planejamento e Fundação – Plano de
+              Projeto + Pitch (peso 25%)
+            </li>
+            <li>
+              <strong>Bimestre 2:</strong> Construção (HTML+CSS+JS) – Protótipo
+              Funcional (peso 25%)
+            </li>
+            <li>
+              <strong>Bimestre 3:</strong> Estruturação de Dados e Lógica –
+              Código Refatorado (peso 25%)
+            </li>
+            <li>
+              <strong>Bimestre 4:</strong> Apresentação e Comunicação – Shark
+              Tank + Autoavaliação (peso 25%)
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- ENCERRAMENTO – O QUE VEM DEPOIS?                             -->
+      <!-- ============================================================ -->
+      <section class="card glass-card p-4 p-lg-5 mb-5">
+        <div class="card-body">
+          <h2 class="card-title display-6 fw-bold text-utfpr-yellow">
+            <i class="fas fa-flag-checkered me-3"></i> ENCERRAMENTO – O QUE VEM
+            DEPOIS?
+          </h2>
+          <div class="carta-abelha p-4 rounded-4">
+            <p class="fs-5">A Grande Estreia não é o fim. É o começo.</p>
+            <p class="fs-5">
+              O que vocês construíram nestas 40 semanas não foi apenas um
+              projeto. Foi uma transformação. Vocês entraram como usuários –
+              consumindo algoritmos, dados, dopamina e bolhas – e saem como
+              <strong>criadores</strong>. Pessoas que entendem como as máquinas
+              funcionam, questionam o que elas fazem e constroem alternativas
+              melhores.
+            </p>
+            <p class="fs-5">
+              O mundo digital não vai mudar sozinho. Ele vai mudar porque
+              pessoas como vocês decidiram que não querem mais ser reféns –
+              querem ser <strong>arquitetos</strong>.
+            </p>
+            <p class="fs-5">Guardem isso:</p>
+            <ul class="list-unstyled ms-4 fs-5">
+              <li>
+                <i class="fas fa-check-circle text-utfpr-yellow me-3"></i>
+                Algoritmos não são neutros – mas podem ser justos, se vocês os
+                programarem.
+              </li>
+              <li>
+                <i class="fas fa-check-circle text-utfpr-yellow me-3"></i> Dados
+                são poder – mas poder pode ser compartilhado, se vocês exigirem.
+              </li>
+              <li>
+                <i class="fas fa-check-circle text-utfpr-yellow me-3"></i> A
+                atenção é finita – mas pode ser direcionada para o que importa,
+                se vocês escolherem.
+              </li>
+              <li>
+                <i class="fas fa-check-circle text-utfpr-yellow me-3"></i>
+                Bolhas isolam – mas podem ser estouradas, se vocês buscarem
+                diversidade.
+              </li>
+              <li>
+                <i class="fas fa-check-circle text-utfpr-yellow me-3"></i> A lei
+                protege – mas só funciona se vocês a conhecerem e a exigirem.
+              </li>
+              <li>
+                <i class="fas fa-check-circle text-utfpr-yellow me-3"></i> A
+                netiqueta importa – porque o que vocês fazem online define quem
+                vocês são.
+              </li>
+            </ul>
+            <blockquote
+              class="blockquote fs-4 mt-4 p-3"
+              style="border-left: 6px solid var(--utfpr-Yellow)"
+            >
+              <p class="mb-0">
+                "Revolução não é um evento. É um processo. E ele começa com uma
+                pergunta: <strong>'Que problema eu quero resolver?'</strong>"
+              </p>
+            </blockquote>
+            <p class="fs-5">
+              Vocês já têm a resposta. Agora é colocar a mão na massa –
+              <strong>para sempre</strong>.
+            </p>
+            <div
+              class="mt-5 p-4 rounded-4 text-center"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  var(--utfpr-Yellow-dark),
+                  var(--utfpr-Yellow)
+                );
+              "
+            >
+              <p class="display-6 fw-bold text-dark mb-0">
+                🚀 A revolução continua. E vocês estão no comando.
+              </p>
+            </div>
+            <p class="mt-4 fs-5 fst-italic">
+              "Agora vocês não são mais apenas usuários. Vocês são arquitetos do
+              futuro digital. Usem esse poder com sabedoria, com irreverência e,
+              acima de tudo, com humanidade." 🔥
+            </p>
+            <hr class="my-4" />
+            <p class="fs-5 fst-italic">
+              "E foi assim que um monte de adolescentes descobriu que o problema
+              não era o algoritmo...
+              <br />...era o fato de que eles passavam 5 horas por dia rolando o
+              feed enquanto o código que eles mesmos escreveram continuava
+              rodando, esperando que eles finalmente percebessem que a maior
+              revolução digital começa quando você desliga o celular, abre o VS
+              Code e começa a escrever o futuro. <br />Não foi sobre HTML, CSS
+              ou JavaScript. Foi sobre aprender que toda ferramenta digital
+              reflete valores, intenções e visões de mundo. E que a única forma
+              de mudar o jogo é aprender as regras para depois quebrá-las com
+              propósito. <br />Parabéns, guerreiros digitais. Vocês codificaram
+              a revolução. E o mundo nunca mais será o mesmo."
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- /container -->
+    <!-- ======================== RODAPÉ ======================== -->
     <footer>
       <div class="container">
         <div class="footer-content">
@@ -96,13 +1892,9 @@
       </div>
     </footer>
 
-    <!-- JavaScript externo -->
-    <script src=""></script>
-    <!-- Opcional: Bootstrap JS (para componentes interativos, se necessário) -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Nosso JS -->
+    <script src="../assets/js/ano3.js"></script>
   </body>
 </html>
