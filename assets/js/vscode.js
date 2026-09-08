@@ -1,18 +1,20 @@
 /* ================================================================
-   vscode.js – Funcionalidades do ano2.html
-   Baseado em modelo_planos_aula.js + função de impressão
+   vscode.js – Funcionalidades do VSCode Manual
+   Baseado em modelo_planos_aula.js e adaptado para o conteúdo atual
    ================================================================ */
 
 document.addEventListener("DOMContentLoaded", function () {
-
-  // --- 1. COPIA DE CÓDIGO (dos blocos <code>) ---
+  // --- 1. COPIA DE CÓDIGO (extraído fielmente do modelo_planos_aula.js) ---
   const copyButtons = document.querySelectorAll(".btn-copy-code");
+
   copyButtons.forEach(function (btn) {
     btn.addEventListener("click", function (e) {
       const targetId = this.getAttribute("data-code-target");
       if (!targetId) return;
+
       const codeElement = document.getElementById(targetId);
       if (!codeElement) return;
+
       const codeText = codeElement.textContent.trim();
 
       if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -47,14 +49,14 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.removeChild(ta);
   }
 
-  // --- 2. BOTÃO DE IMPRESSÃO ---
-  const printBtn = document.getElementById("btnPrint");
-  if (printBtn) {
-    printBtn.addEventListener("click", function () {
+  // --- 2. IMPRESSÃO DO CONTEÚDO ---
+  const btnPrint = document.getElementById("btnPrint");
+
+  if (btnPrint) {
+    btnPrint.addEventListener("click", function () {
+      // O CSS com @media print e a estrutura #print-area cuidam do formato A4
+      // e de esconder os elementos desnecessários (botões, etc.)
       window.print();
     });
   }
-
-  // --- 3. (Opcional) Navegação por teclado nos accordions? Não necessário, Bootstrap já trata.
-
 });
