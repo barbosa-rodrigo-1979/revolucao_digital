@@ -1,112 +1,3685 @@
 <!doctype html>
-<html lang="pt-BR">
-  <head>
+<html lang="pt">
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Programação Web e Cultura Digital | Material Didático para o Ensino Médio
-      - UTFPR
-    </title>
-    <!-- CSS externo -->
-    <link rel="stylesheet" href="../assets/css/index.css" />
-    <!-- Opcional: Bootstrap para responsividade extra (CDN) -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    <!-- ========== CABEÇALHO (copiado de cabecalho.html) ========== -->
-    <header>
-      <div class="header-top">
-        <div class="container">
-          <div class="logo-container">
-            <img
-              src="../assets/images/UTFPR_logo.png"
-              alt="UTFPR Logo"
-              class="logo"
-            />
-            <div class="institution-name">
-              Universidade Tecnológica Federal do Paraná<br />
-              <small>Campus Siqueira Campos</small>
-            </div>
-          </div>
-          <div class="header-title">
-            Revolução Digital: <br />Desvendando Algoritmos, Reconectando
-            Humanidade<br />
-            <small>Material Didático para Professores do 1º ao 3º Ano</small>
-          </div>
-        </div>
-      </div>
-    </header>
+    <title>🚀 VSCode – O Canivete Suíço dos Deuses da Programação</title>
 
-    <!-- ========== MENU PRINCIPAL (copiado de menu_principal.html) ========== -->
-    <div class="header-bottom">
-      <div class="container">
-        <nav>
-          <ul>
-            <li>
-              <a href="../index.html" aria-current="page">Página Inicial</a>
-            </li>
-            <li>
-              <a href="primeiros_passos.html" class="active"
-                >Primeiros Passos</a
-              >
-            </li>
-            <li><a href="ano1.html">1º Ano</a></li>
-            <li><a href="ano2.html">2º Ano</a></li>
-            <li><a href="ano3.html">3º Ano</a></li>
-            <li><a href="UTFPR.html">UTFPR</a></li>
-          </ul>
-        </nav>
-      </div>
+    <!-- Bootstrap 5 + Font Awesome 6 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800;14..32,900&family=Fira+Code:wght@400;600&display=swap"
+        rel="stylesheet" />
+
+    <!-- Nosso CSS -->
+    <link rel="stylesheet" href="../assets/css/vscode.css" />
+</head>
+
+<body>
+    <!-- ======================== BOTÃO DE IMPRESSÃO ======================== -->
+    <div class="d-print-none position-fixed top-0 end-0 m-4 z-3">
+        <button class="btn btn-print shadow-lg" id="btnPrint">
+            <i class="fas fa-print me-2"></i> Imprimir (ou salvar em PDF)
+        </button>
     </div>
 
-    <!-- ========== CONTEÚDO PRINCIPAL (IMAGEM EM TELA CHEIA) ========== -->
-    <main class="hero-section">
-      <div class="hero-image">
-        <!-- A imagem deve preencher toda a área do main -->
-        <img
-          src="../assets/images/em_construção.png"
-          alt="Revolução Digital - Criação, Inovação, Impacto"
-          class="img-fluid w-100 h-100"
-          style="object-fit: cover"
-        />
-      </div>
-    </main>
+    <!-- ======================== CABEÇALHO ======================== -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="logo-container">
+                    <img src="../assets/images/UTFPR_logo.png" alt="UTFPR Logo" class="logo" />
+                    <div class="institution-name">
+                        Universidade Tecnológica Federal do Paraná<br />
+                        <small>Campus Siqueira Campos</small>
+                    </div>
+                </div>
+                <div class="header-title">
+                    Revolução Digital: <br />Desvendando Algoritmos, Reconectando
+                    Humanidade<br />
+                    <small>Material Didático para Professores do 1º ao 3º Ano</small>
+                </div>
+            </div>
+        </div>
+    </header>
 
-    <!-- ========== RODAPÉ (copiado de rodape.html) ========== -->
-    <footer>
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-section">
-            <h3>UTFPR - Campus Siqueira Campos</h3>
-            <p>Universidade Tecnológica Federal do Paraná</p>
-            <p>Departamento de Computação</p>
-          </div>
-          <div class="footer-section"></div>
-          <div class="footer-section">
-            <h3>Contato</h3>
-            <p>Email: giseleacn@gmail.com</p>
-            <p>Email: barbosa.rodrigo.1979@gmail.com</p>
-          </div>
+    <!-- ======================== MENU ======================== -->
+    <div class="header-bottom">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Página Inicial</a></li>
+                    <li><a href="primeiros_passos.html">Primeiros Passos</a></li>
+                    <li><a href="ano1.html">1º Ano</a></li>
+                    <li><a href="ano2.html">2º Ano</a></li>
+                    <li><a href="ano3.html">3º Ano</a></li>
+                    <li><a href="UTFPR.html">UTFPR</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="copyright">
-          &copy; 2026 UTFPR - Desenvolvido por Gisele Nunes e Rodrigo Barbosa.
-          Todos os direitos reservados.
+    </div>
+
+    <!-- ======================== CONTEÚDO PRINCIPAL ======================== -->
+    <div class="container py-5" id="main-content">
+        <div id="print-area">
+            <!-- ============================================================ -->
+            <!-- TÍTULO PRINCIPAL                                             -->
+            <!-- ============================================================ -->
+            <section class="card glass-card p-4 p-lg-5 mb-5">
+                <h1 class="display-4 fw-bold text-utfpr-yellow">
+                    <i class="fas fa-code me-3"></i> VSCODE – O CANIVETE SUÍÇO DOS DEUSES DA PROGRAMAÇÃO
+                </h1>
+                <p class="fs-4 fst-italic text-muted">
+                    Manual Extremamente Detalhado para Iniciantes (que vão usar HTML, CSS, JS e Python)
+                </p>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- PARTE 1                                                      -->
+            <!-- ============================================================ -->
+            <section class="card glass-card p-4 p-lg-5 mb-5">
+                <h2 class="card-title display-6 fw-bold text-utfpr-yellow">
+                    <i class="fas fa-robot me-3"></i> PARTE 1: O QUE É ESSA FERRAMENTA E POR QUE VOCÊ DEVE AMAR ELA
+                </h2>
+                <p><strong>Bem-vindo ao Matrix, Neo.</strong></p>
+                <p>Sabe aquela cena do Matrix onde o Neo finalmente vê o código por trás da realidade? Pois é. O VSCode
+                    é o seu óculos de realidade aumentada para programação – só que sem precisar tomar pílulas estranhas
+                    de um cara de barba.</p>
+                <p>O Visual Studio Code (ou VSCode, pros íntimos) é um editor de código open-source criado pela
+                    Microsoft. E antes que você torça o nariz: sim, a Microsoft. A mesma que fez o Internet Explorer.
+                    Mas dessa vez eles acertaram. Acertaram tanto que o VSCode é hoje o editor mais amado do planeta
+                    pelos programadores. É tipo a redenção do Darth Vader, só que em forma de software.</p>
+                <p><strong>Mas por que ele é tão foda?</strong></p>
+                <ul>
+                    <li><strong>É de graça.</strong> Não, sério. 100% gratuito. Nem pegadinha. Pode baixar, instalar,
+                        usar, amar.</li>
+                    <li><strong>Funciona em tudo:</strong> Windows, Mac, Linux – não importa se você é time Microsoft,
+                        maçã mordida ou pinguim.</li>
+                    <li><strong>Leve e rápido.</strong> Ele não é aquela bazuca chamada Visual Studio (o irmão mais
+                        velho bombado que pesa 50GB e demora uma eternidade pra abrir). O VSCode abre em segundos.</li>
+                    <li><strong>Extensões pra tudo quanto é lado.</strong> Quer programar em Python? Tem extensão. Em
+                        JavaScript? Tem. Em HTML/CSS? Tem. Em linguagem de signo? Provavelmente tem também.</li>
+                    <li><strong>Inteligência artificial integrada.</strong> O GitHub Copilot tá lá, pronto pra te ajudar
+                        a escrever código como se você tivesse um sênior de 20 anos de experiência olhando por cima do
+                        seu ombro.</li>
+                    <li><strong>Debugger embutido.</strong> Você vai errar. Muito. E o VSCode vai estar lá pra te ajudar
+                        a descobrir ONDE você errou.</li>
+                </ul>
+                <p><strong>O que você vai construir com ele?</strong></p>
+                <p>Com o VSCode, você vai:</p>
+                <ul>
+                    <li>Escrever HTML (a estrutura dos sites – tipo os ossos do esqueleto)</li>
+                    <li>Escrever CSS (a beleza, o estilo – tipo a roupa e maquiagem)</li>
+                    <li>Escrever JavaScript (a mágica, a interatividade – tipo o cérebro que faz as coisas acontecerem)
+                    </li>
+                    <li>Escrever Python (a linguagem versátil que serve pra tudo, desde site até inteligência
+                        artificial)</li>
+                </ul>
+                <p>E tudo isso no MESMO lugar. Sem precisar ficar alternando entre 15 programas diferentes. É tipo ter
+                    um canivete suíço com 500 funções, só que na tela do seu computador.</p>
+                <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center">
+                    <img src="../assets/images/imagem_1.jpg" alt="imagem 1" class="img-fluid">
+                </div>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- PARTE 2                                                      -->
+            <!-- ============================================================ -->
+            <section class="card glass-card p-4 p-lg-5 mb-5">
+                <h2 class="card-title display-6 fw-bold text-utfpr-yellow">
+                    <i class="fas fa-download me-3"></i> PARTE 2: INSTALAÇÃO – BAIXANDO O PODER
+                </h2>
+                <h4>Passo 1: Baixe o bichinho</h4>
+                <p>Abra seu navegador (Chrome, Firefox, Edge, ou aquele navegador estranho que você usa pra baixar
+                    jogos) e vá para:</p>
+                <p><a href="https://code.visualstudio.com/" target="_blank">👉 https://code.visualstudio.com/</a></p>
+                <p>O site é inteligente: ele já detecta qual é o seu sistema operacional e mostra o botão de download
+                    certo. Se não detectar, você pode escolher manualmente:</p>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Seu Sistema</th>
+                                <th>O que baixar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Windows</td>
+                                <td>.exe (o instalador normal)</td>
+                            </tr>
+                            <tr>
+                                <td>Mac</td>
+                                <td>.dmg (o instalador da Apple)</td>
+                            </tr>
+                            <tr>
+                                <td>Linux</td>
+                                <td>.deb, .rpm ou .tar.gz (depende da sua distribuição)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h4>Passo 2: Instale como um adulto responsável</h4>
+                <p><strong>No Windows:</strong></p>
+                <ol>
+                    <li>Clique duas vezes no arquivo <code>.exe</code> baixado</li>
+                    <li>Concorde com os termos (ninguém lê mesmo, mas clica em “Aceito”)</li>
+                    <li>Escolha a pasta de instalação (ou deixe a padrão, não seja rebelde)</li>
+                    <li><strong>IMPORTANTE:</strong> Na tela “Selecionar Tarefas Adicionais”, marque TODAS as opções,
+                        especialmente:
+                        <ul>
+                            <li>☑️ Adicionar “Abrir com Code” ao menu de contexto</li>
+                            <li>☑️ Registrar Code como editor para tipos de arquivo suportados</li>
+                            <li>☑️ Adicionar à variável PATH (isso é super importante pra rodar comandos)</li>
+                        </ul>
+                    </li>
+                    <li>Clique em “Instalar” e espere. Vai tomar um café. Ou dois.</li>
+                </ol>
+                <p><strong>No Mac:</strong></p>
+                <ol>
+                    <li>Clique duas vezes no arquivo <code>.dmg</code></li>
+                    <li>Arraste o ícone do VSCode para a pasta “Applications”</li>
+                    <li>Pronto. Sim, é só isso. A Apple gosta de fazer parecer fácil.</li>
+                </ol>
+                <p><strong>No Linux (Ubuntu/Debian):</strong></p>
+                <pre><code class="language-bash">sudo dpkg -i code_.deb
+# ou, se tiver Snap
+sudo snap install --classic code</code></pre>
+                <h4>Passo 3: Abra pela primeira vez</h4>
+                <p>Abra o VSCode. Você vai ver uma janela com uma cara mais ou menos assim:</p>
+                <ul>
+                    <li>Barra de Atividades (do lado esquerdo) com ícones bonitinhos</li>
+                    <li>Editor (no meio) – a área gigante onde a mágica acontece</li>
+                    <li>Barra de Status (embaixo) com informações úteis</li>
+                </ul>
+                <p>Se aparecer uma tela de boas-vindas, aproveite pra dar uma olhada. Mas se você é do tipo “pular
+                    tutorial e sair batendo”, pode fechar. A gente volta lá depois.</p>
+                <p><strong>🔥 BÔNUS: Configure o terminal integrado</strong></p>
+                <p>O VSCode vem com um terminal integrado que é uma maravilha. Você não precisa ficar alternando entre o
+                    editor e o CMD/PowerShell/Terminal.</p>
+                <p>Para abrir:</p>
+                <ul>
+                    <li>Windows/Linux: <code>Ctrl + `</code> (crase, a tecla do lado do 1)</li>
+                    <li>Mac: <code>Cmd + `</code> (crase)</li>
+                </ul>
+                <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                        src="../assets/images/imagem_2.jpg" alt="imagem 2" class="img-fluid">
+                </div>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- PARTE 3                                                      -->
+            <!-- ============================================================ -->
+            <section class="card glass-card p-4 p-lg-5 mb-5">
+                <h2 class="card-title display-6 fw-bold text-utfpr-yellow">
+                    <i class="fas fa-layer-group me-3"></i> PARTE 3: A INTERFACE – CONHECENDO OS BOTÕES MÁGICOS
+                </h2>
+                <p><strong>O Layout: Um tour guiado</strong></p>
+                <p>Imagine que o VSCode é uma nave espacial. Você é o piloto. Vamos conhecer o painel de controle:</p>
+                <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center">
+                    <img src="../assets/images/imagem_extra.jpg" alt="imagem extra" class="img-fluid">
+                </div>
+                <p><strong>1. A Barra de Atividades (lado esquerdo)</strong></p>
+                <p>É aquela coluna vertical com ícones. De cima pra baixo:</p>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Ícone</th>
+                                <th>Nome</th>
+                                <th>O que faz</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>📁</td>
+                                <td>Explorer</td>
+                                <td>Mostra seus arquivos e pastas</td>
+                            </tr>
+                            <tr>
+                                <td>🔍</td>
+                                <td>Search</td>
+                                <td>Procura texto em todos os arquivos</td>
+                            </tr>
+                            <tr>
+                                <td>🔀</td>
+                                <td>Source Control</td>
+                                <td>Controle de versão (Git)</td>
+                            </tr>
+                            <tr>
+                                <td>🐛</td>
+                                <td>Run and Debug</td>
+                                <td>Roda e depura seu código</td>
+                            </tr>
+                            <tr>
+                                <td>🧩</td>
+                                <td>Extensions</td>
+                                <td>Loja de extensões – a parte mais divertida</td>
+                            </tr>
+                            <tr>
+                                <td>👤</td>
+                                <td>Accounts</td>
+                                <td>Suas contas (GitHub, Microsoft)</td>
+                            </tr>
+                            <tr>
+                                <td>⚙️</td>
+                                <td>Manage</td>
+                                <td>Configurações, temas, etc</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p><strong>2. O Editor (centro)</strong></p>
+                <p>É a área gigante. Aqui você escreve código. Você pode abrir VÁRIOS arquivos ao mesmo tempo, cada um
+                    em sua própria aba. Pode até dividir a tela em duas, três, quatro partes – tipo um jogo de Tetris,
+                    mas produtivo.</p>
+                <p><strong>3. A Barra de Status (embaixo)</strong></p>
+                <p>Mostra informações úteis como:</p>
+                <ul>
+                    <li>Qual linguagem você está usando</li>
+                    <li>Em qual branch do Git você está</li>
+                    <li>Quantos problemas o código tem (spoiler: vai ter muitos)</li>
+                    <li>Encoding do arquivo</li>
+                    <li>Tamanho do arquivo</li>
+                </ul>
+                <p><strong>4. O Painel (embaixo do editor)</strong></p>
+                <p>É onde aparecem:</p>
+                <ul>
+                    <li>Terminal 🖥️ – seu amigo das horas vagas</li>
+                    <li>Problemas ⚠️ – os erros que você vai cometer</li>
+                    <li>Saída 📤 – logs e mensagens</li>
+                    <li>Console de Debug 🐛 – pra quando você está caçando bugs</li>
+                </ul>
+                <p><strong>O Comando Supremo: Command Palette</strong></p>
+                <p>Essa é a coisa mais importante que você vai aprender hoje. Sério. É tipo o “Avada Kedavra” do VSCode.
+                </p>
+                <p>Pressione:</p>
+                <ul>
+                    <li>Windows/Linux: <code>Ctrl + Shift + P</code></li>
+                    <li>Mac: <code>Cmd + Shift + P</code></li>
+                </ul>
+                <p>Isso abre a Command Palette. É uma caixinha de busca que permite ACESSAR QUALQUER FUNÇÃO do VSCode
+                    sem precisar ficar clicando em menus.</p>
+                <ul>
+                    <li>Quer abrir um arquivo? Digite “Open” e escolha.</li>
+                    <li>Quer mudar o tema? Digite “Theme” e escolha.</li>
+                    <li>Quer instalar uma extensão? Digite “Extensions” e escolha.</li>
+                    <li>Quer fazer café? Bem… essa ainda não tem, mas vai que na próxima versão.</li>
+                </ul>
+                <p><strong>DECORE ISSO:</strong> <code>Ctrl/Cmd + Shift + P</code> é seu novo melhor amigo. Use e abuse.
+                </p>
+                <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                        src="../assets/images/imagem_3.jpg" alt="imagem 3" class="img-fluid">
+                </div>
+                <p><strong>Atalhos que vão mudar sua vida</strong></p>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Ação</th>
+                                <th>Windows/Linux</th>
+                                <th>Mac</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Abrir Command Palette</td>
+                                <td><code>Ctrl+Shift+P</code></td>
+                                <td><code>Cmd+Shift+P</code></td>
+                            </tr>
+                            <tr>
+                                <td>Abrir arquivo rapidamente</td>
+                                <td><code>Ctrl+P</code></td>
+                                <td><code>Cmd+P</code></td>
+                            </tr>
+                            <tr>
+                                <td>Abrir/Fechar terminal</td>
+                                <td><code>Ctrl+`</code></td>
+                                <td><code>Cmd+`</code></td>
+                            </tr>
+                            <tr>
+                                <td>Buscar no arquivo</td>
+                                <td><code>Ctrl+F</code></td>
+                                <td><code>Cmd+F</code></td>
+                            </tr>
+                            <tr>
+                                <td>Buscar em todos os arquivos</td>
+                                <td><code>Ctrl+Shift+F</code></td>
+                                <td><code>Cmd+Shift+F</code></td>
+                            </tr>
+                            <tr>
+                                <td>Salvar</td>
+                                <td><code>Ctrl+S</code></td>
+                                <td><code>Cmd+S</code></td>
+                            </tr>
+                            <tr>
+                                <td>Desfazer</td>
+                                <td><code>Ctrl+Z</code></td>
+                                <td><code>Cmd+Z</code></td>
+                            </tr>
+                            <tr>
+                                <td>Refazer</td>
+                                <td><code>Ctrl+Y</code></td>
+                                <td><code>Cmd+Shift+Z</code></td>
+                            </tr>
+                            <tr>
+                                <td>Comentar linha</td>
+                                <td><code>Ctrl+/</code></td>
+                                <td><code>Cmd+/</code></td>
+                            </tr>
+                            <tr>
+                                <td>Duplicar linha</td>
+                                <td><code>Shift+Alt+↓</code></td>
+                                <td><code>Shift+Option+↓</code></td>
+                            </tr>
+                            <tr>
+                                <td>Mover linha pra cima/baixo</td>
+                                <td><code>Alt+↑/↓</code></td>
+                                <td><code>Option+↑/↓</code></td>
+                            </tr>
+                            <tr>
+                                <td>Abrir configurações</td>
+                                <td><code>Ctrl+,</code></td>
+                                <td><code>Cmd+,</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                        src="../assets/images/imagem_4.jpg" alt="imagem 4" class="img-fluid">
+                </div>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- PARTE 4                                                      -->
+            <!-- ============================================================ -->
+            <section class="card glass-card p-4 p-lg-5 mb-5">
+                <h2 class="card-title display-6 fw-bold text-utfpr-yellow">
+                    <i class="fas fa-puzzle-piece me-3"></i> PARTE 4: EXTENSÕES – TORNANDO O VSCODE UM SUPER-EDITOR
+                </h2>
+                <p>O VSCode “puro” já é bom. Mas com extensões, ele vira uma nave espacial com turbo, laser e piloto
+                    automático.</p>
+                <p><strong>Como instalar extensões</strong></p>
+                <ol>
+                    <li>Clique no ícone de 🧩 Extensions na barra de atividades (ou <code>Ctrl+Shift+X</code>)</li>
+                    <li>Digite o nome da extensão que você quer</li>
+                    <li>Clique em “Install”</li>
+                    <li>Pronto. É literalmente isso.</li>
+                </ol>
+                <p><strong>As extensões OBRIGATÓRIAS pra você</strong></p>
+                <p><em>Para HTML/CSS/JavaScript:</em></p>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Extensão</th>
+                                <th>O que faz</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Live Server</td>
+                                <td>Abre seu HTML no navegador com atualização automática – você muda o código, a página
+                                    recarrega sozinha. É mágico.</td>
+                            </tr>
+                            <tr>
+                                <td>Prettier</td>
+                                <td>Formata seu código automaticamente. Adeus, bagunça. Olá, código bonito.</td>
+                            </tr>
+                            <tr>
+                                <td>Auto Rename Tag</td>
+                                <td>Muda a tag de abertura e a de fechamento juntas. Se você mudar
+                                    <code>&lt;div&gt;</code> pra <code>&lt;section&gt;</code>, a fechação
+                                    <code>&lt;/div&gt;</code> vira <code>&lt;/section&gt;</code> automaticamente.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>ESLint</td>
+                                <td>Aponta erros de JavaScript antes mesmo de você rodar o código.</td>
+                            </tr>
+                            <tr>
+                                <td>HTML CSS Support</td>
+                                <td>Autocomplete pra classes CSS dentro do HTML.</td>
+                            </tr>
+                            <tr>
+                                <td>Path Intellisense</td>
+                                <td>Autocomplete pra caminhos de arquivos.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p><em>Para Python:</em></p>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Extensão</th>
+                                <th>O que faz</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Python (da Microsoft)</td>
+                                <td>A extensão definitiva. Dá IntelliSense, debug, linting, formatação, testes – TUDO.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Pylance</td>
+                                <td>O interpretador de Python que faz o autocomplete funcionar como mágica.</td>
+                            </tr>
+                            <tr>
+                                <td>Python Indent</td>
+                                <td>Corrige indentação automaticamente (coisa que todo iniciante em Python sofre).</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p><strong>Extras que você vai amar:</strong></p>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Extensão</th>
+                                <th>O que faz</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Material Icon Theme</td>
+                                <td>Deixa os ícones dos arquivos bonitões. Seu projeto vai ficar com cara de projeto
+                                    profissional.</td>
+                            </tr>
+                            <tr>
+                                <td>Bracket Pair Colorizer</td>
+                                <td>Colore parênteses, colchetes e chaves pra você saber qual abre com qual fecha.</td>
+                            </tr>
+                            <tr>
+                                <td>Todo Tree</td>
+                                <td>Mostra todos os <code>TODO:</code> e <code>FIXME:</code> do seu código num lugar só.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                        src="../assets/images/imagem_5.jpg" alt="imagem 5" class="img-fluid">
+                </div>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- PARTE 5                                                      -->
+            <!-- ============================================================ -->
+            <section class="card glass-card p-4 p-lg-5 mb-5">
+                <h2 class="card-title display-6 fw-bold text-utfpr-yellow">
+                    <i class="fas fa-code me-3"></i> PARTE 5: SEU PRIMEIRO PROJETO – MÃO NA MASSA
+                </h2>
+                <p>Agora a coisa fica séria. Vamos criar seu primeiro projeto. E não, não vai ser um “Hello World”
+                    genérico – vai ser uma página de portfólio maneira.</p>
+                <p><strong>Passo 1: Crie uma pasta pro projeto</strong></p>
+                <p>No seu computador, crie uma pasta chamada <code>meu-primeiro-projeto</code>. Pode ser na área de
+                    trabalho, nos documentos, onde você quiser.</p>
+                <p><strong>Passo 2: Abra a pasta no VSCode</strong></p>
+                <p>No VSCode:</p>
+                <ul>
+                    <li>Clique em File > Open Folder (ou Arquivo > Abrir Pasta)</li>
+                    <li>Navegue até sua pasta e selecione</li>
+                </ul>
+                <p>Pronto. Agora a pasta aparece no Explorer do VSCode.</p>
+                <p><strong>Passo 3: Crie seus arquivos</strong></p>
+                <p>No Explorer (lado esquerdo), clique no ícone de “New File” (ou botão direito > New File) e crie:</p>
+                <ol>
+                    <li><code>index.html</code> – a página principal</li>
+                    <li><code>style.css</code> – os estilos</li>
+                    <li><code>script.js</code> – a interatividade</li>
+                    <li><code>app.py</code> – o Python (porque sim, vamos misturar tudo)</li>
+                </ol>
+                <p><strong>Passo 4: Escreva o HTML</strong></p>
+                <p>No <code>index.html</code>, escreva:</p>
+                <div class="code-block position-relative mb-3">
+                    <button class="btn btn-sm btn-copy-code position-absolute top-0 end-0 m-2" data-code-target="code1">
+                        <i class="fas fa-copy me-1"></i> Copiar
+                    </button>
+                    <pre><code class="language-html" id="code1">&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Eu, Programador&lt;/title&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;🚀 Olá, mundo!&lt;/h1&gt;
+  &lt;p&gt;Este é meu primeiro projeto no VSCode.&lt;/p&gt;
+  &lt;button id="botao-magico"&gt;Clique aqui&lt;/button&gt;
+  &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div>
+                <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                        src="../assets/images/imagem_6.jpg" alt="imagem 6" class="img-fluid">
+                </div>
+                <p><strong>Passo 5: Escreva o CSS</strong></p>
+                <p>No <code>style.css</code>:</p>
+                <div class="code-block position-relative mb-3">
+                    <button class="btn btn-sm btn-copy-code position-absolute top-0 end-0 m-2" data-code-target="code2">
+                        <i class="fas fa-copy me-1"></i> Copiar
+                    </button>
+                    <pre><code class="language-css" id="code2">body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+}
+button {
+  background: white;
+  color: #764ba2;
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+button:hover {
+  transform: scale(1.1);
+}</code></pre>
+                </div>
+                <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                        src="../assets/images/imagem_7.jpg" alt="imagem 7" class="img-fluid">
+                </div>
+                <p><strong>Passo 6: Escreva o JavaScript</strong></p>
+                <p>No <code>script.js</code>:</p>
+                <div class="code-block position-relative mb-3">
+                    <button class="btn btn-sm btn-copy-code position-absolute top-0 end-0 m-2" data-code-target="code3">
+                        <i class="fas fa-copy me-1"></i> Copiar
+                    </button>
+                    <pre><code class="language-javascript" id="code3">document.getElementById('botao-magico').addEventListener('click', function() {
+  alert('🎉 Você clicou! O VSCode é demais!');
+});</code></pre>
+                </div>
+                <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                        src="../assets/images/imagem_8.jpg" alt="imagem 8" class="img-fluid">
+                </div>
+                <p><strong>Passo 7: Escreva o Python</strong></p>
+                <p>No <code>app.py</code>:</p>
+                <div class="code-block position-relative mb-3">
+                    <button class="btn btn-sm btn-copy-code position-absolute top-0 end-0 m-2" data-code-target="code4">
+                        <i class="fas fa-copy me-1"></i> Copiar
+                    </button>
+                    <pre><code class="language-python" id="code4">print("🐍 Olá do Python!")
+nome = input("Qual é o seu nome? ")
+print(f"Bem-vindo ao VSCode, {nome}!")</code></pre>
+                </div>
+                <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                        src="../assets/images/imagem_9.jpg" alt="imagem 9" class="img-fluid">
+                </div>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- PARTE 6                                                      -->
+            <!-- ============================================================ -->
+            <section class="card glass-card p-4 p-lg-5 mb-5">
+                <h2 class="card-title display-6 fw-bold text-utfpr-yellow">
+                    <i class="fas fa-play me-3"></i> PARTE 6: RODANDO O CÓDIGO – HORA DO SHOW
+                </h2>
+                <p><strong>Rodar HTML com Live Server</strong></p>
+                <ol>
+                    <li>Instale a extensão Live Server (se já não instalou)</li>
+                    <li>Com o <code>index.html</code> aberto, clique com o botão direito no editor</li>
+                    <li>Escolha “Open with Live Server”</li>
+                    <li>Seu navegador abre automaticamente com a página</li>
+                    <li>Qualquer mudança no código atualiza a página instantaneamente</li>
+                </ol>
+                <p>É tipo mágica, mas é tecnologia.</p>
+                <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                        src="../assets/images/imagem_10.jpg" alt="imagem 10" class="img-fluid">
+                </div>
+                <p><strong>Rodar JavaScript</strong></p>
+                <p>Se seu JS está no HTML (ou conectado via <code>&lt;script src=""&gt;</code>), o Live Server já
+                    executa.</p>
+                <p>Se quiser rodar JS puro no terminal:</p>
+                <ol>
+                    <li>Instale o Node.js (se não tiver)</li>
+                    <li>Abra o terminal integrado (<code>Ctrl + `</code>)</li>
+                    <li>Rode: <code>node script.js</code></li>
+                </ol>
+                <p><strong>Rodar Python</strong></p>
+                <ol>
+                    <li>Instale a extensão Python da Microsoft</li>
+                    <li>Com o <code>app.py</code> aberto, clique no triângulo ▶️ no canto superior direito</li>
+                    <li>Ou use o terminal: <code>python app.py</code></li>
+                </ol>
+                <p>O VSCode automaticamente detecta seu interpretador Python e roda o código.</p>
+
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- PARTE 7                                                      -->
+            <!-- ============================================================ -->
+            <section class="card glass-card p-4 p-lg-5 mb-5">
+                <h2 class="card-title display-6 fw-bold text-utfpr-yellow">
+                    <i class="fas fa-bug me-3"></i> PARTE 7: DEBUGANDO – CAÇANDO BUGS COMO UM PROFISSIONAL
+                </h2>
+                <p>Você vai errar. Todo mundo erra. O importante é saber encontrar os erros.</p>
+                <p><strong>Como debugar no VSCode</strong></p>
+                <ol>
+                    <li>Clique no ícone 🐛 da barra de atividades (Run and Debug)</li>
+                    <li>Clique em “Run and Debug” (ou <code>F5</code>)</li>
+                    <li>Escolha o ambiente (Python, Node.js, etc)</li>
+                    <li>O VSCode cria um arquivo <code>launch.json</code> com a configuração</li>
+                </ol>
+                <p><strong>Colocando breakpoints</strong></p>
+                <p>Breakpoints são “pontos de parada” – o código para naquela linha e você pode inspecionar tudo.</p>
+                <p>Para colocar um:</p>
+                <ul>
+                    <li>Clique na margem esquerda do editor (ao lado do número da linha)</li>
+                    <li>Aparece uma bolinha vermelha 🔴</li>
+                </ul>
+                <p>Quando o código chegar naquele ponto, ele PARA. Aí você pode:</p>
+                <ul>
+                    <li>Ver valores de variáveis</li>
+                    <li>Ver a call stack (quem chamou quem)</li>
+                    <li>Ver o que está na memória</li>
+                </ul>
+                <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                        src="../assets/images/imagem_11.jpg" alt="imagem 11" class="img-fluid">
+                </div>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- PARTE 8                                                      -->
+            <!-- ============================================================ -->
+            <section class="card glass-card p-4 p-lg-5 mb-5">
+                <h2 class="card-title display-6 fw-bold text-utfpr-yellow">
+                    <i class="fas fa-sliders-h me-3"></i> PARTE 8: CONFIGURAÇÕES – DEIXANDO DO SEU JEITO
+                </h2>
+                <p><strong>Mudando o tema</strong></p>
+                <p>O tema padrão é bonito, mas você pode mudar:</p>
+                <ol>
+                    <li><code>Ctrl/Cmd + Shift + P</code></li>
+                    <li>Digite “Color Theme”</li>
+                    <li>Escolha um: Dark+, Light+, Solarized, One Dark Pro, etc</li>
+                </ol>
+
+                <p><strong>Configurações importantes</strong></p>
+                <p>Abra as configurações (<code>Ctrl+,</code> ou <code>Cmd+,</code>) e ajuste:</p>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Configuração</th>
+                                <th>O que faz</th>
+                                <th>Recomendação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>editor.fontSize</code></td>
+                                <td>Tamanho da fonte</td>
+                                <td>16 (seus olhos agradecem)</td>
+                            </tr>
+                            <tr>
+                                <td><code>editor.fontFamily</code></td>
+                                <td>Fonte do código</td>
+                                <td>'Fira Code', 'Cascadia Code' (fontes com ligaturas)</td>
+                            </tr>
+                            <tr>
+                                <td><code>editor.wordWrap</code></td>
+                                <td>Quebrar linhas longas</td>
+                                <td>"on"</td>
+                            </tr>
+                            <tr>
+                                <td><code>editor.minimap.enabled</code></td>
+                                <td>Mapa do código</td>
+                                <td>true (ajuda a navegar)</td>
+                            </tr>
+                            <tr>
+                                <td><code>editor.renderWhitespace</code></td>
+                                <td>Mostrar espaços</td>
+                                <td>"all" (ajuda a ver espaços extras)</td>
+                            </tr>
+                            <tr>
+                                <td><code>workbench.colorTheme</code></td>
+                                <td>Tema</td>
+                                <td>"Dark Modern" ou "One Dark Pro"</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p><strong>Configurações via JSON</strong></p>
+                <p>Se você é old-school, pode editar o arquivo JSON diretamente:</p>
+                <ol>
+                    <li><code>Ctrl/Cmd + Shift + P</code></li>
+                    <li>Digite “Open User Settings (JSON)”</li>
+                    <li>Adicione suas configurações:</li>
+                </ol>
+                <div class="code-block position-relative mb-3">
+                    <button class="btn btn-sm btn-copy-code position-absolute top-0 end-0 m-2" data-code-target="code5">
+                        <i class="fas fa-copy me-1"></i> Copiar
+                    </button>
+                    <pre><code class="language-json" id="code5">{
+  "editor.fontSize": 16,
+  "editor.fontFamily": "'Fira Code', 'Cascadia Code', monospace",
+  "editor.fontLigatures": true,
+  "workbench.colorTheme": "One Dark Pro",
+  "editor.minimap.enabled": true
+}</code></pre>
+                </div>
+                <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                        src="../assets/images/imagem_13.jpg" alt="imagem 13" class="img-fluid">
+                </div>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- PARTE 9                                                      -->
+            <!-- ============================================================ -->
+            <section class="card glass-card p-4 p-lg-5 mb-5">
+                <h2 class="card-title display-6 fw-bold text-utfpr-yellow">
+                    <i class="fas fa-code-branch me-3"></i> PARTE 9: CONTROLE DE VERSÃO – GIT INTEGRADO
+                </h2>
+                <p>O VSCode tem Git integrado. Você não precisa sair do editor pra dar commit.</p>
+                <p><strong>Inicializar um repositório</strong></p>
+                <ol>
+                    <li>Abra a aba Source Control (🔀)</li>
+                    <li>Clique em “Initialize Repository”</li>
+                    <li>Seu projeto agora está sob controle de versão</li>
+                </ol>
+                <p><strong>Fazer commit</strong></p>
+                <ol>
+                    <li>Faça alterações nos arquivos</li>
+                    <li>Na aba Source Control, os arquivos aparecem como modificados</li>
+                    <li>Clique no + ao lado de cada arquivo (stage)</li>
+                    <li>Escreva uma mensagem de commit</li>
+                    <li>Clique em Commit</li>
+                </ol>
+                <p><strong>Publicar no GitHub</strong></p>
+                <ol>
+                    <li>Clique em “Publish Branch”</li>
+                    <li>Escolha se quer público ou privado</li>
+                    <li>Pronto. Seu código tá no GitHub</li>
+                </ol>
+                <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                        src="../assets/images/imagem_15.jpg" alt="imagem 15" class="img-fluid">
+                </div>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- PARTE 10                                                     -->
+            <!-- ============================================================ -->
+            <section class="card glass-card p-4 p-lg-5 mb-5">
+                <h2 class="card-title display-6 fw-bold text-utfpr-yellow">
+                    <i class="fas fa-terminal me-3"></i> PARTE 10: TERMINAL INTEGRADO – SEU MELHOR AMIGO
+                </h2>
+                <p>O terminal integrado é uma das melhores coisas do VSCode.</p>
+                <p><strong>Comandos básicos que você vai usar</strong></p>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Comando</th>
+                                <th>O que faz</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>ls</code> (Mac/Linux) / <code>dir</code> (Windows)</td>
+                                <td>Lista arquivos</td>
+                            </tr>
+                            <tr>
+                                <td><code>cd pasta</code></td>
+                                <td>Entra na pasta</td>
+                            </tr>
+                            <tr>
+                                <td><code>mkdir nome</code></td>
+                                <td>Cria uma pasta</td>
+                            </tr>
+                            <tr>
+                                <td><code>touch arquivo</code> (Mac/Linux) / <code>type nul > arquivo</code> (Windows)
+                                </td>
+                                <td>Cria um arquivo</td>
+                            </tr>
+                            <tr>
+                                <td><code>python app.py</code></td>
+                                <td>Roda um script Python</td>
+                            </tr>
+                            <tr>
+                                <td><code>node script.js</code></td>
+                                <td>Roda um script JavaScript</td>
+                            </tr>
+                            <tr>
+                                <td><code>git status</code></td>
+                                <td>Verifica o status do Git</td>
+                            </tr>
+                            <tr>
+                                <td><code>npm install</code></td>
+                                <td>Instala pacotes Node</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p><strong>Dica de ouro</strong></p>
+                <p>Se você está na pasta errada no terminal, clique com o botão direito em qualquer arquivo no Explorer
+                    e escolha “Open in Integrated Terminal”. O terminal abre já naquela pasta. Genial.</p>
+                <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                        src="../assets/images/imagem_16.jpg" alt="imagem 16" class="img-fluid">
+                </div>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- PARTE 11                                                     -->
+            <!-- ============================================================ -->
+            <section class="card glass-card p-4 p-lg-5 mb-5">
+                <h2 class="card-title display-6 fw-bold text-utfpr-yellow">
+                    <i class="fas fa-keyboard me-3"></i> PARTE 11: ATALHOS AVANÇADOS – VIRANDO UM NINJA
+                </h2>
+                <p><strong>Navegação</strong></p>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Ação</th>
+                                <th>Atalho</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ir para linha específica</td>
+                                <td><code>Ctrl+G</code></td>
+                            </tr>
+                            <tr>
+                                <td>Ir para símbolo (função, classe)</td>
+                                <td><code>Ctrl+Shift+O</code></td>
+                            </tr>
+                            <tr>
+                                <td>Ir para arquivo</td>
+                                <td><code>Ctrl+P</code></td>
+                            </tr>
+                            <tr>
+                                <td>Voltar/avançar na navegação</td>
+                                <td><code>Alt+←</code> / <code>Alt+→</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p><strong>Edição</strong></p>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Ação</th>
+                                <th>Atalho</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mover linha</td>
+                                <td><code>Alt+↑/↓</code></td>
+                            </tr>
+                            <tr>
+                                <td>Duplicar linha</td>
+                                <td><code>Shift+Alt+↑/↓</code></td>
+                            </tr>
+                            <tr>
+                                <td>Selecionar múltiplas ocorrências</td>
+                                <td><code>Ctrl+D</code></td>
+                            </tr>
+                            <tr>
+                                <td>Comentar bloco</td>
+                                <td><code>Ctrl+Shift+/</code></td>
+                            </tr>
+                            <tr>
+                                <td>Formatar documento</td>
+                                <td><code>Shift+Alt+F</code></td>
+                            </tr>
+                            <tr>
+                                <td>Abrir sugestões</td>
+                                <td><code>Ctrl+Space</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p><strong>Multi-cursor</strong></p>
+                <p>Segure <code>Alt</code> (Windows/Linux) ou <code>Option</code> (Mac) e clique em vários lugares. Você
+                    pode escrever em vários lugares AO MESMO TEMPO. É insano. Use com responsabilidade.</p>
+                <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                        src="../assets/images/imagem_17.jpg" alt="imagem 17" class="img-fluid">
+                </div>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- PARTE 12                                                     -->
+            <!-- ============================================================ -->
+            <section class="card glass-card p-4 p-lg-5 mb-5">
+                <h2 class="card-title display-6 fw-bold text-utfpr-yellow">
+                    <i class="fas fa-lightbulb me-3"></i> PARTE 12: DICAS E TRUQUES QUE NINGUÉM TE CONTA
+                </h2>
+                <ol>
+                    <li><strong>Preview do Markdown</strong> – Se você escrever arquivos <code>.md</code>, clique no
+                        ícone de “Open Preview” no canto superior direito. Você vê o Markdown renderizado ao vivo.</li>
+                    <li><strong>Zen Mode</strong> – <code>Ctrl+K Z</code> (ou <code>Cmd+K Z</code> no Mac) entra no modo
+                        ZEN – tela cheia, sem distrações. Só você e o código.</li>
+                    <li><strong>Emmet no HTML</strong> – Digite <code>div.container>ul>li*3</code> e aperte
+                        <code>Tab</code>. O VSCode expande para:
+                        <pre><code>&lt;div class="container"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+                    </li>
+                    <li><strong>Snippets</strong> – Digite <code>!</code> num arquivo HTML e aperte <code>Tab</code>. O
+                        VSCode gera a estrutura HTML completa. Obrigado, snippets.</li>
+                    <li><strong>Command Palette com fuzzy search</strong> – Na Command Palette, você não precisa digitar
+                        o nome exato. Digite “the” e aparece “Color Theme”. O VSCode é inteligente.</li>
+                    <li><strong>Abrir arquivos com <code>Ctrl+P</code></strong> – <code>Ctrl+P</code> (ou
+                        <code>Cmd+P</code>) é mais rápido que ficar navegando pelo Explorer. Digite o nome do arquivo e
+                        aperte Enter.
+                    </li>
+                    <li><strong>Comparar arquivos</strong> – Selecione dois arquivos no Explorer, clique com o botão
+                        direito e escolha “Compare Selected”. O VSCode mostra as diferenças lado a lado.</li>
+                </ol>
+                <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                        src="../assets/images/imagem_18.jpg" alt="imagem 18" class="img-fluid">
+                </div>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- PARTE 13                                                     -->
+            <!-- ============================================================ -->
+            <section class="card glass-card p-4 p-lg-5 mb-5">
+                <h2 class="card-title display-6 fw-bold text-utfpr-yellow">
+                    <i class="fas fa-question-circle me-3"></i> PARTE 13: PERGUNTAS FREQUENTES (FAQ)
+                </h2>
+                <dl>
+                    <dt>P: O VSCode é realmente grátis?</dt>
+                    <dd>R: Sim. 100% grátis. Não tem pegadinha. A Microsoft ganha dinheiro com o GitHub e o Copilot, não
+                        com o VSCode.</dd>
+
+                    <dt>P: Preciso saber programar pra usar?</dt>
+                    <dd>R: Não. O VSCode é uma ferramenta. Você vai aprender programando. É tipo perguntar se precisa
+                        saber dirigir pra comprar um carro.</dd>
+
+                    <dt>P: Qual a diferença entre VSCode e Visual Studio?</dt>
+                    <dd>R: O Visual Studio é um IDE pesadão pra desenvolvimento enterprise (C#, .NET, etc). O VSCode é
+                        um editor leve e versátil. Pense no Visual Studio como um caminhão e no VSCode como uma
+                        bicicleta que você pode turbinar com extensões.</dd>
+
+                    <dt>P: Posso usar VSCode pra outras linguagens além das que você falou?</dt>
+                    <dd>R: SIM! Tem extensão pra C, C++, Java, Go, Rust, PHP, Ruby, Swift, Kotlin… basicamente qualquer
+                        linguagem que existe.</dd>
+
+                    <dt>P: O VSCode tem suporte a IA?</dt>
+                    <dd>R: Tem o GitHub Copilot integrado. Se você assinar (ou usar a versão grátis com limite mensal),
+                        ele sugere código enquanto você digita. É tipo ter um parceiro de programação.</dd>
+
+                    <dt>P: Posso sincronizar minhas configurações entre computadores?</dt>
+                    <dd>R: Sim! Com o Settings Sync, você loga com sua conta GitHub ou Microsoft e todas as
+                        configurações, extensões e temas sincronizam automaticamente.</dd>
+                </dl>
+                <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                        src="../assets/images/imagem_19.jpg" alt="imagem 19" class="img-fluid">
+                </div>to e vírgula.”
         </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- PARTE 14                                                     -->
+        <!-- ============================================================ -->
+        <section class="card glass-card p-4 p-lg-5 mb-5">
+            <h2 class="card-title display-6 fw-bold text-utfpr-yellow">
+                <i class="fas fa-exclamation-triangle me-3"></i> PARTE 14: O QUE FAZER QUANDO DERR PRA ERRO
+            </h2>
+            <p><strong>Erros comuns e como resolver</strong></p>
+            <dl>
+                <dt>“Python não encontrado”</dt>
+                <dd>– Você não instalou o Python<br>– Baixe em python.org e instale<br>– Ou no terminal:
+                    <code>sudo apt install python3</code> (Linux)
+                </dd>
+
+                <dt>“Live Server não funciona”</dt>
+                <dd>– Verifique se a extensão está instalada<br>– Tente reiniciar o VSCode<br>– Verifique se o
+                    arquivo é <code>.html</code></dd>
+
+                <dt>“O VSCode não reconhece meu comando”</dt>
+                <dd>– Você precisa instalar a extensão certa<br>– Ou o comando que você quer executar não existe no
+                    seu PATH</dd>
+
+                <dt>“O código não roda e não sei por quê”</dt>
+                <dd>– Olhe o painel PROBLEMAS (embaixo)<br>– Ele mostra todos os erros de sintaxe<br>– É seu novo
+                    melhor amigo</dd>
+
+                <dt>“Perdi minhas configurações”</dt>
+                <dd>– Elas estão num arquivo JSON. Use a Command Palette e busque “Open User Settings (JSON)”<br>–
+                    Ou ative o Settings Sync e restaure</dd>
+            </dl>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- PARTE 15                                                     -->
+        <!-- ============================================================ -->
+        <section class="card glass-card p-4 p-lg-5 mb-5">
+            <h2 class="card-title display-6 fw-bold text-utfpr-yellow">
+                <i class="fas fa-crown me-3"></i> PARTE 15: BÔNUS – COMO PARECER UM PROGRAMADOR PROFISSIONAL
+            </h2>
+            <ol>
+                <li>Use temas escuros. É clichê, mas funciona. Dark Modern, One Dark Pro, Dracula – todos são
+                    aceitáveis.</li>
+                <li>Use fontes com ligaturas. Fira Code, Cascadia Code, JetBrains Mono. Elas transformam
+                    <code>!=</code> em ≠ e <code>=></code> em ⇒. Parece mágica.
+                </li>
+                <li>Decore os atalhos. Não precisa saber todos, mas saber os principais (Command Palette, abrir
+                    arquivos, terminal) te faz parecer um ninja.</li>
+                <li>Use o terminal integrado. Nada grita “sou profissional” como abrir o terminal dentro do editor
+                    em vez de abrir um CMD separado.</li>
+                <li>Faça commits frequentes. Git integrado + commits com mensagens boas = você parece um sênior.
+                </li>
+                <li>Personalize. Mude o tema, instale extensões, configure atalhos. Seu VSCode é seu. Faça dele sua
+                    casa.</li>
+            </ol>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_20.jpg" alt="imagem 20" class="img-fluid">
+            </div>
+            <p><strong>CONCLUSÃO</strong></p>
+            <p>Parabéns! Você agora sabe o suficiente sobre VSCode pra começar a programar como um verdadeiro(a)
+                dev. Não importa se você vai fazer HTML, CSS, JavaScript ou Python – o VSCode vai estar lá, firme e
+                forte, te ajudando a transformar suas ideias em código.</p>
+            <p>Lembre-se:</p>
+            <ul>
+                <li>A Command Palette é sua amiga (<code>Ctrl/Cmd + Shift + P</code>)</li>
+                <li>Extensões são superpoderes</li>
+                <li>O terminal integrado é seu aliado</li>
+                <li>Debugger é seu detector de mentiras</li>
+            </ul>
+            <p>Agora vai. Abre o VSCode, cria um projeto, e começa a codar. O mundo precisa do que você vai criar.
+            </p>
+            <p>E se der erro? Relaxa. É só um bug. Você tem as ferramentas pra consertar.</p>
+            <p class="display-6 fw-bold">🚀 Bora codar!</p>
+            <p><em>“O VSCode não é apenas um editor. É um estilo de vida.” – Alguém na internet, provavelmente.</em>
+            </p>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- ÍNDICE DAS PARTES                                            -->
+        <!-- ============================================================ -->
+        <section class="card glass-card p-4 p-lg-5 mb-5">
+            <h2 class="card-title display-6 fw-bold text-utfpr-yellow">
+                <i class="fas fa-list me-3"></i> ÍNDICE DAS PARTES
+            </h2>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Parte</th>
+                            <th>Título</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>O que é essa ferramenta e por que você deve amar ela</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Instalação – baixando o poder</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A interface – conhecendo os botões mágicos</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Extensões – tornando o VSCode um super-editor</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Seu primeiro projeto – mão na massa</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Rodando o código – hora do show</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Debugando – caçando bugs como um profissional</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Configurações – deixando do seu jeito</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Controle de versão – Git integrado</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Terminal integrado – seu melhor amigo</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>Atalhos avançados – virando um ninja</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>Dicas e truques que ninguém te conta</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>Perguntas frequentes (FAQ)</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>O que fazer quando der pra erro</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>Bônus – como parecer um programador profissional</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- PARTE 2 DETALHADA (continuação)                              -->
+        <!-- ============================================================ -->
+        <section class="card glass-card p-4 p-lg-5 mb-5">
+            <h2 class="card-title display-6 fw-bold text-utfpr-yellow">
+                <i class="fas fa-cog me-3"></i> 🚀 PARTE 2: INSTALAÇÃO DETALHADA – BAIXANDO O PODER (DE VERDADE)
+            </h2>
+            <p><strong>Bem-vindo à matriz, parte 2</strong></p>
+            <p>Na parte 1, você conheceu o VSCode e ficou de queixo caído com tanta promessa. Agora é hora de
+                colocar a mão na massa e instalar essa belezinha. E não, não é só “baixar e next, next, finish” –
+                tem detalhes que fazem toda a diferença e que ninguém te conta.</p>
+            <p>Pega um café (ou uma cerveja, não vou julgar), respira fundo e bora.</p>
+
+            <h4>📦 INSTALAÇÃO NO WINDOWS – O PASSO A PASSO QUE NINGUÉM TE DEU</h4>
+            <p><strong>Escolhendo seu instalador: User vs System vs ZIP</strong></p>
+            <p>O VSCode no Windows vem em três sabores:</p>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Tipo</th>
+                            <th>O que é</th>
+                            <th>Quando usar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>User Installer (recomendado)</td>
+                            <td>Instala só pro seu usuário. Não precisa de senha de administrador.</td>
+                            <td>99% dos casos é o que você vai usar. Atualizações mais suaves.</td>
+                        </tr>
+                        <tr>
+                            <td>System Installer</td>
+                            <td>Instala pra todos os usuários do computador. Precisa de permissão de admin.</td>
+                            <td>Computadores compartilhados (tipo o PC da família ou do trampo).</td>
+                        </tr>
+                        <tr>
+                            <td>ZIP Archive</td>
+                            <td>Um arquivo zipado. Só extrair e rodar.</td>
+                            <td>Quer levar o VSCode num pendrive? É pra isso.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Minha recomendação: baixe o User Installer. É o mais simples, não enche o saco pedindo senha e
+                atualiza sozinho igual mágica.</p>
+            <p><strong>Passo 1: Baixe o instalador</strong></p>
+            <ol>
+                <li>Abra seu navegador (se ainda tiver coragem depois de tantas abas abertas)</li>
+                <li>Vá para https://code.visualstudio.com/Download</li>
+                <li>O site já detecta que você está no Windows e mostra o botão certo</li>
+                <li>Clique no botão de download. O arquivo vai se chamar algo como
+                    <code>VSCodeUserSetup-x64-1.XX.X.exe</code>
+                </li>
+            </ol>
+            <p>🔥 DICA DE OURO: Se você tem um PC com processador ARM (tipo os novos Snapdragon), baixe a versão ARM
+                específica. Senão, o x64 padrão resolve.</p>
+            <p><strong>Passo 2: Execute o instalador</strong></p>
+            <ol>
+                <li>Dê dois cliques no arquivo <code>.exe</code> baixado</li>
+                <li>Tela 1 – Licença: “Aceito o contrato” → ✅ (ninguém lê mesmo, mas finge que leu)</li>
+                <li>Tela 2 – Local de instalação:
+                    <ul>
+                        <li>O padrão é <code>C:\Users\SeuUsuario\AppData\Local\Programs\Microsoft VS Code</code>
+                        </li>
+                        <li>⚠️ ATENÇÃO: Alguns “especialistas” vão dizer pra instalar em outro disco. IGNORE. Deixa
+                            onde está. O VSCode é leve (< 100 MB), não vai encher seu SSD.</li>
+                    </ul>
+                </li>
+                <li>Tela 3 – Pasta do Menu Iniciar: Deixa padrão. Next.</li>
+                <li><strong>TELA 4 – A MAIS IMPORTANTE DE TODAS (presta atenção aqui):</strong>
+                    <p>Aparecem umas caixinhas pra marcar. MARCA TUDO:</p>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Opção</th>
+                                    <th>Por que marcar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>☑️ Add “Open with Code” action to Windows Explorer file context menu</td>
+                                    <td>Clica com botão direito em qualquer arquivo e abre no VSCode. Mudança de
+                                        vida.</td>
+                                </tr>
+                                <tr>
+                                    <td>☑️ Add “Open with Code” action to Windows Explorer directory context menu
+                                    </td>
+                                    <td>Clica com botão direito em qualquer PASTA e abre no VSCode. Mais mudança de
+                                        vida.</td>
+                                </tr>
+                                <tr>
+                                    <td>☑️ Register Code as an editor for supported file types</td>
+                                    <td>Arquivos .txt, .html, .js, etc abrem no VSCode por padrão.</td>
+                                </tr>
+                                <tr>
+                                    <td>☑️ Add to PATH (a mais importante)</td>
+                                    <td>Permite digitar <code>code</code> no terminal e abrir o VSCode. SEM ISSO
+                                        VOCÊ É UM MERO MORTAL.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                <li>Tela 5 – Pronto pra instalar: Confere se tá tudo certo e clica em “Instalar”</li>
+                <li>Espera a barra de progresso encher (dá tempo de tomar um gole d’água)</li>
+                <li>Tela 6 – Concluído: Clica em “Concluir” e o VSCode abre</li>
+            </ol>
+            <p><strong>Passo 3: Verifique se deu certo</strong></p>
+            <p>Abra o Prompt de Comando ou PowerShell (digita “cmd” no menu iniciar) e digite:</p>
+            <pre><code class="language-bash">code --version</code></pre>
+            <p>Se aparecer um número de versão (tipo <code>1.85.0</code>), deu certo. Se aparecer
+                <code>'code' não é reconhecido</code>, você esqueceu de marcar “Add to PATH” – volta, reinstala e
+                marca a porcaria da caixinha.
+            </p>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_21.jpg" alt="imagem 21" class="img-fluid">
+            </div>
+
+            <h4>🍎 INSTALAÇÃO NO MAC – A VERSÃO “É SÓ ARRASTAR” (MENTIRA, TEM DETALHE)</h4>
+            <p><strong>Passo 1: Baixe o .dmg</strong></p>
+            <ol>
+                <li>Vá para https://code.visualstudio.com/Download</li>
+                <li>O site detecta que você é do time da maçã mordida</li>
+                <li>Baixa o arquivo <code>.dmg</code> – tem versão pra Intel (processador antigo) e Apple Silicon
+                    (M1, M2, M3). Se não sabe qual é o seu, baixa o Universal, que funciona nos dois.</li>
+            </ol>
+            <p><strong>Passo 2: Instale (a parte fácil)</strong></p>
+            <ol>
+                <li>Dê dois cliques no <code>.dmg</code> baixado</li>
+                <li>Uma janela aparece com o ícone do VSCode e uma seta apontando pra pasta Applications</li>
+                <li>ARRASTE o ícone do VSCode pra dentro da pasta Applications</li>
+                <li>Pronto. É literalmente isso. A Apple gosta de fazer parecer fácil.</li>
+            </ol>
+            <p><strong>Passo 3: Abra pela primeira vez (a parte que a Apple não conta)</strong></p>
+            <ol>
+                <li>Vá na pasta Applications e dê dois cliques no Visual Studio Code</li>
+                <li>⚠️ ALERTA: O Mac vai falar que o aplicativo é de desenvolvedor não identificado e não vai deixar
+                    abrir</li>
+                <li>Clique com o botão direito no ícone do VSCode e escolha “Abrir” – aí sim aparece a opção “Abrir
+                    mesmo assim”</li>
+                <li>Confirme e pronto. Agora o VSCode está liberado.</li>
+            </ol>
+            <p>🔥 DICA: Para deixar o VSCode no Dock, clique com o botão direito no ícone quando ele estiver aberto
+                e selecione Opções > Manter no Dock.</p>
+            <p><strong>Passo 4: Configure o comando <code>code</code> no terminal (PARTE MAIS IMPORTANTE)</strong>
+            </p>
+            <p>No Mac, o <code>code</code> não vem configurado por padrão. Você precisa fazer isso MANUALMENTE:</p>
+            <ol>
+                <li>Abra o VSCode</li>
+                <li>Pressione <code>Cmd + Shift + P</code> (a Command Palette que você já ama)</li>
+                <li>Digite “shell command”</li>
+                <li>Selecione “Shell Command: Install 'code' command in PATH”</li>
+                <li>Uma notificação vai aparecer confirmando que deu certo</li>
+                <li>Reinicie o terminal (feche e abra de novo)</li>
+                <li>Teste: digite <code>code --version</code> no terminal</li>
+            </ol>
+            <p>Se aparecer a versão, VOCÊ É UM HERÓI. Se não aparecer, você tem um problema antigo de alias – veja o
+                tutorial oficial que resolve.</p>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_22.jpg" alt="imagem 22" class="img-fluid">
+            </div>
+
+            <h4>🐧 INSTALAÇÃO NO LINUX – O CAMINHO DO GUERREIRO (COM SUDO)</h4>
+            <p><strong>Escolha sua distribuição, jovem padawan</strong></p>
+            <p>O VSCode no Linux tem instalador pra quase tudo:</p>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Distribuição</th>
+                            <th>Formato</th>
+                            <th>Comando</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ubuntu/Debian</td>
+                            <td>.deb</td>
+                            <td><code>sudo apt install ./&lt;arquivo&gt;.deb</code></td>
+                        </tr>
+                        <tr>
+                            <td>Fedora/RHEL</td>
+                            <td>.rpm</td>
+                            <td><code>sudo dnf install &lt;arquivo&gt;.rpm</code></td>
+                        </tr>
+                        <tr>
+                            <td>Arch</td>
+                            <td>AUR</td>
+                            <td><code>yay -S visual-studio-code-bin</code></td>
+                        </tr>
+                        <tr>
+                            <td>Snap</td>
+                            <td>Snap</td>
+                            <td><code>sudo snap install --classic code</code></td>
+                        </tr>
+                        <tr>
+                            <td>Nix</td>
+                            <td>Nix</td>
+                            <td><code>nix-env -iA nixpkgs.vscode</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><strong>O método mais fácil: Snap (funciona em qualquer uma)</strong></p>
+            <pre><code class="language-bash">sudo snap install --classic code</code></pre>
+            <p>Pronto. O Snap cuida de tudo e mantém atualizado automaticamente.</p>
+            <p><strong>O método .deb (Ubuntu/Debian)</strong></p>
+            <ol>
+                <li>Baixe o arquivo <code>.deb</code> do site</li>
+                <li>No terminal, navegue até a pasta onde baixou</li>
+                <li>Rode:
+                    <pre><code class="language-bash">sudo apt install ./code_.deb</code></pre>
+                </li>
+                <li>O sistema instala e configura o repositório pra receber atualizações automáticas</li>
+            </ol>
+            <p><strong>Configure o <code>code</code> no PATH</strong></p>
+            <p>No Linux, o <code>code</code> já vem no PATH se você instalou pelo .deb ou Snap. Mas se não veio:</p>
+            <ol>
+                <li>Abra o VSCode</li>
+                <li><code>Ctrl + Shift + P</code></li>
+                <li>Digite “shell command”</li>
+                <li>Selecione “Install 'code' command in PATH”</li>
+            </ol>
+            <p>Teste com <code>code --version</code>.</p>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_23.png" alt="imagem 23" class="img-fluid">
+            </div>
+
+            <h4>🌐 INSTALAÇÃO VIA WEB – SEM INSTALAR NADA (SÉRIO)</h4>
+            <p>Sabia que você pode usar o VSCode direto do navegador?</p>
+            <p>Acesse https://vscode.dev e pronto. Você tem um VSCode funcionando no browser.</p>
+            <p>Mas peraí:</p>
+            <ul>
+                <li>É mais limitado (não roda código local, não tem terminal integrado)</li>
+                <li>Serve pra abrir arquivos do GitHub ou do seu computador (com permissão)</li>
+                <li>É ótimo pra fazer uma edição rápida quando você não está no seu PC</li>
+            </ul>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_24.jpg" alt="imagem 24" class="img-fluid">
+            </div>
+
+            <h4>✅ PÓS-INSTALAÇÃO – O QUE FAZER ASSIM QUE ABRIR</h4>
+            <ol>
+                <li><strong>A tela de boas-vindas</strong> – Quando você abre o VSCode pela primeira vez, aparece
+                    uma tela de boas-vindas. Ela tem: links pra documentação, opções de tema, tutoriais interativos.
+                    Não precisa ler tudo agora. Dá uma olhada, escolhe um tema escuro (porque você é cool) e fecha.
+                </li>
+                <li><strong>Verifique a instalação</strong> – Abra o terminal integrado (<code>Ctrl + `</code> no
+                    Windows/Linux, <code>Cmd + `</code> no Mac) e digite:
+                    <pre><code class="language-bash">code --version</code></pre>
+                    Você deve ver algo como:
+                    <pre><code>1.85.0
+a1b2c3d4e5f6...
+x64</code></pre>
+                    Se aparecer, tá tudo certo. Se não aparecer, volta e configura o PATH.
+                </li>
+                <li><strong>Instale a extensão de Português</strong> (opcional, mas recomendado) – Se você não se
+                    sente confortável com inglês, pode deixar o VSCode em português:
+                    <ol>
+                        <li>Abra a aba de extensões (🧩)</li>
+                        <li>Busque por “Portuguese” ou “Portuguese (Brazil)”</li>
+                        <li>Clique em Instalar</li>
+                        <li>O VSCode vai pedir pra reiniciar – aceite</li>
+                        <li>Pronto, tudo em português</li>
+                    </ol>
+                </li>
+            </ol>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_25.png" alt="imagem 25" class="img-fluid">
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CONTINUAÇÃO PARTE 2 – PRIMEIROS PASSOS COM HTML               -->
+        <!-- ============================================================ -->
+        <section class="card glass-card p-4 p-lg-5 mb-5">
+            <h2 class="card-title display-6 fw-bold text-utfpr-yellow">
+                <i class="fas fa-file-code me-3"></i> 🎯 PRIMEIROS PASSOS COM HTML – SEU PRIMEIRO ARQUIVO
+            </h2>
+            <p>Agora que o VSCode está instalado, vamos fazer algo de verdade.</p>
+            <p><strong>Passo 1: Crie uma pasta</strong></p>
+            <p>No seu computador, crie uma pasta chamada <code>meu-primeiro-html</code>. Pode ser na Área de
+                Trabalho, Documentos, onde você quiser.</p>
+            <p><strong>Passo 2: Abra a pasta no VSCode</strong></p>
+            <ul>
+                <li><strong>Maneira 1 – pelo VSCode:</strong> Abra o VSCode, clique em File > Open Folder
+                    (Windows/Linux) ou File > Open... (Mac), selecione a pasta que você criou.</li>
+                <li><strong>Maneira 2 – pelo terminal (a maneira foda):</strong> Abra o terminal na pasta (no
+                    Windows, Shift + botão direito > “Abrir PowerShell aqui”), digite <code>code .</code> – o VSCode
+                    abre com a pasta carregada.</li>
+                <li><strong>Maneira 3 – pelo botão direito:</strong> Clique com o botão direito na pasta e escolha
+                    “Open with Code” (se você marcou essa opção na instalação).</li>
+            </ul>
+            <p><strong>Passo 3: Confie nos autores</strong></p>
+            <p>Se o VSCode perguntar “Você confia nos autores dos arquivos desta pasta?”, clique em “Yes, I trust
+                the authors”. Isso é uma medida de segurança. Como a pasta é sua, pode confiar.</p>
+            <p><strong>Passo 4: Crie seu primeiro arquivo HTML</strong></p>
+            <p>No Explorer (lado esquerdo), você vai ver o nome da sua pasta. Do lado do nome, tem uns ícones:</p>
+            <ul>
+                <li>📄 New File – cria um arquivo novo</li>
+                <li>📁 New Folder – cria uma pasta nova</li>
+            </ul>
+            <p>Clique em New File e digite <code>index.html</code>.</p>
+            <p><strong>Passo 5: O atalho mágico do HTML</strong></p>
+            <p>Dentro do <code>index.html</code>, digite <code>!</code> e aperte <code>Tab</code>.</p>
+            <p>O VSCode vai expandir automaticamente para:</p>
+            <div class="code-block position-relative mb-3">
+                <button class="btn btn-sm btn-copy-code position-absolute top-0 end-0 m-2" data-code-target="code6">
+                    <i class="fas fa-copy me-1"></i> Copiar
+                </button>
+                <pre><code class="language-html" id="code6">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <p>Isso é o Emmet – uma das coisas mais satisfatórias da vida. Você acabou de criar a estrutura básica
+                de uma página HTML com UM CARACTERE.</p>
+            <p>🔥 BÔNUS: Mude <code>lang="en"</code> para <code>lang="pt-BR"</code> e <code>Document</code> para o
+                título que você quiser.</p>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_26.jpg" alt="imagem 26" class="img-fluid">
+            </div>
+            <p><strong>Passo 6: Salve e veja a mágica</strong></p>
+            <ol>
+                <li>Pressione <code>Ctrl + S</code> (Windows/Linux) ou <code>Cmd + S</code> (Mac)</li>
+                <li>Instale a extensão Live Server (se você ainda não instalou)</li>
+                <li>Com o <code>index.html</code> aberto, clique com o botão direito no editor</li>
+                <li>Escolha “Open with Live Server”</li>
+                <li>Seu navegador abre com a página</li>
+            </ol>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_27.jpg" alt="imagem 27" class="img-fluid">
+            </div>
+
+            <h4>🎨 CONFIGURAÇÕES INICIAIS QUE VÃO SALVAR SUA VIDA</h4>
+            <p>Agora que você já tem um HTML rodando, vamos fazer algumas configurações que vão tornar sua vida
+                INFINITAMENTE melhor.</p>
+            <p><strong>Como acessar as configurações</strong></p>
+            <ul>
+                <li>Atalho: <code>Ctrl + ,</code> (Windows/Linux) ou <code>Cmd + ,</code> (Mac)</li>
+                <li>Ou: Command Palette (<code>Ctrl/Cmd + Shift + P</code>) > digite “Preferences: Open Settings
+                    (UI)”</li>
+            </ul>
+            <p><strong>Configurações recomendadas (via interface)</strong></p>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Configuração</th>
+                            <th>O que faz</th>
+                            <th>Valor recomendado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>editor.fontSize</code></td>
+                            <td>Tamanho da fonte</td>
+                            <td>16 (seus olhos agradecem)</td>
+                        </tr>
+                        <tr>
+                            <td><code>editor.fontFamily</code></td>
+                            <td>Fonte do código</td>
+                            <td>'Fira Code', 'Cascadia Code', monospace</td>
+                        </tr>
+                        <tr>
+                            <td><code>editor.fontLigatures</code></td>
+                            <td>Ligações entre caracteres (ex: <code>!=</code> vira ≠)</td>
+                            <td>true (instale a Fira Code primeiro)</td>
+                        </tr>
+                        <tr>
+                            <td><code>editor.wordWrap</code></td>
+                            <td>Quebra linhas longas</td>
+                            <td>on</td>
+                        </tr>
+                        <tr>
+                            <td><code>editor.minimap.enabled</code></td>
+                            <td>Mapa miniatura do código</td>
+                            <td>true</td>
+                        </tr>
+                        <tr>
+                            <td><code>editor.renderWhitespace</code></td>
+                            <td>Mostra espaços invisíveis</td>
+                            <td>all</td>
+                        </tr>
+                        <tr>
+                            <td><code>editor.formatOnSave</code></td>
+                            <td>Formata automaticamente ao salvar</td>
+                            <td>true (precisa do Prettier)</td>
+                        </tr>
+                        <tr>
+                            <td><code>files.autoSave</code></td>
+                            <td>Salva automaticamente</td>
+                            <td>afterDelay (salva após pausa)</td>
+                        </tr>
+                        <tr>
+                            <td><code>files.autoSaveDelay</code></td>
+                            <td>Tempo de espera pro auto save</td>
+                            <td>1000 (1 segundo)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><strong>Configurações via JSON (o jeito raiz)</strong></p>
+            <p>Se você é old-school e quer tudo num arquivo:</p>
+            <ol>
+                <li><code>Ctrl/Cmd + Shift + P</code></li>
+                <li>Digite “Open User Settings (JSON)”</li>
+                <li>Cole isso:</li>
+            </ol>
+            <div class="code-block position-relative mb-3">
+                <button class="btn btn-sm btn-copy-code position-absolute top-0 end-0 m-2" data-code-target="code7">
+                    <i class="fas fa-copy me-1"></i> Copiar
+                </button>
+                <pre><code class="language-json" id="code7">{
+  "editor.fontSize": 16,
+  "editor.fontFamily": "'Fira Code', 'Cascadia Code', 'JetBrains Mono', monospace",
+  "editor.fontLigatures": true,
+  "editor.wordWrap": "on",
+  "editor.minimap.enabled": true,
+  "editor.renderWhitespace": "all",
+  "editor.formatOnSave": true,
+  "editor.suggestSelection": "first",
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+  "workbench.colorTheme": "One Dark Pro",
+  "workbench.iconTheme": "material-icon-theme"
+}</code></pre>
+            </div>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_28.jpg" alt="imagem 28" class="img-fluid">
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- EXTENSÕES OBRIGATÓRIAS PARA COMEÇAR                           -->
+        <!-- ============================================================ -->
+        <section class="card glass-card p-4 p-lg-5 mb-5">
+            <h2 class="card-title display-6 fw-bold text-utfpr-yellow">
+                <i class="fas fa-plug me-3"></i> 🧩 EXTENSÕES OBRIGATÓRIAS PARA COMEÇAR
+            </h2>
+            <p>Na Parte 1 eu falei das extensões, mas agora vou ser mais específico sobre quais instalar AGORA.</p>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Extensão</th>
+                            <th>Para que serve</th>
+                            <th>Como instalar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Live Server</td>
+                            <td>Rodar HTML com atualização automática</td>
+                            <td>Busque por “Live Server”</td>
+                        </tr>
+                        <tr>
+                            <td>Prettier</td>
+                            <td>Formatação automática de código</td>
+                            <td>Busque por “Prettier”</td>
+                        </tr>
+                        <tr>
+                            <td>Auto Rename Tag</td>
+                            <td>Muda tag de abertura e fechamento juntas</td>
+                            <td>Busque por “Auto Rename Tag”</td>
+                        </tr>
+                        <tr>
+                            <td>Color Highlight</td>
+                            <td>Mostra a cor no CSS</td>
+                            <td>Busque por “Color Highlight”</td>
+                        </tr>
+                        <tr>
+                            <td>Material Icon Theme</td>
+                            <td>Ícones bonitos nos arquivos</td>
+                            <td>Busque por “Material Icon Theme”</td>
+                        </tr>
+                        <tr>
+                            <td>Portuguese (Brazil)</td>
+                            <td>Interface em português</td>
+                            <td>Busque por “Portuguese”</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><strong>Como instalar todas de uma vez?</strong></p>
+            <ol>
+                <li>Abra a aba de extensões (🧩)</li>
+                <li>Busque por cada uma e clique em “Install”</li>
+                <li>Pronto. Demora 2 minutos.</li>
+            </ol>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_29.jpg" alt="imagem 29" class="img-fluid">
+            </div>
+
+            <h4>🖥️ O COMANDO <code>CODE</code> – SEU NOVO SUPER-PODER</h4>
+            <p>Uma das coisas mais subestimadas do VSCode é o comando <code>code</code> no terminal.</p>
+            <p><strong>O que ele faz?</strong></p>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Comando</th>
+                            <th>O que acontece</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>code .</code></td>
+                            <td>Abre a pasta atual no VSCode</td>
+                        </tr>
+                        <tr>
+                            <td><code>code index.html</code></td>
+                            <td>Abre esse arquivo no VSCode</td>
+                        </tr>
+                        <tr>
+                            <td><code>code pasta/</code></td>
+                            <td>Abre essa pasta no VSCode</td>
+                        </tr>
+                        <tr>
+                            <td><code>code --version</code></td>
+                            <td>Mostra a versão instalada</td>
+                        </tr>
+                        <tr>
+                            <td><code>code --list-extensions</code></td>
+                            <td>Lista todas as extensões instaladas</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><strong>Como usar na prática</strong></p>
+            <ol>
+                <li>Abra o terminal (PowerShell no Windows, Terminal no Mac/Linux)</li>
+                <li>Navegue até a pasta do seu projeto: <code>cd Documents/meu-projeto</code></li>
+                <li>Digite <code>code .</code></li>
+                <li>O VSCode abre instantaneamente com seu projeto</li>
+            </ol>
+            <p>Isso é especialmente útil quando você está no terminal e não quer ficar navegando com o mouse.</p>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_30.jpg" alt="imagem 30" class="img-fluid">
+            </div>
+
+            <h4>❓ PROBLEMAS COMUNS NA INSTALAÇÃO E COMO RESOLVER</h4>
+            <dl>
+                <dt>“O instalador não abre”</dt>
+                <dd>– Windows: Clique com o botão direito > “Executar como administrador”<br>– Mac: Vá em
+                    Preferências > Segurança e Privacidade > “Abrir mesmo assim”<br>– Linux: Verifique se o pacote é
+                    compatível com sua distribuição</dd>
+
+                <dt>“O comando <code>code</code> não funciona”</dt>
+                <dd>– Windows: Você esqueceu de marcar “Add to PATH” – reinstala e marca<br>– Mac: Rode “Shell
+                    Command: Install 'code' command in PATH” na Command Palette<br>– Linux: Instale o pacote
+                    <code>code</code> ou reinicie o terminal
+                </dd>
+
+                <dt>“O VSCode está em inglês e eu quero em português”</dt>
+                <dd>– Instale a extensão Portuguese (Brazil) e reinicie</dd>
+
+                <dt>“O Live Server não funciona”</dt>
+                <dd>– Verifique se você instalou a extensão<br>– Verifique se o arquivo é <code>.html</code><br>–
+                    Tente reiniciar o VSCode</dd>
+
+                <dt>“O VSCode está lento”</dt>
+                <dd>– O VSCode é leve (< 100 MB), mas se estiver lento:<br>– Desative extensões que você não
+                        usa<br>– Feche projetos grandes que não está usando<br>– Aumente a memória disponível
+                        (configurações > <code>files.watcherExclude</code>)</dd>
+            </dl>
+
+            <h4>📝 CHECKLIST – VOCÊ FEZ TUDO?</h4>
+            <ul>
+                <li><input type="checkbox" disabled> Baixou o instalador do site oficial</li>
+                <li><input type="checkbox" disabled> Instalou com as opções certas (especialmente “Add to PATH”)
+                </li>
+                <li><input type="checkbox" disabled> Abriu o VSCode e escolheu um tema</li>
+                <li><input type="checkbox" disabled> Verificou que <code>code --version</code> funciona no terminal
+                </li>
+                <li><input type="checkbox" disabled> Instalou as extensões básicas (Live Server, Prettier, etc)</li>
+                <li><input type="checkbox" disabled> Criou uma pasta de projeto</li>
+                <li><input type="checkbox" disabled> Abriu a pasta no VSCode</li>
+                <li><input type="checkbox" disabled> Criou um <code>index.html</code></li>
+                <li><input type="checkbox" disabled> Usou <code>!</code> + <code>Tab</code> pra gerar a estrutura
+                    HTML</li>
+                <li><input type="checkbox" disabled> Rodou com Live Server e viu a página no navegador</li>
+            </ul>
+            <p>Se você marcou todos, PARABÉNS! Você está oficialmente pronto pra programar.</p>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- PARTE 3 (continuação)                                        -->
+        <!-- ============================================================ -->
+        <section class="card glass-card p-4 p-lg-5 mb-5">
+            <h2 class="card-title display-6 fw-bold text-utfpr-yellow">
+                <i class="fas fa-laptop-code me-3"></i> 🚀 PARTE 3: HTML, CSS E JAVASCRIPT – A TRÍADE SAGRADA NO
+                VSCODE
+            </h2>
+            <p><strong>Chegou a hora do show</strong></p>
+            <p>Na Parte 1 você conheceu o VSCode. Na Parte 2 você instalou e configurou. Agora, na Parte 3, a mágica
+                acontece.</p>
+            <p>Você vai aprender a usar o VSCode para escrever HTML, CSS e JavaScript como um verdadeiro ninja. E
+                não, não vai ser aquela coisa chata de “abrir o bloco de notas e salvar como .html”. Aqui a parada é
+                séria, rápida e divertida.</p>
+            <p>Pega o café, coloca uma música maneira (recomendo synthwave ou lo-fi) e bora codar.</p>
+
+            <h4>📄 HTML NO VSCODE – O ESQUELETO DO SEU SITE</h4>
+            <p><strong>Suporte nativo (e ele é bom)</strong></p>
+            <p>O VSCode já vem com suporte nativo para HTML. Você não precisa instalar NADA pra começar a escrever
+                HTML. Já vem com:</p>
+            <ul>
+                <li>✅ Syntax highlighting – cores diferentes pra tags, atributos, texto</li>
+                <li>✅ IntelliSense – autocomplete inteligente que sugere tags e atributos</li>
+                <li>✅ Fechamento automático de tags – quando você digita <code>&lt;div&gt;</code>, o
+                    <code>&lt;/div&gt;</code> aparece sozinho
+                </li>
+                <li>✅ Validação – ele avisa se você esqueceu de fechar uma tag ou se escreveu algo errado</li>
+                <li>✅ Color picker – passa o mouse em cima de uma cor no CSS e aparece um seletor de cores</li>
+            </ul>
+            <p><strong>Escrevendo HTML como um boss</strong></p>
+            <p>Abra um arquivo <code>.html</code> e comece a digitar. O VSCode vai te dar sugestões o tempo todo.
+            </p>
+            <p><strong>IntelliSense em ação</strong></p>
+            <p>Quando você digita <code>&lt;</code>, aparece uma lista com todas as tags HTML. Conforme você digita,
+                a lista filtra.</p>
+            <p>Quando você digita <code>div.</code> e aperta <code>Tab</code>, o VSCode completa com
+                <code>&lt;div class=""&gt;&lt;/div&gt;</code> e deixa o cursor dentro das aspas pra você digitar o
+                nome da classe.
+            </p>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_31.jpg" alt="imagem 31" class="img-fluid">
+            </div>
+            <p><strong>Fechamento automático de tags</strong></p>
+            <p>Digite <code>&lt;div&gt;</code> e o VSCode já coloca <code>&lt;/div&gt;</code> automaticamente.
+                Digite <code>&lt;/</code> e ele já sugere a tag de fechamento correta.</p>
+            <p>🔥 DICA DE OURO: Se você mudar o nome de uma tag, o VSCode pode atualizar a tag de fechamento
+                automaticamente se você habilitar:</p>
+            <pre><code class="language-json">"editor.linkedEditing": true</code></pre>
+            <p>Com isso, se você mudar <code>&lt;div&gt;</code> pra <code>&lt;section&gt;</code>, o
+                <code>&lt;/div&gt;</code> vira <code>&lt;/section&gt;</code> sozinho. É tipo mágica, mas é
+                configuração.
+            </p>
+            <p><strong>Validação de HTML</strong></p>
+            <p>O VSCode valida seu HTML em tempo real. Se você esquecer de fechar uma tag, aparece um sublinado
+                verde (warning) ou vermelho (erro).</p>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_32.jpg" alt="imagem 32" class="img-fluid">
+            </div>
+
+            <h4>✨ EMMET – O SUPER-PODER QUE VOCÊ NÃO SABIA QUE PRECISAVA</h4>
+            <p><strong>O que é Emmet?</strong></p>
+            <p>Emmet é um sistema de abreviações que transforma textos curtos em estruturas HTML e CSS completas.
+                Ele já vem integrado no VSCode, sem precisar instalar nada.</p>
+            <p>Emmet é suportado nativamente em arquivos <code>.html</code>, <code>.css</code>, <code>.scss</code>,
+                <code>.jsx</code> e vários outros.
+            </p>
+            <p><strong>Como funciona?</strong></p>
+            <p>Você digita uma abreviação e aperta Tab (ou Enter) – o VSCode expande pra estrutura completa.</p>
+            <p><strong>Atalhos básicos de HTML</strong></p>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Abreviação</th>
+                            <th>Expande para</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>!</code> + <code>Tab</code></td>
+                            <td>Estrutura HTML5 completa</td>
+                        </tr>
+                        <tr>
+                            <td><code>html:5</code> + <code>Tab</code></td>
+                            <td>Mesma coisa que <code>!</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>link:css</code> + <code>Tab</code></td>
+                            <td><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>script:src</code> + <code>Tab</code></td>
+                            <td><code>&lt;script src=""&gt;&lt;/script&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>ul>li*5</code> + <code>Tab</code></td>
+                            <td>Lista não ordenada com 5 itens</td>
+                        </tr>
+                        <tr>
+                            <td><code>div.container</code> + <code>Tab</code></td>
+                            <td><code>&lt;div class="container"&gt;&lt;/div&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>header+main+footer</code> + <code>Tab</code></td>
+                            <td>Três elementos irmãos</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><strong>Exemplos na prática</strong></p>
+            <p>1. Estrutura básica: Digite <code>!</code> e aperte <code>Tab</code>. O VSCode gera:</p>
+            <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <p>2. Div com classe e filho: Digite <code>div.container>h1{Olá Mundo}</code> e aperte <code>Tab</code>.
+                Gera:</p>
+            <pre><code class="language-html">&lt;div class="container"&gt;
+  &lt;h1&gt;Olá Mundo&lt;/h1&gt;
+&lt;/div&gt;</code></pre>
+            <p>3. Lista com itens: Digite <code>ul>li.item*3</code> e aperte <code>Tab</code>. Gera:</p>
+            <pre><code class="language-html">&lt;ul&gt;
+  &lt;li class="item"&gt;&lt;/li&gt;
+  &lt;li class="item"&gt;&lt;/li&gt;
+  &lt;li class="item"&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+            <p>4. Estrutura complexa com agrupamento: Digite <code>(header>h1)+(main>section*3)+(footer>p)</code> e
+                aperte <code>Tab</code>. Gera:</p>
+            <pre><code class="language-html">&lt;header&gt;
+  &lt;h1&gt;&lt;/h1&gt;
+&lt;/header&gt;
+&lt;main&gt;
+  &lt;section&gt;&lt;/section&gt;
+  &lt;section&gt;&lt;/section&gt;
+  &lt;section&gt;&lt;/section&gt;
+&lt;/main&gt;
+&lt;footer&gt;
+  &lt;p&gt;&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+            <p>5. Atributos e conteúdo: Digite <code>a[href="https://google.com"]{Clique aqui}</code> e aperte
+                <code>Tab</code>. Gera:
+            </p>
+            <pre><code class="language-html">&lt;a href="https://google.com"&gt;Clique aqui&lt;/a&gt;</code></pre>
+            <p><strong>Emmet no CSS</strong></p>
+            <p>Emmet também funciona no CSS. Digite abreviações de propriedades e aperte <code>Tab</code>:</p>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Abreviação</th>
+                            <th>Expande para</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>m10</code> + <code>Tab</code></td>
+                            <td><code>margin: 10px;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>p20</code> + <code>Tab</code></td>
+                            <td><code>padding: 20px;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>w100p</code> + <code>Tab</code></td>
+                            <td><code>width: 100%;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>bgc#fff</code> + <code>Tab</code></td>
+                            <td><code>background-color: #fff;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>d:f</code> + <code>Tab</code></td>
+                            <td><code>display: flex;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>jc:c</code> + <code>Tab</code></td>
+                            <td><code>justify-content: center;</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><strong>Configurando o Tab para Emmet</strong></p>
+            <p>Por padrão, o Emmet é acionado com Tab nos arquivos HTML e CSS. Se por algum motivo não estiver
+                funcionando, você pode ativar explicitamente:</p>
+            <pre><code class="language-json">"emmet.triggerExpansionOnTab": true</code></pre>
+            <p><strong>Emmet em outros arquivos (JSX, React, etc)</strong></p>
+            <p>Se você usa React com JSX, pode configurar o Emmet para funcionar em arquivos <code>.jsx</code> e
+                <code>.tsx</code>:
+            </p>
+            <pre><code class="language-json">"emmet.includeLanguages": {
+  "javascript": "html",
+  "javascriptreact": "html",
+  "typescriptreact": "html"
+}</code></pre>
+            <p>Com isso, Emmet funciona em JSX e inclusive converte <code>class</code> para <code>className</code>
+                automaticamente.</p>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_33.jpg" alt="imagem 33" class="img-fluid">
+            </div>
+
+            <h4>🌐 LIVE SERVER – SEU HTML RODANDO EM TEMPO REAL</h4>
+            <p><strong>O que é o Live Server?</strong></p>
+            <p>O Live Server é uma extensão que cria um servidor de desenvolvimento local e atualiza o navegador
+                automaticamente sempre que você salva um arquivo.</p>
+            <p>Ou seja: você muda o código, salva, e o navegador recarrega sozinho. Sem F5, sem clicar em refresh,
+                sem perder o foco.</p>
+            <p><strong>Instalando o Live Server</strong></p>
+            <ol>
+                <li>Abra a aba de extensões (🧩) ou pressione <code>Ctrl + Shift + X</code></li>
+                <li>Busque por “Live Server”</li>
+                <li>Instale a extensão do Ritwick Dey (é a mais popular)</li>
+            </ol>
+            <p><strong>Usando o Live Server</strong></p>
+            <p>Com o arquivo HTML aberto:</p>
+            <ol>
+                <li>Clique com o botão direito no editor</li>
+                <li>Escolha “Open with Live Server”</li>
+            </ol>
+            <p>Ou use o atalho:</p>
+            <ul>
+                <li>Windows/Linux: <code>Alt + L, Alt + O</code></li>
+                <li>Mac: <code>Cmd + L, Cmd + O</code></li>
+            </ul>
+            <p>O navegador abre com sua página em um endereço tipo <code>http://127.0.0.1:5500</code>.</p>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_34.jpg" alt="imagem 34" class="img-fluid">
+            </div>
+            <p><strong>O que acontece quando você edita?</strong></p>
+            <ol>
+                <li>Você faz uma alteração no HTML, CSS ou JS</li>
+                <li>Pressiona <code>Ctrl + S</code> (salva)</li>
+                <li>O Live Server detecta a mudança</li>
+                <li>O navegador recarrega automaticamente</li>
+            </ol>
+            <p>Isso é game-changer. Você não perde tempo alternando entre editor e navegador. O foco fica no código.
+            </p>
+            <p><strong>Dicas do Live Server</strong></p>
+            <ul>
+                <li><strong>Porta:</strong> O padrão é 5500. Se estiver ocupada, ele usa 5501, 5502, etc.</li>
+                <li><strong>Abrir no navegador:</strong> Se você já tiver a página aberta, ele só recarrega.</li>
+                <li><strong>Dispositivos móveis:</strong> O servidor roda na sua rede local. Pegue seu celular,
+                    digite <code>http://[SEU-IP]:5500</code> e veja sua página no celular em tempo real.</li>
+                <li><strong>Parar o servidor:</strong> Olhe na barra de status (embaixo). Tem um botão “Port: 5500”
+                    – clique e escolha “Stop Live Server”.</li>
+            </ul>
+
+            <h4>🎨 CSS NO VSCODE – DEIXANDO AS COISAS BONITAS</h4>
+            <p><strong>Suporte nativo para CSS</strong></p>
+            <p>Assim como o HTML, o CSS tem suporte nativo no VSCode:</p>
+            <ul>
+                <li>✅ Syntax highlighting</li>
+                <li>✅ IntelliSense para propriedades e valores</li>
+                <li>✅ Autocomplete de cores</li>
+                <li>✅ Validação de sintaxe</li>
+                <li>✅ Emmet para CSS</li>
+            </ul>
+            <p><strong>IntelliSense no CSS</strong></p>
+            <p>Quando você digita uma propriedade CSS, o VSCode sugere as opções.</p>
+            <p>Digite <code>background</code> e veja as sugestões: <code>background-color</code>,
+                <code>background-image</code>, <code>background-size</code>, etc.
+            </p>
+            <p>Digite <code>c</code> e veja <code>color</code> aparecer. Aperte Tab e o VSCode completa.</p>
+            <p><strong>Color Picker</strong></p>
+            <p>Passe o mouse em cima de qualquer cor no CSS (hex, rgb, hsl, nome) e aparece um seletor de cores.</p>
+            <p>Você pode:</p>
+            <ul>
+                <li>Clicar no quadrado de cor para abrir o seletor</li>
+                <li>Arrastar o seletor para mudar a cor</li>
+                <li>Mudar entre modos (hex, rgb, hsl)</li>
+            </ul>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_35.jpg" alt="imagem 35" class="img-fluid">
+            </div>
+            <p><strong>Emmet para CSS (de novo)</strong></p>
+            <p>Já falamos disso, mas vale repetir: Emmet no CSS é vida.</p>
+            <ul>
+                <li><code>m10</code> + <code>Tab</code> → <code>margin: 10px;</code></li>
+                <li><code>p20-30</code> + <code>Tab</code> → <code>padding: 20px 30px;</code></li>
+                <li><code>d:f</code> + <code>Tab</code> → <code>display: flex;</code></li>
+            </ul>
+            <p><strong>Formatando CSS</strong></p>
+            <p>Use o comando Format Document (<code>Shift + Alt + F</code>) para organizar seu CSS automaticamente.
+            </p>
+
+            <h4>⚡ JAVASCRIPT NO VSCODE – A MÁGICA ACONTECE</h4>
+            <p><strong>Suporte nativo para JavaScript</strong></p>
+            <p>O VSCode tem suporte excelente para JavaScript:</p>
+            <ul>
+                <li>✅ Syntax highlighting</li>
+                <li>✅ IntelliSense poderoso (sugere métodos, propriedades, variáveis)</li>
+                <li>✅ Autocomplete de funções nativas</li>
+                <li>✅ Validação de sintaxe</li>
+                <li>✅ Debugging integrado</li>
+            </ul>
+            <p><strong>IntelliSense no JavaScript</strong></p>
+            <p>Quando você digita <code>document.</code>, o VSCode sugere todos os métodos e propriedades do DOM:
+                <code>getElementById</code>, <code>querySelector</code>, <code>addEventListener</code>, etc.
+            </p>
+            <p>Quando você digita <code>console.</code>, ele sugere <code>log</code>, <code>error</code>,
+                <code>warn</code>, <code>table</code>.
+            </p>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_36.jpg" alt="imagem 36" class="img-fluid">
+            </div>
+            <p><strong>Rodando JavaScript</strong></p>
+            <p><em>Opção 1: No HTML (via Live Server)</em> – Se seu JS está dentro de <code>&lt;script&gt;</code> no
+                HTML ou em um arquivo <code>.js</code> linkado, o Live Server executa automaticamente.</p>
+            <p><em>Opção 2: No terminal com Node.js</em> – Se você tem o Node.js instalado:</p>
+            <ol>
+                <li>Abra o terminal integrado (<code>Ctrl + `</code>)</li>
+                <li>Rode: <code>node script.js</code></li>
+            </ol>
+            <p><em>Opção 3: Debug integrado</em> – Clique no ícone 🐛 da barra de atividades, configure e rode com
+                breakpoints. É poderoso.</p>
+
+            <h4>🧹 PRETTIER – SEU CÓDIGO SEMPRE BONITO</h4>
+            <p><strong>O que é o Prettier?</strong></p>
+            <p>Prettier é um formatador automático de código. Ele organiza seu código HTML, CSS e JavaScript
+                seguindo regras consistentes.</p>
+            <p>Chega de ficar ajustando espaços, quebras de linha e indentação. O Prettier faz isso por você.</p>
+            <p><strong>Instalando o Prettier</strong></p>
+            <ol>
+                <li>Abra a aba de extensões (🧩)</li>
+                <li>Busque por “Prettier - Code formatter”</li>
+                <li>Instale</li>
+            </ol>
+            <p><strong>Configurando o Prettier</strong></p>
+            <p><em>Passo 1: Definir como formatador padrão</em></p>
+            <ol>
+                <li>Abra as configurações (<code>Ctrl + ,</code>)</li>
+                <li>Busque por “Default Formatter”</li>
+                <li>Selecione “Prettier - Code formatter”</li>
+            </ol>
+            <p><em>Passo 2: Ativar formatação automática ao salvar</em></p>
+            <ol>
+                <li>Nas configurações, busque por “Format On Save”</li>
+                <li>Marque a opção</li>
+            </ol>
+            <p>Pronto. Agora, toda vez que você salvar um arquivo (<code>Ctrl + S</code>), o Prettier vai formatar
+                automaticamente.</p>
+            <p><strong>Formatando manualmente</strong></p>
+            <p>Se você quiser formatar sob demanda:</p>
+            <ul>
+                <li>Format Document: <code>Shift + Alt + F</code> (formata o arquivo inteiro)</li>
+                <li>Format Selection: <code>Ctrl + K, Ctrl + F</code> (formata só o texto selecionado)</li>
+            </ul>
+            <p><strong>Configurações do Prettier</strong></p>
+            <p>Você pode personalizar como o Prettier formata:</p>
+            <pre><code class="language-json">{
+  "prettier.tabWidth": 2,            // Tamanho da indentação
+  "prettier.useTabs": false,         // Usa espaços em vez de tabs
+  "prettier.semi": true,             // Ponto e vírgula no final
+  "prettier.singleQuote": true,      // Aspas simples em vez de duplas
+  "prettier.printWidth": 80          // Limite de caracteres por linha
+}</code></pre>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_37.jpg" alt="imagem 37" class="img-fluid">
+            </div>
+
+            <h4>🧩 EXTENSÕES ADICIONAIS PARA WEB</h4>
+            <p>Além do Live Server e Prettier, instale estas:</p>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Extensão</th>
+                            <th>Para que serve</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Auto Rename Tag</td>
+                            <td>Muda tag de abertura e fechamento juntas</td>
+                        </tr>
+                        <tr>
+                            <td>HTML CSS Support</td>
+                            <td>Autocomplete para classes CSS no HTML</td>
+                        </tr>
+                        <tr>
+                            <td>JavaScript (ES6) code snippets</td>
+                            <td>Snippets para ES6</td>
+                        </tr>
+                        <tr>
+                            <td>Path Intellisense</td>
+                            <td>Autocomplete para caminhos de arquivos</td>
+                        </tr>
+                        <tr>
+                            <td>Color Highlight</td>
+                            <td>Mostra a cor no código (ex: <code>#ff0000</code> fica vermelho)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>🎯 PROJETO PRÁTICO – CRIE SUA PRIMEIRA PÁGINA</h4>
+            <p>Agora vamos juntar tudo que você aprendeu.</p>
+            <p><strong>Passo 1: Crie a estrutura</strong></p>
+            <p>Crie uma pasta chamada <code>meu-site</code> e abra no VSCode.</p>
+            <p>Crie três arquivos:</p>
+            <ul>
+                <li><code>index.html</code></li>
+                <li><code>style.css</code></li>
+                <li><code>script.js</code></li>
+            </ul>
+            <p><strong>Passo 2: HTML com Emmet</strong></p>
+            <p>No <code>index.html</code>, digite <code>!</code> e aperte <code>Tab</code>. O VSCode gera a
+                estrutura.</p>
+            <p>Modifique o <code>&lt;title&gt;</code> para “Meu Primeiro Site”.</p>
+            <p>Dentro do <code>&lt;body&gt;</code>, digite:</p>
+            <pre><code>header>h1{Título do Site}+nav>ul>li*3{Item $}
+main>section*2>h2{Seção $}+p{Lorem ipsum dolor sit amet.}
+footer>p{© 2026 Meu Site}</code></pre>
+            <p>Aperte <code>Tab</code>. O Emmet gera a estrutura completa.</p>
+            <p><strong>Passo 3: CSS com estilo</strong></p>
+            <p>No <code>style.css</code>, escreva:</p>
+            <div class="code-block position-relative mb-3">
+                <button class="btn btn-sm btn-copy-code position-absolute top-0 end-0 m-2" data-code-target="code8">
+                    <i class="fas fa-copy me-1"></i> Copiar
+                </button>
+                <pre><code class="language-css" id="code8">body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f5f5;
+  color: #333;
+}
+header {
+  background: #2c3e50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+}
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+}
+section {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+footer {
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}</code></pre>
+            </div>
+            <p>💡 DICA: Use Emmet para acelerar. Digite <code>bgc#f5f5f5</code> + <code>Tab</code> para
+                <code>background-color: #f5f5f5;</code>.
+            </p>
+            <p><strong>Passo 4: JavaScript com interação</strong></p>
+            <p>No <code>script.js</code>, escreva:</p>
+            <div class="code-block position-relative mb-3">
+                <button class="btn btn-sm btn-copy-code position-absolute top-0 end-0 m-2" data-code-target="code9">
+                    <i class="fas fa-copy me-1"></i> Copiar
+                </button>
+                <pre><code class="language-javascript" id="code9">document.addEventListener('DOMContentLoaded', function() {
+  console.log('🚀 Página carregada!');
+  // Adiciona um evento nos itens do menu
+  const items = document.querySelectorAll('nav ul li');
+  items.forEach((item, index) => {
+    item.addEventListener('click', function() {
+      alert(`Você clicou no item ${index + 1}`);
+    });
+  });
+});</code></pre>
+            </div>
+            <p><strong>Passo 5: Rode com Live Server</strong></p>
+            <ol>
+                <li>Clique com o botão direito no <code>index.html</code></li>
+                <li>Escolha “Open with Live Server”</li>
+                <li>Veja sua página no navegador</li>
+            </ol>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_38.jpg" alt="imagem 38" class="img-fluid">
+            </div>
+            <p><strong>Passo 6: Teste o fluxo</strong></p>
+            <ol>
+                <li>Mude o texto do <code>&lt;h1&gt;</code> no HTML</li>
+                <li>Salve (<code>Ctrl + S</code>)</li>
+                <li>Veja o navegador atualizar automaticamente</li>
+                <li>Mude uma cor no CSS</li>
+                <li>Salve → navegador atualiza</li>
+                <li>Mude o JavaScript (ex: mude o texto do alert)</li>
+                <li>Salve → recarregue a página e veja a mudança</li>
+            </ol>
+
+            <h4>🧠 DICAS DE PRODUTIVIDADE PARA WEB</h4>
+            <ol>
+                <li><strong>Multi-cursor</strong> – Segure <code>Alt</code> (Windows/Linux) ou <code>Option</code>
+                    (Mac) e clique em vários lugares. Digite e veja o texto aparecer em todos os lugares ao mesmo
+                    tempo.</li>
+                <li><strong>Selecionar múltiplas ocorrências</strong> – Selecione uma palavra e pressione
+                    <code>Ctrl + D</code> (Windows/Linux) ou <code>Cmd + D</code> (Mac) para selecionar a próxima
+                    ocorrência.
+                </li>
+                <li><strong>Comentar rápido</strong> – <code>Ctrl + /</code> (Windows/Linux) ou <code>Cmd + /</code>
+                    (Mac) comenta/descomenta a linha.</li>
+                <li><strong>Emmet Wrap</strong> – Selecione um texto, abra a Command Palette
+                    (<code>Ctrl + Shift + P</code>), digite “Emmet: Wrap with Abbreviation”, digite uma abreviação
+                    (ex: <code>div.container</code>) e veja o texto ser envolvido.</li>
+                <li><strong>Navegação rápida</strong> – <code>Ctrl + P</code> (ou <code>Cmd + P</code>) → abrir
+                    arquivo rapidamente; <code>Ctrl + G</code> → ir para uma linha específica;
+                    <code>Ctrl + Shift + O</code> → ir para um símbolo (função, classe, etc).
+                </li>
+                <li><strong>Abrir no navegador sem Live Server</strong> – Clique com o botão direito no arquivo →
+                    “Reveal in File Explorer”, dê dois cliques no arquivo HTML – ele abre no navegador (mas sem
+                    atualização automática).</li>
+            </ol>
+
+            <h4>📝 CHECKLIST – VOCÊ DOMINOU A TRÍADE?</h4>
+            <ul>
+                <li><input type="checkbox" disabled> Criou um arquivo HTML com Emmet (<code>!</code> +
+                    <code>Tab</code>)
+                </li>
+                <li><input type="checkbox" disabled> Usou IntelliSense para escrever HTML mais rápido</li>
+                <li><input type="checkbox" disabled> Instalou e usou o Live Server</li>
+                <li><input type="checkbox" disabled> Viu o navegador atualizar automaticamente ao salvar</li>
+                <li><input type="checkbox" disabled> Escreveu CSS com IntelliSense e color picker</li>
+                <li><input type="checkbox" disabled> Usou Emmet para CSS (ex: <code>m10</code> + <code>Tab</code>)
+                </li>
+                <li><input type="checkbox" disabled> Escreveu JavaScript com IntelliSense</li>
+                <li><input type="checkbox" disabled> Instalou e configurou o Prettier</li>
+                <li><input type="checkbox" disabled> Ativou “Format on Save”</li>
+                <li><input type="checkbox" disabled> Criou uma página completa com HTML, CSS e JS</li>
+                <li><input type="checkbox" disabled> Usou o Live Server para ver a página funcionando</li>
+            </ul>
+            <p>Se você marcou todos, PARABÉNS! Você já está mais produtivo que 90% das pessoas que abrem o VSCode
+                pela primeira vez.</p>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- PARTE 4 – PYTHON                                             -->
+        <!-- ============================================================ -->
+        <section class="card glass-card p-4 p-lg-5 mb-5">
+            <h2 class="card-title display-6 fw-bold text-utfpr-yellow">
+                <i class="fab fa-python me-3"></i> 🐍 PARTE 4: PYTHON NO VSCODE – A LINGUAGEM QUE FAZ TUDO
+                (INCLUSIVE CAFÉ)
+            </h2>
+            <p><strong>Bem-vindo ao lado negro da força (que na verdade é azul)</strong></p>
+            <p>Na Parte 3 você dominou a tríade sagrada da web (HTML, CSS, JS). Agora é hora de adicionar Python ao
+                seu arsenal. E não é qualquer Python – é Python no VSCode, que é tipo colocar um motor de foguete
+                num carro esportivo.</p>
+            <p>Python é a linguagem que todo mundo ama. É usada pra:</p>
+            <ul>
+                <li>🧠 Inteligência Artificial</li>
+                <li>📊 Ciência de Dados</li>
+                <li>🌐 Backend de sites</li>
+                <li>🤖 Automação de tarefas</li>
+                <li>🎮 Jogos (sim, dá pra fazer jogos)</li>
+                <li>E basicamente tudo que você imaginar</li>
+            </ul>
+            <p>E o VSCode é o melhor editor pra Python. A extensão oficial da Microsoft transforma o VSCode num IDE
+                completo, com IntelliSense, debug, testes, formatação e muito mais.</p>
+            <p>Pega o café (ou chá, ou água, não vou julgar) e bora dominar o Python no VSCode.</p>
+
+            <h4>📦 INSTALANDO O PYTHON – O PRIMEIRO PASSO</h4>
+            <p><strong>Você já tem Python? Vamos descobrir.</strong></p>
+            <p>Antes de sair instalando tudo, vamos ver se você já tem Python no seu computador.</p>
+            <p>Abra o terminal (integrado do VSCode ou o do sistema) e digite:</p>
+            <pre><code class="language-bash">python --version</code></pre>
+            <p>ou</p>
+            <pre><code class="language-bash">python3 --version</code></pre>
+            <p>Se aparecer algo como <code>Python 3.12.0</code> ou superior, você já tem Python. Pule para a próxima
+                seção.</p>
+            <p>Se aparecer <code>'python' não é reconhecido</code> ou similar, você precisa instalar.</p>
+            <p><strong>Instalando Python (se você não tiver)</strong></p>
+            <p><em>No Windows</em></p>
+            <ol>
+                <li>Vá para https://python.org/downloads/</li>
+                <li>Baixe o instalador mais recente</li>
+                <li>⚠️ ATENÇÃO: Na primeira tela, MARQUE “Add Python to PATH” (isso é crucial)</li>
+                <li>Clique em “Install Now”</li>
+                <li>Espere terminar</li>
+                <li>Abra o terminal e teste: <code>python --version</code></li>
+            </ol>
+            <p><em>No Mac</em></p>
+            <ol>
+                <li>Abra o terminal</li>
+                <li>Instale via Homebrew (se tiver): <code>brew install python</code></li>
+                <li>Ou baixe do site oficial python.org</li>
+                <li>Teste: <code>python3 --version</code></li>
+            </ol>
+            <p><em>No Linux</em></p>
+            <pre><code class="language-bash">sudo apt update
+sudo apt install python3 python3-pip</code></pre>
+            <p>Teste: <code>python3 --version</code></p>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_39.jpg" alt="imagem 39" class="img-fluid">
+            </div>
+
+            <h4>🧩 EXTENSÕES OBRIGATÓRIAS PARA PYTHON</h4>
+            <p>O VSCode “puro” não entende Python. Você precisa instalar as extensões certas. E não é uma, são
+                várias que trabalham juntas.</p>
+            <p><strong>A Tríade do Python no VSCode</strong></p>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Extensão</th>
+                            <th>O que faz</th>
+                            <th>Por que é essencial</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Python (ms-python.python)</td>
+                            <td>A extensão principal. Dá suporte a IntelliSense, debug, testes, formatação, linting
+                                e muito mais.</td>
+                            <td>OBRIGATÓRIA. Sem ela, você tá escrevendo texto colorido, não código.</td>
+                        </tr>
+                        <tr>
+                            <td>Pylance</td>
+                            <td>O servidor de linguagem que faz o IntelliSense funcionar.</td>
+                            <td>OBRIGATÓRIA. É o cérebro por trás do autocomplete.</td>
+                        </tr>
+                        <tr>
+                            <td>Python Debugger</td>
+                            <td>O debugger oficial do Python.</td>
+                            <td>OBRIGATÓRIA. Você vai errar. E vai precisar debugar.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><strong>Como instalar</strong></p>
+            <ol>
+                <li>Abra a aba de extensões (🧩) ou pressione <code>Ctrl + Shift + X</code></li>
+                <li>Busque por “Python” (da Microsoft)</li>
+                <li>Clique em Instalar</li>
+                <li>As extensões Pylance e Python Debugger vêm juntas com a Python extension. Você não precisa
+                    instalar separadamente.</li>
+            </ol>
+            <p><strong>Extensões extras que vão mudar sua vida</strong></p>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Extensão</th>
+                            <th>O que faz</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ruff</td>
+                            <td>Um linter e formatador extremamente rápido para Python, escrito em Rust. É tipo o
+                                Prettier do Python, só que mais rápido.</td>
+                        </tr>
+                        <tr>
+                            <td>Python Indent</td>
+                            <td>Corrige indentação automaticamente (coisa que todo iniciante em Python sofre)</td>
+                        </tr>
+                        <tr>
+                            <td>Jupyter</td>
+                            <td>Suporte a notebooks Jupyter dentro do VSCode</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_40.jpg" alt="imagem 40" class="img-fluid">
+            </div>
+
+            <h4>🎯 SEU PRIMEIRO PROJETO PYTHON</h4>
+            <p><strong>Passo 1: Crie uma pasta</strong></p>
+            <p>Crie uma pasta chamada <code>meu-python</code> em algum lugar do seu computador.</p>
+            <p><strong>Passo 2: Abra no VSCode</strong></p>
+            <ul>
+                <li>Abra o VSCode</li>
+                <li>File > Open Folder (ou Arquivo > Abrir Pasta)</li>
+                <li>Selecione a pasta <code>meu-python</code></li>
+            </ul>
+            <p><strong>Passo 3: Crie seu primeiro arquivo Python</strong></p>
+            <p>No Explorer, clique em New File e crie <code>ola.py</code>.</p>
+            <p><strong>Passo 4: Escreva seu primeiro código</strong></p>
+            <p>No <code>ola.py</code>, digite:</p>
+            <div class="code-block position-relative mb-3">
+                <button class="btn btn-sm btn-copy-code position-absolute top-0 end-0 m-2" data-code-target="code10">
+                    <i class="fas fa-copy me-1"></i> Copiar
+                </button>
+                <pre><code class="language-python" id="code10">print("🐍 Olá, mundo do Python!")
+nome = input("Qual é o seu nome? ")
+print(f"Bem-vindo ao VSCode, {nome}!")</code></pre>
+            </div>
+            <p><strong>Passo 5: Execute</strong></p>
+            <ul>
+                <li><strong>Maneira 1 – Botão de Run:</strong> No canto superior direito, tem um triângulo ▶️ –
+                    clique nele.</li>
+                <li><strong>Maneira 2 – Terminal:</strong> Abra o terminal integrado (<code>Ctrl + `</code>),
+                    digite: <code>python ola.py</code> (ou <code>python3 ola.py</code> no Mac/Linux).</li>
+                <li><strong>Maneira 3 – Atalho:</strong> Pressione <code>Ctrl + F5</code> (Windows/Linux) ou
+                    <code>Cmd + F5</code> (Mac).
+                </li>
+            </ul>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_41.jpg" alt="imagem 41" class="img-fluid">
+            </div>
+
+            <h4>🌍 AMBIENTES VIRTUAIS – ISOLANDO SEUS PROJETOS</h4>
+            <p><strong>O que é um ambiente virtual?</strong></p>
+            <p>Um ambiente virtual é uma cópia isolada do Python dentro do seu projeto. Cada projeto tem seu próprio
+                Python, suas próprias bibliotecas, suas próprias versões.</p>
+            <p><strong>Por que isso é importante?</strong></p>
+            <ul>
+                <li>Projeto A precisa da versão 1.0 da biblioteca X</li>
+                <li>Projeto B precisa da versão 2.0 da biblioteca X</li>
+                <li>Sem ambientes virtuais, você teria que desinstalar e instalar toda hora</li>
+                <li>Com ambientes virtuais, cada projeto tem sua própria versão</li>
+            </ul>
+            <p>É tipo cada projeto ter seu próprio quarto, com suas próprias coisas, sem bagunçar o quarto dos
+                outros.</p>
+            <p><strong>Criando um ambiente virtual com venv</strong></p>
+            <p>O Python vem com o módulo <code>venv</code> pra criar ambientes virtuais.</p>
+            <p>No terminal integrado do VSCode (dentro da pasta do seu projeto), rode:</p>
+            <pre><code class="language-bash">python -m venv .venv</code></pre>
+            <p>Isso cria uma pasta <code>.venv</code> dentro do seu projeto com uma cópia isolada do Python.</p>
+            <p><strong>Ativando o ambiente virtual</strong></p>
+            <ul>
+                <li><strong>No Windows (PowerShell):</strong> <code>.venv\Scripts\Activate.ps1</code></li>
+                <li><strong>No Windows (CMD):</strong> <code>.venv\Scripts\activate.bat</code></li>
+                <li><strong>No Mac/Linux:</strong> <code>source .venv/bin/activate</code></li>
+            </ul>
+            <p>Quando o ambiente está ativo, você vê <code>(.venv)</code> no início do prompt do terminal.</p>
+            <p><strong>Selecionando o interpretador no VSCode</strong></p>
+            <p>O VSCode detecta automaticamente ambientes virtuais com o nome <code>.venv</code> na raiz do projeto.
+            </p>
+            <p>Mas se não detectar, você pode selecionar manualmente:</p>
+            <ol>
+                <li>Abra a Command Palette (<code>Ctrl + Shift + P</code> ou <code>Cmd + Shift + P</code>)</li>
+                <li>Digite “Python: Select Interpreter”</li>
+                <li>Escolha o interpretador que está dentro da pasta <code>.venv</code></li>
+            </ol>
+            <p>O VSCode mostra na barra de status (embaixo) qual interpretador está sendo usado.</p>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_42.jpg" alt="imagem 42" class="img-fluid">
+            </div>
+            <p><strong>Instalando pacotes no ambiente virtual</strong></p>
+            <p>Com o ambiente ativado, use o <code>pip</code> para instalar pacotes:</p>
+            <pre><code class="language-bash">pip install requests
+pip install flask
+pip install numpy pandas</code></pre>
+            <p>Os pacotes são instalados apenas dentro do <code>.venv</code>, não afetam o resto do sistema.</p>
+            <p><strong>O arquivo requirements.txt</strong></p>
+            <p>Para compartilhar as dependências do seu projeto:</p>
+            <pre><code class="language-bash">pip freeze > requirements.txt</code></pre>
+            <p>Isso cria um arquivo com todas as bibliotecas instaladas e suas versões.</p>
+            <p>Outra pessoa pode instalar tudo com:</p>
+            <pre><code class="language-bash">pip install -r requirements.txt</code></pre>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_43.jpg" alt="imagem 43" class="img-fluid">
+            </div>
+
+            <h4>🧠 INTELLISENSE – O AUTOPILOTO DO PYTHON</h4>
+            <p>O IntelliSense é uma das melhores coisas do VSCode com Python. Ele:</p>
+            <ul>
+                <li>Sugere métodos e propriedades enquanto você digita</li>
+                <li>Mostra a documentação das funções</li>
+                <li>Auto-completa nomes de variáveis e funções</li>
+                <li>Importa automaticamente módulos que você usa</li>
+            </ul>
+            <p><strong>Como funciona?</strong></p>
+            <p>Quando você digita <code>import </code>, o VSCode sugere todos os módulos disponíveis.</p>
+            <p>Quando você digita <code>requests.</code>, ele sugere <code>get</code>, <code>post</code>,
+                <code>put</code>, <code>delete</code>.
+            </p>
+            <p>Quando você digita o nome de uma função, ele mostra os parâmetros esperados.</p>
+            <p><strong>Atalhos do IntelliSense</strong></p>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Ação</th>
+                            <th>Atalho</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Abrir sugestões manualmente</td>
+                            <td><code>Ctrl + Space</code></td>
+                        </tr>
+                        <tr>
+                            <td>Aceitar sugestão</td>
+                            <td><code>Tab</code> ou <code>Enter</code></td>
+                        </tr>
+                        <tr>
+                            <td>Ver documentação</td>
+                            <td><code>Ctrl + K, Ctrl + I</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_44.jpg" alt="imagem 44" class="img-fluid">
+            </div>
+
+            <h4>🐛 DEBUGANDO PYTHON – CAÇANDO BUGS COMO UM PROFISSIONAL</h4>
+            <p><strong>O que é debugging?</strong></p>
+            <p>Debugging é o processo de encontrar e corrigir erros no seu código. O VSCode tem um debugger
+                integrado que permite:</p>
+            <ul>
+                <li>Parar o código em pontos específicos (breakpoints)</li>
+                <li>Ver o valor das variáveis</li>
+                <li>Executar o código linha por linha</li>
+                <li>Entender o fluxo do programa</li>
+            </ul>
+            <p><strong>Como debugar no VSCode</strong></p>
+            <p><em>Passo 1: Abra a view de Debug</em> – Clique no ícone 🐛 na barra de atividades (ou pressione
+                <code>Ctrl + Shift + D</code> / <code>Cmd + Shift + D</code>).
+            </p>
+            <p><em>Passo 2: Configure o debugger</em></p>
+            <ol>
+                <li>Clique em “Run and Debug” (ou pressione <code>F5</code>)</li>
+                <li>Selecione “Python File” (ou “Python Debugger”)</li>
+                <li>O VSCode cria um arquivo <code>.vscode/launch.json</code> com a configuração</li>
+            </ol>
+            <p><em>Passo 3: Coloque breakpoints</em> – Breakpoints são pontos onde o código para de executar. Para
+                colocar um: clique na margem esquerda do editor (ao lado do número da linha) – aparece uma bolinha
+                vermelha 🔴.</p>
+            <p><em>Passo 4: Inicie o debug</em> – Pressione <code>F5</code> ou clique no botão verde de play na view
+                de Debug.</p>
+            <p><em>Passo 5: Controle a execução</em> – Quando o código para num breakpoint, você pode:</p>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Comando</th>
+                            <th>Atalho</th>
+                            <th>O que faz</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Continuar</td>
+                            <td><code>F5</code></td>
+                            <td>Continua a execução até o próximo breakpoint</td>
+                        </tr>
+                        <tr>
+                            <td>Passar por cima</td>
+                            <td><code>F10</code></td>
+                            <td>Executa a linha atual e vai pra próxima</td>
+                        </tr>
+                        <tr>
+                            <td>Entrar</td>
+                            <td><code>F11</code></td>
+                            <td>Entra dentro de uma função</td>
+                        </tr>
+                        <tr>
+                            <td>Sair</td>
+                            <td><code>Shift + F11</code></td>
+                            <td>Sai da função atual</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><em>Passo 6: Inspecione variáveis</em> – No painel de debug, você pode ver:</p>
+            <ul>
+                <li><strong>Variáveis:</strong> Todas as variáveis e seus valores atuais</li>
+                <li><strong>Watch:</strong> Expressões que você quer monitorar</li>
+                <li><strong>Call Stack:</strong> A pilha de chamadas (quem chamou quem)</li>
+            </ul>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_45.jpg" alt="imagem 45" class="img-fluid">
+            </div>
+            <p><strong>Dicas de debugging</strong></p>
+            <ul>
+                <li><strong>Breakpoints condicionais:</strong> Clique com o botão direito no breakpoint e defina uma
+                    condição (ex: <code>i > 5</code>)</li>
+                <li><strong>Logpoints:</strong> Em vez de parar, o breakpoint pode apenas imprimir uma mensagem no
+                    console</li>
+                <li><strong>Debug remoto:</strong> O VSCode pode debugar código rodando em outro computador ou
+                    container</li>
+            </ul>
+
+            <h4>🧹 LINTING E FORMATAÇÃO – CÓDIGO BONITO E SEM ERROS</h4>
+            <p><strong>Linting: encontrando erros antes de rodar</strong></p>
+            <p>Linting é o processo de analisar o código em busca de erros antes de executá-lo.</p>
+            <p>O VSCode com Python suporta vários linters:</p>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Linter</th>
+                            <th>O que faz</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Pylint</td>
+                            <td>O mais tradicional. Analisa estilo, erros e problemas.</td>
+                        </tr>
+                        <tr>
+                            <td>Flake8</td>
+                            <td>Combina PyFlakes, pycodestyle e McCabe. Muito popular.</td>
+                        </tr>
+                        <tr>
+                            <td>Ruff</td>
+                            <td>O mais novo e mais rápido – escrito em Rust.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><strong>Instalando e configurando o Ruff (recomendado)</strong></p>
+            <ol>
+                <li>Instale a extensão Ruff no VSCode</li>
+                <li>Ou instale via pip: <code>pip install ruff</code></li>
+                <li>O Ruff vai apontar erros e problemas em tempo real</li>
+            </ol>
+            <p><strong>Como ativar o linting</strong></p>
+            <ol>
+                <li>Abra a Command Palette (<code>Ctrl + Shift + P</code>)</li>
+                <li>Digite “Python: Select Linter”</li>
+                <li>Escolha o linter que você quer usar</li>
+            </ol>
+            <p><strong>Formatação: código sempre bonito</strong></p>
+            <p>Assim como o Prettier para HTML/CSS/JS, o Python tem seus próprios formatadores:</p>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Formatador</th>
+                            <th>O que faz</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Black</td>
+                            <td>O formatador mais popular – “opinionado” e sem configurações</td>
+                        </tr>
+                        <tr>
+                            <td>autopep8</td>
+                            <td>Formata seguindo as regras do PEP 8</td>
+                        </tr>
+                        <tr>
+                            <td>Ruff</td>
+                            <td>Também faz formatação, além de linting</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><strong>Configurando o Ruff como formatador</strong></p>
+            <ol>
+                <li>Instale a extensão Ruff</li>
+                <li>Nas configurações, defina:
+                    <pre><code>{
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true
+  }
+}</code></pre>
+                </li>
+            </ol>
+            <p><strong>Formatando manualmente</strong></p>
+            <ul>
+                <li>Format Document: <code>Shift + Alt + F</code></li>
+                <li>Format Selection: selecione o código e use o comando</li>
+            </ul>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_46.jpg" alt="imagem 46" class="img-fluid">
+            </div>
+
+            <h4>📓 JUPYTER NOTEBOOKS NO VSCODE</h4>
+            <p><strong>O que é Jupyter?</strong></p>
+            <p>Jupyter Notebook é uma ferramenta que permite combinar código Python, texto e visualizações num único
+                documento interativo.</p>
+            <p>É muito usado em:</p>
+            <ul>
+                <li>Ciência de Dados</li>
+                <li>Machine Learning</li>
+                <li>Educação</li>
+                <li>Prototipagem rápida</li>
+            </ul>
+            <p><strong>Usando Jupyter no VSCode</strong></p>
+            <p>O VSCode tem suporte nativo para Jupyter Notebooks.</p>
+            <p><em>Passo 1: Instale o Jupyter</em> – No terminal, com seu ambiente virtual ativado:</p>
+            <pre><code class="language-bash">pip install jupyter</code></pre>
+            <p><em>Passo 2: Crie um notebook</em> – No Explorer, clique em New File, nomeie o arquivo com extensão
+                <code>.ipynb</code> (ex: <code>analise.ipynb</code>). O VSCode abre o notebook.
+            </p>
+            <p><em>Passo 3: Escreva código</em> – Cada “célula” pode conter código Python. Clique no botão ▶️ para
+                executar a célula. O resultado aparece abaixo da célula.</p>
+            <p><em>Passo 4: Misture com Markdown</em> – Células podem ser do tipo Markdown. Você pode escrever
+                texto, títulos, listas, equações.</p>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_47.jpg" alt="imagem 47" class="img-fluid">
+            </div>
+
+            <h4>🚀 ATALHOS ESSENCIAIS PARA PYTHON</h4>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Ação</th>
+                            <th>Windows/Linux</th>
+                            <th>Mac</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Executar arquivo Python</td>
+                            <td><code>Ctrl + F5</code></td>
+                            <td><code>Cmd + F5</code></td>
+                        </tr>
+                        <tr>
+                            <td>Iniciar debug</td>
+                            <td><code>F5</code></td>
+                            <td><code>F5</code></td>
+                        </tr>
+                        <tr>
+                            <td>Passar por cima (debug)</td>
+                            <td><code>F10</code></td>
+                            <td><code>F10</code></td>
+                        </tr>
+                        <tr>
+                            <td>Entrar (debug)</td>
+                            <td><code>F11</code></td>
+                            <td><code>F11</code></td>
+                        </tr>
+                        <tr>
+                            <td>Selecionar interpretador</td>
+                            <td><code>Ctrl + Shift + P</code> → “Python: Select Interpreter”</td>
+                            <td><code>Cmd + Shift + P</code> → “Python: Select Interpreter”</td>
+                        </tr>
+                        <tr>
+                            <td>Criar ambiente virtual</td>
+                            <td><code>python -m venv .venv</code></td>
+                            <td><code>python3 -m venv .venv</code></td>
+                        </tr>
+                        <tr>
+                            <td>Instalar pacote</td>
+                            <td><code>pip install pacote</code></td>
+                            <td><code>pip install pacote</code></td>
+                        </tr>
+                        <tr>
+                            <td>Format Document</td>
+                            <td><code>Shift + Alt + F</code></td>
+                            <td><code>Shift + Option + F</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>🎯 PROJETO PRÁTICO – UMA CALCULADORA EM PYTHON</h4>
+            <p>Vamos criar um projeto Python completo no VSCode.</p>
+            <p><strong>Passo 1: Crie a estrutura</strong></p>
+            <pre><code>meu-python/
+├── .venv/          (ambiente virtual)
+├── calculadora.py
+└── requirements.txt</code></pre>
+            <p><strong>Passo 2: Crie o ambiente virtual</strong></p>
+            <pre><code class="language-bash">python -m venv .venv</code></pre>
+            <p>Ative o ambiente e selecione o interpretador no VSCode.</p>
+            <p><strong>Passo 3: Escreva o código</strong></p>
+            <p>No <code>calculadora.py</code>:</p>
+            <div class="code-block position-relative mb-3">
+                <button class="btn btn-sm btn-copy-code position-absolute top-0 end-0 m-2" data-code-target="code11">
+                    <i class="fas fa-copy me-1"></i> Copiar
+                </button>
+                <pre><code class="language-python" id="code11">"""
+Calculadora simples em Python
+Demonstra funções, input do usuário e tratamento de erros
+"""
+
+def soma(a, b):
+    return a + b
+
+def subtracao(a, b):
+    return a - b
+
+def multiplicacao(a, b):
+    return a * b
+
+def divisao(a, b):
+    if b == 0:
+        return "Erro: divisão por zero!"
+    return a / b
+
+def calculadora():
+    print("🧮 CALCULADORA PYTHON")
+    print("=" * 30)
+    while True:
+        print("\nOperações:")
+        print("1 - Soma")
+        print("2 - Subtração")
+        print("3 - Multiplicação")
+        print("4 - Divisão")
+        print("5 - Sair")
+        opcao = input("\nEscolha uma opção: ")
+        if opcao == "5":
+            print("👋 Até logo!")
+            break
+        if opcao not in ["1", "2", "3", "4"]:
+            print("❌ Opção inválida!")
+            continue
+        try:
+            num1 = float(input("Digite o primeiro número: "))
+            num2 = float(input("Digite o segundo número: "))
+        except ValueError:
+            print("❌ Entrada inválida! Digite números.")
+            continue
+        if opcao == "1":
+            resultado = soma(num1, num2)
+            print(f"✅ {num1} + {num2} = {resultado}")
+        elif opcao == "2":
+            resultado = subtracao(num1, num2)
+            print(f"✅ {num1} - {num2} = {resultado}")
+        elif opcao == "3":
+            resultado = multiplicacao(num1, num2)
+            print(f"✅ {num1} × {num2} = {resultado}")
+        elif opcao == "4":
+            resultado = divisao(num1, num2)
+            print(f"✅ {num1} ÷ {num2} = {resultado}")
+
+if __name__ == "__main__":
+    calculadora()</code></pre>
+            </div>
+            <p><strong>Passo 4: Rode e debugue</strong></p>
+            <ol>
+                <li>Execute com <code>Ctrl + F5</code> ou clique no triângulo</li>
+                <li>Teste todas as operações</li>
+                <li>Coloque um breakpoint na função <code>soma</code> e debugue (<code>F5</code>)</li>
+            </ol>
+            <p><strong>Passo 5: Formate com Ruff</strong></p>
+            <ol>
+                <li>Instale o Ruff: <code>pip install ruff</code></li>
+                <li>Instale a extensão Ruff no VSCode</li>
+                <li>Pressione <code>Shift + Alt + F</code> para formatar</li>
+            </ol>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_48.jpg" alt="imagem 48" class="img-fluid">
+            </div>
+
+            <h4>📝 CHECKLIST – VOCÊ DOMINOU O PYTHON NO VSCODE?</h4>
+            <ul>
+                <li><input type="checkbox" disabled> Instalou o Python no seu computador</li>
+                <li><input type="checkbox" disabled> Instalou a extensão Python da Microsoft</li>
+                <li><input type="checkbox" disabled> Criou um arquivo <code>.py</code> e rodou com o botão de run
+                </li>
+                <li><input type="checkbox" disabled> Criou um ambiente virtual com <code>python -m venv .venv</code>
+                </li>
+                <li><input type="checkbox" disabled> Ativou o ambiente virtual</li>
+                <li><input type="checkbox" disabled> Selecionou o interpretador correto no VSCode</li>
+                <li><input type="checkbox" disabled> Instalou um pacote com <code>pip</code></li>
+                <li><input type="checkbox" disabled> Usou o IntelliSense para autocomplete</li>
+                <li><input type="checkbox" disabled> Colocou um breakpoint e debugou com <code>F5</code></li>
+                <li><input type="checkbox" disabled> Instalou o Ruff (ou outro linter)</li>
+                <li><input type="checkbox" disabled> Formatou o código com <code>Shift + Alt + F</code></li>
+                <li><input type="checkbox" disabled> Criou um Jupyter Notebook (<code>.ipynb</code>)</li>
+                <li><input type="checkbox" disabled> Criou um projeto Python completo (calculadora)</li>
+            </ul>
+            <p>Se você marcou todos, PARABÉNS! Você é oficialmente um(a) pythonista.</p>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- PARTE 5 – PROJETO INTEGRADO                                  -->
+        <!-- ============================================================ -->
+        <section class="card glass-card p-4 p-lg-5 mb-5">
+            <h2 class="card-title display-6 fw-bold text-utfpr-yellow">
+                <i class="fas fa-rocket me-3"></i> 🌟 PARTE 5: PROJETO INTEGRADO – HTML + CSS + JS + PYTHON =
+                FELICIDADE
+            </h2>
+            <p><strong>O momento da verdade</strong></p>
+            <p>Você já:</p>
+            <ul>
+                <li>Aprendeu a usar o VSCode como um(a) deus(a)</li>
+                <li>Instalou e configurou tudo</li>
+                <li>Dominou HTML, CSS e JavaScript</li>
+                <li>Dominou Python com ambientes virtuais e debug</li>
+            </ul>
+            <p>Agora é hora de JUNTAR TUDO numa aplicação de verdade. Não vai ser um “Hello World” – vai ser um
+                sistema completo com frontend e backend, rodando no VSCode, com direito a debug, formatação, e tudo
+                que você aprendeu.</p>
+            <p><strong>O projeto do dia: Lista de Tarefas (To-Do List)</strong> com:</p>
+            <ul>
+                <li>Frontend em HTML, CSS e JavaScript (página bonita e interativa)</li>
+                <li>Backend em Python com Flask (API REST)</li>
+                <li>Comunicação entre frontend e backend via fetch</li>
+            </ul>
+            <p>Pega o café (ou energético, ou chá, ou suco, não julgo) e bora codar.</p>
+
+            <h4>🎯 ESCOLHA DO PROJETO – POR QUE UMA TO-DO LIST?</h4>
+            <p>Porque é um projeto clássico que:</p>
+            <ul>
+                <li>Envolve CRUD (Create, Read, Update, Delete) – o básico de qualquer sistema</li>
+                <li>Tem frontend interativo (JavaScript puro, sem frameworks)</li>
+                <li>Tem backend com API (Flask)</li>
+                <li>É útil – você pode usar no dia a dia</li>
+                <li>É fácil de expandir (pode adicionar autenticação, banco de dados, etc)</li>
+            </ul>
+            <p>No final, você vai ter uma aplicação funcional que roda no seu computador, com código bonito e bem
+                estruturado.</p>
+
+            <h4>📁 ESTRUTURA DO PROJETO</h4>
+            <p>Crie uma pasta chamada <code>todo-app</code> e dentro dela a seguinte estrutura:</p>
+            <pre><code>todo-app/
+├── .venv/                    Ambiente virtual (criado depois)
+├── backend/
+│   ├── app.py                Servidor Flask
+│   └── requirements.txt      Dependências do backend
+├── frontend/
+│   ├── index.html            Página principal
+│   ├── style.css             Estilos
+│   └── script.js             Lógica frontend
+└── .vscode/                  Configurações do VSCode (opcional)
+    └── settings.json         Configurações específicas do projeto</code></pre>
+            <p>Abra a pasta <code>todo-app</code> no VSCode.</p>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_49.jpg" alt="imagem 49" class="img-fluid">
+            </div>
+
+            <h4>🐍 BACKEND – CRIANDO A API COM FLASK</h4>
+            <p><strong>O que é Flask?</strong></p>
+            <p>Flask é um micro-framework para Python. Ele permite criar servidores web e APIs REST com poucas
+                linhas de código. É leve, flexível e perfeito para projetos como este.</p>
+            <p><strong>Passo 1: Crie e ative o ambiente virtual</strong></p>
+            <p>No terminal integrado (dentro da pasta <code>todo-app</code>):</p>
+            <pre><code class="language-bash">python -m venv .venv</code></pre>
+            <p>Ative:</p>
+            <ul>
+                <li>Windows: <code>.venv\Scripts\activate</code></li>
+                <li>Mac/Linux: <code>source .venv/bin/activate</code></li>
+            </ul>
+            <p><strong>Passo 2: Instale o Flask</strong></p>
+            <pre><code class="language-bash">pip install flask</code></pre>
+            <p><strong>Passo 3: Crie o arquivo <code>requirements.txt</code></strong></p>
+            <p>No terminal, rode:</p>
+            <pre><code class="language-bash">pip freeze > backend/requirements.txt</code></pre>
+            <p>Isso salva as dependências. Sempre faça isso para compartilhar o projeto.</p>
+            <p><strong>Passo 4: Escreva o backend</strong></p>
+            <p>No arquivo <code>backend/app.py</code>, cole o código abaixo:</p>
+            <div class="code-block position-relative mb-3">
+                <button class="btn btn-sm btn-copy-code position-absolute top-0 end-0 m-2" data-code-target="code12">
+                    <i class="fas fa-copy me-1"></i> Copiar
+                </button>
+                <pre><code class="language-python" id="code12">from flask import Flask, jsonify, request, render_template
+
+app = Flask(__name__)
+
+# Dados em memória (simulando um banco de dados)
+tarefas = []
+contador_id = 1
+
+@app.route('/')
+def home():
+    return "🚀 Servidor Flask está rodando! Acesse /tarefas para ver a lista."
+
+@app.route('/tarefas', methods=['GET'])
+def listar_tarefas():
+    """Retorna todas as tarefas em formato JSON"""
+    return jsonify(tarefas)
+
+@app.route('/tarefas', methods=['POST'])
+def criar_tarefa():
+    """Cria uma nova tarefa"""
+    global contador_id
+    dados = request.get_json()
+    if not dados or 'titulo' not in dados:
+        return jsonify({'erro': 'Título é obrigatório'}), 400
+    nova_tarefa = {
+        'id': contador_id,
+        'titulo': dados['titulo'],
+        'concluida': False
+    }
+    tarefas.append(nova_tarefa)
+    contador_id += 1
+    return jsonify(nova_tarefa), 201
+
+@app.route('/tarefas/<int:id>', methods=['PUT'])
+def atualizar_tarefa(id):
+    """Atualiza uma tarefa (marca como concluída ou não)"""
+    dados = request.get_json()
+    for tarefa in tarefas:
+        if tarefa['id'] == id:
+            if 'titulo' in dados:
+                tarefa['titulo'] = dados['titulo']
+            if 'concluida' in dados:
+                tarefa['concluida'] = dados['concluida']
+            return jsonify(tarefa)
+    return jsonify({'erro': 'Tarefa não encontrada'}), 404
+
+@app.route('/tarefas/<int:id>', methods=['DELETE'])
+def deletar_tarefa(id):
+    """Remove uma tarefa pelo ID"""
+    global tarefas
+    tarefas = [t for t in tarefas if t['id'] != id]
+    return jsonify({'mensagem': 'Tarefa removida com sucesso'}), 200
+
+if __name__ == '__main__':
+    app.run(debug=True, port=5000)</code></pre>
+            </div>
+            <p><strong>Explicação do código:</strong></p>
+            <ul>
+                <li><code>@app.route</code> define os endpoints (URLs) da API</li>
+                <li><code>GET /tarefas</code> → lista todas as tarefas</li>
+                <li><code>POST /tarefas</code> → cria uma nova tarefa (recebe JSON com <code>titulo</code>)</li>
+                <li><code>PUT /tarefas/&lt;id&gt;</code> → atualiza uma tarefa (pode mudar título ou status)</li>
+                <li><code>DELETE /tarefas/&lt;id&gt;</code> → remove uma tarefa</li>
+                <li>Os dados ficam em memória (quando o servidor reiniciar, os dados somem – depois você pode
+                    adicionar banco de dados)</li>
+            </ul>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_50.jpg" alt="imagem 50" class="img-fluid">
+            </div>
+            <p><strong>Passo 5: Rode o backend</strong></p>
+            <ol>
+                <li>Com o <code>app.py</code> aberto, clique no botão de run ▶️ no canto superior direito (ou
+                    pressione <code>Ctrl + F5</code>)</li>
+                <li>O Flask vai iniciar o servidor em <code>http://127.0.0.1:5000</code></li>
+                <li>Abra seu navegador e acesse <code>http://127.0.0.1:5000/tarefas</code> – você verá uma lista
+                    vazia <code>[]</code></li>
+            </ol>
+            <p>Se quiser testar a API, você pode usar o Postman, Insomnia ou o próprio terminal com
+                <code>curl</code>. Mas não precisa – o frontend vai consumir a API.
+            </p>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_51.jpg" alt="imagem 51" class="img-fluid">
+            </div>
+
+            <h4>🎨 FRONTEND – CRIANDO A PÁGINA</h4>
+            <p>Agora vamos construir a interface do usuário que vai consumir a API.</p>
+            <p><strong>Passo 1: HTML – a estrutura</strong></p>
+            <p>No arquivo <code>frontend/index.html</code>:</p>
+            <div class="code-block position-relative mb-3">
+                <button class="btn btn-sm btn-copy-code position-absolute top-0 end-0 m-2" data-code-target="code13">
+                    <i class="fas fa-copy me-1"></i> Copiar
+                </button>
+                <pre><code class="language-html" id="code13">&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;📋 Minha Lista de Tarefas&lt;/title&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="container"&gt;
+    &lt;h1&gt;📋 Minhas Tarefas&lt;/h1&gt;
+    &lt;div class="formulario"&gt;
+      &lt;input type="text" id="input-tarefa" placeholder="Digite uma nova tarefa..." /&gt;
+      &lt;button id="btn-adicionar"&gt;Adicionar&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;ul id="lista-tarefas"&gt;
+      &lt;!-- As tarefas serão inseridas aqui via JavaScript --&gt;
+    &lt;/ul&gt;
+    &lt;div id="status" class="status"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_52.jpg" alt="imagem 52" class="img-fluid">
+            </div>
+            <p><strong>Passo 2: CSS – a beleza</strong></p>
+            <p>No arquivo <code>frontend/style.css</code>:</p>
+            <div class="code-block position-relative mb-3">
+                <button class="btn btn-sm btn-copy-code position-absolute top-0 end-0 m-2" data-code-target="code14">
+                    <i class="fas fa-copy me-1"></i> Copiar
+                </button>
+                <pre><code class="language-css" id="code14">* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.container {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+.container:hover {
+  transform: scale(1.01);
+}
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+.formulario {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+#input-tarefa {
+  flex: 1;
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 25px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+#input-tarefa:focus {
+  border-color: #667eea;
+}
+#btn-adicionar {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+#btn-adicionar:hover {
+  background: #5a6fd6;
+  transform: scale(1.02);
+}
+#lista-tarefas {
+  list-style: none;
+  padding: 0;
+}
+.tarefa-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  margin-bottom: 8px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border-left: 5px solid #667eea;
+  transition: background 0.3s;
+}
+.tarefa-item:hover {
+  background: #e9ecef;
+}
+.tarefa-item .titulo {
+  flex: 1;
+  cursor: pointer;
+  font-size: 16px;
+}
+.tarefa-item .titulo.concluida {
+  text-decoration: line-through;
+  color: #6c757d;
+}
+.tarefa-item .acoes button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: 8px;
+  transition: transform 0.2s;
+}
+.tarefa-item .acoes button:hover {
+  transform: scale(1.2);
+}
+.tarefa-item .acoes .btn-deletar {
+  color: #dc3545;
+}
+.tarefa-item .acoes .btn-toggle {
+  color: #28a745;
+}
+.status {
+  text-align: center;
+  margin-top: 15px;
+  color: #6c757d;
+  font-size: 14px;
+}</code></pre>
+            </div>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_53.jpg" alt="imagem 53" class="img-fluid">
+            </div>
+            <p><strong>Passo 3: JavaScript – a interação com a API</strong></p>
+            <p>No arquivo <code>frontend/script.js</code>:</p>
+            <div class="code-block position-relative mb-3">
+                <button class="btn btn-sm btn-copy-code position-absolute top-0 end-0 m-2" data-code-target="code15">
+                    <i class="fas fa-copy me-1"></i> Copiar
+                </button>
+                <pre><code class="language-javascript" id="code15">// URL da API (backend Flask)
+const API_URL = 'http://127.0.0.1:5000/tarefas';
+
+// Elementos DOM
+const inputTarefa = document.getElementById('input-tarefa');
+const btnAdicionar = document.getElementById('btn-adicionar');
+const listaTarefas = document.getElementById('lista-tarefas');
+const statusDiv = document.getElementById('status');
+
+// Carrega as tarefas ao iniciar a página
+document.addEventListener('DOMContentLoaded', carregarTarefas);
+
+// Adiciona evento de clique no botão
+btnAdicionar.addEventListener('click', adicionarTarefa);
+
+// Adiciona evento de "Enter" no input
+inputTarefa.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    adicionarTarefa();
+  }
+});
+
+/**
+ * Busca todas as tarefas da API e renderiza na tela
+ */
+async function carregarTarefas() {
+  try {
+    const response = await fetch(API_URL);
+    if (!response.ok) throw new Error('Erro ao carregar tarefas');
+    const tarefas = await response.json();
+    renderizarTarefas(tarefas);
+    atualizarStatus(tarefas);
+  } catch (error) {
+    console.error('Erro:', error);
+    statusDiv.textContent = '❌ Erro ao carregar tarefas. Verifique se o backend está rodando.';
+  }
+}
+
+/**
+ * Envia uma nova tarefa para a API
+ */
+async function adicionarTarefa() {
+  const titulo = inputTarefa.value.trim();
+  if (!titulo) {
+    alert('Digite uma tarefa!');
+    return;
+  }
+  try {
+    const response = await fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ titulo })
+    });
+    if (!response.ok) throw new Error('Erro ao adicionar tarefa');
+    const novaTarefa = await response.json();
+    inputTarefa.value = '';
+    carregarTarefas(); // recarrega a lista
+  } catch (error) {
+    console.error('Erro:', error);
+    alert('❌ Não foi possível adicionar a tarefa.');
+  }
+}
+
+/**
+ * Marca/desmarca uma tarefa como concluída
+ */
+async function alternarConcluida(id, concluidaAtual) {
+  try {
+    const response = await fetch(`${API_URL}/${id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ concluida: !concluidaAtual })
+    });
+    if (!response.ok) throw new Error('Erro ao atualizar tarefa');
+    carregarTarefas(); // recarrega
+  } catch (error) {
+    console.error('Erro:', error);
+    alert('❌ Não foi possível atualizar a tarefa.');
+  }
+}
+
+/**
+ * Remove uma tarefa
+ */
+async function deletarTarefa(id) {
+  if (!confirm('Tem certeza que deseja deletar esta tarefa?')) return;
+  try {
+    const response = await fetch(`${API_URL}/${id}`, {
+      method: 'DELETE'
+    });
+    if (!response.ok) throw new Error('Erro ao deletar tarefa');
+    carregarTarefas(); // recarrega
+  } catch (error) {
+    console.error('Erro:', error);
+    alert('❌ Não foi possível deletar a tarefa.');
+  }
+}
+
+/**
+ * Renderiza a lista de tarefas no DOM
+ */
+function renderizarTarefas(tarefas) {
+  if (tarefas.length === 0) {
+    listaTarefas.innerHTML = '<li style="text-align:center;color:#6c757d;">🎉 Nenhuma tarefa! Adicione uma acima.</li>';
+    return;
+  }
+  listaTarefas.innerHTML = tarefas.map(tarefa => `
+    <li class="tarefa-item" data-id="${tarefa.id}">
+      <span class="titulo ${tarefa.concluida ? 'concluida' : ''}"
+            onclick="alternarConcluida(${tarefa.id}, ${tarefa.concluida})">
+        ${tarefa.titulo}
+      </span>
+      <div class="acoes">
+        <button class="btn-toggle" onclick="alternarConcluida(${tarefa.id}, ${tarefa.concluida})"
+                title="Alternar conclusão">
+          ${tarefa.concluida ? '✅' : '⬜'}
+        </button>
+        <button class="btn-deletar" onclick="deletarTarefa(${tarefa.id})" title="Deletar">
+          🗑️
+        </button>
       </div>
+    </li>
+  `).join('');
+}
+
+/**
+ * Atualiza o contador de tarefas
+ */
+function atualizarStatus(tarefas) {
+  const total = tarefas.length;
+  const concluidas = tarefas.filter(t => t.concluida).length;
+  statusDiv.textContent = `📊 Total: ${total} | Concluídas: ${concluidas} | Pendentes: ${total - concluidas}`;
+}</code></pre>
+            </div>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_54.jpg" alt="imagem 54" class="img-fluid">
+            </div>
+
+            <h4>🚀 RODANDO TUDO JUNTO</h4>
+            <p><strong>Passo 1: Inicie o backend</strong></p>
+            <ol>
+                <li>No terminal integrado, ative o ambiente virtual (se não estiver ativo)</li>
+                <li>Rode: <code>python backend/app.py</code></li>
+                <li>O servidor Flask vai iniciar em <code>http://127.0.0.1:5000</code></li>
+            </ol>
+            <p>Deixe o terminal rodando. Ele vai ficar ouvindo requisições.</p>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_55.jpg" alt="imagem 55" class="img-fluid">
+            </div>
+            <p><strong>Passo 2: Abra o frontend</strong></p>
+            <p>Você tem duas opções:</p>
+            <ul>
+                <li><strong>Opção A: Live Server (recomendada)</strong> – Abra o <code>index.html</code> no VSCode,
+                    clique com o botão direito e escolha “Open with Live Server”. O navegador vai abrir em
+                    <code>http://127.0.0.1:5500</code> (ou porta similar).
+                </li>
+                <li><strong>Opção B: Abrir diretamente</strong> – Localize o <code>index.html</code> no Explorer e
+                    dê dois cliques. Ele abre no navegador, mas sem Live Server (não atualiza automaticamente).</li>
+            </ul>
+            <p>⚠️ ATENÇÃO: O frontend e backend rodam em portas diferentes. Isso é normal. O frontend faz
+                requisições para a porta 5000 (backend) via fetch.</p>
+            <p><strong>Passo 3: Use a aplicação</strong></p>
+            <ul>
+                <li>Digite uma tarefa e clique em “Adicionar” ou pressione Enter</li>
+                <li>A tarefa aparece na lista</li>
+                <li>Clique no ⬜ ou no texto para marcar como concluída</li>
+                <li>Clique em 🗑️ para deletar</li>
+                <li>O status na parte inferior mostra totais</li>
+            </ul>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_56.jpg" alt="imagem 56" class="img-fluid">
+            </div>
+
+            <h4>🐛 DEBUGGING INTEGRADO – FRONTEND E BACKEND JUNTOS</h4>
+            <p><strong>Debugando o backend (Flask)</strong></p>
+            <ol>
+                <li>No <code>app.py</code>, coloque breakpoints clicando na margem esquerda</li>
+                <li>Pressione <code>F5</code> ou clique no ícone 🐛 e selecione “Python Flask”</li>
+                <li>O VSCode inicia o Flask em modo debug</li>
+                <li>Quando o frontend fizer uma requisição, o código para nos breakpoints</li>
+                <li>Você pode inspecionar variáveis, executar passo a passo, etc</li>
+            </ol>
+            <p><strong>Debugando o frontend (JavaScript)</strong></p>
+            <ol>
+                <li>Abra o DevTools do navegador (F12 no Chrome/Edge, Option+Command+I no Mac)</li>
+                <li>Vá para a aba “Sources” (ou “Depurador”)</li>
+                <li>Encontre o <code>script.js</code> e coloque breakpoints</li>
+                <li>Recarregue a página ou interaja com a aplicação</li>
+                <li>O navegador para nos breakpoints e você pode inspecionar variáveis</li>
+            </ol>
+            <div class="img-placeholder my-3 p-3 bg-light rounded-4 text-muted text-center"><img
+                    src="../assets/images/imagem_57.jpg" alt="imagem 57" class="img-fluid">
+            </div>
+
+            <h4>🧹 ORGANIZANDO O PROJETO – CONFIGURAÇÕES ESPECÍFICAS</h4>
+            <p>Crie uma pasta <code>.vscode</code> na raiz do projeto e dentro dela um arquivo
+                <code>settings.json</code> com:
+            </p>
+            <div class="code-block position-relative mb-3">
+                <button class="btn btn-sm btn-copy-code position-absolute top-0 end-0 m-2" data-code-target="code16">
+                    <i class="fas fa-copy me-1"></i> Copiar
+                </button>
+                <pre><code class="language-json" id="code16">{
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+  "python.terminal.activateEnvironment": true,
+  "editor.formatOnSave": true,
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true,
+      "source.organizeImports": true
+    }
+  },
+  "ruff.enable": true,
+  "ruff.format.args": ["--config", "${workspaceFolder}/pyproject.toml"],
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/*.pyc": true
+  }
+}</code></pre>
+            </div>
+            <p>Isso garante que o VSCode use o ambiente virtual e o Ruff para formatação e linting automaticamente
+                ao salvar.</p>
+
+            <h4>📈 EXPANDINDO O PROJETO (IDEIAS)</h4>
+            <p>Se você quiser ir além, aqui estão algumas ideias:</p>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Funcionalidade</th>
+                            <th>O que fazer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Banco de dados</td>
+                            <td>Substitua a lista em memória por SQLite, PostgreSQL ou MongoDB</td>
+                        </tr>
+                        <tr>
+                            <td>Autenticação</td>
+                            <td>Adicione login com Flask-Login e JWT</td>
+                        </tr>
+                        <tr>
+                            <td>Prazos</td>
+                            <td>Adicione campo de data e ordenação por prazo</td>
+                        </tr>
+                        <tr>
+                            <td>Categorias</td>
+                            <td>Adicione tags ou categorias para organizar</td>
+                        </tr>
+                        <tr>
+                            <td>Arrastar e soltar</td>
+                            <td>Use Drag and Drop API para reordenar tarefas</td>
+                        </tr>
+                        <tr>
+                            <td>Notificações</td>
+                            <td>Adicione notificações desktop com a API Notification do navegador</td>
+                        </tr>
+                        <tr>
+                            <td>Docker</td>
+                            <td>Containerize a aplicação com Docker e docker-compose</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>O céu é o limite!</p>
+
+            <h4>📝 CHECKLIST – PROJETO INTEGRADO COMPLETO</h4>
+            <ul>
+                <li><input type="checkbox" disabled> Criei a estrutura de pastas (<code>todo-app/backend</code> e
+                    <code>todo-app/frontend</code>)
+                </li>
+                <li><input type="checkbox" disabled> Criei e ativei o ambiente virtual</li>
+                <li><input type="checkbox" disabled> Instalei o Flask e gerei <code>requirements.txt</code></li>
+                <li><input type="checkbox" disabled> Escrevi o backend (<code>app.py</code>) com rotas GET, POST,
+                    PUT, DELETE</li>
+                <li><input type="checkbox" disabled> Rodei o backend e testei a API no navegador</li>
+                <li><input type="checkbox" disabled> Escrevi o frontend (<code>index.html</code>,
+                    <code>style.css</code>, <code>script.js</code>)
+                </li>
+                <li><input type="checkbox" disabled> Consumi a API usando <code>fetch</code> no JavaScript</li>
+                <li><input type="checkbox" disabled> Rodei o frontend com Live Server</li>
+                <li><input type="checkbox" disabled> Adicionei, marquei e deletei tarefas</li>
+                <li><input type="checkbox" disabled> Usei o debugger do VSCode no backend</li>
+                <li><input type="checkbox" disabled> Usei o DevTools do navegador para debug do frontend</li>
+                <li><input type="checkbox" disabled> Configurei o VSCode com formatação automática e Ruff</li>
+            </ul>
+
+            <h4>🎬 CONCLUSÃO DA SAGA</h4>
+            <p>Parabéns! Você chegou ao final dessa jornada épica. Você:</p>
+            <ol>
+                <li>Instalou e configurou o VSCode como um(a) profissional</li>
+                <li>Dominou HTML, CSS e JavaScript com as ferramentas do VSCode (Emmet, Live Server, Prettier)</li>
+                <li>Dominou Python com ambientes virtuais, IntelliSense, debug e Ruff</li>
+                <li>Integrou tudo num projeto completo de frontend + backend</li>
+            </ol>
+            <p>Você não é mais um iniciante. Você é alguém que sabe construir uma aplicação web completa, com
+                ferramentas modernas, código limpo e fluxo de trabalho eficiente.</p>
+            <p><strong>O que fazer agora?</strong></p>
+            <ul>
+                <li><strong>Pratique:</strong> Crie outros projetos (blog, chat, encurtador de URLs)</li>
+                <li><strong>Explore:</strong> Aprenda sobre bancos de dados, autenticação, deploy</li>
+                <li><strong>Aprofunde:</strong> Veja outros frameworks (Django, FastAPI, React, Vue)</li>
+                <li><strong>Contribua:</strong> Participe de projetos open-source</li>
+                <li><strong>Ensine:</strong> Compartilhe seu conhecimento com outras pessoas</li>
+            </ul>
+            <p><strong>Lembre-se sempre</strong></p>
+            <ul>
+                <li>O VSCode é seu aliado – aprenda atalhos e extensões</li>
+                <li>O código é sobre resolver problemas – não sobre ser perfeito</li>
+                <li>Erros são oportunidades de aprendizado – o debugger é seu amigo</li>
+                <li>A comunidade dev é acolhedora – participe de fóruns, Discord, meetups</li>
+            </ul>
+            <p><strong>📚 ÍNDICE GERAL DO MANUAL</strong></p>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Parte</th>
+                            <th>Título</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>O que é essa ferramenta e por que você deve amar ela</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Instalação – baixando o poder</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>HTML, CSS e JavaScript no VSCode</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Python no VSCode</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Projeto Integrado – HTML + CSS + JS + Python = FELICIDADE</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><em>“O VSCode é o canivete suíço dos devs. E agora você sabe usar todas as lâminas.” – Eu, no final
+                    da jornada.</em></p>
+            <p>Agora você tem em mãos um guia completo, irreverente, didático e extremamente detalhado sobre o
+                VSCode, cobrindo desde a instalação até a criação de um projeto integrado. Use, abuse, compartilhe
+                e, acima de tudo, codifique com paixão.</p>
+            <p class="display-6 fw-bold">🚀 Bora pra próxima aventura!</p>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- FIM DO CONTEÚDO                                               -->
+        <!-- ============================================================ -->
+    </div>
+    </div>
+
+    <!-- ======================== RODAPÉ ======================== -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>UTFPR - Campus Siqueira Campos</h3>
+                    <p>Universidade Tecnológica Federal do Paraná</p>
+                    <p>Departamento de Computação</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Conheça os alunos</h3>
+                    <p>Gisele Nunes: <a href="https://projetosgn.com.br/" target="_blank"
+                            rel="noopener noreferrer">https://projetosgn.com.br/</a></p>
+                    <p>Rodrigo Barbosa:
+                        <a href="https://projetosrb.com.br/" target="_blank"
+                            rel="noopener noreferrer">https://projetosrb.com.br/</a>
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p>Email: giseleacn@gmail.com</p>
+                    <p>Email: barbosa.rodrigo.1979@gmail.com</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 UTFPR - Desenvolvido por Gisele Nunes e Rodrigo Barbosa. Todos os direitos reservados.
+            </div>
+        </div>
     </footer>
 
-    <!-- JavaScript externo -->
-    <script src="../assets/js/index.js"></script>
-    <!-- Opcional: Bootstrap JS (para componentes interativos, se necessário) -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Nosso JS -->
+    <script src="../assets/js/vscode.js"></script>
+</body>
+
 </html>
