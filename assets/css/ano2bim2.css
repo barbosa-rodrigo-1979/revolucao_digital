@@ -38,7 +38,7 @@ body {
     "Segoe UI",
     Roboto,
     sans-serif;
-  background-color: #b3b4b5;
+  background: var(--utfpr-white) !important;
   color: var(--utfpr-black);
   line-height: 1.7;
   padding-bottom: 2rem;
@@ -56,11 +56,9 @@ button:focus {
 
 /* --- 3. CABEÇALHO (header-top) --- */
 .header-top {
-  background: linear-gradient(
-    135deg,
-    var(--utfpr-gray-dark) 0%,
-    var(--utfpr-gray-medium) 100%
-  );
+  background: linear-gradient(135deg,
+      var(--utfpr-gray-dark) 0%,
+      var(--utfpr-gray-medium) 100%);
   color: var(--utfpr-black);
   padding: 20px 0;
   box-shadow: 0 2px 15px rgba(35, 31, 32, 0.4);
@@ -192,12 +190,15 @@ nav a.active {
 .text-utfpr-yellow {
   color: var(--utfpr-Yellow-dark) !important;
 }
+
 .text-utfpr-yellow-light {
   color: var(--utfpr-Yellow-light) !important;
 }
+
 .text-utfpr-yellow-darker {
   color: var(--utfpr-Yellow-darker) !important;
 }
+
 .bg-utfpr-yellow-dark {
   background-color: var(--utfpr-Yellow-dark) !important;
   color: var(--utfpr-black) !important;
@@ -210,9 +211,11 @@ nav a.active {
   padding: 2rem !important;
   border-radius: 1.5rem !important;
 }
+
 .carta-abelha p {
   margin-bottom: 1rem;
 }
+
 .carta-abelha .display-6 {
   color: var(--utfpr-Yellow-dark);
 }
@@ -223,6 +226,7 @@ nav a.active {
   color: var(--utfpr-black) !important;
   border-color: var(--utfpr-Yellow-dark) !important;
 }
+
 .table-utfpr-yellow th {
   background-color: var(--utfpr-Yellow-dark) !important;
   color: var(--utfpr-white) !important;
@@ -236,10 +240,11 @@ nav a.active {
   background-color: #87888a !important;
 }
 
-.table-striped > tbody > tr:nth-of-type(odd) {
+.table-striped>tbody>tr:nth-of-type(odd) {
   background-color: rgba(255, 210, 0, 0.08);
 }
-.table-hover > tbody > tr:hover {
+
+.table-hover>tbody>tr:hover {
   background-color: rgba(255, 210, 0, 0.2);
 }
 
@@ -248,26 +253,32 @@ nav a.active {
   background-color: var(--utfpr-Yellow) !important;
   color: var(--utfpr-black) !important;
 }
+
 .badge.bg-info {
   background-color: #17a2b8 !important;
   color: var(--utfpr-white) !important;
 }
+
 .badge.bg-danger {
   background-color: #dc3545 !important;
   color: var(--utfpr-white) !important;
 }
+
 .badge.bg-success {
   background-color: #28a745 !important;
   color: var(--utfpr-white) !important;
 }
+
 .badge.bg-primary {
   background-color: #007bff !important;
   color: var(--utfpr-white) !important;
 }
+
 .badge.bg-secondary {
   background-color: var(--utfpr-gray-dark) !important;
   color: var(--utfpr-white) !important;
 }
+
 .badge.bg-dark {
   background-color: var(--utfpr-black) !important;
   color: var(--utfpr-white) !important;
@@ -282,6 +293,7 @@ nav a.active {
   box-shadow: var(--shadow-md);
   border-left: 6px solid var(--utfpr-Yellow);
 }
+
 .code-block pre {
   margin: 0;
   padding: 1.5rem 2rem;
@@ -295,6 +307,7 @@ nav a.active {
   text-shadow: none !important;
   border: none;
 }
+
 .code-block pre code {
   font-family: inherit;
   color: #ebf0eb !important;
@@ -302,6 +315,7 @@ nav a.active {
   background: transparent;
   padding: 0;
 }
+
 [id^="code"] {
   color: #ebf0eb !important;
   text-shadow: none !important;
@@ -320,11 +334,13 @@ nav a.active {
   transition: all var(--transition-base);
   z-index: 10;
 }
+
 .btn-copy-code:hover {
   opacity: 1;
   background-color: var(--utfpr-Yellow-light);
   transform: scale(1.05);
 }
+
 .btn-copy-code:active {
   transform: scale(0.95);
 }
@@ -334,9 +350,11 @@ nav a.active {
   border: none;
   background: transparent;
 }
+
 .accordion-header {
   background: transparent;
 }
+
 .accordion-button {
   background-color: var(--utfpr-white);
   color: var(--utfpr-black);
@@ -347,19 +365,23 @@ nav a.active {
   transition: all var(--transition-base);
   border: 1px solid var(--utfpr-gray);
 }
+
 .accordion-button:not(.collapsed) {
   background-color: var(--utfpr-Yellow-light);
   color: var(--utfpr-black);
   box-shadow: inset 0 -1px 0 var(--utfpr-Yellow-dark);
 }
+
 .accordion-button:focus {
   box-shadow: 0 0 0 0.25rem rgba(255, 210, 0, 0.5);
   border-color: var(--utfpr-Yellow);
 }
+
 .accordion-button .badge {
   background-color: var(--utfpr-Yellow-dark);
   color: var(--utfpr-black);
 }
+
 .accordion-body {
   background-color: var(--utfpr-white);
   border-radius: 0 0 1rem 1rem;
@@ -368,19 +390,23 @@ nav a.active {
   border-top: none;
   box-shadow: var(--shadow-sm);
 }
+
 .accordion-body h4 {
   color: var(--utfpr-Yellow-dark);
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
   font-weight: 700;
 }
+
 .accordion-body h4:first-of-type {
   margin-top: 0;
 }
+
 .accordion-body ul,
 .accordion-body ol {
   padding-left: 1.5rem;
 }
+
 .accordion-body code {
   padding: 0.2rem 0.5rem;
   border-radius: 0.3rem;
@@ -390,7 +416,7 @@ nav a.active {
 
 /* 5.8. Código inline */
 code:not(.language-html):not(.language-css) {
-    padding: 0.2rem 0.4rem;
+  padding: 0.2rem 0.4rem;
   border-radius: 0.25rem;
   font-size: 0.85em;
   color: #0a0a0a;
@@ -398,11 +424,9 @@ code:not(.language-html):not(.language-css) {
 
 /* --- 6. RODAPÉ --- */
 footer {
-  background: linear-gradient(
-    135deg,
-    var(--utfpr-gray-medium) 0%,
-    var(--utfpr-gray-dark) 100%
-  );
+  background: linear-gradient(135deg,
+      var(--utfpr-gray-medium) 0%,
+      var(--utfpr-gray-dark) 100%);
   color: var(--utfpr-black);
   padding: 30px 0 15px 0;
   border-top: 5px solid var(--utfpr-Yellow);
@@ -470,11 +494,13 @@ footer {
   box-shadow: var(--shadow-md);
   transition: all var(--transition-base);
 }
+
 .btn-print:hover {
   background-color: var(--utfpr-Yellow-light);
   transform: scale(1.05);
   box-shadow: var(--shadow-lg);
 }
+
 .btn-print:active {
   background-color: var(--utfpr-Yellow-dark);
   transform: scale(0.95);
@@ -487,37 +513,47 @@ footer {
     text-align: center;
     gap: 18px;
   }
+
   .header-title {
     text-align: center;
   }
+
   nav ul {
     flex-direction: column;
   }
+
   nav a {
     padding: 10px 20px;
     text-align: center;
   }
+
   .glass-card {
     padding: 1.25rem !important;
   }
+
   .btn-print {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
   }
+
   .carta-abelha {
     padding: 1.25rem !important;
   }
+
   .code-block pre {
     padding: 1rem;
     font-size: 0.8rem;
   }
+
   .accordion-button {
     font-size: 0.9rem;
     padding: 0.75rem 1rem;
   }
+
   .accordion-body {
     padding: 1rem;
   }
+
   .container {
     padding: 0 15px;
   }
@@ -527,6 +563,7 @@ footer {
   .logo {
     height: 55px;
   }
+
   nav a {
     padding: 8px 15px;
   }
@@ -539,6 +576,7 @@ footer {
     color: var(--utfpr-black) !important;
     font-size: 12pt;
   }
+
   .glass-card {
     background: var(--utfpr-white) !important;
     backdrop-filter: none !important;
@@ -546,28 +584,35 @@ footer {
     border: 1px solid var(--utfpr-gray) !important;
     page-break-inside: avoid;
   }
+
   .btn-print {
     display: none !important;
   }
+
   .table-utfpr-yellow th {
     background-color: var(--utfpr-Yellow-dark) !important;
     color: var(--utfpr-white) !important;
   }
+
   .carta-abelha {
     border-left-color: var(--utfpr-Yellow-dark) !important;
     background: var(--utfpr-gray-light) !important;
   }
+
   .text-utfpr-yellow {
     color: var(--utfpr-Yellow-dark) !important;
   }
+
   a {
     color: var(--utfpr-Yellow-dark) !important;
   }
+
   .badge {
     border: 1px solid var(--utfpr-gray) !important;
     background: var(--utfpr-gray-light) !important;
     color: var(--utfpr-black) !important;
   }
+
   .badge.bg-warning,
   .badge.bg-info,
   .badge.bg-danger,
@@ -578,22 +623,28 @@ footer {
     background: var(--utfpr-gray-light) !important;
     color: var(--utfpr-black) !important;
   }
+
   .btn-copy-code {
     display: none !important;
   }
+
   .accordion-collapse {
     display: block !important;
   }
+
   .accordion-button::after {
     display: none !important;
   }
+
   .accordion-button {
     background: #f8f9fa !important;
     border: 1px solid #dee2e6 !important;
   }
+
   .code-block {
     page-break-inside: avoid;
   }
+
   footer {
     background: var(--utfpr-gray-light) !important;
     border-top-color: var(--utfpr-Yellow-dark) !important;
