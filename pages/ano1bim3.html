@@ -4104,64 +4104,83 @@ print("=" * 60)</code></pre>
 #
 # O objetivo: entender como a lei funciona na prática ---
 # e descobrir que você tem mais poder do que imagina.
+#
+# AJUSTES FEITOS:
+#   - Menu interativo para o usuário escolher o caso a julgar.
+#   - Opção explícita de sair do programa.
+#   - Argumentos de acusação/defesa preenchidos para TODOS os casos.
+#   - Comentários linha a linha para fins didáticos.
 # ============================================================
 
-class CasoLGPD:
+
+# ------------------------------------------------------------
+# DEFINIÇÃO DA CLASSE QUE REPRESENTA UM CASO DA LGPD
+# ------------------------------------------------------------
+class CasoLGPD:  # Declara a classe que modelará cada caso jurídico
+    # Método construtor: executado ao criar um novo objeto CasoLGPD
     def __init__(self, id, titulo, descricao, violacao, artigo, pena):
-        self.id = id
-        self.titulo = titulo
-        self.descricao = descricao
-        self.violacao = violacao
-        self.artigo = artigo
-        self.pena = pena
-        self.veredito = None
-        self.argumentos_prosecucao = []
-        self.argumentos_defesa = []
+        self.id = id                          # Armazena o identificador numérico do caso
+        self.titulo = titulo                  # Armazena o título curto do caso
+        self.descricao = descricao            # Armazena a descrição detalhada dos fatos
+        self.violacao = violacao              # Armazena o tipo de violação cometida
+        self.artigo = artigo                  # Armazena o(s) artigo(s) da LGPD violados
+        self.pena = pena                      # Armazena a pena prevista para o caso
+        self.veredito = None                  # Inicialmente não há veredito (None)
+        self.argumentos_prosecucao = []       # Lista vazia que guardará argumentos da acusação
+        self.argumentos_defesa = []           # Lista vazia que guardará argumentos da defesa
 
+    # Método para adicionar um argumento da acusação
     def adicionar_argumento_prosecucao(self, argumento):
-        self.argumentos_prosecucao.append(argumento)
+        self.argumentos_prosecucao.append(argumento)   # Insere o argumento na lista de acusação
 
+    # Método para adicionar um argumento da defesa
     def adicionar_argumento_defesa(self, argumento):
-        self.argumentos_defesa.append(argumento)
+        self.argumentos_defesa.append(argumento)       # Insere o argumento na lista de defesa
 
+    # Método que emite o veredito do caso
     def julgar(self, veredito):
-        self.veredito = veredito
+        self.veredito = veredito                        # Armazena o veredito no objeto
+        # Exibe o veredito formatado no terminal
         print(f"\n⚖️ VEREDITO PARA O CASO '{self.titulo}': {veredito}")
-        if veredito == "CULPADO":
-            print(f" 📜 Pena aplicada: {self.pena}")
-        else:
-            print(" 🔓 Réu absolvido. Mas fica o alerta!")
+        if veredito == "CULPADO":                       # Se o veredito for condenatório...
+            print(f" 📜 Pena aplicada: {self.pena}")     # ...mostra a pena prevista
+        else:                                            # Caso contrário (absolvição)...
+            print(" 🔓 Réu absolvido. Mas fica o alerta!")  # ...mostra mensagem de absolvição
 
+    # Método que imprime na tela todos os dados do caso
     def mostrar_caso(self):
-        print(f"\n📋 CASO {self.id}: {self.titulo}")
-        print("-" * 50)
-        print(f"📌 Descrição: {self.descricao}")
-        print(f"⚖️ Violação: {self.violacao}")
-        print(f"📜 Artigo da LGPD: {self.artigo}")
-        print(f"⚡ Pena prevista: {self.pena}")
-        print("\n🎤 ARGUMENTOS DA PROSECUÇÃO:")
-        for arg in self.argumentos_prosecucao:
-            print(f" • {arg}")
-        print("\n🛡️ ARGUMENTOS DA DEFESA:")
-        for arg in self.argumentos_defesa:
-            print(f" • {arg}")
+        print(f"\n📋 CASO {self.id}: {self.titulo}")     # Cabeçalho com id e título
+        print("-" * 50)                                  # Linha separadora visual
+        print(f"📌 Descrição: {self.descricao}")         # Mostra a descrição dos fatos
+        print(f"⚖️ Violação: {self.violacao}")           # Mostra o tipo de violação
+        print(f"📜 Artigo da LGPD: {self.artigo}")       # Mostra os artigos aplicáveis
+        print(f"⚡ Pena prevista: {self.pena}")          # Mostra a pena prevista
+        print("\n🎤 ARGUMENTOS DA PROSECUÇÃO:")          # Rótulo da lista de acusação
+        for arg in self.argumentos_prosecucao:           # Percorre cada argumento de acusação
+            print(f" • {arg}")                           # Imprime o argumento com marcador
+        print("\n🛡️ ARGUMENTOS DA DEFESA:")              # Rótulo da lista de defesa
+        for arg in self.argumentos_defesa:               # Percorre cada argumento de defesa
+            print(f" • {arg}")                           # Imprime o argumento com marcador
+
 
 # ============================================================
-# CASOS PARA JULGAMENTO
+# CRIAÇÃO DA LISTA DE CASOS DISPONÍVEIS PARA JULGAMENTO
 # ============================================================
 # PERGUNTA QUE DÓI: Qual desses casos poderia ser REAL com você?
 # Resposta: todos. E você nem saberia.
 
-casos = [
-    CasoLGPD(
-        id=1,
-        titulo="O Caso da Escola Fofoqueira",
-        descricao="Uma escola compartilhou fotos de alunos em suas redes sociais sem autorização dos pais. As fotos foram usadas em campanhas publicitárias da escola.",
-        violacao="Compartilhamento de dados pessoais (imagens) sem consentimento explícito.",
-        artigo="Art. 7º, inciso I (consentimento) e Art. 18 (direito de acesso e correção)",
-        pena="Multa de até 2% do faturamento da escola + indenização por danos morais."
+casos = [  # Inicia a lista que conterá todos os objetos CasoLGPD
+    # -------------------- CASO 1 --------------------
+    CasoLGPD(  # Cria o primeiro caso
+        id=1,  # Identificador do caso
+        titulo="O Caso da Escola Fofoqueira",  # Título
+        descricao="Uma escola compartilhou fotos de alunos em suas redes sociais sem autorização dos pais. As fotos foram usadas em campanhas publicitárias da escola.",  # Descrição
+        violacao="Compartilhamento de dados pessoais (imagens) sem consentimento explícito.",  # Violação
+        artigo="Art. 7º, inciso I (consentimento) e Art. 18 (direito de acesso e correção)",  # Artigos
+        pena="Multa de até 2% do faturamento da escola + indenização por danos morais."  # Pena
     ),
-    CasoLGPD(
+    # -------------------- CASO 2 --------------------
+    CasoLGPD(  # Cria o segundo caso
         id=2,
         titulo="O Caso do App Abusivo",
         descricao="Um aplicativo de música coletava dados de localização dos usuários e os vendia para empresas de publicidade, sem informar os usuários ou pedir consentimento.",
@@ -4169,7 +4188,8 @@ casos = [
         artigo="Art. 6º (princípios da finalidade, adequação e transparência) e Art. 11 (dados sensíveis)",
         pena="Multa de até R$50 milhões + suspensão do aplicativo."
     ),
-    CasoLGPD(
+    # -------------------- CASO 3 --------------------
+    CasoLGPD(  # Cria o terceiro caso
         id=3,
         titulo="O Caso do Vazamento de Dados",
         descricao="Um site de comércio eletrônico sofreu um ataque hacker e os dados de milhões de clientes (nomes, CPFs, endereços, cartões) foram vazados. A empresa demorou 3 meses para comunicar os clientes.",
@@ -4177,7 +4197,8 @@ casos = [
         artigo="Art. 48 (notificação de incidentes) e Art. 46 (segurança técnica e administrativa)",
         pena="Multa de até R$50 milhões + indenização coletiva."
     ),
-    CasoLGPD(
+    # -------------------- CASO 4 --------------------
+    CasoLGPD(  # Cria o quarto caso
         id=4,
         titulo="O Caso da Recusa de Exclusão",
         descricao="Um usuário pediu a exclusão de seus dados de uma rede social, mas a empresa se recusou a excluir, alegando que os dados eram 'necessários para a operação da plataforma'.",
@@ -4185,7 +4206,8 @@ casos = [
         artigo="Art. 18 (direito de exclusão) e Art. 16 (exceções à exclusão)",
         pena="Multa de até R$50 milhões + obrigação de excluir os dados."
     ),
-    CasoLGPD(
+    # -------------------- CASO 5 --------------------
+    CasoLGPD(  # Cria o quinto caso
         id=5,
         titulo="O Caso do Dado Sensível Vazado",
         descricao="Um hospital vazou dados de saúde de pacientes, incluindo diagnósticos e tratamentos, em um fórum online. Os pacientes não foram informados.",
@@ -4195,18 +4217,99 @@ casos = [
     )
 ]
 
+
+# ============================================================
+# FUNÇÃO QUE PRÉ-CARREGA OS ARGUMENTOS DE TODOS OS CASOS
+# ============================================================
+# Assim, quando o usuário escolher qualquer caso, os argumentos
+# de acusação e defesa já estarão preenchidos.
+def carregar_argumentos():
+    # -------------------- Caso 1 --------------------
+    casos[0].adicionar_argumento_prosecucao(  # Acusação do caso 1
+        "A escola usou imagens de alunos sem autorização, violando o direito de imagem e o consentimento previsto na LGPD."
+    )
+    casos[0].adicionar_argumento_prosecucao(  # Acusação do caso 1
+        "A escola não informou os pais sobre o uso das imagens, violando o princípio da transparência."
+    )
+    casos[0].adicionar_argumento_prosecucao(  # Acusação do caso 1
+        "Os pais não tiveram a oportunidade de consentir ou recusar o uso das imagens."
+    )
+    casos[0].adicionar_argumento_defesa(  # Defesa do caso 1
+        "A escola alegou que as imagens foram usadas em um contexto educacional e que isso justificava o uso."
+    )
+    casos[0].adicionar_argumento_defesa(  # Defesa do caso 1
+        "A escola afirmou que os pais poderiam pedir a remoção das imagens a qualquer momento, o que caracteriza consentimento implícito."
+    )
+
+    # -------------------- Caso 2 --------------------
+    casos[1].adicionar_argumento_prosecucao(  # Acusação do caso 2
+        "O aplicativo coletou localização sem informar de forma clara a finalidade do tratamento."
+    )
+    casos[1].adicionar_argumento_prosecucao(  # Acusação do caso 2
+        "Os dados eram repassados a terceiros para fins publicitários, sem base legal."
+    )
+    casos[1].adicionar_argumento_defesa(  # Defesa do caso 2
+        "O app alegou que a coleta de localização era necessária para recomendar músicas regionalmente."
+    )
+    casos[1].adicionar_argumento_defesa(  # Defesa do caso 2
+        "A empresa afirmou que o usuário poderia desativar a localização nas configurações do celular."
+    )
+
+    # -------------------- Caso 3 --------------------
+    casos[2].adicionar_argumento_prosecucao(  # Acusação do caso 3
+        "A empresa falhou em adotar medidas técnicas de segurança adequadas, permitindo o vazamento."
+    )
+    casos[2].adicionar_argumento_prosecucao(  # Acusação do caso 3
+        "A comunicação aos titulares ocorreu 3 meses após o incidente, violando o prazo razoável do Art. 48."
+    )
+    casos[2].adicionar_argumento_defesa(  # Defesa do caso 3
+        "A empresa alegou ter sido vítima de ataque sofisticado e que cooperou com as autoridades após detectar o problema."
+    )
+    casos[2].adicionar_argumento_defesa(  # Defesa do caso 3
+        "A empresa afirmou ter contratado perícia para investigar antes de comunicar, evitando pânico desnecessário."
+    )
+
+    # -------------------- Caso 4 --------------------
+    casos[3].adicionar_argumento_prosecucao(  # Acusação do caso 4
+        "A recusa em excluir os dados viola diretamente o direito de eliminação previsto no Art. 18."
+    )
+    casos[3].adicionar_argumento_prosecucao(  # Acusação do caso 4
+        "A empresa não demonstrou base legal para manter os dados após o pedido do usuário."
+    )
+    casos[3].adicionar_argumento_defesa(  # Defesa do caso 4
+        "A rede social alegou que parte dos dados era necessária para cumprir obrigações legais e prevenir fraudes."
+    )
+    casos[3].adicionar_argumento_defesa(  # Defesa do caso 4
+        "A empresa afirmou que havia termos de uso aceitos pelo usuário que previam a manutenção dos dados."
+    )
+
+    # -------------------- Caso 5 --------------------
+    casos[4].adicionar_argumento_prosecucao(  # Acusação do caso 5
+        "O hospital tratou dados de saúde — categoria sensível — sem os cuidados exigidos pelo Art. 11."
+    )
+    casos[4].adicionar_argumento_prosecucao(  # Acusação do caso 5
+        "Os pacientes não foram notificados do vazamento, descumprindo o dever de comunicação."
+    )
+    casos[4].adicionar_argumento_defesa(  # Defesa do caso 5
+        "O hospital alegou que o vazamento foi causado por falha humana isolada e que já afastou o responsável."
+    )
+    casos[4].adicionar_argumento_defesa(  # Defesa do caso 5
+        "A instituição afirmou estar implementando novas medidas de segurança para evitar reincidência."
+    )
+
+
 # ============================================================
 # GUIA DE DENÚNCIA --- O Algoritmo da Defesa
 # ============================================================
 
-def guia_de_denuncia():
-    print("\n" + "=" * 60)
-    print("📋 GUIA DE DENÚNCIA --- ALGORITMO DE DEFESA")
-    print("=" * 60)
-    print("\n🔑 PASSO A PASSO PARA EXERCER SEUS DIREITOS:")
-    print("=" * 60)
+def guia_de_denuncia():  # Define a função que exibe o passo a passo de denúncia
+    print("\n" + "=" * 60)  # Linha decorativa
+    print("📋 GUIA DE DENÚNCIA --- ALGORITMO DE DEFESA")  # Título do guia
+    print("=" * 60)  # Linha decorativa
+    print("\n🔑 PASSO A PASSO PARA EXERCER SEUS DIREITOS:")  # Subtítulo
+    print("=" * 60)  # Linha decorativa
 
-    passos = [
+    passos = [  # Lista com os 10 passos para o cidadão exercer seus direitos
         "1. IDENTIFIQUE A VIOLAÇÃO: O que a empresa fez (ou não fez) com seus dados?",
         "2. REÚNA AS PROVAS: Prints, e-mails, mensagens, termos de uso --- tudo o que comprova a violação.",
         "3. CONTATE A EMPRESA: Envie um e-mail ou preencha o formulário de DPO (Encarregado de Dados).",
@@ -4219,67 +4322,122 @@ def guia_de_denuncia():
         "10. BUSQUE AJUDA JURÍDICA: Se necessário, procure a Defensoria Pública ou um advogado."
     ]
 
-    for passo in passos:
-        print(f"\n{passo}")
+    for passo in passos:  # Percorre cada passo da lista
+        print(f"\n{passo}")  # Imprime o passo com uma linha em branco antes
 
-    print("\n" + "=" * 60)
-    print("💡 LEMBRE-SE: A lei só funciona se você a conhece e a usa.")
-    print(" Seus dados são SEUS. E só seus.")
-    print(" A ANPD está de olho. Mas você precisa dar o primeiro passo.")
-    print("=" * 60)
+    print("\n" + "=" * 60)  # Linha decorativa
+    print("💡 LEMBRE-SE: A lei só funciona se você a conhece e a usa.")  # Mensagem de reflexão
+    print(" Seus dados são SEUS. E só seus.")  # Reforço
+    print(" A ANPD está de olho. Mas você precisa dar o primeiro passo.")  # Reforço
+    print("=" * 60)  # Linha decorativa
+
 
 # ============================================================
-# SIMULAÇÃO
+# FUNÇÃO AUXILIAR PARA EXIBIR O MENU DE ESCOLHA DE CASOS
 # ============================================================
+def exibir_menu():  # Define a função que mostra o menu
+    print("\n" + "=" * 60)  # Linha decorativa
+    print("⚖️ MENU DO TRIBUNAL DIGITAL")  # Título do menu
+    print("=" * 60)  # Linha decorativa
+    for caso in casos:  # Percorre todos os casos cadastrados
+        print(f" {caso.id}. {caso.titulo}")  # Mostra id e título de cada caso
+    print(f" {len(casos) + 1}. Guia de Denúncia (como agir na vida real)")  # Opção extra: guia
+    print(" 0. Sair")  # Opção para encerrar o programa
+    print("=" * 60)  # Linha decorativa
 
-print("=" * 60)
-print("⚖️ TRIBUNAL DIGITAL --- A LGPD em Ação")
-print("=" * 60)
-print("\n⚠️ ATENÇÃO: Isso é uma SIMULAÇÃO de um julgamento.")
-print(" Na vida real, os casos são julgados pela ANPD e pela justiça.")
-print(" O objetivo: aprender a identificar violações e saber como agir.")
-print(" Porque conhecimento é poder. E poder se usa.")
-print("=" * 60)
 
-# Mostrando os casos
-print("\n📋 CASOS DISPONÍVEIS PARA JULGAMENTO:")
-for caso in casos:
-    print(f" {caso.id}. {caso.titulo}")
+# ============================================================
+# FUNÇÃO PRINCIPAL --- LOOP INTERATIVO
+# ============================================================
+def main():  # Define a função principal que roda o programa
+    # Chama a função que preenche os argumentos de todos os casos
+    carregar_argumentos()
 
-# Simulação de um julgamento (caso 1)
-print("\n" + "=" * 60)
-print("⚖️ INICIANDO O JULGAMENTO DO CASO 1")
-print("=" * 60)
+    print("=" * 60)  # Linha decorativa
+    print("⚖️ TRIBUNAL DIGITAL --- A LGPD em Ação")  # Título
+    print("=" * 60)  # Linha decorativa
+    print("\n⚠️ ATENÇÃO: Isso é uma SIMULAÇÃO de um julgamento.")  # Aviso
+    print(" Na vida real, os casos são julgados pela ANPD e pela justiça.")  # Aviso
+    print(" O objetivo: aprender a identificar violações e saber como agir.")  # Aviso
+    print(" Porque conhecimento é poder. E poder se usa.")  # Frase de efeito
+    print("=" * 60)  # Linha decorativa
 
-caso1 = casos[0]
-caso1.adicionar_argumento_prosecucao("A escola usou imagens de alunos sem autorização, violando o direito de imagem e o consentimento previsto na LGPD.")
-caso1.adicionar_argumento_prosecucao("A escola não informou os pais sobre o uso das imagens, violando o princípio da transparência.")
-caso1.adicionar_argumento_prosecucao("Os pais não tiveram a oportunidade de consentir ou recusar o uso das imagens.")
+    # Loop infinito: só termina quando o usuário escolher "0"
+    while True:  # Mantém o menu ativo até o usuário sair
+        exibir_menu()  # Mostra as opções ao usuário
 
-caso1.adicionar_argumento_defesa("A escola alegou que as imagens foram usadas em um contexto educacional e que isso justificava o uso.")
-caso1.adicionar_argumento_defesa("A escola afirmou que os pais poderiam pedir a remoção das imagens a qualquer momento, o que caracteriza consentimento implícito.")
+        # Bloco try/except para tratar entradas inválidas (não numéricas)
+        try:
+            escolha = int(input("\n👉 Digite o número da sua escolha: "))  # Lê a escolha do usuário
+        except ValueError:  # Se o usuário digitar algo que não é número...
+            print("\n❌ Entrada inválida. Digite apenas números.")  # ...avisa e volta ao menu
+            continue  # Volta ao início do while
 
-caso1.mostrar_caso()
+        # -------------------- OPÇÃO: SAIR --------------------
+        if escolha == 0:  # Se o usuário digitou 0...
+            print("\n👋 Encerrando o Tribunal Digital. Até a próxima!")  # ...mensagem de despedida
+            print("💡 Lembre-se: seus dados são SEUS.")  # Reforço final
+            break  # Sai do loop while e encerra o programa
 
-# Veredito (simulado)
-caso1.julgar("CULPADO")
+        # -------------------- OPÇÃO: GUIA DE DENÚNCIA --------------------
+        elif escolha == len(casos) + 1:  # Se escolheu a opção do guia (6, no caso)
+            guia_de_denuncia()  # Chama a função que mostra o passo a passo
 
-# Guia de denúncia
-guia_de_denuncia()
+        # -------------------- OPÇÃO: JULGAR UM CASO --------------------
+        elif 1 <= escolha <= len(casos):  # Se escolheu um caso válido (1 a 5)...
+            caso_escolhido = casos[escolha - 1]  # ...pega o caso correspondente (índice = escolha - 1)
+            print("\n" + "=" * 60)  # Linha decorativa
+            print(f"⚖️ INICIANDO O JULGAMENTO DO CASO {caso_escolhido.id}")  # Anúncio do julgamento
+            print("=" * 60)  # Linha decorativa
 
-print("\n" + "=" * 60)
-print("💡 REFLEXÃO (a parte mais importante):")
-print("- Você sabia que tem todos esses direitos?")
-print("- Você já exerceu algum deles?")
-print("- A LGPD existe. Mas ela só funciona se você a CONHECE.")
-print("- E, mais importante: ela só funciona se você a EXIGE.")
-print("\n📌 PERGUNTAS PARA VOCÊ:")
-print(" 1. Qual desses casos você já vivenciou ou conhece alguém que vivenciou?")
-print(" 2. O que você faria se seus dados fossem vazados?")
-print(" 3. Você já pediu a exclusão de seus dados de alguma plataforma?")
-print(" 4. Você sabe quem é o DPO (Encarregado de Dados) da sua escola?")
-print(" 5. O que você vai fazer diferente depois de hoje?")
-print("=" * 60)</code></pre>
+            caso_escolhido.mostrar_caso()  # Mostra todas as informações e argumentos do caso
+
+            # Pergunta ao usuário qual deve ser o veredito
+            print("\n🧑‍⚖️ Como juiz, qual é o seu veredito?")  # Pergunta ao usuário
+            print(" 1. CULPADO")  # Opção 1
+            print(" 2. INOCENTE")  # Opção 2
+
+            # Trata a escolha do veredito também com try/except
+            try:
+                v = int(input("👉 Digite 1 para CULPADO ou 2 para INOCENTE: "))  # Lê veredito
+            except ValueError:  # Se digitar algo inválido...
+                print("\n❌ Entrada inválida. Considerando INOCENTE por padrão.")  # ...avisa
+                v = 2  # Assume inocente como padrão
+
+            if v == 1:  # Se escolheu culpado...
+                caso_escolhido.julgar("CULPADO")  # ...aplica veredito de culpa
+            else:  # Caso contrário...
+                caso_escolhido.julgar("INOCENTE")  # ...aplica veredito de inocência
+
+        # -------------------- OPÇÃO INVÁLIDA --------------------
+        else:  # Se o número digitado não corresponde a nenhuma opção...
+            print("\n❌ Opção inválida. Escolha um número do menu.")  # ...avisa o usuário
+
+    # -------------------- REFLEXÃO FINAL --------------------
+    # Exibida sempre ao sair do programa (após break)
+    print("\n" + "=" * 60)  # Linha decorativa
+    print("💡 REFLEXÃO (a parte mais importante):")  # Título da reflexão
+    print("- Você sabia que tem todos esses direitos?")  # Pergunta
+    print("- Você já exerceu algum deles?")  # Pergunta
+    print("- A LGPD existe. Mas ela só funciona se você a CONHECE.")  # Reflexão
+    print("- E, mais importante: ela só funciona se você a EXIGE.")  # Reflexão
+    print("\n📌 PERGUNTAS PARA VOCÊ:")  # Título das perguntas
+    print(" 1. Qual desses casos você já vivenciou ou conhece alguém que vivenciou?")  # Pergunta 1
+    print(" 2. O que você faria se seus dados fossem vazados?")  # Pergunta 2
+    print(" 3. Você já pediu a exclusão de seus dados de alguma plataforma?")  # Pergunta 3
+    print(" 4. Você sabe quem é o DPO (Encarregado de Dados) da sua escola?")  # Pergunta 4
+    print(" 5. O que você vai fazer diferente depois de hoje?")  # Pergunta 5
+    print("=" * 60)  # Linha decorativa
+
+
+# ============================================================
+# PONTO DE ENTRADA DO PROGRAMA
+# ============================================================
+# Esta verificação garante que main() só roda se o arquivo
+# for executado diretamente (não importado por outro módulo).
+if __name__ == "__main__":  # Checa se este arquivo é o script principal
+    main()  # Executa a função principal
+    </code></pre>
               </div>
 
               <h4>⏱️ Detalhamento Minuto a Minuto (50 min)</h4>
