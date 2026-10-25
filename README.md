@@ -1,756 +1,152 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Revolução Digital · Desvendando Algoritmos, Reconectando Humanidade</title>
-  <!-- Font Awesome 6 (gratuito) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- Google Fonts: Inter e Space Grotesk para um toque moderno e ácido -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      background: #0a0c0f;
-      color: #e8edf2;
-      line-height: 1.6;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    /* grade de fundo sutil */
-    .bg-grid {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: 
-        linear-gradient(rgba(0, 255, 200, 0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 255, 200, 0.02) 1px, transparent 1px);
-      background-size: 40px 40px;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* wrapper para manter conteúdo acima do grid */
-    .wrapper {
-      position: relative;
-      z-index: 1;
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem;
-      flex: 1;
-      width: 100%;
-    }
-
-    /* cabeçalho / hero */
-    .hero {
-      margin-bottom: 3rem;
-      border-bottom: 1px solid rgba(0, 255, 200, 0.2);
-      padding-bottom: 2rem;
-    }
-
-    .hero h1 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(2rem, 6vw, 3.6rem);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-      background: linear-gradient(135deg, #c0ffee 0%, #7ef0d0 40%, #3dd6b0 80%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 0.75rem;
-    }
-
-    .hero .subhead {
-      font-size: 1.2rem;
-      color: #b0c4d9;
-      max-width: 800px;
-      border-left: 4px solid #3dd6b0;
-      padding-left: 1.5rem;
-      font-weight: 400;
-    }
-
-    /* badges */
-    .badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin: 1.5rem 0 2rem;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(20, 30, 40, 0.8);
-      border: 1px solid rgba(61, 214, 176, 0.3);
-      padding: 0.4rem 1rem;
-      border-radius: 30px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: #c0d9e8;
-      backdrop-filter: blur(4px);
-      transition: all 0.2s;
-    }
-
-    .badge i {
-      color: #3dd6b0;
-    }
-
-    .badge:hover {
-      border-color: #3dd6b0;
-      background: rgba(61, 214, 176, 0.1);
-      transform: translateY(-1px);
-    }
-
-    /* navegação rápida (sumário) */
-    .toc {
-      background: rgba(12, 18, 24, 0.8);
-      border: 1px solid rgba(61, 214, 176, 0.2);
-      border-radius: 20px;
-      padding: 1.5rem 1.8rem;
-      margin-bottom: 3rem;
-      backdrop-filter: blur(8px);
-    }
-
-    .toc h3 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.2rem;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      color: #7ef0d0;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .toc-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 0.75rem 1.5rem;
-    }
-
-    .toc-item {
-      color: #b0c9dd;
-      text-decoration: none;
-      font-size: 0.95rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 0.2rem 0;
-      transition: color 0.15s;
-      border-bottom: 1px dashed transparent;
-    }
-
-    .toc-item i {
-      color: #3dd6b0;
-      font-size: 0.75rem;
-      width: 18px;
-    }
-
-    .toc-item:hover {
-      color: #7ef0d0;
-      border-bottom-color: rgba(61, 214, 176, 0.4);
-    }
-
-    /* seções */
-    section {
-      margin-bottom: 3.5rem;
-      scroll-margin-top: 1rem;
-    }
-
-    h2 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 2rem;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      margin-bottom: 1.5rem;
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      border-bottom: 2px solid rgba(61, 214, 176, 0.3);
-      padding-bottom: 0.75rem;
-    }
-
-    h2 i {
-      color: #3dd6b0;
-      font-size: 2rem;
-    }
-
-    h3 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin: 1.8rem 0 1rem;
-      color: #a8e6d0;
-    }
-
-    h4 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin: 1.5rem 0 0.8rem;
-      color: #c0ffee;
-      letter-spacing: -0.01em;
-    }
-
-    p {
-      margin-bottom: 1.2rem;
-      color: #cbdae7;
-    }
-
-    a {
-      color: #7ef0d0;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(126, 240, 208, 0.3);
-      transition: border-color 0.2s, color 0.2s;
-    }
-
-    a:hover {
-      color: #a8ffe0;
-      border-bottom-color: #a8ffe0;
-    }
-
-    strong {
-      color: #ffffff;
-      font-weight: 600;
-    }
-
-    /* código inline e blocos */
-    code {
-      background: #10171f;
-      padding: 0.2rem 0.5rem;
-      border-radius: 8px;
-      font-size: 0.9em;
-      font-family: 'JetBrains Mono', 'Fira Code', monospace;
-      color: #b0f0dd;
-      border: 1px solid rgba(61, 214, 176, 0.2);
-    }
-
-    pre {
-      background: #0c141c;
-      border-radius: 20px;
-      padding: 1.5rem;
-      overflow-x: auto;
-      border: 1px solid rgba(61, 214, 176, 0.25);
-      font-size: 0.9rem;
-      line-height: 1.6;
-      margin: 1.5rem 0;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    }
-
-    pre code {
-      background: transparent;
-      padding: 0;
-      border: none;
-      color: #d4f0e8;
-      font-family: 'JetBrains Mono', 'Fira Code', monospace;
-      font-size: 0.9rem;
-    }
-
-    /* listas */
-    ul, ol {
-      margin: 1rem 0 1.5rem 1.8rem;
-      color: #cbdae7;
-    }
-
-    li {
-      margin-bottom: 0.6rem;
-    }
-
-    li::marker {
-      color: #3dd6b0;
-    }
-
-    /* cards de destaque */
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin: 2rem 0;
-    }
-
-    .card {
-      background: rgba(16, 24, 32, 0.8);
-      border: 1px solid rgba(61, 214, 176, 0.2);
-      border-radius: 24px;
-      padding: 1.8rem 1.5rem;
-      backdrop-filter: blur(4px);
-      transition: transform 0.2s, border-color 0.2s;
-      box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.6);
-    }
-
-    .card:hover {
-      border-color: rgba(61, 214, 176, 0.5);
-      transform: translateY(-3px);
-    }
-
-    .card i {
-      font-size: 2rem;
-      color: #3dd6b0;
-      margin-bottom: 1rem;
-    }
-
-    .card h4 {
-      margin-top: 0;
-      font-size: 1.3rem;
-    }
-
-    /* accordion para seções (simulando sanfona) */
-    details {
-      background: rgba(16, 24, 32, 0.6);
-      border: 1px solid rgba(61, 214, 176, 0.15);
-      border-radius: 16px;
-      margin-bottom: 1rem;
-      padding: 0.5rem 1.2rem;
-      transition: background 0.2s;
-    }
-
-    details[open] {
-      background: rgba(16, 24, 32, 0.9);
-      border-color: rgba(61, 214, 176, 0.4);
-    }
-
-    summary {
-      font-weight: 600;
-      cursor: pointer;
-      padding: 0.8rem 0;
-      color: #d0f0e4;
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.1rem;
-      list-style: none;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    summary::-webkit-details-marker {
-      display: none;
-    }
-
-    summary::before {
-      content: '▸';
-      color: #3dd6b0;
-      font-size: 1.2rem;
-      transition: transform 0.2s;
-    }
-
-    details[open] summary::before {
-      transform: rotate(90deg);
-    }
-
-    /* caixa de destaque (blockquote) */
-    .quote-box {
-      background: rgba(61, 214, 176, 0.08);
-      border-left: 6px solid #3dd6b0;
-      padding: 1.5rem 2rem;
-      border-radius: 0 20px 20px 0;
-      margin: 2rem 0;
-      font-style: italic;
-      color: #d0f0e4;
-    }
-
-    /* tabela de estrutura de pastas */
-    .tree {
-      background: #0c141c;
-      border-radius: 20px;
-      padding: 1.5rem;
-      border: 1px solid rgba(61, 214, 176, 0.2);
-      font-family: 'JetBrains Mono', 'Fira Code', monospace;
-      font-size: 0.9rem;
-      line-height: 1.8;
-      color: #c0d9e8;
-      white-space: pre;
-      overflow-x: auto;
-      margin: 1.5rem 0;
-    }
-
-    .tree .comment {
-      color: #6a8a9a;
-    }
-
-    /* rodapé */
-    footer {
-      margin-top: 3rem;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(61, 214, 176, 0.2);
-      text-align: center;
-      color: #7a94a8;
-      font-size: 0.9rem;
-    }
-
-    .footer-slogan {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: #7ef0d0;
-      margin-top: 1rem;
-      letter-spacing: 0.5px;
-    }
-
-    .footer-slogan i {
-      margin: 0 6px;
-    }
-
-    /* responsividade */
-    @media (max-width: 700px) {
-      .wrapper {
-        padding: 1.5rem 1rem;
-      }
-      h2 {
-        font-size: 1.6rem;
-      }
-      .hero h1 {
-        font-size: 2rem;
-      }
-      .toc-grid {
-        grid-template-columns: 1fr;
-      }
-      .badges {
-        gap: 0.5rem;
-      }
-      pre {
-        font-size: 0.8rem;
-        padding: 1rem;
-      }
-    }
-
-    /* botão flutuante de impressão (opcional) */
-    .print-btn {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      background: #3dd6b0;
-      color: #0a0c0f;
-      border: none;
-      border-radius: 50px;
-      padding: 0.8rem 1.5rem;
-      font-weight: 600;
-      font-family: 'Space Grotesk', sans-serif;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      cursor: pointer;
-      box-shadow: 0 8px 20px rgba(61, 214, 176, 0.3);
-      transition: transform 0.2s, background 0.2s;
-      z-index: 99;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-    }
-
-    .print-btn:hover {
-      background: #7ef0d0;
-      transform: scale(1.03);
-    }
-
-    .print-btn i {
-      font-size: 1.1rem;
-    }
-
-    @media print {
-      .print-btn, .toc, .bg-grid {
-        display: none;
-      }
-      body {
-        background: white;
-        color: black;
-      }
-      .hero h1 {
-        -webkit-text-fill-color: #0a0c0f;
-        background: none;
-      }
-      .card, details, pre, .tree, .badge {
-        border: 1px solid #ccc;
-        background: #f9f9f9;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="bg-grid"></div>
-
-  <div class="wrapper">
-    <!-- HERO / CABEÇALHO -->
-    <header class="hero">
-      <h1>🚀 Revolução Digital:<br>Desvendando Algoritmos, Reconectando Humanidade</h1>
-      <div class="subhead">
-        Um projeto de material didático completo e inovador para o Ensino Médio, criado para transformar alunos de usuários passivos em criadores digitais críticos e conscientes.
-      </div>
-      <div class="badges">
-        <span class="badge"><i class="fas fa-university"></i> UTFPR – Campus Siqueira Campos</span>
-        <span class="badge"><i class="fas fa-balance-scale"></i> Licença MIT</span>
-        <span class="badge"><i class="fas fa-code-branch"></i> Em desenvolvimento</span>
-      </div>
-    </header>
-
-    <!-- SUMÁRIO / NAVEGAÇÃO RÁPIDA -->
-    <nav class="toc">
-      <h3><i class="fas fa-list-ul"></i> Sumário</h3>
-      <div class="toc-grid">
-        <a class="toc-item" href="#sobre"><i class="fas fa-chevron-right"></i> Sobre o Projeto</a>
-        <a class="toc-item" href="#manifesto"><i class="fas fa-chevron-right"></i> Manifesto</a>
-        <a class="toc-item" href="#problema"><i class="fas fa-chevron-right"></i> O Problema</a>
-        <a class="toc-item" href="#solucao"><i class="fas fa-chevron-right"></i> A Solução</a>
-        <a class="toc-item" href="#caracteristicas"><i class="fas fa-chevron-right"></i> Características</a>
-        <a class="toc-item" href="#tecnologias"><i class="fas fa-chevron-right"></i> Tecnologias</a>
-        <a class="toc-item" href="#estrutura"><i class="fas fa-chevron-right"></i> Estrutura</a>
-        <a class="toc-item" href="#navegacao"><i class="fas fa-chevron-right"></i> Como Navegar</a>
-        <a class="toc-item" href="#comecar"><i class="fas fa-chevron-right"></i> Guia Rápido</a>
-        <a class="toc-item" href="#pilares"><i class="fas fa-chevron-right"></i> 4 Pilares (PC)</a>
-        <a class="toc-item" href="#metodologia"><i class="fas fa-chevron-right"></i> Metodologia</a>
-        <a class="toc-item" href="#contribuicao"><i class="fas fa-chevron-right"></i> Contribuição</a>
-        <a class="toc-item" href="#licenca"><i class="fas fa-chevron-right"></i> Licença</a>
-        <a class="toc-item" href="#autores"><i class="fas fa-chevron-right"></i> Autores</a>
-      </div>
-    </nav>
-
-    <!-- SEÇÃO SOBRE -->
-    <section id="sobre">
-      <h2><i class="fas fa-bullseye"></i> 🎯 Sobre o Projeto</h2>
-
-      <!-- MANIFESTO -->
-      <h3 id="manifesto">📜 O Manifesto: A Filosofia do Projeto</h3>
-      <div class="quote-box">
-        <p><strong>Este não é apenas um material didático. É um manifesto.</strong></p>
-        <p>Vivemos em um mundo onde somos bombardeados por algoritmos, nossos dados são o novo petróleo, e nossa atenção é vendida em leilões digitais. A maioria das pessoas são apenas zumbis digitais, consumindo conteúdo sem questionar, presas em bolhas que reforçam suas próprias opiniões.</p>
-        <p>Este projeto nasce para <strong>quebrar essa corrente</strong>. Ele foi criado para a disciplina de "Revolução Digital" e parte de um princípio fundamental: <strong>a única forma de não ser controlado pela tecnologia é entendendo como ela funciona.</strong></p>
-        <p>Acreditamos que os alunos do Ensino Médio não devem ser apenas consumidores de tecnologia, mas sim <strong>arquitetos do futuro digital</strong>. Eles precisam entender o que está por trás da tela, desmontar a "Matrix" e, mais importante, <strong>construir suas próprias ferramentas</strong>.</p>
-        <p>O tom é ácido, o humor é ácido e a abordagem é punk-rock. Cada texto tem o objetivo de <strong>provocar, indignar e, acima de tudo, inspirar ação.</strong></p>
-      </div>
-
-      <!-- PROBLEMA -->
-      <h3 id="problema">❓ O Problema que Queremos Resolver</h3>
-      <p>O cenário atual do ensino de tecnologia no Brasil ainda é, em muitos lugares, raso. Muitos alunos aprendem a usar ferramentas, mas não a <strong>entendê-las</strong>. Nossos desafios são:</p>
-      <ol>
-        <li><strong>Letramento Digital Crítico:</strong> Alunos sabem usar o TikTok, mas não sabem como o algoritmo do TikTok usa eles.</li>
-        <li><strong>Desigualdade de Acesso:</strong> A falta de um material de programação unificado e acessível para professores.</li>
-        <li><strong>Falta de Engajamento:</strong> Materiais tradicionais não conectam com a realidade dos alunos.</li>
-        <li><strong>Medo de Programar:</strong> A programação é frequentemente vista como um bicho de sete cabeças, algo "para gênios".</li>
-      </ol>
-
-      <!-- SOLUÇÃO -->
-      <h3 id="solucao">💡 A Solução: O que é este Material Didático?</h3>
-      <p>Este repositório contém um <strong>currículo anual completo e gratuito</strong> para o ensino de Programação Web e Cultura Digital, dividido em 40 semanas (4 bimestres) para cada ano do Ensino Médio.</p>
-      <p>O material foi desenhado para ser "à prova de professor" e "à prova de aluno":</p>
-      <ul>
-        <li><strong>Para o Professor:</strong> É um guia completo com planos de aula detalhados, incluindo objetivos, códigos comentados, atividades minuto a minuto, orientações de acessibilidade e critérios de avaliação.</li>
-        <li><strong>Para o Aluno:</strong> É uma jornada de transformação, onde ele aprende os fundamentos do desenvolvimento web (HTML, CSS, JavaScript) e constrói, do zero, projetos com propósito social.</li>
-      </ul>
-      <p><strong>O objetivo final é que cada aluno, ao final do ano, tenha um portfólio de projetos no ar, provando que ele não é mais um espectador, mas um criador.</strong></p>
-    </section>
-
-    <!-- CARACTERÍSTICAS E DIFERENCIAIS -->
-    <section id="caracteristicas">
-      <h2><i class="fas fa-star"></i> ✨ Principais Características e Diferenciais</h2>
-      <div class="card-grid">
-        <div class="card">
-          <i class="fas fa-chalkboard-teacher"></i>
-          <h4>🧑‍🏫 Para Professores</h4>
-          <ul style="margin-left: 1rem;">
-            <li><strong>Planos de Aula Prontos:</strong> Cada aula é um plano detalhado que você pode seguir ou se inspirar. É só abrir e usar.</li>
-            <li><strong>Código Comentado:</strong> Todo o código é explicado linha por linha, não apenas para o aluno, mas com dicas e justificativas para o professor.</li>
-            <li><strong>Detalhamento Minuto a Minuto:</strong> Cada aula de 50 minutos é planejada do início ao fim, eliminando a ansiedade do "o que eu faço agora?".</li>
-            <li><strong>Orientações para Adaptação:</strong> Cada plano de aula inclui sugestões concretas para adaptar o conteúdo para alunos com Deficiência Visual, Auditiva, Motora, TDAH, TEA e Altas Habilidades.</li>
-            <li><strong>Rúbricas de Avaliação:</strong> Critérios de avaliação claros e detalhados para cada semana e para o projeto final, com pontuações e descrições de desempenho.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <i class="fas fa-user-graduate"></i>
-          <h4>🧑‍🎓 Para Alunos</h4>
-          <ul style="margin-left: 1rem;">
-            <li><strong>Jornada de Transformação:</strong> Começa com o básico de HTML e CSS e culmina na criação de um projeto web completo e interativo com JavaScript.</li>
-            <li><strong>Projetos com Propósito:</strong> Os alunos não constroem apenas "sites de teste". Eles resolvem problemas reais da cultura digital, como fake news, cyberbullying e vício em redes sociais.</li>
-            <li><strong>"Mão na Massa":</strong> A teoria é sempre um trampolim para a prática. O foco é codificar, testar, errar, corrigir e aprender.</li>
-            <li><strong>Soft Skills:</strong> Desenvolve habilidades essenciais como trabalho em equipe, comunicação (pitch), resiliência (debug) e pensamento crítico.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- TECNOLOGIAS -->
-    <section id="tecnologias">
-      <h2><i class="fas fa-cogs"></i> 🛠 Tecnologias Utilizadas</h2>
-      <p>O material foi construído com as tecnologias fundamentais da web:</p>
-      <ul>
-        <li><strong>HTML5:</strong> Para a estrutura e o conteúdo de todas as páginas.</li>
-        <li><strong>CSS3:</strong> Para a estilização, utilizando Flexbox, Grid e design responsivo.</li>
-        <li><strong>JavaScript:</strong> Para toda a interatividade, manipulação do DOM e funcionalidades interativas (como o botão de impressão e o download do material).</li>
-        <li><strong>Bootstrap 5:</strong> Utilizado para agilizar a criação de componentes responsivos e um layout consistente em todas as páginas.</li>
-        <li><strong>Font Awesome:</strong> Para os ícones que tornam a navegação mais visual e intuitiva.</li>
-      </ul>
-    </section>
-
-    <!-- ESTRUTURA DO REPOSITÓRIO -->
-    <section id="estrutura">
-      <h2><i class="fas fa-folder-tree"></i> 📂 Estrutura do Repositório</h2>
-      <p>A estrutura de pastas foi organizada para separar o conteúdo dos alunos, os planos de aula e os assets (imagens, CSS, JS).</p>
-      <div class="tree">
-        <span class="comment">/</span>
-        ├── index.html                <span class="comment"># Página inicial do portal</span>
-        ├── primeiros_passos.html     <span class="comment"># Guia de instalação e configuração do VS Code</span>
-        ├── UTFPR.html                <span class="comment"># Página de créditos e informações da instituição</span>
-        │
-        ├── assets/                   <span class="comment"># Arquivos estáticos</span>
-        │   ├── css/                  <span class="comment"># Folhas de estilo</span>
-        │   ├── js/                   <span class="comment"># Scripts JavaScript</span>
-        │   └── images/               <span class="comment"># Imagens e logotipos</span>
-        │
-        ├── pages/                    <span class="comment"># Páginas de conteúdo dos anos e bimestres</span>
-        │   ├── ano1.html
+🚀
+Revolução Digital: Desvendando Algoritmos, Reconectando Humanidade
+Um projeto de material didático completo e inovador para o Ensino Médio, criado para transformar alunos de usuários passivos em criadores digitais críticos e conscientes.
+UTFPR – Campus Siqueira Campos  •  Licença MIT  •  Em desenvolvimento
+Sumário
+•	Sobre o Projeto
+•	Manifesto
+•	O Problema
+•	A Solução
+•	Características
+•	Tecnologias
+•	Estrutura
+•	Como Navegar
+•	Guia Rápido
+•	4 Pilares (PC)
+•	Metodologia
+•	Contribuição
+•	Licença
+•	Autores
+🎯 Sobre o Projeto
+📜 O Manifesto: A Filosofia do Projeto
+Este não é apenas um material didático. É um manifesto.
+Vivemos em um mundo onde somos bombardeados por algoritmos, nossos dados são o novo petróleo, e nossa atenção é vendida em leilões digitais. A maioria das pessoas são apenas zumbis digitais, consumindo conteúdo sem questionar, presas em bolhas que reforçam suas próprias opiniões.
+Este projeto nasce para quebrar essa corrente. Ele foi criado para a disciplina de "Revolução Digital" e parte de um princípio fundamental: a única forma de não ser controlado pela tecnologia é entendendo como ela funciona.
+Acreditamos que os alunos do Ensino Médio não devem ser apenas consumidores de tecnologia, mas sim arquitetos do futuro digital. Eles precisam entender o que está por trás da tela, desmontar a "Matrix" e, mais importante, construir suas próprias ferramentas.
+O tom é ácido, o humor é ácido e a abordagem é punk-rock. Cada texto tem o objetivo de provocar, indignar e, acima de tudo, inspirar ação.
+❓ O Problema que Queremos Resolver
+O cenário atual do ensino de tecnologia no Brasil ainda é, em muitos lugares, raso. Muitos alunos aprendem a usar ferramentas, mas não a entendê-las. Nossos desafios são:
+1.	Letramento Digital Crítico: Alunos sabem usar o TikTok, mas não sabem como o algoritmo do TikTok usa eles.
+2.	Desigualdade de Acesso: A falta de um material de programação unificado e acessível para professores.
+3.	Falta de Engajamento: Materiais tradicionais não conectam com a realidade dos alunos.
+4.	Medo de Programar: A programação é frequentemente vista como um bicho de sete cabeças, algo "para gênios".
+💡 A Solução: O que é este Material Didático?
+Este repositório contém um currículo anual completo e gratuito para o ensino de Programação Web e Cultura Digital, dividido em 40 semanas (4 bimestres) para cada ano do Ensino Médio.
+O material foi desenhado para ser "à prova de professor" e "à prova de aluno":
+•	Para o Professor: É um guia completo com planos de aula detalhados, incluindo objetivos, códigos comentados, atividades minuto a minuto, orientações de acessibilidade e critérios de avaliação.
+•	Para o Aluno: É uma jornada de transformação, onde ele aprende os fundamentos do desenvolvimento web (HTML, CSS, JavaScript) e constrói, do zero, projetos com propósito social.
+O objetivo final é que cada aluno, ao final do ano, tenha um portfólio de projetos no ar, provando que ele não é mais um espectador, mas um criador.
+✨ Principais Características e Diferenciais
+🧑‍🏫 Para Professores
+•	Planos de Aula Prontos: Cada aula é um plano detalhado que você pode seguir ou se inspirar. É só abrir e usar.
+•	Código Comentado: Todo o código é explicado linha por linha, não apenas para o aluno, mas com dicas e justificativas para o professor.
+•	Detalhamento Minuto a Minuto: Cada aula de 50 minutos é planejada do início ao fim, eliminando a ansiedade do "o que eu faço agora?".
+•	Orientações para Adaptação: Cada plano de aula inclui sugestões concretas para adaptar o conteúdo para alunos com Deficiência Visual, Auditiva, Motora, TDAH, TEA e Altas Habilidades.
+•	Rúbricas de Avaliação: Critérios de avaliação claros e detalhados para cada semana e para o projeto final, com pontuações e descrições de desempenho.
+🧑‍🎓 Para Alunos
+•	Jornada de Transformação: Começa com o básico de HTML e CSS e culmina na criação de um projeto web completo e interativo com JavaScript.
+•	Projetos com Propósito: Os alunos não constroem apenas "sites de teste". Eles resolvem problemas reais da cultura digital, como fake news, cyberbullying e vício em redes sociais.
+•	"Mão na Massa": A teoria é sempre um trampolim para a prática. O foco é codificar, testar, errar, corrigir e aprender.
+•	Soft Skills: Desenvolve habilidades essenciais como trabalho em equipe, comunicação (pitch), resiliência (debug) e pensamento crítico.
+🛠 Tecnologias Utilizadas
+O material foi construído com as tecnologias fundamentais da web:
+•	HTML5: Para a estrutura e o conteúdo de todas as páginas.
+•	CSS3: Para a estilização, utilizando Flexbox, Grid e design responsivo.
+•	JavaScript: Para toda a interatividade, manipulação do DOM e funcionalidades interativas (como o botão de impressão e o download do material).
+•	Bootstrap 5: Utilizado para agilizar a criação de componentes responsivos e um layout consistente em todas as páginas.
+•	Font Awesome: Para os ícones que tornam a navegação mais visual e intuitiva.
+📂 Estrutura do Repositório
+A estrutura de pastas foi organizada para separar o conteúdo dos alunos, os planos de aula e os assets (imagens, CSS, JS).
+/
+├── index.html
+# Página inicial do portal
+├── primeiros_passos.html
+# Guia de instalação e configuração do VS Code
+├── UTFPR.html
+# Página de créditos e informações da instituição
+│
+        ├── assets/
+# Arquivos estáticos
+│   ├── css/
+# Folhas de estilo
+│   ├── js/
+# Scripts JavaScript
+│   └── images/
+# Imagens e logotipos
+│
+        ├── pages/
+# Páginas de conteúdo dos anos e bimestres
+│   ├── ano1.html
         │   ├── ano2.html
         │   ├── ano3.html
         │   ├── ano1bim1.html
         │   ├── ...
         │   └── ano3bim4.html
         │
-        └── README.md                 <span class="comment"># Este arquivo</span>
-      </div>
-      <ul>
-        <li><strong><code>index.html</code></strong>: O ponto de entrada. Apresenta o projeto e direciona para os anos.</li>
-        <li><strong><code>primeiros_passos.html</code></strong>: Um guia completo sobre o VS Code, a ferramenta que os alunos usarão.</li>
-        <li><strong><code>pages/</code></strong>: Contém todas as páginas de conteúdo, cada uma dedicada a um ano e bimestre.</li>
-        <li><strong><code>assets/</code></strong>: Contém todos os recursos visuais e de estilo.</li>
-      </ul>
-    </section>
+        └── README.md
+# Este arquivo
+•	index.html: O ponto de entrada. Apresenta o projeto e direciona para os anos.
+•	primeiros_passos.html: Um guia completo sobre o VS Code, a ferramenta que os alunos usarão.
+•	pages/: Contém todas as páginas de conteúdo, cada uma dedicada a um ano e bimestre.
+•	assets/: Contém todos os recursos visuais e de estilo.
+🧭 Como Navegar pelo Material
+🧑‍🏫 Jornada do Professor
+5.	Comece pela página inicial (index.html) para entender a filosofia.
+6.	Leia o Manifesto e a Carta de Abertura de cada ano.
+7.	Consulte o Mapeamento de Habilidades BNCC para alinhar seu planejamento.
+8.	Escolha o ano e o bimestre que deseja lecionar.
+9.	Dentro da página do bimestre, explore os Planos de Aula Detalhados no menu "sanfona" (accordion). Cada semana contém tudo o que você precisa.
+10.	Use o botão "Imprimir" para gerar uma versão em PDF do plano de aula.
+🧑‍🎓 Jornada do Aluno
+11.	Aventure-se pela página inicial (index.html) para sentir o clima da coisa.
+12.	Leia o "Manifesto" com atenção. Ele vai te preparar para o que está por vir.
+13.	Acesse "Primeiros Passos" para configurar seu ambiente de programação (o VS Code).
+14.	Siga a jornada do seu ano. Cada bimestre é uma nova fase da revolução.
+15.	Mão na massa! Use os códigos, construa os projetos e não tenha medo de errar.
+🚀 Como Começar a Usar (Guia Rápido)
+Opção 1: Acessando os links
 
-    <!-- COMO NAVEGAR -->
-    <section id="navegacao">
-      <h2><i class="fas fa-compass"></i> 🧭 Como Navegar pelo Material</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-        <div>
-          <h3>🧑‍🏫 Jornada do Professor</h3>
-          <ol style="margin-left: 1.2rem;">
-            <li>Comece pela página inicial (<code>index.html</code>) para entender a filosofia.</li>
-            <li>Leia o <strong>Manifesto</strong> e a <strong>Carta de Abertura</strong> de cada ano.</li>
-            <li>Consulte o <strong>Mapeamento de Habilidades BNCC</strong> para alinhar seu planejamento.</li>
-            <li>Escolha o ano e o bimestre que deseja lecionar.</li>
-            <li>Dentro da página do bimestre, explore os <strong>Planos de Aula Detalhados</strong> no menu "sanfona" (accordion). Cada semana contém tudo o que você precisa.</li>
-            <li>Use o botão "Imprimir" para gerar uma versão em PDF do plano de aula.</li>
-          </ol>
-        </div>
-        <div>
-          <h3>🧑‍🎓 Jornada do Aluno</h3>
-          <ol style="margin-left: 1.2rem;">
-            <li>Aventure-se pela página inicial (<code>index.html</code>) para sentir o clima da coisa.</li>
-            <li>Leia o <strong>"Manifesto"</strong> com atenção. Ele vai te preparar para o que está por vir.</li>
-            <li>Acesse <strong>"Primeiros Passos"</strong> para configurar seu ambiente de programação (o VS Code).</li>
-            <li>Siga a jornada do seu ano. Cada bimestre é uma nova fase da revolução.</li>
-            <li><strong>Mão na massa!</strong> Use os códigos, construa os projetos e não tenha medo de errar.</li>
-          </ol>
-        </div>
-      </div>
-    </section>
+https://projetosgn.com.br/ → Cartilha Pedagógica - 1º ao 3º Ano · Cultura Digital 
 
-    <!-- GUIA RÁPIDO -->
-    <section id="comecar">
-      <h2><i class="fas fa-rocket"></i> 🚀 Como Começar a Usar (Guia Rápido)</h2>
-      <h4>Opção 1: Acessando os links</h4>
-      <p>
-        <a href="https://projetosgn.com.br/" target="_blank">https://projetosgn.com.br/</a> → Cartilha Pedagógica - 1º ao 3º Ano · Cultura Digital <br>
-        <a href="https://projetosrb.com.br/" target="_blank">https://projetosrb.com.br/</a> → Cartilha Pedagógica - 1º ao 3º Ano · Cultura Digital
-      </p>
-
-      <h4>Opção 2:</h4>
-      <h3 style="font-size: 1.2rem; margin-top: 1rem;">Pré-requisitos</h3>
-      <ul>
-        <li>Um navegador de internet moderno (Chrome, Firefox, Edge).</li>
-        <li>Um editor de código. Recomendamos o <strong>Visual Studio Code</strong>, mas o material pode ser lido em qualquer um.</li>
-        <li>(Opcional) Um servidor web local para rodar os projetos. A extensão <strong>Live Server</strong> no VS Code é a mais recomendada e é ensinada no material.</li>
-      </ul>
-
-      <h3 style="font-size: 1.2rem;">Clonando o Repositório</h3>
-      <p>Para ter todo o material em sua máquina local, abra seu terminal e execute:</p>
-      <pre><code>git clone https://github.com/barbosa-rodrigo-1979/revolucao_digital.git</code></pre>
-
-      <h3 style="font-size: 1.2rem;">Abrindo o Material</h3>
-      <ol>
-        <li>Navegue até a pasta onde você clonou o repositório.</li>
-        <li>Encontre o arquivo <code>index.html</code> e abra-o com seu navegador.</li>
-        <li>A partir daí, você pode navegar por todo o conteúdo.</li>
-      </ol>
-      <p>Para uma experiência melhor, abra a pasta do projeto no VS Code e use a extensão Live Server para servir as páginas.</p>
-    </section>
-
-    <!-- 4 PILARES DO PC -->
-    <section id="pilares">
-      <h2><i class="fas fa-puzzle-piece"></i> 🧩 Os 4 Pilares do Pensamento Computacional (PC)</h2>
-      <p>Este projeto é fundamentado nos quatro pilares essenciais do Pensamento Computacional (Wing, 2006), que são a base para a resolução de problemas de forma estruturada.</p>
-      <ul>
-        <li><strong>Decomposição:</strong> Dividir um problema complexo em partes menores e mais fáceis de gerenciar.</li>
-        <li><strong>Reconhecimento de Padrões:</strong> Identificar similaridades e repetições para resolver problemas de forma mais eficiente.</li>
-        <li><strong>Abstração:</strong> Focar no que é essencial e ignorar os detalhes irrelevantes para criar um modelo do problema.</li>
-        <li><strong>Algoritmos:</strong> Desenvolver uma sequência de passos lógica e finita para resolver o problema.</li>
-      </ul>
-    </section>
-
-    <!-- METODOLOGIA -->
-    <section id="metodologia">
-      <h2><i class="fas fa-book-open"></i> 📚 Metodologia e Base Curricular</h2>
-      <p>O material é <strong>totalmente alinhado à Base Nacional Comum Curricular (BNCC)</strong> e ao <strong>Referencial Curricular do Paraná (RCP-PR)</strong>, com foco especial nas competências da <strong>Cultura Digital</strong> e no complemento de <strong>Computação</strong> (Resolução CNE/CEB nº 1/2022).</p>
-      <p>A metodologia adotada é baseada em <strong>projetos e metodologias ativas</strong>, onde o aluno é o protagonista do seu aprendizado, construindo soluções para problemas reais.</p>
-    </section>
-
-    <!-- CONTRIBUIÇÃO -->
-    <section id="contribuicao">
-      <h2><i class="fas fa-handshake"></i> 🤝 Contribuição</h2>
-      <p>Sua contribuição é muito bem-vinda! Se você é um educador ou desenvolvedor e quer melhorar este material, sinta-se à vontade para:</p>
-      <ol>
-        <li>Fazer um <strong>Fork</strong> do projeto.</li>
-        <li>Criar uma <strong>Branch</strong> para sua modificação (<code>git checkout -b feature/melhoria-no-plano-de-aula</code>).</li>
-        <li>Fazer o <strong>Commit</strong> de suas mudanças (<code>git commit -m 'Adiciona melhoria no plano de aula X'</code>).</li>
-        <li>Fazer o <strong>Push</strong> para a branch (<code>git push origin feature/melhoria-no-plano-de-aula</code>).</li>
-        <li>Abrir um <strong>Pull Request</strong>.</li>
-      </ol>
-    </section>
-
-    <!-- LICENÇA -->
-    <section id="licenca">
-      <h2><i class="fas fa-balance-scale"></i> 📄 Licença</h2>
-      <p>Este projeto está sob a licença <strong>MIT</strong>. Veja o arquivo <a href="LICENSE">LICENSE</a> para mais detalhes. Isso significa que você pode usar, copiar, modificar e distribuir este material livremente, desde que dê o devido crédito aos autores.</p>
-    </section>
-
-    <!-- AUTORES -->
-    <section id="autores">
-      <h2><i class="fas fa-users"></i> 👨‍💻 Autores</h2>
-      <p>Este material foi idealizado e desenvolvido por:</p>
-      <ul>
-        <li><strong>Gisele Nunes</strong> – <em>Design Instrucional e Conteúdo</em> – <a href="https://projetosgn.com.br/" target="_blank">projetosgn.com.br</a></li>
-        <li><strong>Rodrigo Barbosa</strong> – <em>Conteúdo e Desenvolvimento</em> – <a href="https://projetosrb.com.br/" target="_blank">projetosrb.com.br</a></li>
-      </ul>
-      <p>Agradecimentos especiais à <strong>Universidade Tecnológica Federal do Paraná (UTFPR) - Campus Siqueira Campos</strong> por todo o apoio.</p>
-    </section>
-
-    <!-- RODAPÉ -->
-    <footer>
-      <p style="margin-bottom: 0.5rem;">🔥 A revolução não vai ser televisionada. Ela vai ser CODIFICADA. Junte-se a nós.</p>
-      <div class="footer-slogan">
-        <i class="fas fa-code"></i> Revolução Digital · 2025 <i class="fas fa-terminal"></i>
-      </div>
-      <p style="margin-top: 1.5rem; font-size: 0.8rem; opacity: 0.6;">Material didático gratuito e aberto · Licença MIT</p>
-    </footer>
-  </div>
-
-  <!-- Botão de impressão (simula a funcionalidade descrita no README) -->
-  <button class="print-btn" onclick="window.print()">
-    <i class="fas fa-print"></i> Imprimir / PDF
-  </button>
-
-  <script>
-    // Pequeno realce: abrir o primeiro details se houver (não usado aqui, mas mantido)
-    // Nada extra necessário, apenas mantendo a interatividade nativa.
-  </script>
-</body>
-</html>
+https://projetosrb.com.br/ → Cartilha Pedagógica - 1º ao 3º Ano · Cultura Digital
+      
+Opção 2:
+Pré-requisitos
+•	Um navegador de internet moderno (Chrome, Firefox, Edge).
+•	Um editor de código. Recomendamos o Visual Studio Code, mas o material pode ser lido em qualquer um.
+•	(Opcional) Um servidor web local para rodar os projetos. A extensão Live Server no VS Code é a mais recomendada e é ensinada no material.
+Clonando o Repositório
+Para ter todo o material em sua máquina local, abra seu terminal e execute:
+git clone https://github.com/barbosa-rodrigo-1979/revolucao_digital.git
+Abrindo o Material
+16.	Navegue até a pasta onde você clonou o repositório.
+17.	Encontre o arquivo index.html e abra-o com seu navegador.
+18.	A partir daí, você pode navegar por todo o conteúdo.
+Para uma experiência melhor, abra a pasta do projeto no VS Code e use a extensão Live Server para servir as páginas.
+🧩 Os 4 Pilares do Pensamento Computacional (PC)
+Este projeto é fundamentado nos quatro pilares essenciais do Pensamento Computacional (Wing, 2006), que são a base para a resolução de problemas de forma estruturada.
+•	Decomposição: Dividir um problema complexo em partes menores e mais fáceis de gerenciar.
+•	Reconhecimento de Padrões: Identificar similaridades e repetições para resolver problemas de forma mais eficiente.
+•	Abstração: Focar no que é essencial e ignorar os detalhes irrelevantes para criar um modelo do problema.
+•	Algoritmos: Desenvolver uma sequência de passos lógica e finita para resolver o problema.
+📚 Metodologia e Base Curricular
+O material é totalmente alinhado à Base Nacional Comum Curricular (BNCC) e ao Referencial Curricular do Paraná (RCP-PR), com foco especial nas competências da Cultura Digital e no complemento de Computação (Resolução CNE/CEB nº 1/2022).
+A metodologia adotada é baseada em projetos e metodologias ativas, onde o aluno é o protagonista do seu aprendizado, construindo soluções para problemas reais.
+🤝 Contribuição
+Sua contribuição é muito bem-vinda! Se você é um educador ou desenvolvedor e quer melhorar este material, sinta-se à vontade para:
+19.	Fazer um Fork do projeto.
+20.	Criar uma Branch para sua modificação (git checkout -b feature/melhoria-no-plano-de-aula).
+21.	Fazer o Commit de suas mudanças (git commit -m 'Adiciona melhoria no plano de aula X').
+22.	Fazer o Push para a branch (git push origin feature/melhoria-no-plano-de-aula).
+23.	Abrir um Pull Request.
+📄 Licença
+Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes. Isso significa que você pode usar, copiar, modificar e distribuir este material livremente, desde que dê o devido crédito aos autores.
+👨‍💻 Autores
+Este material foi idealizado e desenvolvido por:
+•	Gisele Nunes – Design Instrucional e Conteúdo – projetosgn.com.br
+•	Rodrigo Barbosa – Conteúdo e Desenvolvimento – projetosrb.com.br
+Agradecimentos especiais à Universidade Tecnológica Federal do Paraná (UTFPR) - Campus Siqueira Campos por todo o apoio.
+Encerramento
+🔥 A revolução não vai ser televisionada. Ela vai ser CODIFICADA. Junte-se a nós.
+Material didático gratuito e aberto · Licença MIT
+Revolução Digital · 2026
