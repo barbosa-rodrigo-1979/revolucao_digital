@@ -417,8 +417,6 @@ Projeto desenvolvido na **Universidade Tecnológica Federal do Paraná (UTFPR), 
 
 © 2026 UTFPR · Desenvolvido por Gisele Nunes e Rodrigo Barbosa. **Todos os direitos reservados.**
 
-> ℹ️ Se a intenção for que outros professores possam **usar e adaptar** o material livremente, considere adicionar um arquivo `LICENSE` (por exemplo, uma licença [Creative Commons](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt-br)) e atualizar esta seção.
-
 ---
 
 <div align="center">
